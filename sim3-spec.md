@@ -87,7 +87,7 @@ Layer 3: Aggregation
 ## 2b. Mandate draw correlation
 
 Independent normal draws per party are unrealistic. The transition
-matrix (research/transition_matrix_prop.csv) shows strong voter flows:
+matrix (research/transition_matrix.csv) shows strong voter flows:
 when S loses, SF gains (10.89% of S 2022 voters → SF 2026). Independent
 draws would produce scenarios where both collapse simultaneously, or
 both surge — empirically unlikely.
@@ -1213,7 +1213,7 @@ vs. clearly dominated, and how mandate draws shift the ranking.
 coalition-simulator/
   sim3.js            <- main simulator
   sim3-spec.md       <- this document
-  sim3-sweep.js      <- batch runner for parameter sweeps
+  sweep.sh           <- batch runner for parameter sweeps
   sim3-parties.js    <- party definitions and budget-vote functions
   sim3-packages.js   <- enumerated government packages and platforms
 ```

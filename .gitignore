@@ -1,0 +1,6 @@
+node_modules/
+results/sweep-tmp-*/
+results/pass1-tmp-*/
+results/pass2-tmp-*/
+results/transitions-tmp-*/
+*.DS_Store

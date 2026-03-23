@@ -27,7 +27,7 @@ The formateur protocol gives Frederiksen (sitting PM) structural first-mover adv
 
 2. **Two parameters crack the baseline.** Lokke demanding the PM post (mDemandPM) drops Frederiksen to ~83%. A blue mandate surge (V=22, LA=22, KF=14) drops her to ~87%. No other single parameter moves her below 90%.
 
-3. **Multiplicative interaction.** These two factors interact: mDemandPM + blue surge together drop Frederiksen to ~54%, far below either effect alone.
+3. **Multiplicative interaction.** These factors interact: mDemandPM + blue mandate surge + contested formateur (pBlueFormateur=0.2) together drop Frederiksen to ~54%, far below any single effect.
 
 4. **M's direction reshapes coalitions, not PM identity.** Whether M leans red, blue, or demands the PM post for itself barely affects who becomes PM -- but it dramatically changes which coalition forms (S+SF vs. S+M vs. S+SF+M).
 
@@ -97,8 +97,8 @@ Selected `cfg` options:
 | `blocBiasBlue` | `0.0` | Systematic polling bias added to blue bloc mandates |
 | `blocBiasRed` | `0.0` | Systematic polling bias added to red bloc mandates |
 | `pBlueFormateur` | `0.0` | Probability that a blue leader gets formateur rights directly |
-| `distPenalty` | `2.0` | Ideology distance penalty in package scoring |
-| `sizePenalty` | `0.10` | Penalty per excess seat beyond minimum winning |
+| `distPenalty` | `1.5` | Ideology distance penalty in package scoring |
+| `sizePenalty` | `0.08` | Penalty per excess seat beyond minimum winning |
 
 See `sim3-spec.md` for the full parameter list and behavioral model.
 
