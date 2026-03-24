@@ -588,12 +588,28 @@ details .panel {
 </header>
 
 <!-- ===== SECTION 1: EXECUTIVE SUMMARY ===== -->
+<details class="callout" style="margin-bottom:2rem;" id="baseline-assumptions">
+  <summary style="cursor:pointer;font-family:'Libre Baskerville',serif;font-weight:700;font-size:1rem;">Standardantagelser (baseline)</summary>
+  <div style="margin-top:0.75rem;">
+    <p class="methodology" style="margin-bottom:0.75rem;">Alle scenarier bygger p&aring; et f&aelig;lles s&aelig;t af standardantagelser. Baselinev&aelig;rdierne er valgt ud fra Altingets snit af meningsm&aring;linger og ekspertvurderinger.</p>
+    <h3 style="margin-top:1rem;">Mandatfordeling (175 danske mandater)</h3>
+    <p class="methodology">S=38, SF=23, EL=12, ALT=4, RV=9, M=9, KF=12, V=17, LA=19, DD=13, DF=14, BP=5. R&oslash;d blok: 86. Bl&aring; blok: 80. M (swing): 9.</p>
+    <h3 style="margin-top:1rem;">Nordatlantiske mandater (4 s&aelig;der)</h3>
+    <p class="methodology">GL1 (Gr&oslash;nland): 60% r&oslash;d, 30% fleksibel, 10% bl&aring;. GL2: 25% r&oslash;d, 45% fleksibel, 30% bl&aring;. FO1 (F&aelig;r&oslash;erne): 55% r&oslash;d, 20% fleksibel, 25% bl&aring;. FO2: 10% r&oslash;d, 15% fleksibel, 75% bl&aring;. Mere uforudsigelige end normalt pga. Siumut-krise og Demokraatits fremgang.</p>
+    <h3 style="margin-top:1rem;">Sp&aelig;rrepartier</h3>
+    <p class="methodology">ALT: 60% sandsynlighed for at klare 2%-gr&aelig;nsen. BP: 75%. Hvis de falder under, mistes 4-5 mandater fra blokken.</p>
+    <h3 style="margin-top:1rem;">Adf&aelig;rdsparametre (standardv&aelig;rdier)</h3>
+    <p class="methodology">mDemandGov = fra &middot; mDemandPM = fra &middot; sRelaxPM = fra &middot; sfAcceptM = fra &middot; redPreference = 0,5 (neutral) &middot; pBlueFormateur = 0,15 &middot; flexibility = 0 &middot; sigmaBloc = 4,0 &middot; sigmaSub = 1,5 &middot; sigmaParty = 1,5</p>
+    <h3 style="margin-top:1rem;">13 regeringspakker</h3>
+    <p class="methodology">S-alene, S+SF, S+SF+RV, S+RV, S+M, S+SF+M, S+SF+RV+M, S+V, S+V+M, V-ledet bl&aring; (V+LA+KF), LA-ledet bl&aring; (LA+V+KF), M+S+SF (M-ledet), M+S+RV (M-ledet)</p>
+  </div>
+</details>
+
 <section id="exec-summary">
   <h2>Executive Summary</h2>
   <div class="stat-row" id="exec-stats">
     <!-- Populated dynamically from DATA -->
   </div>
-  <p id="exec-narrative" style="font-size: 0.92rem; line-height: 1.7; max-width: 860px;"></p>
 </section>
 
 
@@ -639,10 +655,11 @@ details .panel {
     <div class="combiner-dim">
       <label class="small" style="font-weight:600;display:block;margin-bottom:0.3rem;">L&oslash;kkes retning</label>
       <select id="cb-r" style="width:100%;padding:0.4rem;border:1px solid #d4cdc2;border-radius:4px;font-size:0.85rem;">
-        <option value="S" selected>Mod Frederiksen (S)</option>
-        <option value="V">Mod bl&aring; (V)</option>
-        <option value="self">Egne m&aelig;rkesager</option>
+        <option value="S" selected>Orientering mod S (Frederiksen)</option>
+        <option value="V">Orientering mod V (bl&aring; blok)</option>
+        <option value="self">Fokus p&aring; egne m&aelig;rkesager</option>
       </select>
+      <div class="small muted" style="font-size:0.72rem;margin-top:0.2rem;">&rdquo;Egne m&aelig;rkesager&rdquo; = M prioriterer sin egen politik fremfor at st&oslash;tte en bestemt blok. Under inklusionskrav har retningen ingen effekt</div>
     </div>
     <div class="combiner-dim">
       <label class="small" style="font-weight:600;display:block;margin-bottom:0.3rem;">Frederiksens pr&aelig;ference</label>
@@ -651,7 +668,7 @@ details .panel {
         <option value="r50" selected>Neutral</option>
         <option value="r20">Foretr&aelig;kker bred (S+SF+RV+M)</option>
       </select>
-      <div class="small muted" style="font-size:0.72rem;margin-top:0.2rem;">Ved lav v&aelig;rdi foretr&aelig;kker Frederiksen koalitioner uden SF over brede koalitioner med SF</div>
+      <div class="small muted" style="font-size:0.72rem;margin-top:0.2rem;">&rdquo;Foretr&aelig;kker midten&rdquo; (S+M uden SF) kan udforskes via Scenarieudforsker &rarr; Frederiksens pr&aelig;ference &rarr; &rdquo;Foretr. midten&rdquo;</div>
     </div>
     <div class="combiner-dim">
       <label class="small" style="font-weight:600;display:block;margin-bottom:0.3rem;">SFs budgetblokering</label>
@@ -673,7 +690,7 @@ details .panel {
 <!-- ===== SECTION 2: SCENARIO EXPLORER ===== -->
 <section id="explorer">
   <h2>Scenarieudforsker</h2>
-  <p class="small muted" style="margin-bottom:0.5rem;">V&aelig;lg et eller flere scenarier for at sammenligne. Klik igen for at frav&aelig;lge.</p>
+  <p class="methodology" style="margin-bottom:0.8rem;">Scenarieudforskeren giver overblik over, hvordan specifikke parametervalg p&aring;virker sandsynligheden for forskellige regeringsdannelser. V&aelig;lg &eacute;t eller flere foruddefinerede scenarier ved at klikke p&aring; knapperne &mdash; grupperet efter kategori. N&aring;r flere scenarier er aktive, vises en sammenligningstabel med stablede koalitionsbjælker. Klik igen for at frav&aelig;lge.</p>
   <div id="explorer-presets"></div>
   <div id="explorer-result" class="result-card" style="display:none;">
     <div id="explorer-result-grid"></div>
@@ -685,6 +702,7 @@ details .panel {
 <!-- ===== SECTION 3: COMPARISON MODE ===== -->
 <section id="comparison">
   <h2>Sammenligningsv&aelig;rkt&oslash;j</h2>
+  <p class="methodology" style="margin-bottom:0.8rem;">Placerer to scenarier side om side og beregner forskellen p&aring; alle n&oslash;gletal. V&aelig;lg Scenarie A og Scenarie B &mdash; en deltarække markerer afvigelser. S&aelig;rligt nyttigt til at isolere effekten af &eacute;n enkelt parameter&aelig;ndring.</p>
   <div class="comparison-row">
     <div class="comparison-col">
       <h3>Scenario A</h3>
@@ -743,6 +761,7 @@ details .panel {
 <!-- ===== SECTION 6: COALITION COMPOSITION ===== -->
 <section id="composition">
   <h2>Koalitionssammens&aelig;tning pr. scenarie</h2>
+  <p class="methodology" style="margin-bottom:0.8rem;">Horisontale stablede s&oslash;jler viser koalitionsfordelingen for ca. 16 udvalgte scenarier. Hvert segment repr&aelig;senterer andelen af simulationer der producerer en bestemt koalitionstype. Visualiseringen g&oslash;r det muligt at sammenligne koalitionsm&oslash;nstre p&aring; tv&aelig;rs af scenarier p&aring; &eacute;t blik. Hold musen over scenarienavnet for en kort beskrivelse af parameterindstillingerne.</p>
   <div class="coalition-legend" id="global-legend" style="margin-bottom:1rem;"></div>
   <div class="stacked-bars" id="stacked-bars"></div>
 </section>
@@ -750,6 +769,7 @@ details .panel {
 <!-- ===== SECTION 7: INTERACTION HEATMAPS ===== -->
 <section id="heatmaps">
   <h2>Interaktionsheatmaps</h2>
+  <p class="methodology" style="margin-bottom:0.8rem;">Heatmappene viser, hvordan sandsynligheden for en S-ledet regering varierer p&aring; tv&aelig;rs af to dimensioner samtidig. Hver celle angiver en specifik kombination af parameterv&aelig;rdier, farvekodet fra lavt til h&oslash;jt. Form&aring;let er at synligg&oslash;re interaktionseffekter: om effekten af &eacute;n parameter afh&aelig;nger af v&aelig;rdien p&aring; en anden.</p>
   <div class="heatmap-container">
     <div>
       <div class="heatmap-title">L&oslash;kkes strategi &times; Mandatscenarie</div>
@@ -765,6 +785,7 @@ details .panel {
 <!-- ===== SECTION 8: STRUCTURAL IMPLICATIONS ===== -->
 <section id="implications">
   <h2>Strukturelle implikationer</h2>
+  <p class="methodology" style="margin-bottom:0.8rem;">De vigtigste strukturelle indsigter fra simuleringsanalyserne. Hvert punkt angiver et m&oslash;nster der g&aring;r p&aring; tv&aelig;rs af scenarier &mdash; udledt af data, ikke politisk vurdering.</p>
   <div id="implications-content"></div>
 
 </section>
@@ -989,7 +1010,8 @@ details .panel {
 
 <!-- ===== SECTION 10: DATA TABLE ===== -->
 <section id="data-table-section">
-  <h2>Alle data</h2>
+  <h2>Alle simulerede scenarier</h2>
+  <p class="methodology" style="margin-bottom:0.8rem;">Samtlige 687 simulerede scenarier med n&oslash;gletal. Brug s&oslash;gefeltet til at filtrere p&aring; parameterkombinationer og klik p&aring; kolonneoverskrifter for at sortere. Tabellen giver fuld adgang til r&aring;resultaterne bag de &oslash;vrige visualiseringer.</p>
   <div class="table-controls">
     <input type="text" class="table-search" id="table-search" placeholder="S&oslash;g i scenarier...">
     <span class="small muted" id="table-count"></span>
@@ -1074,10 +1096,10 @@ const PRESETS = [
     { name: 'Kr\u00e6ver regeringsdeltagelse', label: 'mDemandGov+current-polls', tip: 'M blokerer enhver regering uden M. Det mest sandsynlige scenarie if\u00f8lge kommentatorer' },
     { name: 'Ingen s\u00e6rlige krav', label: 'baseline', tip: 'M forhandler normalt uden at stille ultimative krav' },
     { name: 'Kr\u00e6ver statsministerpost', label: 'M-demands-PM', tip: 'M stemmer imod alle budgetter hvor L\u00f8kke ikke er SM \u2014 selvdestruktivt' },
-    { name: 'Orientering mod V', label: 'M->V', tip: 'M st\u00f8tter i h\u00f8jere grad bl\u00e5-ledede budgetter' },
-    { name: 'S accepterer L\u00f8kke som SM', label: 'sRelaxPM+baseline', tip: 'Frederiksen accepterer at L\u00f8kke kan lede en M+S+SF-koalition. Prior: 5%' }
+    { name: 'Orientering mod V', label: 'M->V', tip: 'M st\u00f8tter i h\u00f8jere grad bl\u00e5-ledede budgetter' }
   ]},
   { group: 'Frederiksens præference', desc: 'R\u00f8d = foretr\u00e6kker S+SF. Midten = foretr\u00e6kker S+M uden SF. Bred = foretr\u00e6kker S+SF+RV+M', items: [
+    { name: 'S accepterer L\u00f8kke som statsminister', label: 'sRelaxPM+baseline', tip: 'Frederiksen accepterer at L\u00f8kke kan lede en M+S+SF-koalition. Historisk pr\u00e6cedens: Baunsgaard 1968. Prior: 5%' },
     { name: 'Foretr\u00e6kker r\u00f8d', label: 'redPref=0.8', tip: 'S+SF og S+SF+RV foretrukket over koalitioner med M' },
     { name: 'Neutral', label: 'redPref=0.5', tip: 'Ingen s\u00e6rlig pr\u00e6ference for koalitionstype' },
     { name: 'Foretr\u00e6kker midten', label: 'midten:baseline', tip: 'S+M foretrukket. SF modvillig over for M. Ny tretrins-bonus' },
@@ -1087,6 +1109,11 @@ const PRESETS = [
     { name: 'SF blokerer trov\u00e6rdigt', label: 'sf-abstain-sm=0.3', tip: 'SF stemmer imod i 70% af tilf\u00e6ldene n\u00e5r de er udenfor \u2192 S+M umulig' },
     { name: 'SF neutral', label: 'sf-abstain-sm=0.5', tip: 'SF afst\u00e5r/stemmer imod 50/50' },
     { name: 'SF f\u00f8lger blokken', label: 'sf-abstain-sm=0.7', tip: 'SF afst\u00e5r oftest \u2192 S+M lettere at danne' }
+  ]},
+  { group: 'Nordatlantiske mandater', desc: '4 mandater (2 Gr\u00f8nland, 2 F\u00e6r\u00f8erne) med usikker blokorientering. Kan v\u00e6re afg\u00f8rende for flertalsdannelsen', items: [
+    { name: 'Mere r\u00f8de NA-mandater', label: 'naRedShift=0.1', tip: 'Alle NA-s\u00e6der forskudt 10pp mod r\u00f8d. Forh\u00f8jer r\u00f8d bloks chance for 90' },
+    { name: 'Baseline NA', label: 'naRedShift=0', tip: 'GL1=60% r\u00f8d, GL2=25%, FO1=55%, FO2=10%' },
+    { name: 'Mere bl\u00e5 NA-mandater', label: 'naRedShift=-0.1', tip: 'Alle NA-s\u00e6der forskudt 10pp mod bl\u00e5' }
   ]},
   { group: 'M\u00e5lingsusikkerhed', items: [
     { name: 'Normal (\u03c3=4)', label: 'sigmaBloc=4.0' },
@@ -1476,6 +1503,7 @@ function buildTornado() {
     { name: 'Koalitionsst\u00f8rrelse', tip: 'Straf pr. ekstra parti i koalitionen. H\u00f8jere = f\u00e6rre partier foretr\u00e6kkes', filter: l => /^sizePenalty=/.test(l) },
     { name: 'M afst\u00e5-andel', tip: 'N\u00e5r M ikke stemmer FOR: andel der afst\u00e5r vs. stemmer imod', filter: l => /^mAbstain=/.test(l) },
     { name: 'EL afst\u00e5-andel', tip: 'N\u00e5r EL ikke stemmer FOR: andel der afst\u00e5r vs. stemmer imod', filter: l => /^elAbstain=/.test(l) && !l.includes('+') },
+    { name: 'Nordatlantisk orientering', tip: 'Forskydning af NA-mandaternes r\u00f8de sandsynlighed. +0.10 = mere r\u00f8de, -0.10 = mere bl\u00e5. Baseline: GL1=60%, GL2=25%, FO1=55%, FO2=10% r\u00f8d', filter: l => /^naRedShift=/.test(l) },
   ];
 
   const tornadoData = [];
@@ -1509,7 +1537,7 @@ function buildTornado() {
     const x2 = labelW + scale(d.max);
     const opacity = 0.4 + (d.range / tornadoData[0].range) * 0.6;
 
-    svg += '<g>' + (d.tip ? '<title>' + d.tip + '</title>' : '');
+    svg += '<g' + (d.tip ? ' data-tip="' + d.tip.replace(/"/g, '&quot;') + '"' : '') + '>';
     svg += '<rect x="0" y="' + y + '" width="' + (labelW - 4) + '" height="' + barH + '" fill="transparent" style="cursor:help"/>';
     svg += '<text x="' + (labelW - 8) + '" y="' + (y + barH / 2 + 4) + '" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#2a2420" style="cursor:help">' + d.name + '</text>';
     svg += '</g>';
@@ -1536,6 +1564,30 @@ function highlightTornadoScenario(label) {
 }
 
 buildTornado();
+
+// Tornado JS tooltip (SVG <title> is unreliable across browsers)
+(function() {
+  const tooltip = document.createElement('div');
+  tooltip.style.cssText = 'position:fixed;background:#1e3a5f;color:#fff;font-family:IBM Plex Mono,monospace;font-size:0.72rem;padding:0.4rem 0.6rem;border-radius:4px;pointer-events:none;z-index:1000;max-width:320px;white-space:normal;display:none;line-height:1.4;';
+  document.body.appendChild(tooltip);
+  const chart = document.getElementById('tornado-chart');
+  if (chart) {
+    chart.addEventListener('mouseover', function(e) {
+      const g = e.target.closest('[data-tip]');
+      if (g && g.dataset.tip) {
+        tooltip.textContent = g.dataset.tip;
+        tooltip.style.display = 'block';
+      }
+    });
+    chart.addEventListener('mousemove', function(e) {
+      tooltip.style.left = (e.clientX + 12) + 'px';
+      tooltip.style.top = (e.clientY - 30) + 'px';
+    });
+    chart.addEventListener('mouseout', function(e) {
+      if (!e.target.closest('[data-tip]')) tooltip.style.display = 'none';
+    });
+  }
+})();
 
 // ===== PHASE TRANSITION CURVES =====
 function buildLineChart(containerId, dataPoints, xLabel, yLabel, xTicks) {
@@ -2055,7 +2107,7 @@ function buildScenarioCard(label, title, subtitle) {
     <div style="display:flex;border-radius:4px;overflow:hidden;margin:0.5rem 0">${barSegs}</div>
     <div class="scenario-metric"><span class="metric-label">Top</span><span class="metric-value">${top?.govt || '?'} (${(top?.pct||0).toFixed(0)}%)</span></div>
     <div class="scenario-metric"><span class="metric-label">M i regering</span><span class="metric-value ${mInGov > 60 ? 'highlight' : ''}">${mInGov.toFixed(0)}%</span></div>
-    <div class="scenario-metric"><span class="metric-label">PM(S)</span><span class="metric-value">${pmS.toFixed(0)}%</span></div>
+    <div class="scenario-metric"><span class="metric-label">Frederiksen statsminister</span><span class="metric-value">${pmS.toFixed(0)}%</span></div>
   </div>`;
 }
 
@@ -2086,12 +2138,14 @@ function updateCombiner() {
   ).join('');
 
   const tops = (d.topCoalitions || []).slice(0, 5);
-  coalEl.innerHTML = tops.map(c =>
-    '<div style="display:flex;justify-content:space-between;padding:0.15rem 0;border-bottom:1px solid #eee">' +
-    '<span>' + c.govt + '</span>' +
+  coalEl.innerHTML = tops.map(c => {
+    const cat = categorizeCoalition(c.govt);
+    const color = COAL_COLORS[cat] || '#999';
+    return '<div style="display:flex;justify-content:space-between;align-items:center;padding:0.15rem 0;border-bottom:1px solid #eee">' +
+    '<span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:' + color + ';margin-right:6px;vertical-align:middle"></span>' + c.govt + '</span>' +
     '<span><strong>' + c.pct.toFixed(1) + '%</strong> <span class="muted">(P(finanslov): ' + c.avgPPassage.toFixed(2) + ')</span></span>' +
-    '</div>'
-  ).join('');
+    '</div>';
+  }).join('');
 
   const pmS = d.pm?.S ?? 0;
   const pmM = d.pm?.M ?? 0;
@@ -2141,24 +2195,24 @@ function buildImplications() {
 
   if (dp) {
     callouts.push({
-      title: 'SM-kravet er selvdestruktivt',
-      text: 'N\u00e5r L\u00f8kke kr\u00e6ver statsministerposten ekskluderes M fra stort set alle koalitioner, fordi ingen M-ledet pakke eksisterer under standardantagelser. PM(S) falder til ' + fmt(dp.pm.S) + ' \u2014 ikke fordi bl\u00e5 vinder, men fordi S regerer med S+SF\u00b1RV uden M.',
-      evidence: 'mDemandPM \u2192 PM(S): ' + fmt(dp.pm.S) + ' | M i regering: ' + fmt(mInGov(dp))
+      title: 'Kravet om statsministerposten er selvdestruktivt',
+      text: 'N\u00e5r L\u00f8kke kr\u00e6ver statsministerposten ekskluderes Moderaterne fra stort set alle koalitioner. Frederiksen forbliver statsminister i ' + fmt(dp.pm.S) + ' af simulationerne \u2014 ikke fordi bl\u00e5 vinder, men fordi S regerer med S+SF\u00b1RV uden M.',
+      evidence: 'Statsministerkrav \u2192 Frederiksen statsminister: ' + fmt(dp.pm.S) + ' | M i regering: ' + fmt(mInGov(dp))
     });
   }
 
   if (sr) {
     callouts.push({
-      title: 'Hvad hvis S accepterer L\u00f8kke som statsminister?',
-      text: 'Med sRelaxPM=true konkurrerer M-ledede pakker (M+S+SF) p\u00e5 lige vilk\u00e5r med S-ledede. L\u00f8kke bliver SM i ' + fmt(sr.pm.M || 0) + ' af simulationerne. Historisk pr\u00e6cedens: Baunsgaard 1968 (mindste koalitionspartis leder blev SM). Prior: 5% baseret p\u00e5 Polymarket.',
-      evidence: 'sRelaxPM \u2192 PM(S): ' + fmt(sr.pm.S) + ' | PM(M): ' + fmt(sr.pm.M || 0)
+      title: 'Hvad hvis Frederiksen accepterer L\u00f8kke som statsminister?',
+      text: 'N\u00e5r S accepterer en ikke-S statsminister, konkurrerer M-ledede pakker (M+S+SF) p\u00e5 lige vilk\u00e5r med S-ledede. L\u00f8kke bliver statsminister i ' + fmt(sr.pm.M || 0) + ' af simulationerne. Historisk pr\u00e6cedens: Baunsgaard 1968 (mindste koalitionspartis leder blev statsminister). Prior: 5% baseret p\u00e5 Polymarket.',
+      evidence: 'Frederiksen statsminister: ' + fmt(sr.pm.S) + ' | L\u00f8kke statsminister: ' + fmt(sr.pm.M || 0)
     });
   }
 
   if (rp2 && rp8) {
     callouts.push({
       title: 'Frederiksens pr\u00e6ference styrer koalitionstypen',
-      text: 'Forskellen mellem "foretr\u00e6kker r\u00f8d" og "foretr\u00e6kker bred" skifter topkoalitionen fra ' + (rp8.topCoalitions?.[0]?.govt||'?') + ' til ' + (rp2.topCoalitions?.[0]?.govt||'?') + ', men PM(S) forbliver stort set u\u00e6ndret.',
+      text: 'Forskellen mellem "foretr\u00e6kker r\u00f8d" og "foretr\u00e6kker bred" skifter topkoalitionen fra ' + (rp8.topCoalitions?.[0]?.govt||'?') + ' til ' + (rp2.topCoalitions?.[0]?.govt||'?') + ', men Frederiksens sandsynlighed for statsministerposten forbliver stort set u\u00e6ndret.',
       evidence: 'R\u00f8d pr\u00e6f \u2192 top: ' + (rp8.topCoalitions?.[0]?.govt||'?') + ' (' + (rp8.topCoalitions?.[0]?.pct||0).toFixed(0) + '%) | Bred pr\u00e6f \u2192 top: ' + (rp2.topCoalitions?.[0]?.govt||'?') + ' (' + (rp2.topCoalitions?.[0]?.pct||0).toFixed(0) + '%)'
     });
   }
@@ -2200,24 +2254,21 @@ if (execStats) {
 
   execStats.innerHTML = `
     <div class="stat-card">
-      <div class="stat-number"><span class="tip" data-tip="PM(S) ved aktuelle m\u00e5linger (Altingets snit, stokastiske mandattr\u00e6k)">${typeof blPmS === 'number' ? blPmS.toFixed(0) + '%' : '?'}</span></div>
-      <div class="stat-label">PM Frederiksen ved aktuelle m\u00e5linger</div>
+      <div class="stat-number">${typeof blPmS === 'number' ? blPmS.toFixed(0) + '%' : '?'}</div>
+      <div class="stat-label">Frederiksen som statsminister</div>
     </div>
     <div class="stat-card">
-      <div class="stat-number"><span class="tip" data-tip="Andel af simulationer hvor M er i regering n\u00e5r L\u00f8kke kr\u00e6ver deltagelse">${dgMInGov.toFixed(0)}%</span></div>
-      <div class="stat-label">M i regering (inklusionskrav)</div>
+      <div class="stat-number">${dgMInGov.toFixed(0)}%</div>
+      <div class="stat-label">M som del af regeringskoalition (ved inklusionskrav)</div>
     </div>
     <div class="stat-card">
-      <div class="stat-number"><span class="tip" data-tip="PM(S) n\u00e5r bl\u00e5 blok n\u00e5r 90 mandater (V=22, LA=22, KF=14)">${typeof bsPmS === 'number' ? bsPmS.toFixed(0) + '%' : '?'}</span></div>
-      <div class="stat-label">PM Frederiksen ved bl\u00e5t flertal</div>
+      <div class="stat-number">${typeof bsPmS === 'number' ? bsPmS.toFixed(0) + '%' : '?'}</div>
+      <div class="stat-label">Frederiksen som statsminister ved bl\u00e5t flertal (uden M)</div>
     </div>
-  `;
-
-  const blMInGov = bl ? (bl.topCoalitions || []).filter(t => t.govt.includes('M')).reduce((s,t) => s+t.pct, 0) : 0;
-  execNarr.innerHTML = `
-    Det centrale sp\u00f8rgsm\u00e5l er <em>hvilken</em> regering Frederiksen danner \u2014 ikke om hun bliver statsminister.
-    Ved aktuelle m\u00e5linger er den hyppigste koalition <strong>${blTop?.govt || '?'}</strong> (${(blTop?.pct||0).toFixed(0)}% af simulationerne).
-    M er i regering i ${blMInGov.toFixed(0)}% af tilf\u00e6ldene under standardantagelser, stigende til ${dgMInGov.toFixed(0)}% n\u00e5r L\u00f8kke kr\u00e6ver deltagelse.
+    <div class="stat-card">
+      <div class="stat-number" style="font-size:1.6rem">${blTop?.govt || '?'}</div>
+      <div class="stat-label">Hyppigste koalition (${(blTop?.pct||0).toFixed(0)}% af simulationerne)</div>
+    </div>
   `;
 }
 
