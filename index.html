@@ -2318,22 +2318,24 @@ if (execStats) {
   const dgMInGov = dg ? (dg.topCoalitions || []).filter(t => t.govt.includes('M')).reduce((s,t) => s+t.pct, 0) : 0;
   const bsPmS = bs?.pm?.S ?? '?';
 
+  const blMInGov = bl ? (bl.topCoalitions || []).filter(t => t.govt.includes('M')).reduce((s,t) => s+t.pct, 0) : 0;
+
   execStats.innerHTML = `
     <div class="stat-card">
       <div class="stat-number">${typeof blPmS === 'number' ? blPmS.toFixed(0) + '%' : '?'}</div>
       <div class="stat-label">Frederiksen som statsminister</div>
     </div>
     <div class="stat-card">
-      <div class="stat-number">${dgMInGov.toFixed(0)}%</div>
-      <div class="stat-label">M som del af regeringskoalition (ved inklusionskrav)</div>
-    </div>
-    <div class="stat-card">
       <div class="stat-number">${typeof bsPmS === 'number' ? bsPmS.toFixed(0) + '%' : '?'}</div>
-      <div class="stat-label">Frederiksen som statsminister ved bl\u00e5t flertal (uden M)</div>
+      <div class="stat-label">Frederiksen som statsminister ved bl\u00e5t flertal</div>
     </div>
     <div class="stat-card">
       <div class="stat-number" style="font-size:1.6rem">${blTop?.govt || '?'}</div>
       <div class="stat-label">Hyppigste koalition (${(blTop?.pct||0).toFixed(0)}% af simulationerne)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">${dgMInGov.toFixed(0)}%</div>
+      <div class="stat-label">M i regeringskoalition (ved inklusionskrav)</div>
     </div>
   `;
 }
