@@ -1017,11 +1017,15 @@ function selectGovernment(mandates, naAlignments, bases, params, cfg) {
     };
   }
 
-  // Formateur order: with probability pBlueFormateur, blue evaluates first.
-  // M-led packages are evaluated as fallback after both S-led and blue-led,
-  // modelling that M only gets a chance if neither primary formateur succeeds.
-  // Models uncertainty about kongerunde outcome (spec §9.1)
-  const blueFirst = (cfg.pBlueFormateur || 0) > 0 && Math.random() < cfg.pBlueFormateur;
+  // Formateur order: endogenous to mandate draw.
+  // If blue bloc >= 90, blue always evaluates first (they have a majority).
+  // Otherwise, with probability pBlueFormateur (default 0.15), blue evaluates first.
+  // M-led packages evaluated as fallback after both S-led and blue-led.
+  const blueBloc = (mandates["V"]||0) + (mandates["LA"]||0) + (mandates["KF"]||0) +
+                   (mandates["DD"]||0) + (mandates["DF"]||0) + (mandates["BP"]||0);
+  const redBloc = (mandates["S"]||0) + (mandates["SF"]||0) + (mandates["EL"]||0) +
+                  (mandates["ALT"]||0) + (mandates["RV"]||0);
+  const blueFirst = blueBloc >= 90 || (cfg.pBlueFormateur > 0 && Math.random() < cfg.pBlueFormateur);
 
   if (blueFirst) {
     return tryBlue() || trySLed() || tryMLed() || null;

@@ -4,10 +4,12 @@
 const DEFAULT_N = 500;
 const PARTY_ORDER = ["S", "SF", "EL", "ALT", "RV", "M", "KF", "V", "LA", "DD", "DF", "BP"];
 
+// With endogenous formateur (sim3.js checks blueBloc >= 90),
+// pBF=0.15 everywhere. Blue gets formateur automatically when they have majority.
 const PBF_BY_SCENARIO = {
   current: 0.15,
-  red: 0.0,
-  blue: 0.85,
+  red: 0.15,
+  blue: 0.15,
 };
 
 const MANDATE_BASELINES = {
