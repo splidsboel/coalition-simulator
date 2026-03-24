@@ -723,17 +723,19 @@ details .panel {
 <!-- ===== SECTION 5: PHASE TRANSITION CURVES ===== -->
 <section id="transitions">
   <h2>Faseskift</h2>
-  <p class="small muted" style="margin-bottom:1rem;">Disse kurver viser hvordan sandsynligheder &aelig;ndrer sig n&aring;r mandatfordelingen forskydes. Y-aksen viser P(Frederiksen SM). De stiplede linjer viser scenariet hvor L&oslash;kke kr&aelig;ver statsministerposten. Faseskiftet &mdash; det punkt hvor sandsynligheder springer &mdash; afsl&oslash;rer de kritiske t&aelig;rskler i forhandlingsrummet.</p>
+  <p class="small muted" style="margin-bottom:1rem;">Disse kurver viser hvordan koalitionssammens&aelig;tningen skifter n&aring;r mandatfordelingen forskydes. Y-aksen viser andelen af simulationer, s&aring; man kan se hvorn&aring;r Moderaterne glider ind og ud af regeringen, og hvorn&aring;r en bl&aring; regering bliver realistisk.</p>
   <div class="chart-container">
     <div class="chart-box">
-      <div class="chart-title">Systematisk m&aring;lingsfejl mod bl&aring;</div>
-      <p class="small muted" style="margin:0 0 0.5rem;">X-aksen viser hvor mange mandater bl&aring; blok vinder ud over det forventede (0 = m&aring;lingerne rammer; 3 = bl&aring; f&aring;r ~12 ekstra mandater)</p>
-      <div id="chart-poll-error"></div>
+      <div class="chart-title">Hvem sidder i Frederiksens regering?</div>
+      <div id="chart-m-mandater"></div>
     </div>
     <div class="chart-box">
-      <div class="chart-title">Bl&aring; bloks mandater (V+LA+KF)</div>
-      <p class="small muted" style="margin:0 0 0.5rem;">X-aksen viser det samlede mandattal for V+LA+KF. Bl&aring; blok i alt = V+LA+KF + DD+DF+BP (~32). Kurven viser t&aelig;rsklen for bl&aring; regering</p>
+      <div class="chart-title">Koalitionstype ved stigende bl&aring; styrke</div>
       <div id="chart-blue-steps"></div>
+    </div>
+    <div class="chart-box">
+      <div class="chart-title">Hvad hvis m&aring;lingerne undervurderer bl&aring; blok?</div>
+      <div id="chart-poll-error"></div>
     </div>
   </div>
 </section>
@@ -1581,46 +1583,109 @@ function buildLineChart(containerId, dataPoints, xLabel, yLabel, xTicks) {
   document.getElementById(containerId).innerHTML = svg;
 }
 
-// Chart A: Poll error
+function coalPct(d, name) {
+  return d ? (d.topCoalitions || []).filter(c => c.govt === name).reduce((s, c) => s + c.pct, 0) : 0;
+}
+
+function mInGovPct(d) {
+  return d ? (d.topCoalitions || []).filter(c => c.govt.includes('M')).reduce((s, c) => s + c.pct, 0) : 0;
+}
+
+function recolorExtraLineSeries(containerId, color) {
+  const root = document.getElementById(containerId);
+  if (!root) return;
+  root.querySelectorAll('[stroke="undefined"]').forEach(el => el.setAttribute('stroke', color));
+  root.querySelectorAll('[fill="undefined"]').forEach(el => el.setAttribute('fill', color));
+}
+
+// Chart A: M mandates
 (function() {
-  const biases = [0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0];
-  const noDemand = biases.map(b => {
-    const d = getScenario('pollError:blue+' + b.toFixed(1));
-    return { x: b, y: d ? (d.pm.S || 0) : 0 };
-  });
-  const withDemand = biases.map(b => {
-    const d = getScenario('pollError:blue+' + b.toFixed(1) + '+demandPM');
-    return { x: b, y: d ? (d.pm.S || 0) : 0 };
-  });
-  buildLineChart('chart-poll-error',
-    [{ name: 'Baseline', points: noDemand }, { name: 'M demands PM', points: withDemand }],
-    'Blue polling bias (mandate equivalents)',
-    'PM(S) %',
-    biases.map(b => ({ v: b, label: '+' + b.toFixed(1) }))
+  const mandates = Array.from({ length: 11 }, (_, i) => i + 5);
+  const baseline = mandates.map(m => {
+    const d = getScenario('M-mandater=' + m);
+    return d ? { x: m, y: mInGovPct(d) } : null;
+  }).filter(Boolean);
+  const demandGov = mandates.map(m => {
+    const d = getScenario('M-mandater=' + m + '+demandGov');
+    return d ? { x: m, y: mInGovPct(d) } : null;
+  }).filter(Boolean);
+  const blueGov = mandates.map(m => {
+    const d = getScenario('M-mandater=' + m);
+    return d ? { x: m, y: d.govType.blue || 0 } : null;
+  }).filter(Boolean);
+
+  buildLineChart('chart-m-mandater',
+    [
+      { name: 'M i regering', points: baseline },
+      { name: 'M i regering (inklusionskrav)', points: demandGov },
+      { name: 'Bl\u00e5 regering', points: blueGov }
+    ],
+    'Moderaternes mandater',
+    'Andel af simulationer (%)',
+    mandates.map(m => ({ v: m, label: '' + m }))
   );
+  recolorExtraLineSeries('chart-m-mandater', '#64b5f6');
 })();
 
 // Chart B: Blue steps
 (function() {
+  const defaults = { V: 17, LA: 19, KF: 12 };
   const steps = [];
-  for (let i = 1; i <= 10; i++) {
-    const d = getScenario('blue-step-' + i);
-    const dd = getScenario('blue-step-' + i + '+demandPM');
-    if (d) {
-      const m = d.config.mandates || {};
-      const totalBlue = (m.V || 0) + (m.LA || 0) + (m.KF || 0);
-      steps.push({ step: i, totalBlue, pmS: d.pm.S || 0, pmSDemand: dd ? (dd.pm.S || 0) : 0 });
-    }
+  for (let step = 1; step <= 10; step++) {
+    const d = getScenario('blue-step-' + step);
+    if (!d) continue;
+    const m = d.config?.mandates || {};
+    const totalBlue = (m.V ?? defaults.V) + (m.LA ?? defaults.LA) + (m.KF ?? defaults.KF);
+    steps.push({
+      step,
+      totalBlue,
+      ssfrvm: coalPct(d, 'S+SF+RV+M'),
+      ssf: coalPct(d, 'S+SF'),
+      blueGov: d.govType.blue || 0
+    });
   }
+
   buildLineChart('chart-blue-steps',
     [
-      { name: 'Baseline', points: steps.map(s => ({ x: s.totalBlue, y: s.pmS })) },
-      { name: 'M demands PM', points: steps.map(s => ({ x: s.totalBlue, y: s.pmSDemand })) }
+      { name: 'S+SF+RV+M', points: steps.map(s => ({ x: s.step, y: s.ssfrvm })) },
+      { name: 'S+SF', points: steps.map(s => ({ x: s.step, y: s.ssf })) },
+      { name: 'Bl\u00e5 regering', points: steps.map(s => ({ x: s.step, y: s.blueGov })) }
     ],
-    'Total blue mandates (V + LA + KF)',
-    'PM(S) %',
-    steps.filter((_, i) => i % 2 === 0).map(s => ({ v: s.totalBlue, label: '' + s.totalBlue }))
+    'V + LA + KF mandater',
+    'Andel af simulationer (%)',
+    steps.map(s => ({ v: s.step, label: '' + s.totalBlue }))
   );
+  recolorExtraLineSeries('chart-blue-steps', '#64b5f6');
+})();
+
+// Chart C: Poll error
+(function() {
+  const biases = [0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0];
+  const mandateEquivalentLabels = biases.map(b => '+' + Math.round((b / 3) * 7));
+  const mSeries = biases.map(b => {
+    const d = getScenario('pollError:blue+' + b.toFixed(1));
+    return { x: b, y: mInGovPct(d) };
+  });
+  const sSfSeries = biases.map(b => {
+    const d = getScenario('pollError:blue+' + b.toFixed(1));
+    return { x: b, y: coalPct(d, 'S+SF') };
+  });
+  const blueGovSeries = biases.map(b => {
+    const d = getScenario('pollError:blue+' + b.toFixed(1));
+    return { x: b, y: d ? (d.govType.blue || 0) : 0 };
+  });
+
+  buildLineChart('chart-poll-error',
+    [
+      { name: 'M i regering', points: mSeries },
+      { name: 'S+SF (smal r\u00f8d)', points: sSfSeries },
+      { name: 'Bl\u00e5 regering', points: blueGovSeries }
+    ],
+    'Bl\u00e5 blok ekstra mandater (ca.)',
+    'Andel af simulationer (%)',
+    biases.map((b, i) => ({ v: b, label: mandateEquivalentLabels[i] }))
+  );
+  recolorExtraLineSeries('chart-poll-error', '#64b5f6');
 })();
 
 // ===== STACKED BARS =====
