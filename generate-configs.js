@@ -658,4 +658,19 @@ generatePhaseTransitionProbes();
 generateDemandGovExtras();
 generatePriorsGridFills();
 generateElectionNightSpecials();
+
+// M-mandate sweep: how does M's size affect its leverage?
+// Varies M from 5 to 15 mandates (partial override, stochastic for other parties)
+function generateMandateSweeps() {
+  for (const mSeats of [5, 6, 7, 8, 9, 10, 11, 12, 13, 15]) {
+    addRecord(`M-mandater=${mSeats}`, {M: mSeats}, {pBlueFormateur: 0.15});
+    addRecord(`M-mandater=${mSeats}+demandGov`, {M: mSeats}, {pBlueFormateur: 0.15, mDemandGov: true});
+  }
+  // Red bloc sweep: varies S (largest red party) from 30 to 45
+  for (const sSeats of [30, 33, 35, 38, 40, 42, 45]) {
+    addRecord(`S-mandater=${sSeats}`, {S: sSeats}, {pBlueFormateur: 0.15});
+  }
+}
+generateMandateSweeps();
+
 emit();

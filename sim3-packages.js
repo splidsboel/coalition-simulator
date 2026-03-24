@@ -192,13 +192,10 @@ function classifyGovType(members) {
   if (hasRed && hasBlue && hasSwing) return "midter";
   if (hasRed && hasBlue) return "cross";
 
-  // Pure red
+  // Pure red (no M)
   if (hasRed && !hasBlue && !hasSwing) return "red";
-  // Red + swing
-  if (hasRed && hasSwing && !hasBlue) {
-    const hasLeftParty = members.some(id => ["SF", "EL", "ALT"].includes(id));
-    return hasLeftParty ? "red" : "center-left";
-  }
+  // Red + M = center-left (M's presence makes it a center coalition)
+  if (hasRed && hasSwing && !hasBlue) return "center-left";
   // Pure blue or blue + swing
   if (hasBlue) return "blue";
   // All swing

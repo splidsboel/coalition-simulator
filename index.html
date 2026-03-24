@@ -1001,6 +1001,7 @@ const COAL_COLORS = {
   'S+SF+RV': '#e67e22',
   'S+SF+RV+M': '#6a1b9a',
   'S+SF+M': '#ab47bc',
+  'M-ledet': '#00897b',
   'Blue': '#64b5f6',
   'Cross-bloc': '#27ae60',
   'Gridlock': '#95a5a6',
@@ -1014,6 +1015,7 @@ function categorizeCoalition(name) {
   if (name === 'S+SF+M') return 'S+SF+M';
   if (name === 'S+SF') return 'S+SF';
   if (name === 'S-alone') return 'S-alone';
+  if (name === 'M+S+SF' || name === 'M+S+RV') return 'M-ledet';
   if (name === 'S+V' || name === 'S+V+M' || name === 'S+RV') return 'Cross-bloc';
   if (name.includes('blue') || name.includes('Blue') || name === 'V-led blue' || name === 'LA-led blue') return 'Blue';
   return 'Cross-bloc';
@@ -1036,31 +1038,40 @@ function getCategoryBreakdown(d) {
 
 // ===== PRESET DEFINITIONS =====
 const PRESETS = [
-  { group: 'Election outcome', items: [
-    { name: 'Red majority (red=90)', label: 'red-majority' },
-    { name: 'Current polls (M decides)', label: 'baseline' },
-    { name: 'Blue majority (blue=90)', label: 'archetype:blue-surge' }
+  { group: 'Valgresultat', items: [
+    { name: 'Aktuelle m\u00e5linger', label: 'baseline' },
+    { name: 'R\u00f8dt flertal (r\u00f8d=90)', label: 'red-majority' },
+    { name: 'Bl\u00e5t flertal (bl\u00e5=90)', label: 'archetype:blue-surge' },
+    { name: 'R\u00f8d svækket (S=35)', label: 'archetype:knife-edge' }
   ]},
-  { group: "L\u00f8kke's strategy", items: [
-    { name: 'Leans red', label: 'baseline+M->S' },
-    { name: 'Leans blue', label: 'M->V' },
-    { name: 'Wants PM himself', label: 'M->self' },
-    { name: 'Demands PM post', label: 'M-demands-PM' },
-    { name: 'Demands govt inclusion', label: 'mDemandGov+current-polls' }
+  { group: "L\u00f8kkes position", items: [
+    { name: 'Kræver regeringsdeltagelse', label: 'mDemandGov+current-polls' },
+    { name: 'Standardposition', label: 'baseline' },
+    { name: 'Kræver statsministerpost', label: 'M-demands-PM' },
+    { name: 'Orientering mod V', label: 'M->V' },
+    { name: 'S accepterer L\u00f8kke-SM (sRelaxPM)', label: 'sRelaxPM+baseline' }
   ]},
-  { group: 'Coalition preference', items: [
-    { name: 'Frederiksen prefers red', label: 'redPref=0.8' },
-    { name: 'Frederiksen prefers broad', label: 'redPref=0.2' },
-    { name: 'Frederiksen prefers midter', label: 'redPref=0.5' }
+  { group: 'Frederiksens præference', items: [
+    { name: 'Foretrækker r\u00f8d', label: 'redPref=0.8' },
+    { name: 'Neutral', label: 'redPref=0.5' },
+    { name: 'Foretrækker bred', label: 'redPref=0.2' }
   ]},
-  { group: 'Negotiation mood', items: [
-    { name: 'Rigid parties', label: 'flex=-0.4' },
-    { name: 'Flexible parties', label: 'flex=0.4' }
+  { group: 'SFs forhandlingsstyrke', items: [
+    { name: 'SF stærk blokering', label: 'sf-abstain-sm=0.3' },
+    { name: 'SF neutral', label: 'sf-abstain-sm=0.5' },
+    { name: 'SF svag', label: 'sf-abstain-sm=0.7' }
   ]},
-  { group: 'Polling error', items: [
-    { name: 'Blue +1', label: 'pollError:blue+1.0' },
-    { name: 'Blue +2', label: 'pollError:blue+2.0' },
-    { name: 'Blue +3', label: 'pollError:blue+3.0' }
+  { group: 'M\u00e5lingsusikkerhed', items: [
+    { name: 'Normal (\u03c3=4)', label: 'sigmaBloc=4.0' },
+    { name: 'Bred (\u03c3=6)', label: 'sigmaBloc=6.0' },
+    { name: 'Meget bred (\u03c3=8)', label: 'sigmaBloc=8.0' }
+  ]},
+  { group: 'Interaktioner', items: [
+    { name: 'Inklusionskrav + r\u00f8d præf', label: 'mDemandGov+redPref=0.8' },
+    { name: 'Inklusionskrav + bred præf', label: 'mDemandGov+redPref=0.2' },
+    { name: 'Inklusionskrav + SF stærk', label: 'mDemandGov+sf-abstain=0.3' },
+    { name: 'Inklusionskrav + SF svag', label: 'mDemandGov+sf-abstain=0.7' },
+    { name: 'Inklusionskrav + bl\u00e5 bias +2', label: 'mDemandGov+pollError:blue+2.0' }
   ]}
 ];
 
@@ -1161,7 +1172,7 @@ function renderResultCard(gridEl, barEl, legendEl, d) {
 
   // Coalition bar
   const cats = getCategoryBreakdown(d);
-  const order = ['S+SF', 'S+SF+RV', 'S+SF+RV+M', 'S+SF+M', 'S-alone', 'Cross-bloc', 'Blue', 'Gridlock'];
+  const order = ['S+SF', 'S+SF+RV', 'S+SF+RV+M', 'S+SF+M', 'M-ledet', 'S-alone', 'Cross-bloc', 'Blue', 'Gridlock'];
   barEl.innerHTML = order.filter(k => cats[k] > 0.5).map(k =>
     '<div class="segment" style="width:' + cats[k] + '%;background:' + COAL_COLORS[k] + '">' + (cats[k] > 4 ? cats[k].toFixed(0) + '%' : '') + '</div>'
   ).join('');
@@ -1232,7 +1243,7 @@ function renderExplorerResult() {
   }
 
   resultEl.style.display = 'block';
-  const order = ['S+SF', 'S+SF+RV', 'S+SF+RV+M', 'S+SF+M', 'S-alone', 'Cross-bloc', 'Blue', 'Gridlock'];
+  const order = ['S+SF', 'S+SF+RV', 'S+SF+RV+M', 'S+SF+M', 'M-ledet', 'S-alone', 'Cross-bloc', 'Blue', 'Gridlock'];
 
   if (explorerSelected.length === 1) {
     // Single selection: show the classic result card
@@ -1552,7 +1563,7 @@ function buildStackedBars() {
     { label: 'flex=-0.4', name: 'Rigid parties' },
   ];
 
-  const order = ['S+SF', 'S+SF+RV', 'S+SF+RV+M', 'S+SF+M', 'S-alone', 'Cross-bloc', 'Blue', 'Gridlock'];
+  const order = ['S+SF', 'S+SF+RV', 'S+SF+RV+M', 'S+SF+M', 'M-ledet', 'S-alone', 'Cross-bloc', 'Blue', 'Gridlock'];
 
   document.getElementById('global-legend').innerHTML = order.map(k =>
     '<div class="legend-item"><span class="legend-swatch" style="background:' + COAL_COLORS[k] + '"></span>' + k + '</div>'
