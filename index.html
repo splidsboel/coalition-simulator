@@ -583,9 +583,9 @@ details .panel {
 
 <!-- ===== HEADER ===== -->
 <header>
-  <h1>Danish Coalition Formation Simulator</h1>
-  <p class="subtitle">Sensitivity Analysis &mdash; Valgdag, 24. marts 2026</p>
-  <p class="methodology">Monte Carlo simulation (1.000&ndash;2.500 iterationer pr. konfiguration) &middot; 541 parameterkonfigurationer &middot; Mandatfordeling baseret p&aring; Altingets snit af meningsm&aring;linger</p>
+  <h1>Regeringsdannelse 2026: Koalitionssimulator</h1>
+  <p class="subtitle">Scenarieanalyse &mdash; Valgdag, 24. marts 2026</p>
+  <p class="methodology">Monte Carlo-simulation &middot; 500 iterationer pr. konfiguration &middot; 668 scenarier &middot; Mandatfordeling: Altingets snit af meningsm&aring;linger</p>
 </header>
 
 <!-- ===== SECTION 1: EXECUTIVE SUMMARY ===== -->
@@ -601,7 +601,7 @@ details .panel {
 <!-- ===== SECTION: THREE-SCENARIO OVERVIEW ===== -->
 <section id="scenario-overview" class="scenario-overview">
   <h2>Tre mandatscenarier</h2>
-  <p class="small muted" style="margin-bottom:0.5rem;">Mandater tr&aelig;kkes stokastisk fra Altingets snit (M=9, S=38, SF=23, ...) med &sigma;<sub>bloc</sub>=4.0. De tre scenarier nedenfor varierer mandatgrundlaget. Alle tal opdateres automatisk fra sweep-data.</p>
+  <p class="small muted" style="margin-bottom:0.5rem;">Tre scenarier for mandatfordelingen: aktuelle m&aring;linger, r&oslash;dt flertal og bl&aring;t flertal. For hvert scenarie vises den hyppigste koalition og M&rsquo;s rolle.</p>
 
   <div class="scenario-cards" id="scenario-cards">
     <!-- Populated dynamically from DATA after sweep -->
@@ -612,6 +612,61 @@ details .panel {
     <div class="scenario-cards" id="scenario-cards-demandgov">
       <!-- Populated dynamically from DATA after sweep -->
     </div>
+  </div>
+</section>
+
+<!-- ===== SECTION: PARAMETER COMBINER ===== -->
+<section id="combiner">
+  <h2>Kombiner antagelser</h2>
+  <p class="small muted" style="margin-bottom:1rem;">V&aelig;lg &eacute;n indstilling pr. dimension. Resultatet viser koalitionsfordelingen for den specifikke kombination af antagelser. 243 pr&aelig;beregnede kombinationer (3&times;3&times;3&times;3&times;3).</p>
+  <div class="combiner-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-bottom:1.5rem;">
+    <div class="combiner-dim">
+      <label class="small" style="font-weight:600;display:block;margin-bottom:0.3rem;">Valgresultat</label>
+      <select id="cb-v" style="width:100%;padding:0.4rem;border:1px solid #d4cdc2;border-radius:4px;font-size:0.85rem;">
+        <option value="current" selected>T&aelig;t l&oslash;b (m&aring;linger)</option>
+        <option value="red">R&oslash;dt flertal (r&oslash;d=90)</option>
+        <option value="blue">Bl&aring;t flertal (bl&aring;=90)</option>
+      </select>
+    </div>
+    <div class="combiner-dim">
+      <label class="small" style="font-weight:600;display:block;margin-bottom:0.3rem;">L&oslash;kkes krav</label>
+      <select id="cb-k" style="width:100%;padding:0.4rem;border:1px solid #d4cdc2;border-radius:4px;font-size:0.85rem;">
+        <option value="demandGov" selected>Kr&aelig;ver regeringsdeltagelse</option>
+        <option value="standard">Ingen s&aelig;rlige krav</option>
+        <option value="demandPM">Kr&aelig;ver statsministerpost</option>
+      </select>
+      <div class="small muted" style="font-size:0.72rem;margin-top:0.2rem;">Under &rdquo;kr&aelig;ver deltagelse&rdquo; dominerer kravet L&oslash;kkes retning</div>
+    </div>
+    <div class="combiner-dim">
+      <label class="small" style="font-weight:600;display:block;margin-bottom:0.3rem;">L&oslash;kkes retning</label>
+      <select id="cb-r" style="width:100%;padding:0.4rem;border:1px solid #d4cdc2;border-radius:4px;font-size:0.85rem;">
+        <option value="S" selected>Mod Frederiksen (S)</option>
+        <option value="V">Mod bl&aring; (V)</option>
+        <option value="self">Egne m&aelig;rkesager</option>
+      </select>
+    </div>
+    <div class="combiner-dim">
+      <label class="small" style="font-weight:600;display:block;margin-bottom:0.3rem;">Frederiksens pr&aelig;ference</label>
+      <select id="cb-p" style="width:100%;padding:0.4rem;border:1px solid #d4cdc2;border-radius:4px;font-size:0.85rem;">
+        <option value="r80">Foretr&aelig;kker r&oslash;d (S+SF)</option>
+        <option value="r50" selected>Neutral</option>
+        <option value="r20">Foretr&aelig;kker bred (S+SF+RV+M)</option>
+      </select>
+    </div>
+    <div class="combiner-dim">
+      <label class="small" style="font-weight:600;display:block;margin-bottom:0.3rem;">SFs budgetblokering</label>
+      <select id="cb-sf" style="width:100%;padding:0.4rem;border:1px solid #d4cdc2;border-radius:4px;font-size:0.85rem;">
+        <option value="s30">St&aelig;rk blokerer (SF stemmer imod)</option>
+        <option value="s50" selected>Neutral</option>
+        <option value="s70">Svag (SF f&oslash;lger blokken)</option>
+      </select>
+      <div class="small muted" style="font-size:0.72rem;margin-top:0.2rem;">Den vigtigste parameter for om S+M-midterregering er mulig</div>
+    </div>
+  </div>
+  <div id="combiner-result" style="background:#faf7f2;border:1px solid #d4cdc2;border-radius:8px;padding:1rem;">
+    <div id="combiner-bar" style="display:flex;border-radius:4px;overflow:hidden;margin-bottom:0.8rem;height:28px;"></div>
+    <div id="combiner-coalitions" style="font-size:0.85rem;"></div>
+    <div id="combiner-meta" class="small muted" style="margin-top:0.5rem;"></div>
   </div>
 </section>
 
@@ -970,9 +1025,9 @@ const COAL_COLORS = {
   'S+SF+RV+M': '#6a1b9a',
   'S+SF+M': '#ab47bc',
   'M-ledet': '#00897b',
-  'Blue': '#64b5f6',
-  'Cross-bloc': '#27ae60',
-  'Gridlock': '#95a5a6',
+  'Bl\u00e5 (V+LA+KF)': '#64b5f6',
+  'Tv\u00e6rblok': '#27ae60',
+  'D\u00f8dvande': '#95a5a6',
   'S-alone': '#e74c3c'
 };
 
@@ -984,9 +1039,9 @@ function categorizeCoalition(name) {
   if (name === 'S+SF') return 'S+SF';
   if (name === 'S-alone') return 'S-alone';
   if (name === 'M+S+SF' || name === 'M+S+RV') return 'M-ledet';
-  if (name === 'S+V' || name === 'S+V+M' || name === 'S+RV') return 'Cross-bloc';
-  if (name.includes('blue') || name.includes('Blue') || name === 'V-led blue' || name === 'LA-led blue') return 'Blue';
-  return 'Cross-bloc';
+  if (name === 'S+V' || name === 'S+V+M' || name === 'S+RV') return 'Tv\u00e6rblok';
+  if (name.includes('blue') || name.includes('Blue') || name === 'V-led blue' || name === 'LA-led blue') return 'Bl\u00e5 (V+LA+KF)';
+  return 'Tv\u00e6rblok';
 }
 
 function getCategoryBreakdown(d) {
@@ -998,7 +1053,7 @@ function getCategoryBreakdown(d) {
     cats[cat] = (cats[cat] || 0) + c.pct;
   }
   // Add gridlock from govType
-  cats['Gridlock'] = d.govType.none || 0;
+  cats['D\u00f8dvande'] = d.govType.none || 0;
   // Fix: remove gridlock counted in topCoalitions (it shouldn't be there, but just in case)
   // Ensure blue is from categorized topCoalitions, not double counted
   return cats;
@@ -1012,22 +1067,22 @@ const PRESETS = [
     { name: 'Bl\u00e5t flertal (bl\u00e5=90)', label: 'archetype:blue-surge' },
     { name: 'R\u00f8d svækket (S=35)', label: 'archetype:knife-edge' }
   ]},
-  { group: "L\u00f8kkes position", items: [
-    { name: 'Kræver regeringsdeltagelse', label: 'mDemandGov+current-polls' },
-    { name: 'Standardposition', label: 'baseline' },
-    { name: 'Kræver statsministerpost', label: 'M-demands-PM' },
-    { name: 'Orientering mod V', label: 'M->V' },
-    { name: 'S accepterer L\u00f8kke-SM (sRelaxPM)', label: 'sRelaxPM+baseline' }
+  { group: "L\u00f8kkes position", desc: 'Moderaternes forhandlingsstrategi \u2014 fra ingen krav til at kr\u00e6ve statsministerposten', items: [
+    { name: 'Kr\u00e6ver regeringsdeltagelse', label: 'mDemandGov+current-polls', tip: 'M blokerer enhver regering uden M. Det mest sandsynlige scenarie if\u00f8lge kommentatorer' },
+    { name: 'Ingen s\u00e6rlige krav', label: 'baseline', tip: 'M forhandler normalt uden at stille ultimative krav' },
+    { name: 'Kr\u00e6ver statsministerpost', label: 'M-demands-PM', tip: 'M stemmer imod alle budgetter hvor L\u00f8kke ikke er SM \u2014 selvdestruktivt' },
+    { name: 'Orientering mod V', label: 'M->V', tip: 'M st\u00f8tter i h\u00f8jere grad bl\u00e5-ledede budgetter' },
+    { name: 'S accepterer L\u00f8kke som SM', label: 'sRelaxPM+baseline', tip: 'Frederiksen accepterer at L\u00f8kke kan lede en M+S+SF-koalition. Prior: 5%' }
   ]},
   { group: 'Frederiksens præference', items: [
     { name: 'Foretrækker r\u00f8d', label: 'redPref=0.8' },
     { name: 'Neutral', label: 'redPref=0.5' },
     { name: 'Foretrækker bred', label: 'redPref=0.2' }
   ]},
-  { group: 'SFs forhandlingsstyrke', items: [
-    { name: 'SF stærk blokering', label: 'sf-abstain-sm=0.3' },
-    { name: 'SF neutral', label: 'sf-abstain-sm=0.5' },
-    { name: 'SF svag', label: 'sf-abstain-sm=0.7' }
+  { group: 'SFs budgetblokering', desc: 'Hvor trov\u00e6rdigt kan SF stemme imod finansloven for en regering SF er udelukket fra? Afg\u00f8rende for om S+M er mulig uden SF', items: [
+    { name: 'SF blokerer trov\u00e6rdigt', label: 'sf-abstain-sm=0.3', tip: 'SF stemmer imod i 70% af tilf\u00e6ldene n\u00e5r de er udenfor \u2192 S+M umulig' },
+    { name: 'SF neutral', label: 'sf-abstain-sm=0.5', tip: 'SF afst\u00e5r/stemmer imod 50/50' },
+    { name: 'SF f\u00f8lger blokken', label: 'sf-abstain-sm=0.7', tip: 'SF afst\u00e5r oftest \u2192 S+M lettere at danne' }
   ]},
   { group: 'M\u00e5lingsusikkerhed', items: [
     { name: 'Normal (\u03c3=4)', label: 'sigmaBloc=4.0' },
@@ -1144,11 +1199,20 @@ function renderPresets(container, onSelect, prefix) {
     const lbl = document.createElement('div');
     lbl.className = 'preset-group-label';
     lbl.textContent = group.group;
+    if (group.desc) { lbl.title = group.desc; lbl.style.cursor = 'help'; }
     div.appendChild(lbl);
+    if (group.desc) {
+      const descEl = document.createElement('div');
+      descEl.className = 'small muted';
+      descEl.style.cssText = 'margin:-0.3rem 0 0.3rem; font-size:0.75rem; line-height:1.4;';
+      descEl.textContent = group.desc;
+      div.appendChild(descEl);
+    }
     group.items.forEach(item => {
       const btn = document.createElement('button');
       btn.className = 'preset-btn';
       btn.textContent = item.name;
+      if (item.tip) btn.title = item.tip;
       btn.dataset.label = item.label;
       btn.dataset.prefix = prefix;
       btn.addEventListener('click', () => {
@@ -1180,7 +1244,7 @@ function renderResultCard(gridEl, barEl, legendEl, d) {
 
   // Coalition bar
   const cats = getCategoryBreakdown(d);
-  const order = ['S+SF', 'S+SF+RV', 'S+SF+RV+M', 'S+SF+M', 'M-ledet', 'S-alone', 'Cross-bloc', 'Blue', 'Gridlock'];
+  const order = ['S+SF', 'S+SF+RV', 'S+SF+RV+M', 'S+SF+M', 'M-ledet', 'S-alone', 'Tv\u00e6rblok', 'Bl\u00e5 (V+LA+KF)', 'D\u00f8dvande'];
   barEl.innerHTML = order.filter(k => cats[k] > 0.5).map(k =>
     '<div class="segment" style="width:' + cats[k] + '%;background:' + COAL_COLORS[k] + '">' + (cats[k] > 4 ? cats[k].toFixed(0) + '%' : '') + '</div>'
   ).join('');
@@ -1251,7 +1315,7 @@ function renderExplorerResult() {
   }
 
   resultEl.style.display = 'block';
-  const order = ['S+SF', 'S+SF+RV', 'S+SF+RV+M', 'S+SF+M', 'M-ledet', 'S-alone', 'Cross-bloc', 'Blue', 'Gridlock'];
+  const order = ['S+SF', 'S+SF+RV', 'S+SF+RV+M', 'S+SF+M', 'M-ledet', 'S-alone', 'Tv\u00e6rblok', 'Bl\u00e5 (V+LA+KF)', 'D\u00f8dvande'];
 
   if (explorerSelected.length === 1) {
     // Single selection: show the classic result card
@@ -1433,8 +1497,11 @@ function buildTornado() {
     const x2 = labelW + scale(d.max);
     const opacity = 0.4 + (d.range / tornadoData[0].range) * 0.6;
 
-    svg += '<text x="' + (labelW - 8) + '" y="' + (y + barH / 2 + 4) + '" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#2a2420">' + (d.tip ? '<title>' + d.tip + '</title>' : '') + d.name + '</text>';
-    svg += '<rect class="tornado-bar" data-labels="' + d.labels.join(',') + '" x="' + x1 + '" y="' + y + '" width="' + (x2 - x1) + '" height="' + barH + '" fill="#1e3a5f" opacity="' + opacity.toFixed(2) + '" rx="0"/>';
+    svg += '<g>' + (d.tip ? '<title>' + d.tip + '</title>' : '');
+    svg += '<rect x="0" y="' + y + '" width="' + (labelW - 4) + '" height="' + barH + '" fill="transparent" style="cursor:help"/>';
+    svg += '<text x="' + (labelW - 8) + '" y="' + (y + barH / 2 + 4) + '" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#2a2420" style="cursor:help">' + d.name + '</text>';
+    svg += '</g>';
+    svg += '<rect class="tornado-bar" data-labels="' + d.labels.join(',') + '" x="' + x1 + '" y="' + y + '" width="' + Math.max(x2 - x1, 1) + '" height="' + barH + '" fill="#1e3a5f" opacity="' + opacity.toFixed(2) + '" rx="0"><title>' + d.name + ': ' + d.min.toFixed(1) + '% \u2013 ' + d.max.toFixed(1) + '%' + (d.tip ? '\n' + d.tip : '') + '</title></rect>';
     svg += '<text x="' + (x1 - 4) + '" y="' + (y + barH / 2 + 4) + '" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#8a7e72">' + d.min.toFixed(1) + '</text>';
     svg += '<text x="' + (x2 + 4) + '" y="' + (y + barH / 2 + 4) + '" text-anchor="start" font-family="IBM Plex Mono, monospace" font-size="9" fill="#8a7e72">' + d.max.toFixed(1) + '</text>';
   });
@@ -1559,25 +1626,25 @@ function buildLineChart(containerId, dataPoints, xLabel, yLabel, xTicks) {
 // ===== STACKED BARS =====
 function buildStackedBars() {
   const scenarios = [
-    { label: 'baseline', name: 'Aktuelle m\u00e5linger' },
-    { label: 'mDemandGov+current-polls', name: 'Inklusionskrav' },
-    { label: 'red-majority', name: 'R\u00f8dt flertal' },
-    { label: 'archetype:blue-surge', name: 'Bl\u00e5t flertal' },
-    { label: 'mDemandGov+red-majority', name: 'Inklusionskrav + r\u00f8dt flertal' },
-    { label: 'mDemandGov+blue-surge', name: 'Inklusionskrav + bl\u00e5t flertal' },
-    { label: 'redPref=0.8', name: 'Frederiksen foretr\u00e6kker r\u00f8d' },
-    { label: 'redPref=0.2', name: 'Frederiksen foretr\u00e6kker bred' },
-    { label: 'M->V', name: 'L\u00f8kke orientering mod V' },
-    { label: 'M-demands-PM', name: 'L\u00f8kke kr\u00e6ver SM-post' },
-    { label: 'sRelaxPM+baseline', name: 'S accepterer L\u00f8kke-SM' },
-    { label: 'archetype:knife-edge', name: 'R\u00f8d sv\u00e6kket' },
-    { label: 'archetype:red-tide', name: 'R\u00f8d b\u00f8lge' },
-    { label: 'sf-abstain-sm=0.3', name: 'SF st\u00e6rk blokering' },
-    { label: 'sf-abstain-sm=0.7', name: 'SF svag' },
-    { label: 'sigmaBloc=6.0', name: 'Bred m\u00e5lingsusikkerhed (\u03c3=6)' },
+    { label: 'baseline', name: 'Aktuelle m\u00e5linger', tip: 'Altingets snit (S=38, SF=23, M=9), ingen s\u00e6rlige krav' },
+    { label: 'mDemandGov+current-polls', name: 'Inklusionskrav', tip: 'L\u00f8kke kr\u00e6ver at M er med i regeringen' },
+    { label: 'red-majority', name: 'R\u00f8dt flertal', tip: 'S=40, SF=25 \u2192 r\u00f8d blok n\u00e5r 90 mandater' },
+    { label: 'archetype:blue-surge', name: 'Bl\u00e5t flertal', tip: 'V=22, LA=22, KF=14 \u2192 bl\u00e5 blok n\u00e5r 90 mandater' },
+    { label: 'mDemandGov+red-majority', name: 'Inklusionskrav + r\u00f8dt flertal', tip: 'R\u00f8d har flertal, men L\u00f8kke kr\u00e6ver deltagelse alligevel' },
+    { label: 'mDemandGov+blue-surge', name: 'Inklusionskrav + bl\u00e5t flertal', tip: 'Bl\u00e5 har flertal og L\u00f8kke kr\u00e6ver deltagelse' },
+    { label: 'redPref=0.8', name: 'Frederiksen foretr. r\u00f8d', tip: 'Frederiksen prioriterer S+SF/S+SF+RV over bredere koalitioner' },
+    { label: 'redPref=0.2', name: 'Frederiksen foretr. bred', tip: 'Frederiksen prioriterer brede koalitioner med M' },
+    { label: 'M->V', name: 'L\u00f8kke mod V', tip: 'M orienterer mod bl\u00e5 blok, reducerer st\u00f8tte til S-ledede budgetter' },
+    { label: 'M-demands-PM', name: 'L\u00f8kke kr\u00e6ver SM', tip: 'M stemmer imod alt hvor M ikke er statsminister \u2014 selvdestruktivt' },
+    { label: 'sRelaxPM+baseline', name: 'S accept. L\u00f8kke-SM', tip: 'Frederiksen accepterer at L\u00f8kke kan blive SM (prior: 5%)' },
+    { label: 'archetype:knife-edge', name: 'R\u00f8d sv\u00e6kket', tip: 'S=35, SF=22 \u2192 r\u00f8d blok kun 82 mandater' },
+    { label: 'archetype:red-tide', name: 'R\u00f8d b\u00f8lge', tip: 'S=42, SF=25 + Frederiksen foretr\u00e6kker r\u00f8d (0.8)' },
+    { label: 'sf-abstain-sm=0.3', name: 'SF st\u00e6rk blokerer', tip: 'SF stemmer trov\u00e6rdigt imod finanslov for regeringer uden SF' },
+    { label: 'sf-abstain-sm=0.7', name: 'SF f\u00f8lger blokken', tip: 'SF afst\u00e5r oftest n\u00e5r de er udenfor \u2014 svag blokering' },
+    { label: 'sigmaBloc=6.0', name: 'Bred usikkerhed (\u03c3=6)', tip: 'St\u00f8rre stokastisk variation i mandatfordelingen' },
   ];
 
-  const order = ['S+SF', 'S+SF+RV', 'S+SF+RV+M', 'S+SF+M', 'M-ledet', 'S-alone', 'Cross-bloc', 'Blue', 'Gridlock'];
+  const order = ['S+SF', 'S+SF+RV', 'S+SF+RV+M', 'S+SF+M', 'M-ledet', 'S-alone', 'Tv\u00e6rblok', 'Bl\u00e5 (V+LA+KF)', 'D\u00f8dvande'];
 
   document.getElementById('global-legend').innerHTML = order.map(k =>
     '<div class="legend-item"><span class="legend-swatch" style="background:' + COAL_COLORS[k] + '"></span>' + k + '</div>'
@@ -1591,7 +1658,7 @@ function buildStackedBars() {
     const segs = order.filter(k => cats[k] > 0.3).map(k =>
       '<div class="seg" style="width:' + cats[k] + '%;background:' + COAL_COLORS[k] + '">' + (cats[k] > 5 ? cats[k].toFixed(0) : '') + '</div>'
     ).join('');
-    return '<div class="stacked-row"><div class="stacked-label">' + s.name + '</div><div class="stacked-bar">' + segs + '</div></div>';
+    return '<div class="stacked-row"><div class="stacked-label"><span class="tip" data-tip="' + (s.tip || '') + '">' + s.name + '</span></div><div class="stacked-bar">' + segs + '</div></div>';
   }).join('');
 }
 buildStackedBars();
@@ -1894,19 +1961,68 @@ function buildScenarioCard(label, title, subtitle) {
   const top = d.topCoalitions?.[0];
   const mInGov = (d.topCoalitions || []).filter(t => t.govt.includes('M')).reduce((s,t) => s + t.pct, 0);
   const pmS = d.pm?.S ?? 0;
-  const blue = d.govType?.blue ?? 0;
-  const none = d.govType?.none ?? 0;
   const isKingmaker = label === 'baseline' || label === 'mDemandGov+current-polls';
+  // Mini coalition bar
+  const cats = getCategoryBreakdown(d);
+  const barOrder = ['S+SF', 'S+SF+RV', 'S+SF+RV+M', 'S+SF+M', 'M-ledet', 'S-alone', 'Tv\u00e6rblok', 'Bl\u00e5 (V+LA+KF)', 'D\u00f8dvande'];
+  const barSegs = barOrder.filter(k => cats[k] > 1).map(k =>
+    '<div style="width:' + cats[k] + '%;background:' + COAL_COLORS[k] + ';height:18px;display:inline-block" title="' + k + ': ' + cats[k].toFixed(0) + '%"></div>'
+  ).join('');
   return `<div class="scenario-card ${isKingmaker ? 'kingmaker' : ''}">
     <h3>${title}</h3>
     <div class="scenario-subtitle">${subtitle}</div>
-    <div class="scenario-metric"><span class="metric-label">Top koalition</span><span class="metric-value">${top?.govt || '?'} (${(top?.pct||0).toFixed(0)}%)</span></div>
+    <div style="display:flex;border-radius:4px;overflow:hidden;margin:0.5rem 0">${barSegs}</div>
+    <div class="scenario-metric"><span class="metric-label">Top</span><span class="metric-value">${top?.govt || '?'} (${(top?.pct||0).toFixed(0)}%)</span></div>
     <div class="scenario-metric"><span class="metric-label">M i regering</span><span class="metric-value ${mInGov > 60 ? 'highlight' : ''}">${mInGov.toFixed(0)}%</span></div>
     <div class="scenario-metric"><span class="metric-label">PM(S)</span><span class="metric-value">${pmS.toFixed(0)}%</span></div>
-    ${blue > 1 ? `<div class="scenario-metric"><span class="metric-label">Bl&aring; regering</span><span class="metric-value">${blue.toFixed(0)}%</span></div>` : ''}
-    ${none > 1 ? `<div class="scenario-metric"><span class="metric-label">Gridlock</span><span class="metric-value">${none.toFixed(0)}%</span></div>` : ''}
   </div>`;
 }
+
+// ===== PARAMETER COMBINER =====
+function updateCombiner() {
+  const v = document.getElementById('cb-v').value;
+  const k = document.getElementById('cb-k').value;
+  const r = document.getElementById('cb-r').value;
+  const p = document.getElementById('cb-p').value;
+  const sf = document.getElementById('cb-sf').value;
+  const label = 'grid:' + v + '-' + k + '-' + r + '-' + p + '-' + sf;
+  const d = getScenario(label);
+  const barEl = document.getElementById('combiner-bar');
+  const coalEl = document.getElementById('combiner-coalitions');
+  const metaEl = document.getElementById('combiner-meta');
+
+  if (!d) {
+    barEl.innerHTML = '';
+    coalEl.innerHTML = '<span class="muted">Ingen data for denne kombination (' + label + ')</span>';
+    metaEl.innerHTML = '';
+    return;
+  }
+
+  const cats = getCategoryBreakdown(d);
+  const barOrder = ['S+SF', 'S+SF+RV', 'S+SF+RV+M', 'S+SF+M', 'M-ledet', 'S-alone', 'Tv\u00e6rblok', 'Bl\u00e5 (V+LA+KF)', 'D\u00f8dvande'];
+  barEl.innerHTML = barOrder.filter(k => cats[k] > 0.5).map(k =>
+    '<div style="width:' + cats[k] + '%;background:' + COAL_COLORS[k] + '" title="' + k + ': ' + cats[k].toFixed(1) + '%">' + (cats[k] > 5 ? '<span style="color:#fff;font-size:0.7rem;padding:0 3px">' + cats[k].toFixed(0) + '%</span>' : '') + '</div>'
+  ).join('');
+
+  const tops = (d.topCoalitions || []).slice(0, 5);
+  coalEl.innerHTML = tops.map(c =>
+    '<div style="display:flex;justify-content:space-between;padding:0.15rem 0;border-bottom:1px solid #eee">' +
+    '<span>' + c.govt + '</span>' +
+    '<span><strong>' + c.pct.toFixed(1) + '%</strong> <span class="muted">(P(finanslov): ' + c.avgPPassage.toFixed(2) + ')</span></span>' +
+    '</div>'
+  ).join('');
+
+  const pmS = d.pm?.S ?? 0;
+  const pmM = d.pm?.M ?? 0;
+  const mInGov = (d.topCoalitions||[]).filter(t=>t.govt.includes('M')).reduce((s,t)=>s+t.pct,0);
+  metaEl.innerHTML = 'PM(S): ' + pmS.toFixed(0) + '% | PM(M): ' + pmM.toFixed(0) + '% | M i regering: ' + mInGov.toFixed(0) + '% | N=' + (d.N||500);
+}
+
+['cb-v','cb-k','cb-r','cb-p','cb-sf'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('change', updateCombiner);
+});
+updateCombiner();
 
 // ===== DYNAMIC STRUCTURAL IMPLICATIONS =====
 function buildImplications() {
