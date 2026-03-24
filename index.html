@@ -2179,62 +2179,91 @@ function buildImplications() {
   const rp2 = getScenario('redPref=0.2');
   const rp8 = getScenario('redPref=0.8');
   const bs = getScenario('archetype:blue-surge');
+  const bsdg = getScenario('mDemandGov+blue-surge');
+  const s6 = getScenario('sigmaBloc=6.0');
+  const s8 = getScenario('sigmaBloc=8.0');
+  const mt = getScenario('midten:baseline');
 
   function mInGov(d) { return d ? (d.topCoalitions||[]).filter(t=>t.govt.includes('M')).reduce((s,t)=>s+t.pct,0) : 0; }
   function fmt(v) { return v != null ? v.toFixed(0) + '%' : '?'; }
 
   const callouts = [];
 
-  if (bl) {
+  // 1. Headline finding
+  if (bl && bs) {
     callouts.push({
-      title: 'Frederiksen er statsminister i ~' + fmt(bl.pm.S) + ' af simulationerne',
-      text: 'Ved aktuelle m\u00e5linger (Altingets snit, M=9) er Frederiksens position stærk men ikke uantastelig. St\u00f8rre m\u00e5lingsusikkerhed (\u03c3<sub>bloc</sub> = 6\u20138) eller et bl\u00e5t flertal kan bringe sandsynligheden ned mod 88\u201368%.',
-      evidence: 'Baseline: ' + fmt(bl.pm.S) + (bs ? ' | Bl\u00e5t flertal: ' + fmt(bs.pm.S) : '')
+      title: 'Frederiksen er statsminister i ' + fmt(bl.pm.S) + ' af simulationerne ved aktuelle m\u00e5linger',
+      text: 'P\u00e5 tv\u00e6rs af alle scenarier og antagelser (v\u00e6gtet) er sandsynligheden 94,5%. Ved aktuelle m\u00e5linger alene er den ' + fmt(bl.pm.S) + '. Kun et bl\u00e5t flertal (bl\u00e5 blok \u2265 90 mandater) \u00e6ndrer billedet grundl\u00e6ggende: her falder Frederiksen til ' + fmt(bs.pm.S) + ', og bl\u00e5 blok regerer i ' + fmt(bs.govType?.blue||0) + ' af tilf\u00e6ldene.',
+      evidence: 'Baseline: ' + fmt(bl.pm.S) + ' | Bl\u00e5t flertal: ' + fmt(bs.pm.S) + (s8 ? ' | Bred usikkerhed (\u03c3=8): ' + fmt(s8.pm.S) : '')
     });
   }
 
+  // 2. Coalition landscape
   if (dg && bl) {
     callouts.push({
-      title: 'Inklusionskravet omformer koalitionslandskabet',
-      text: 'N\u00e5r L\u00f8kke kr\u00e6ver regeringsdeltagelse stiger M-inkluderende koalitioner fra ' + fmt(mInGov(bl)) + ' til ' + fmt(mInGov(dg)) + '. Under inklusionskravet har L\u00f8kkes retningspr\u00e6ference (S vs. V) <em>ingen m\u00e5lbar effekt</em> \u2014 kravet dominerer forhandlingsdynamikken.',
-      evidence: 'Standard \u2192 M i regering: ' + fmt(mInGov(bl)) + ' | Inklusionskrav \u2192 ' + fmt(mInGov(dg))
+      title: 'L\u00f8kkes inklusionskrav omformer koalitionslandskabet',
+      text: 'N\u00e5r L\u00f8kke kr\u00e6ver regeringsdeltagelse stiger M-inkluderende koalitioner fra ' + fmt(mInGov(bl)) + ' til ' + fmt(mInGov(dg)) + '. Under inklusionskravet har L\u00f8kkes retningspr\u00e6ference (mod S vs. mod V) <em>ingen m\u00e5lbar effekt</em> \u2014 kravet dominerer. Den hyppigste koalition er S+SF+RV+M (' + fmt(dg.topCoalitions?.[0]?.pct||0) + ').',
+      evidence: 'Uden krav \u2192 M i regering: ' + fmt(mInGov(bl)) + ' | Med inklusionskrav \u2192 ' + fmt(mInGov(dg))
     });
   }
 
+  // 3. Blue majority conditional
+  if (bs && bsdg) {
+    callouts.push({
+      title: 'Selv ved bl\u00e5t flertal kan L\u00f8kkes krav holde Frederiksen ved magten',
+      text: 'N\u00e5r bl\u00e5 blok n\u00e5r 90 mandater og f\u00e5r formateurmandatet, falder Frederiksens sandsynlighed til ' + fmt(bs.pm.S) + ' under normale omst\u00e6ndigheder. Men n\u00e5r L\u00f8kke samtidig kr\u00e6ver regeringsdeltagelse, blokerer M de bl\u00e5 koalitioner (M er ikke med i V+LA+KF) \u2014 og Frederiksen stiger til ' + fmt(bsdg.pm.S) + ' ved at danne S-ledet regering med M.',
+      evidence: 'Bl\u00e5t flertal (standard): ' + fmt(bs.pm.S) + ' | Bl\u00e5t flertal + inklusionskrav: ' + fmt(bsdg.pm.S)
+    });
+  }
+
+  // 4. PM demand is self-defeating
   if (dp) {
     callouts.push({
-      title: 'Kravet om statsministerposten er selvdestruktivt',
-      text: 'N\u00e5r L\u00f8kke kr\u00e6ver statsministerposten ekskluderes Moderaterne fra stort set alle koalitioner. Frederiksen forbliver statsminister i ' + fmt(dp.pm.S) + ' af simulationerne \u2014 ikke fordi bl\u00e5 vinder, men fordi S regerer med S+SF\u00b1RV uden M.',
-      evidence: 'Statsministerkrav \u2192 Frederiksen statsminister: ' + fmt(dp.pm.S) + ' | M i regering: ' + fmt(mInGov(dp))
+      title: 'Kravet om statsministerposten er selvdestruktivt for L\u00f8kke',
+      text: 'N\u00e5r L\u00f8kke kr\u00e6ver statsministerposten ekskluderes Moderaterne fra stort set alle koalitioner, fordi ingen af de 13 pakker giver L\u00f8kke statsministerposten under standardbetingelser. Frederiksen forbliver statsminister i ' + fmt(dp.pm.S) + ' \u2014 S regerer simpelthen med S+SF\u00b1RV uden M. L\u00f8kkes forhandlingsstyrke ligger i at deltage som juniorpartner, ikke i at kr\u00e6ve toppen.',
+      evidence: 'Statsministerkrav \u2192 Frederiksen: ' + fmt(dp.pm.S) + ' | M i regering: ' + fmt(mInGov(dp))
     });
   }
 
+  // 5. sRelaxPM
   if (sr) {
     callouts.push({
-      title: 'Hvad hvis Frederiksen accepterer L\u00f8kke som statsminister?',
-      text: 'N\u00e5r S accepterer en ikke-S statsminister, konkurrerer M-ledede pakker (M+S+SF) p\u00e5 lige vilk\u00e5r med S-ledede. L\u00f8kke bliver statsminister i ' + fmt(sr.pm.M || 0) + ' af simulationerne. Historisk pr\u00e6cedens: Baunsgaard 1968 (mindste koalitionspartis leder blev statsminister). Prior: 5% baseret p\u00e5 Polymarket.',
-      evidence: 'Frederiksen statsminister: ' + fmt(sr.pm.S) + ' | L\u00f8kke statsminister: ' + fmt(sr.pm.M || 0)
+      title: 'L\u00f8kke som statsminister kr\u00e6ver at Frederiksen accepterer det',
+      text: 'Hvis S accepterer en ikke-S statsminister (historisk pr\u00e6cedens: Baunsgaard 1968), kan M-ledede koalitioner som M+S+SF konkurrere med S-ledede. L\u00f8kke bliver statsminister i ' + fmt(sr.pm.M||0) + ' af simulationerne under dette scenarie. Polymarket priss\u00e6tter L\u00f8kke som statsminister til ~4%, hvilket antyder en prior p\u00e5 ca. 5% for dette scenarie.',
+      evidence: 'Frederiksen: ' + fmt(sr.pm.S) + ' | L\u00f8kke: ' + fmt(sr.pm.M||0)
     });
   }
 
+  // 6. Coalition preference
   if (rp2 && rp8) {
     callouts.push({
-      title: 'Frederiksens pr\u00e6ference styrer koalitionstypen',
-      text: 'Forskellen mellem "foretr\u00e6kker r\u00f8d" og "foretr\u00e6kker bred" skifter topkoalitionen fra ' + (rp8.topCoalitions?.[0]?.govt||'?') + ' til ' + (rp2.topCoalitions?.[0]?.govt||'?') + ', men Frederiksens sandsynlighed for statsministerposten forbliver stort set u\u00e6ndret.',
-      evidence: 'R\u00f8d pr\u00e6f \u2192 top: ' + (rp8.topCoalitions?.[0]?.govt||'?') + ' (' + (rp8.topCoalitions?.[0]?.pct||0).toFixed(0) + '%) | Bred pr\u00e6f \u2192 top: ' + (rp2.topCoalitions?.[0]?.govt||'?') + ' (' + (rp2.topCoalitions?.[0]?.pct||0).toFixed(0) + '%)'
+      title: 'Frederiksens pr\u00e6ference styrer koalitionstypen \u2014 ikke statsministerspørgsmålet',
+      text: 'Forskellen mellem "foretr\u00e6kker r\u00f8d" og "foretr\u00e6kker bred" skifter topkoalitionen fra ' + (rp8.topCoalitions?.[0]?.govt||'?') + ' (' + (rp8.topCoalitions?.[0]?.pct||0).toFixed(0) + '%) til ' + (rp2.topCoalitions?.[0]?.govt||'?') + ' (' + (rp2.topCoalitions?.[0]?.pct||0).toFixed(0) + '%), men Frederiksens sandsynlighed for statsministerposten forbliver stort set u\u00e6ndret. Det afg\u00f8rende sp\u00f8rgsm\u00e5l er <em>hvem</em> Frederiksen regerer med, ikke <em>om</em> hun regerer.',
+      evidence: 'R\u00f8d pr\u00e6ference: ' + (rp8.topCoalitions?.[0]?.govt||'?') + ' | Bred pr\u00e6ference: ' + (rp2.topCoalitions?.[0]?.govt||'?')
     });
   }
 
+  // 7. Legislative robustness
   if (bl) {
     const sfp = bl.topCoalitions?.find(c => c.govt === 'S+SF');
     const sfrmp = bl.topCoalitions?.find(c => c.govt === 'S+SF+RV+M');
     if (sfp && sfrmp) {
       callouts.push({
-        title: 'Bred koalition er lovgivningsm\u00e6ssigt sikrere',
-        text: 'S+SF+RV+M har gennemsnitlig finanslovssandsynlighed p\u00e5 ' + sfrmp.avgPPassage.toFixed(2) + ' mod S+SFs ' + sfp.avgPPassage.toFixed(2) + '. Den bredere koalition er markant mere robust \u2014 prisen er flere vetohold\u00e6re.',
-        evidence: 'S+SF pPassage: ' + sfp.avgPPassage.toFixed(3) + ' | S+SF+RV+M: ' + sfrmp.avgPPassage.toFixed(3)
+        title: 'Bredere koalitioner er lovgivningsm\u00e6ssigt mere robuste',
+        text: 'S+SF+RV+M har gennemsnitlig finanslovssandsynlighed p\u00e5 ' + sfrmp.avgPPassage.toFixed(2) + ' mod S+SFs ' + sfp.avgPPassage.toFixed(2) + '. Den bredere koalition er markant mere robust \u2014 prisen er flere vetohold\u00e6re og potentielle interne konflikter (s\u00e6rligt SF-M sp\u00e6ndingen om skattepolitik og immigration).',
+        evidence: 'S+SF: ' + sfp.avgPPassage.toFixed(3) + ' | S+SF+RV+M: ' + sfrmp.avgPPassage.toFixed(3)
       });
     }
+  }
+
+  // 8. SF's structural inclusion
+  if (bl) {
+    const sfCoals = (bl.topCoalitions||[]).filter(c => c.govt.includes('SF')).reduce((s,c) => s+c.pct, 0);
+    callouts.push({
+      title: 'SF er med i ' + fmt(sfCoals) + ' af S-ledede koalitioner',
+      text: 'Med 23 mandater er SF n\u00e6sten umulig at udelukke fra en S-ledet regering. Enhver koalition uden SF mister 23 garanterede FOR-stemmer p\u00e5 finansloven, hvilket s\u00e6nker lovgivningssandsynligheden markant. Historisk har S regeret uden SF (2019: S alene, 2022: SVM), men ved SFs nuv\u00e6rende mandattal er den aritmetiske fordel ved inklusion overvejende.',
+      evidence: 'SF i koalition: ' + fmt(sfCoals) + ' | SF=23 mandater (potentielt bedste resultat nogensinde)'
+    });
   }
 
   el.innerHTML = callouts.map(c => `
