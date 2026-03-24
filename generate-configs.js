@@ -13,9 +13,10 @@ const PBF_BY_SCENARIO = {
 };
 
 const MANDATE_BASELINES = {
-  current: {},
-  red: { S: 40, SF: 25 },
-  blue: { V: 22, LA: 22, KF: 14 },
+  current: {},  // stochastic draws from code defaults (pre-election uncertainty)
+  // Full 12-party deterministic overrides (post-election conditionals):
+  red: { S:40, SF:25, EL:12, ALT:4, RV:9, M:9, KF:12, V:15, LA:17, DD:12, DF:13, BP:7 },
+  blue: { S:33, SF:19, EL:10, ALT:3, RV:11, M:9, KF:14, V:22, LA:22, DD:13, DF:14, BP:5 },
 };
 
 const BLUE_STEP_OVERRIDES = {
