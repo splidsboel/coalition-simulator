@@ -1062,7 +1062,7 @@ function runSim(userCfg, N) {
     mAbstainShare: userCfg.cfg?.mAbstainShare != null ? userCfg.cfg.mAbstainShare : 0.50,
     mwccFullBonus: userCfg.cfg?.mwccFullBonus != null ? userCfg.cfg.mwccFullBonus : 1.15,
     naRedShift: userCfg.cfg?.naRedShift != null ? userCfg.cfg.naRedShift : 0,
-    pBlueFormateur: userCfg.cfg?.pBlueFormateur != null ? userCfg.cfg.pBlueFormateur : 0,
+    pBlueFormateur: userCfg.cfg?.pBlueFormateur != null ? userCfg.cfg.pBlueFormateur : 0.15,
   };
 
   const sweepDefaults = {
