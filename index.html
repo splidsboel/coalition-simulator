@@ -15840,6 +15840,7 @@
         flexibility: 0,
         redPreference: 0.5,
         mPmPref: "neutral",
+        formateurOverride: "red",
         maxFormationRounds: 3,
         viabilityThreshold: 0.7,
         N: 500,
@@ -16218,10 +16219,10 @@ onmessage = function(e) {
               <div class="field-header">
                 <span class="field-label">Første formateur</span>
               </div>
-              <p class="field-desc">Hvem får først forsøg på at danne regering? "Endogen" = beregnes fra Løkkes orientering og mandatfordeling. Kan overstyres manuelt.</p>
+              <p class="field-desc">Hvem får først forsøg på at danne regering? Frederiksen er udpeget som kongelig undersøger (marts 2026). "Endogen" = beregnes fra Løkkes orientering og mandatfordeling.</p>
               <select id="control-formateurOverride" data-control="formateurOverride">
                 <option value="endogenous">Endogen (beregnet)</option>
-                <option value="red">Altid rød (S) først</option>
+                <option value="red" selected>Altid rød (S) først</option>
                 <option value="blue">Altid blå (V) først</option>
               </select>
             </div>

@@ -235,7 +235,16 @@ function computeAbstainShare(party, coalition) {
   }
 
   const avgDist = count ? totalDist / count : 0.5;
-  return clamp01(0.85 - avgDist * 0.8);
+  let share = clamp01(0.85 - avgDist * 0.8);
+
+  // Parties that reject the PM vote against, not abstain. In Danish politics,
+  // opposition parties don't abstain on finansloven — they vote against.
+  if (coalition.leader) {
+    const pmAcceptance = relationshipValue(party, coalition.leader, "asPM", 1.0);
+    share *= Math.max(0.05, pmAcceptance);
+  }
+
+  return share;
 }
 
 function evalBudgetVote(partyId, coalition, platform, cfg) {
@@ -306,11 +315,15 @@ function evalBudgetVote(partyId, coalition, platform, cfg) {
     // party's willingness to vote for the budget is tempered by who is actually
     // in the government. EL won't blindly support a government containing
     // parties it deeply opposes (e.g. M) at full strength.
-    pFor *= relationshipValue(party, coalition.leader, "asPM", 1.0);
+    // Use sqrt-softened product: a formal written agreement dampens but doesn't
+    // eliminate discomfort. Without softening, moderate values like 0.68 × 0.55
+    // × 0.90 = 0.34 would nearly kill support even for plausible arrangements.
+    let relMod = relationshipValue(party, coalition.leader, "asPM", 1.0);
     for (const member of coalition.government) {
       if (member === coalition.leader) continue;
-      pFor *= relationshipValue(party, member, "tolerateInGov", 1.0);
+      relMod *= relationshipValue(party, member, "tolerateInGov", 1.0);
     }
+    pFor *= Math.sqrt(relMod);
 
     return splitVote(pFor, computeAbstainShare(party, coalition));
   }
@@ -907,6 +920,8 @@ function buildConfig(userParams) {
     mDemandGov: true,
     sDemandGov: true,
     mPmPref: "neutral",
+    // Frederiksen appointed as kongelig undersøger (March 2026): red forms first.
+    formateurOverride: "red",
     redPreference: 0.5,
     maxFormationRounds: 3,
     flexIncrement: 0.05,
