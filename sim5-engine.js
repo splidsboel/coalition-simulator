@@ -387,7 +387,21 @@ function scoreCoalition(coalition, mandates, pPassage, cfg) {
   const passageExp = cfg.passageExponent != null ? cfg.passageExponent : 2.0;
   const passageScore = Math.pow(pPassage, passageExp);
 
-  return passageScore * ideoFit * sizePenalty * mwcc * flexBonus * crossBloc * precedent;
+  // Governing ease: formateurs prefer coalitions that can build
+  // majorities across policy dimensions (vekslende flertal).
+  // Uses existing governabilityProfile computation.
+  let govEase = 1.0;
+  if (coalition.platform) {
+    const profile = governabilityProfile(coalition, coalition.platform, mandates);
+    const dims = Object.keys(profile);
+    if (dims.length > 0) {
+      const avgFeasibility = dims.reduce((sum, d) => sum + profile[d].feasibility, 0) / dims.length;
+      // Scale: avgFeasibility of 0.5 = neutral (1.0), higher = bonus, lower = penalty
+      govEase = 0.7 + 0.6 * avgFeasibility;  // range: ~0.7 to ~1.3
+    }
+  }
+
+  return passageScore * ideoFit * sizePenalty * mwcc * flexBonus * crossBloc * precedent * govEase;
 }
 
 function frederiksenBonus(coalition, redPreference) {
@@ -451,6 +465,7 @@ function determineForstaaelsespapir(government, outsideParties, platform, cfg) {
 }
 
 function checkDyadAcceptance(members, flexibility) {
+  const flex = flexibility || 0;
   for (const id of members) {
     const party = PARTIES_MAP[id];
     if (!party) continue;
@@ -460,10 +475,13 @@ function checkDyadAcceptance(members, flexibility) {
       const val = relationshipValue(party, otherId, "inGov", 1.0);
       if (val < minInGov) minInGov = val;
     }
-    if (minInGov >= 1.0) continue;
-    if (minInGov < 0.05) return false;
-    const spread = Math.max(0.05, minInGov * 0.4);
-    const threshold = minInGov + Math.random() * Math.min(spread, 1 - minInGov);
+    // Apply flexibility: positive flex increases effective tolerance,
+    // modelling increased willingness to compromise in later formation rounds.
+    const effectiveMin = Math.min(1.0, minInGov + flex * 0.5);
+    if (effectiveMin >= 1.0) continue;
+    if (effectiveMin < 0.05) return false;  // hard floor still respected
+    const spread = Math.max(0.05, effectiveMin * 0.4);
+    const threshold = effectiveMin + Math.random() * Math.min(spread, 1 - effectiveMin);
     if (Math.random() > threshold) return false;
   }
 
@@ -563,6 +581,23 @@ function selectGovernment(mandates, naAlignments, cfg, coalitions) {
       result.formateurOrder = "rød først";
       return result;
     }
+
+    // Desperation fallback: historical precedent shows government always forms.
+    // 1975: four dronningerunder. 1988: four rounds. Hartling: 22 seats.
+    // Progressive threshold reduction until something works.
+    const desperationCfgBlue = {
+      ...cfg,
+      flexibility: (cfg.flexibility || 0) + (maxRedRounds + 1) * flexIncrement,
+      _naAlignments: naAlignments
+    };
+    const desperationResultBlue = tryGroup(sLed, sLedBonus, desperationCfgBlue, 0.05)
+      || tryGroup(blueLed, blueBonus, desperationCfgBlue, 0.05)
+      || tryGroup(mLed, mLedBonus, desperationCfgBlue, 0.05);
+    if (desperationResultBlue) {
+      desperationResultBlue.formationRound = maxRedRounds + 2;
+      desperationResultBlue.formateurOrder = "desperation";
+      return desperationResultBlue;
+    }
     return null;
   }
 
@@ -586,6 +621,23 @@ function selectGovernment(mandates, naAlignments, cfg, coalitions) {
     result.formationRound = maxRedRounds + 1;
     result.formateurOrder = "blå først";
     return result;
+  }
+
+  // Desperation fallback: historical precedent shows government always forms.
+  // 1975: four dronningerunder. 1988: four rounds. Hartling: 22 seats.
+  // Progressive threshold reduction until something works.
+  const desperationCfg = {
+    ...cfg,
+    flexibility: (cfg.flexibility || 0) + (maxRedRounds + 1) * flexIncrement,
+    _naAlignments: naAlignments
+  };
+  const desperationResult = tryGroup(sLed, sLedBonus, desperationCfg, 0.05)
+    || tryGroup(blueLed, blueBonus, desperationCfg, 0.05)
+    || tryGroup(mLed, mLedBonus, desperationCfg, 0.05);
+  if (desperationResult) {
+    desperationResult.formationRound = maxRedRounds + 2;
+    desperationResult.formateurOrder = "desperation";
+    return desperationResult;
   }
 
   return null;
