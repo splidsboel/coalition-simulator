@@ -772,11 +772,23 @@ function simulate(userParams, N) {
         agg.govTypeCounts[result.govType] = (agg.govTypeCounts[result.govType] || 0) + 1;
 
         if (!agg.coalitionCounts[result.coalition]) {
+          // Identify support parties: forståelsespapir + likely-aligned NA seats
+          const supportParties = (result.support || []).map(s => s.party);
+          const govSide = getGovSide(result);
+          for (const seat of NA_SEATS) {
+            // Use base alignment probabilities, not per-iteration draw
+            const pAligned = govSide === "red" ? seat.pRed : govSide === "blue" ? seat.pBlue : 0;
+            if (pAligned + seat.pFlexible >= 0.50) {
+              supportParties.push(seat.id);
+            }
+          }
+
           agg.coalitionCounts[result.coalition] = {
             count: 0,
             pPassageSum: 0,
             platform: result.platform,
-            govProfile: result.govProfile
+            govProfile: result.govProfile,
+            support: supportParties
           };
         }
 
@@ -819,7 +831,8 @@ function simulate(userParams, N) {
       pct: roundPct(data.count, iterations),
       avgPPassage: +(data.pPassageSum / data.count).toFixed(3),
       platform: data.platform,
-      govProfile: data.govProfile
+      govProfile: data.govProfile,
+      support: data.support || []
     }));
 
   const formed = iterations - agg.noGovCount;

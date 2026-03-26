@@ -1516,7 +1516,7 @@ onmessage = function(e) {
                 <strong style="color:#333;">Finanslovsafstemning (endogen):</strong> Hvert partis stemmeadfærd beregnes fra dets politiske positioner, relationer til regeringspartierne, evt. forståelsespapir, og partiets deltagelsespræference (partier der kræver kabinetsplads men er udelukket, reducerer deres støtte). Sandsynlighederne fødes ind i en dynamisk programmerings-motor der beregner P(finanslov).
               </p>
               <p class="field-desc" style="color:#555;">
-                <strong style="color:#333;">Støttepartier:</strong> For mindretalsregeringer vises partier der sandsynligvis stemmer for finansloven. Beregnet med <em>samme evalBudgetVote-funktion</em> som simulationen bruger internt — gennemsnittet af 10 stokastiske træk. Inkluderer alle modeleffekter: politisk overensstemmelse, PM-accept, deltagelsespræference og forståelsespapir. Partier med P(for) &gt; 15% vises.
+                <strong style="color:#333;">Støttepartier:</strong> For mindretalsregeringer vises forståelsespapir-partier (EL) og sandsynligt alliererede nordatlantiske mandater. Baseret på blokalliance og basisalliancesandsynligheder.
               </p>
               <p class="field-desc" style="color:#555;">
                 <strong style="color:#333;">Forståelsespapir og EL:</strong> Modellen skelner mellem <em>toleration</em> (afståelse fra at stemme imod — reducerer modstandsmandater) og <em>aktiv støtte</em> (stemmer for — øger formandater). Et forståelsespapir konverterer et parti fra positionsbaseret afstemning til nær-sikker FOR-stemme. Denne mekanisme er generisk (udløses af parameteren forstaaelsespapir.weight ≥ 0.95), men kun Enhedslisten opfylder tærsklen i de nuværende data. Det er ikke en ad hoc-modellering: EL's finanslovsafstemninger har empirisk været binære siden 2011 — MED forståelsespapir: FOR i 100% af afstemninger (2019-2022); UDEN: IMOD i 100%. Ingen andre partier har dette mønster. Mekanismen ville automatisk gælde for ethvert parti der fik weight ≥ 0.95.
@@ -1882,40 +1882,18 @@ onmessage = function(e) {
           const govType = Sim5Coalitions.classifyGovType(members);
           const seats = coalitionSeats(members);
 
-          // Compute likely støttepartier for minority governments
-          // Uses the same evalBudgetVote function as the simulation, averaged
-          // over multiple stochastic draws for stability.
+          // Support parties from the simulation engine (forståelsespapir + aligned NA seats)
+          const supportIds = item.support || [];
+          const memberSet = new Set(members);
           let supportParties = [];
-          if (seats < 90) {
-            const memberSet = new Set(members);
-            const coalition = {
-              government: members,
-              leader: members[0],
-              support: [],
-              platform: item.platform
-            };
-            // Check if EL should get a forståelsespapir
-            const elParty = Sim5Parties.PARTIES_MAP.EL;
-            if (elParty && !memberSet.has("EL") && elParty.positions.forstaaelsespapir.weight >= 0.95) {
-              coalition.support = [{ party: "EL", type: "forstaaelsespapir" }];
-            }
-            const cfg = { flexibility: 0, voteSensitivity: 4.0, mDemandGov: state.results ? undefined : true };
-            const nDraws = 10;
-
-            supportParties = Sim5Parties.PARTIES_LIST
-              .filter(p => !memberSet.has(p.id))
-              .map(p => {
-                // Average pFor over multiple draws (evalBudgetVote is stochastic)
-                let pForSum = 0;
-                for (let i = 0; i < nDraws; i++) {
-                  const vote = Sim5Engine.evalBudgetVote(p.id, coalition, item.platform, cfg);
-                  pForSum += vote.pFor;
-                }
-                const avgPFor = pForSum / nDraws;
-                return { id: p.id, pFor: avgPFor, mandates: p.mandates };
-              })
-              .filter(s => s.pFor > 0.15)
-              .sort((a, b) => b.pFor - a.pFor);
+          if (seats < 90 && supportIds.length > 0) {
+            const allParties = [...Sim5Parties.PARTIES_LIST, ...(Sim5Parties.NA_SEATS || [])];
+            supportParties = supportIds
+              .filter(id => !memberSet.has(id))
+              .map(id => {
+                const p = allParties.find(pp => pp.id === id);
+                return { id, pFor: id === "EL" ? 0.93 : 0.80, mandates: p ? p.mandates : 1 };
+              });
           }
 
           // Leader is the PM-eligible member with most mandates
@@ -2129,7 +2107,7 @@ onmessage = function(e) {
                 ${item.supportParties && item.supportParties.length > 0 ? `
                 <div class="detail-card">
                   <h3>Sandsynlige støttepartier</h3>
-                  <p class="field-desc">Beregnet fra simuleringsmodellens finanslovsafstemning (evalBudgetVote): partiets gennemsnitlige P(stemmer for) baseret på politisk overensstemmelse med platformens positioner, accept af statsministeren, deltagelsespræferencer og evt. forståelsespapir. Gennemsnit over ${10} stokastiske træk.</p>
+                  <p class="field-desc">Støttepartier identificeret fra simuleringsmodellen: forståelsespapir-partier og nordatlantiske mandater med sandsynlig alliereret tilknytning til regeringens blok.</p>
                   <div class="bar-list">
                     ${item.supportParties.map(s => {
                       const pct = (s.pFor * 100).toFixed(0);
