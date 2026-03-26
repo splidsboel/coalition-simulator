@@ -1882,19 +1882,25 @@ onmessage = function(e) {
           const govType = Sim5Coalitions.classifyGovType(members);
           const seats = coalitionSeats(members);
 
-          // Support parties from the simulation engine (forståelsespapir + aligned NA seats)
-          const supportIds = item.support || [];
+          // Three-tier support structure from engine
+          const forstIds = item.support || [];
+          const looseIds = item.looseSupport || [];
+          const naIds = item.naSupport || [];
           const memberSet = new Set(members);
-          let supportParties = [];
-          if (seats < 90 && supportIds.length > 0) {
-            const allParties = [...Sim5Parties.PARTIES_LIST, ...(Sim5Parties.NA_SEATS || [])];
-            supportParties = supportIds
-              .filter(id => !memberSet.has(id))
-              .map(id => {
-                const p = allParties.find(pp => pp.id === id);
-                return { id, pFor: id === "EL" ? 0.93 : 0.80, mandates: p ? p.mandates : 1 };
-              });
-          }
+          const allEntities = [...Sim5Parties.PARTIES_LIST, ...(Sim5Parties.NA_SEATS || [])];
+
+          const supportParties = forstIds.filter(id => !memberSet.has(id)).map(id => {
+            const p = allEntities.find(pp => pp.id === id);
+            return { id, pFor: 0.93, mandates: p ? p.mandates : 0, type: "forst" };
+          });
+          const looseParties = looseIds.filter(id => !memberSet.has(id)).map(id => {
+            const p = allEntities.find(pp => pp.id === id);
+            return { id, pFor: 0.50, mandates: p ? p.mandates : 0, type: "loose" };
+          });
+          const naParties = naIds.map(id => {
+            const p = allEntities.find(pp => pp.id === id);
+            return { id, pFor: 0.60, mandates: p ? p.mandates : 1, type: "na" };
+          });
 
           // Leader is the PM-eligible member with most mandates
           const pmEligible = members.filter(id => { const p = Sim5Parties.PARTIES_MAP[id]; return p && p.pmEligible; });
@@ -1913,7 +1919,8 @@ onmessage = function(e) {
             platform: item.platform,
             govProfile: item.govProfile || {},
             concessions,
-            supportParties
+            supportParties: [...supportParties, ...looseParties],
+            naParties
           };
         });
       }
@@ -1991,15 +1998,28 @@ onmessage = function(e) {
         `;
       }
 
+      function naColor(seatId) {
+        if (seatId.startsWith("GL-")) return "linear-gradient(135deg, #d00c33 50%, #fff 50%)";
+        return "linear-gradient(135deg, #002f6c 33%, #fff 33% 66%, #d00c33 66%)";
+      }
+
       function coalitionRowMarkup(item, selected) {
         const supportDots = item.supportParties && item.supportParties.length > 0
           ? `<span style="color:#aaa; margin:0 2px; font-size:0.65rem;">+</span>` +
-            item.supportParties.slice(0, 4).map(s => `
-              <span class="party-dot" style="background:${partyColor(s.id)}; opacity:${Math.max(0.3, Math.min(0.9, s.pFor))}; width:10px; height:10px;" title="${escapeHtml(partyName(s.id))}: P(for)=${(s.pFor*100).toFixed(0)}%"></span>
+            item.supportParties.map(s => `
+              <span class="party-dot" style="background:${partyColor(s.id)}; opacity:${Math.max(0.3, Math.min(0.9, s.pFor))}; width:10px; height:10px;" title="${escapeHtml(partyName(s.id))}"></span>
             `).join("")
           : "";
-        const supportLabel = item.supportParties && item.supportParties.length > 0
-          ? ` + ${item.supportParties.slice(0, 4).map(s => s.id).join(", ")}`
+        const naDots = item.naParties && item.naParties.length > 0
+          ? `<span style="color:#aaa; margin:0 2px; font-size:0.65rem;">+</span>` +
+            item.naParties.map(s => `
+              <span class="party-dot" style="background:${naColor(s.id)}; width:10px; height:10px; border:1px solid #ccc;" title="${escapeHtml(s.id)}"></span>
+            `).join("")
+          : "";
+        const allSupport = [...(item.supportParties || []), ...(item.naParties || [])];
+        const supportLabel = allSupport.length > 0
+          ? ` + ${item.supportParties.map(s => s.id).join(", ")}` +
+            (item.naParties && item.naParties.length > 0 ? ` + ${item.naParties.map(s => s.id.replace("GL-","🇬🇱").replace("FO-","🇫🇴").replace("NAL","").replace("IA","").replace("JF","").replace("SB","")).join("")}` : "")
           : "";
         return `
           <tr class="coalition-row ${selected ? "selected" : ""}" data-coalition="${escapeHtml(item.id)}">
@@ -2009,9 +2029,9 @@ onmessage = function(e) {
                   ${item.members.map(id => `
                     <span class="party-dot" style="background:${partyColor(id)}" title="${escapeHtml(partyName(id))}"></span>
                   `).join("")}
-                  ${supportDots}
+                  ${supportDots}${naDots}
                 </div>
-                <span class="coalition-label">${escapeHtml(item.label)}${item.seats < 90 ? `<span style="color:#888; font-size:0.72rem;">${escapeHtml(supportLabel)}</span>` : ""}</span>
+                <span class="coalition-label">${escapeHtml(item.label)}${allSupport.length > 0 ? `<span style="color:#888; font-size:0.72rem;">${supportLabel}</span>` : ""}</span>
               </div>
             </td>
             <td><span class="party-dot" style="background:${partyColor(item.leader)}; display:inline-block; vertical-align:middle;" title="${escapeHtml(partyName(item.leader))}"></span> <span style="font-size:0.75rem;">${escapeHtml(item.leader)}</span></td>
@@ -2024,7 +2044,7 @@ onmessage = function(e) {
               </div>
             </td>
             <td class="mono">${formatPct(item.pPassage)}</td>
-            <td class="mono">${item.seats}${item.seats < 90 && item.supportParties.length > 0 ? `<span style="color:var(--muted); font-size:0.72rem;" title="Regeringsmandater (samlet med sandsynlige støttepartier)"> (${item.seats + item.supportParties.reduce((s, p) => s + p.mandates, 0)})</span>` : ""}</td>
+            <td class="mono">${item.seats}${item.seats < 90 && allSupport.length > 0 ? `<span style="color:var(--muted); font-size:0.72rem;" title="Regeringsmandater (samlet med støttepartier)"> (${item.seats + allSupport.reduce((s, p) => s + p.mandates, 0)})</span>` : ""}</td>
             <td>${escapeHtml(item.typeLabel)}</td>
           </tr>
         `;

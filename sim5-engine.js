@@ -772,14 +772,37 @@ function simulate(userParams, N) {
         agg.govTypeCounts[result.govType] = (agg.govTypeCounts[result.govType] || 0) + 1;
 
         if (!agg.coalitionCounts[result.coalition]) {
-          // Identify support parties: forståelsespapir + likely-aligned NA seats
-          const supportParties = (result.support || []).map(s => s.party);
+          const govIds = result.government;
+          const govSet = new Set(govIds);
+          const govSeats = govIds.reduce((s, id) => s + (mandates[id] || 0), 0);
           const govSide = getGovSide(result);
-          for (const seat of NA_SEATS) {
-            // Use base alignment probabilities, not per-iteration draw
-            const pAligned = govSide === "red" ? seat.pRed : govSide === "blue" ? seat.pBlue : 0;
-            if (pAligned + seat.pFlexible >= 0.50) {
-              supportParties.push(seat.id);
+
+          // 1. Forståelsespapir parties (EL)
+          const forstPartier = (result.support || []).map(s => s.party);
+
+          // 2. Loose mainland støttepartier: same-bloc, not in govt, not forst
+          const looseSupport = [];
+          const forstSet = new Set(forstPartier);
+          for (const party of PARTIES_LIST) {
+            if (govSet.has(party.id) || forstSet.has(party.id)) continue;
+            if (party.bloc === govSide && party.participationPref) {
+              // Include if they'd plausibly support (same bloc, not demanding govt)
+              const govPref = party.participationPref.government || 0;
+              if (govPref < 0.50) looseSupport.push(party.id);
+            }
+          }
+
+          // 3. NA seats — only when they help reach 90
+          const naSupport = [];
+          const forstSeats = forstPartier.reduce((s, id) => s + ((PARTIES_MAP[id] || {}).mandates || 0), 0);
+          const looseSeats = looseSupport.reduce((s, id) => s + ((PARTIES_MAP[id] || {}).mandates || 0), 0);
+          const withMainland = govSeats + forstSeats + looseSeats;
+          if (withMainland < 90) {
+            for (const seat of NA_SEATS) {
+              const pAligned = govSide === "red" ? seat.pRed : govSide === "blue" ? seat.pBlue : 0;
+              if (pAligned + seat.pFlexible >= 0.50) {
+                naSupport.push(seat.id);
+              }
             }
           }
 
@@ -788,7 +811,9 @@ function simulate(userParams, N) {
             pPassageSum: 0,
             platform: result.platform,
             govProfile: result.govProfile,
-            support: supportParties
+            support: forstPartier,
+            looseSupport,
+            naSupport
           };
         }
 
@@ -832,7 +857,9 @@ function simulate(userParams, N) {
       avgPPassage: +(data.pPassageSum / data.count).toFixed(3),
       platform: data.platform,
       govProfile: data.govProfile,
-      support: data.support || []
+      support: data.support || [],
+      looseSupport: data.looseSupport || [],
+      naSupport: data.naSupport || []
     }));
 
   const formed = iterations - agg.noGovCount;
