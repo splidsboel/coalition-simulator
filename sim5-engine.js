@@ -410,8 +410,12 @@ function frederiksenBonus(coalition, redPreference) {
 }
 
 function determineForstaaelsespapir(government, outsideParties, platform, cfg) {
+  // Forståelsespapir negotiation is probabilistic: P(deal) = average
+  // tolerateInGov across ALL government parties, not just the most willing.
+  // This reflects that M's "no far-left dependency" red line creates real
+  // friction even when SF champions EL's inclusion.
   const offers = [];
-  const threshold = cfg.forstMinAcceptance != null ? cfg.forstMinAcceptance : 0.30;
+  const minThreshold = cfg.forstMinAcceptance != null ? cfg.forstMinAcceptance : 0.20;
   const normalizedOutside = outsideParties.map(entry => (typeof entry === "string" ? entry : entry && entry.id)).filter(Boolean);
 
   for (const partyId of normalizedOutside) {
@@ -423,17 +427,16 @@ function determineForstaaelsespapir(government, outsideParties, platform, cfg) {
       continue;
     }
 
-    let accepted = false;
+    // Average tolerateInGov across all government parties
+    let tolerateSum = 0;
     for (const govId of government) {
       const govParty = PARTIES_MAP[govId];
-      const tolerate = relationshipValue(govParty, partyId, "tolerateInGov", 0);
-      if (tolerate > threshold) {
-        accepted = true;
-        break;
-      }
+      tolerateSum += relationshipValue(govParty, partyId, "tolerateInGov", 0);
     }
+    const avgTolerate = government.length > 0 ? tolerateSum / government.length : 0;
 
-    if (accepted) {
+    // Probabilistic: must exceed minimum AND pass stochastic draw
+    if (avgTolerate >= minThreshold && Math.random() < avgTolerate) {
       offers.push({ party: partyId, type: "forstaaelsespapir" });
     }
   }

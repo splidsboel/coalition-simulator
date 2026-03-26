@@ -57,11 +57,11 @@ const S = {
       tolerateInGov: 0.00,
       asPM: 0.00
     },
-    // ADDED: S needs a view on EL as external support. S's brief says it has "not publicly vetoed any party from potential support arrangements," and EL's brief identifies the likeliest equilibrium as S+SF+M+RV with EL outside on a forståelsespapir (S.md; EL.md).
+    // ADDED: S needs a view on EL as external support. S's brief says it has "not publicly vetoed any party from potential support arrangements," and EL's brief identifies the likeliest equilibrium as S+SF+M+RV with EL outside on a forståelsespapir (S.md; EL.md). tolerateInGov raised from 0: S negotiated the 2019-22 forståelsespapir with EL — S clearly tolerates EL as external support.
     EL: {
       inGov: 0.35,
       asSupport: 0.82,
-      tolerateInGov: 0.00,
+      tolerateInGov: 0.75,
       asPM: 0.00
     },
     // ADDED: S needs a view on ALT as external support for the same reason. ALT's brief says it wants to "pull a red government in a green, green direction" and commentators place ALT as an external support party rather than a cabinet partner (ALT.md).
@@ -298,11 +298,11 @@ const M = {
       tolerateInGov: 0.00,
       asPM: 0.00
     },
-    // M's brief makes the "no far-left dependency" line explicit, but the consensus outcome (S+SF+M+RV with EL external support) requires exactly this. Experts treat the red line as a negotiating position, not binding (M.md).
+    // M's brief makes the "no far-left dependency" line explicit, but the consensus outcome (S+SF+M+RV with EL external support) requires exactly this. Experts treat the red line as a negotiating position, not binding (M.md). tolerateInGov raised to 0.35: M reluctantly accepts EL as external support because the alternative (no government or pure red) is worse.
     EL: {
       inGov: 0.00,
       asSupport: 0.42,
-      tolerateInGov: 0.00,
+      tolerateInGov: 0.35,
       asPM: 0.00
     },
     // ALT is the milder of the two left-flank support parties. The consensus outcome places ALT outside supporting an M-containing government. Raised to reflect that experts treat this as likely (ALT.md; M.md).
