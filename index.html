@@ -1081,7 +1081,7 @@
         redPreference: 0.5,
         mPmPref: "neutral",
         formateurOverride: "red",
-        maxFormationRounds: 3,
+        maxFormationRounds: 1,
         viabilityThreshold: 0.7,
         N: 500,
         mDemandGov: true,
@@ -1100,7 +1100,7 @@
         "Bred midte": { redPreference: 0.3, flexibility: 0.1 },
         "Rød blok": { redPreference: 0.8 },
         "Løkke → blå": { mPmPref: "V", mDemandGov: false },
-        "Maksimalt pres": { flexibility: 0.3, maxFormationRounds: 5 },
+        "Maksimalt pres": { flexibility: 0.3, maxFormationRounds: 3 },
         "SF blokerer M": { flexibility: -0.2 }
       };
       const PRESET_DESCRIPTIONS = {
@@ -1472,7 +1472,7 @@ onmessage = function(e) {
                 <span class="value-pill" id="control-maxFormationRounds-value">3</span>
               </div>
               <p class="field-desc">Antal forsøg inden for Frederiksens formatørmandat. Hvert forsøg stiger fleksibiliteten lidt — partierne bliver mere pragmatiske efterhånden. Hvis alle forsøg fejler, overgår mandatet til en blå formatør med lavere viabilitetstærskel (0,10).</p>
-              <input type="range" id="control-maxFormationRounds" data-control="maxFormationRounds" min="1" max="5" step="1" value="3">
+              <input type="range" id="control-maxFormationRounds" data-control="maxFormationRounds" min="1" max="5" step="1" value="1">
             </div>
 
             <div class="field">

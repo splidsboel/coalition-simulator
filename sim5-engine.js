@@ -857,21 +857,21 @@ function selectGovernment(mandates, naAlignments, cfg, coalitions) {
   const blueFirst = cfg.formateurOverride === "blue";
 
   if (blueFirst) {
-    // Blue formateur rounds with increasing flexibility
+    // Blue formateur rounds: blue faces tough arithmetic, uses desperation threshold
     for (let round = 0; round < maxRedRounds; round++) {
       const roundFlex = Math.min(0.5, (cfg.flexibility || 0) + round * flexIncrement);
       const roundCfg = { ...cfg, flexibility: roundFlex, _naAlignments: naAlignments };
-      const result = tryGroup(blueLed, blueBonus, roundCfg, viabilityThreshold)
-        || tryGroup(mLed, mLedBonus, roundCfg, viabilityThreshold);
+      const result = tryGroup(blueLed, blueBonus, roundCfg, blueViabilityThreshold)
+        || tryGroup(mLed, mLedBonus, roundCfg, blueViabilityThreshold);
       if (result) {
         result.formationRound = round + 1;
         result.formateurOrder = "blå først";
         return result;
       }
     }
-    // Fallback: S formateur with lower threshold
+    // Fallback: S formateur with normal threshold
     const fallbackCfg = { ...cfg, flexibility: (cfg.flexibility || 0) + maxRedRounds * flexIncrement, _naAlignments: naAlignments };
-    const result = tryGroup(sLed, sLedBonus, fallbackCfg, blueViabilityThreshold);
+    const result = tryGroup(sLed, sLedBonus, fallbackCfg, viabilityThreshold);
     if (result) {
       result.formationRound = maxRedRounds + 1;
       result.formateurOrder = "rød først";
@@ -997,7 +997,7 @@ function buildConfig(userParams) {
     // Frederiksen appointed as kongelig undersøger (March 2026): red forms first.
     formateurOverride: "red",
     redPreference: 0.5,
-    maxFormationRounds: 3,
+    maxFormationRounds: 1,
     flexIncrement: 0.05,
     voteSensitivity: 4.0,
     formateurPull: 0.3,
