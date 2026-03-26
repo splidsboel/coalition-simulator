@@ -869,7 +869,8 @@ function buildConfig(userParams) {
     "elInformalRate",
     "elCentristPenalty",
     "elForstBase",
-    "parsimonySpread"
+    "parsimonySpread",
+    "mdfCooperationProb"
   ];
 
   for (const key of passthroughKeys) {
@@ -907,13 +908,18 @@ function simulate(userParams, N) {
   };
 
   // Determine which parameters the user explicitly changed from defaults.
-  // When a user moves a slider, they're expressing a view — the CI should
+  // When a user moves a slider (or a sweep injects a value), the CI should
   // not override it. CI only applies to parameters left at their defaults.
-  const CI_DEFAULTS = { mElTolerate: 0.35, viabilityThreshold: 0.70 };
-  const userSet = {
-    mElTolerate: cfg.mElTolerate != null && Math.abs(cfg.mElTolerate - CI_DEFAULTS.mElTolerate) > 0.001,
-    viabilityThreshold: Math.abs(cfg.viabilityThreshold - CI_DEFAULTS.viabilityThreshold) > 0.001
+  const CI_DEFAULTS = {
+    mElTolerate: 0.35, viabilityThreshold: 0.70, passageWeight: 0.65,
+    elInformalRate: 0.45, elCentristPenalty: 0.08, elForstBase: 0.93,
+    rescueBase: 0.10, oppositionAbstention: 0.30, distPenalty: 1.50,
+    parsimonySpread: 1.0, mdfCooperationProb: 0.12
   };
+  function isUserSet(key) {
+    if (CI_DEFAULTS[key] == null) return false;
+    return cfg[key] != null && Math.abs(cfg[key] - CI_DEFAULTS[key]) > 0.001;
+  }
 
   for (let i = 0; i < iterations; i++) {
     // Per-iteration confidence-interval variation
@@ -926,14 +932,17 @@ function simulate(userParams, N) {
 
     // M→EL tolerateInGov CI: skip if user set the slider
     const _savedMEL = PARTIES_MAP.M.relationships.EL.tolerateInGov;
-    if (!userSet.mElTolerate) {
+    if (!isUserSet("mElTolerate")) {
       PARTIES_MAP.M.relationships.EL.tolerateInGov = clamp01(normDraw(_savedMEL, 0.10));
     }
 
     // M↔DF cooperation probability: continuous draw replacing the old
     // discrete 12% switch. Genuine uncertainty about whether pragmatic
     // M-DF cooperation is possible in any given negotiation.
-    const _dfRelaxProb = Math.max(0, Math.min(0.30, normDraw(0.12, 0.04)));
+    const _mdfBase = cfg.mdfCooperationProb != null ? cfg.mdfCooperationProb : 0.12;
+    const _dfRelaxProb = isUserSet("mdfCooperationProb")
+      ? _mdfBase
+      : Math.max(0, Math.min(0.30, normDraw(_mdfBase, 0.04)));
     let _dfRelaxed = false;
     const _savedMDF = {};
     if (Math.random() < _dfRelaxProb) {
@@ -952,46 +961,36 @@ function simulate(userParams, N) {
       PARTIES_MAP.DF.relationships.M.inGov = 0.08;
     }
 
-    // Viability threshold CI: skip if user set the slider
-    const _iterViability = userSet.viabilityThreshold
+    // All CI-varied parameters: draw from N(mean, sigma) unless user/sweep
+    // set a non-default value. The isUserSet() guard ensures that slider
+    // positions and sweep-injected values are respected exactly.
+    const _iterViability = isUserSet("viabilityThreshold")
       ? cfg.viabilityThreshold
       : Math.max(0.50, Math.min(0.85, normDraw(0.70, 0.06)));
-
-    // Passage-quality tradeoff CI: how much does budget passage
-    // dominate formateur choice vs coalition quality?
-    // Structural uncertainty — we don't know how formateurs weigh this.
-    const _iterPassageWeight = Math.max(0.50, Math.min(0.90, normDraw(0.65, 0.08)));
-
-    // EL informal support rate CI: genuine uncertainty about EL's
-    // willingness to support red governments without forståelsespapir.
-    // ~linear effect on red-bloc viability calculations.
-    const _iterElInformal = Math.max(0.20, Math.min(0.70, normDraw(0.45, 0.08)));
-
-    // EL centrist penalty CI: how much EL's support drops per non-red
-    // government partner. ~linear over the small integer range (1-3 partners).
-    const _iterElCentrist = Math.max(0.02, Math.min(0.16, normDraw(0.08, 0.02)));
-
-    // EL forståelsespapir base rate CI: calibrated from 3/3 votes under
-    // Frederiksen I, but tiny sample. Narrow CI reflects high confidence
-    // in direction, moderate uncertainty in precise level.
-    const _iterElForstBase = Math.max(0.80, Math.min(0.98, normDraw(0.93, 0.03)));
-
-    // Cross-bloc rescue base CI: ~2-3 historical pivots in 50 years.
-    // Narrow CI — we're fairly sure it's low, less sure how low.
-    const _iterRescueBase = Math.max(0.03, Math.min(0.25, normDraw(0.10, 0.03)));
-
-    // Opposition abstention CI: the norm exists (S abstained on FL 1989)
-    // but the precise ratio is uncertain.
-    const _iterAbstention = Math.max(0.10, Math.min(0.60, normDraw(0.30, 0.05)));
-
-    // Ideological distance penalty CI: structural choice, no calibration
-    // target. Wide CI reflects genuine uncertainty about how much formateurs
-    // weigh ideological coherence.
-    const _iterDistPenalty = Math.max(0.5, Math.min(2.5, normDraw(1.50, 0.15)));
-
-    // Parsimony spread CI: how strongly do formateurs prefer fewer parties?
-    // Moderate CI — direction is clear, magnitude uncertain.
-    const _iterParsimony = Math.max(0.3, Math.min(1.5, normDraw(1.0, 0.15)));
+    const _iterPassageWeight = isUserSet("passageWeight")
+      ? cfg.passageWeight
+      : Math.max(0.50, Math.min(0.90, normDraw(0.65, 0.08)));
+    const _iterElInformal = isUserSet("elInformalRate")
+      ? cfg.elInformalRate
+      : Math.max(0.20, Math.min(0.70, normDraw(0.45, 0.08)));
+    const _iterElCentrist = isUserSet("elCentristPenalty")
+      ? cfg.elCentristPenalty
+      : Math.max(0.02, Math.min(0.16, normDraw(0.08, 0.02)));
+    const _iterElForstBase = isUserSet("elForstBase")
+      ? cfg.elForstBase
+      : Math.max(0.80, Math.min(0.98, normDraw(0.93, 0.03)));
+    const _iterRescueBase = isUserSet("rescueBase")
+      ? cfg.rescueBase
+      : Math.max(0.03, Math.min(0.25, normDraw(0.10, 0.03)));
+    const _iterAbstention = isUserSet("oppositionAbstention")
+      ? cfg.oppositionAbstention
+      : Math.max(0.10, Math.min(0.60, normDraw(0.30, 0.05)));
+    const _iterDistPenalty = isUserSet("distPenalty")
+      ? cfg.distPenalty
+      : Math.max(0.5, Math.min(2.5, normDraw(1.50, 0.15)));
+    const _iterParsimony = isUserSet("parsimonySpread")
+      ? cfg.parsimonySpread
+      : Math.max(0.3, Math.min(1.5, normDraw(1.0, 0.15)));
 
     try {
       const naAlignments = drawNAAlignments(cfg);
