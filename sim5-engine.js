@@ -180,11 +180,18 @@ function blocBudgetVote(partyId, coalition, cfg) {
 function evalNABudgetVote(seatId, coalition, cfg) {
   // Strong norm: NA mandates never participate in toppling a government.
   // They either vote FOR or abstain — voting against is near-zero.
-  // This reflects that Greenlandic and Faroese MFs focus on constituency
-  // issues and avoid taking sides in Danish bloc politics on confidence matters.
+  // Exception: Greenlandic seats actively oppose governments containing DF,
+  // whose proposal for a Danish referendum on Greenlandic independence is
+  // an existential sovereignty threat (both GL-NAL and GL-IA briefs).
   const alignments = cfg._naAlignments || cfg.naAlignments || {};
   const alignment = alignments[seatId] || "flexible";
   const govSide = getGovSide(coalition);
+  const government = coalition.government || [];
+
+  // Greenlandic DF exception: break abstain norm on sovereignty grounds
+  if ((seatId === "GL-NAL" || seatId === "GL-IA") && government.includes("DF")) {
+    return { pFor: 0.02, pAbstain: 0.18, pAgainst: 0.80 };
+  }
 
   if (alignment === "red") {
     if (govSide === "red") return { pFor: 0.80, pAbstain: 0.18, pAgainst: 0.02 };
