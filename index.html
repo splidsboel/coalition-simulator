@@ -1534,7 +1534,7 @@ onmessage = function(e) {
                 <strong style="color:#333;">Mindretalsregeringer:</strong> De fleste danske regeringer er mindretalsregeringer — det er normalt, ikke en fejl. Modellen viser hvilke støttepartier der sandsynligvis sikrer finansloven. Mindretalsregeringer med færre partier har en fleksibilitetsfordel (kan forhandle med forskellige partnere ad hoc).
               </p>
               <p class="field-desc" style="color:#555;">
-                <strong style="color:#333;">Gridlock:</strong> "Ingen regering" opstår kun når alle koalitioner fejler i alle runder. Med rød+M = 98 mandater er dette sjældent — hæv viabilitetstærsklen til 0,80+ og/eller sænk forhandlingsrunder for at udforske gridlock.
+                <strong style="color:#333;">Gridlock:</strong> "Ingen regering" opstår når S-formatøren ikke kan danne regering (alle koalitioner fejler dyadacceptance) og den blå formatør heller ikke lykkes. Hæv viabilitetstærsklen for at udforske gridlock.
               </p>
               <p class="field-desc" style="color:#555;">
                 <strong style="color:#333;">Transparens:</strong> Al kode, partidata og modelparametre er open source og kan inspiceres på <a href="https://github.com/chdausgaard/coalition-simulator" target="_blank" style="color:var(--accent);">GitHub</a>. Parternes positioner og relationer er dokumenteret i <code>sim5-parties.js</code>, simuleringsmotoren i <code>sim5-engine.js</code>.
@@ -1582,15 +1582,6 @@ onmessage = function(e) {
               </div>
               <p class="field-desc">Hvor meget stiger fleksibiliteten pr. forhandlingsrunde. Højere = partierne giver sig hurtigere efter.</p>
               <input type="range" id="control-flexIncrement" data-control="flexIncrement" min="0" max="0.15" step="0.01" value="0.05">
-            </div>
-
-            <div class="field">
-              <div class="field-header">
-                <span class="field-label">Afstemningsfølsomhed</span>
-                <span class="value-pill" id="control-voteSensitivity-value">4,0</span>
-              </div>
-              <p class="field-desc">Sigmoid-stejlhed i finanslovsafstemningen. Lav = afstemninger er mere tilfældige. Høj = partipositioner determinerer afstemning mere skarpt.</p>
-              <input type="range" id="control-voteSensitivity" data-control="voteSensitivity" min="1" max="8" step="0.5" value="4">
             </div>
 
             <div class="field">

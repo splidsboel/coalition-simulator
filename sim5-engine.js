@@ -24,7 +24,6 @@ const {
   PARTIES_MAP,
   PARTIES_LIST,
   isWithinRange,
-  distancePastFloor,
   policyDistance
 } = sim5Parties;
 
@@ -60,11 +59,6 @@ const HISTORICAL_PRECEDENTS = {
 };
 
 const SIZE_PENALTIES = [1.0, 0.96, 0.90, 0.82];
-const DP_MAX = 180;
-const DP_SIZE = DP_MAX * DP_MAX;
-
-let _dpA = new Float64Array(DP_SIZE);
-let _dpB = new Float64Array(DP_SIZE);
 
 function clamp01(v) {
   return Math.max(0, Math.min(1, v));
@@ -79,182 +73,11 @@ function normDraw(mean, sigma) {
   return mean + sigma * Math.sqrt(-2 * Math.log(u1)) * Math.cos(2 * Math.PI * u2);
 }
 
-function uniformDraw(lo, hi) {
-  return lo + Math.random() * (hi - lo);
-}
-
-function flexDraw(lo, hi, flexibility) {
-  if (!flexibility) return uniformDraw(lo, hi);
-  const center = 0.5 + flexibility;
-  const u1 = Math.random();
-  const u2 = Math.random();
-  const raw = (u1 + u2) / 2;
-  const shifted = Math.max(0, Math.min(1, raw + (center - 0.5)));
-  return lo + shifted * (hi - lo);
-}
-
-function partyFlexDraw(lo, hi, partyId, globalFlex) {
-  const party = PARTIES_MAP[partyId];
-  const harshness = party ? party.globalHarshness || 0 : 0;
-  const effectiveFlex = Math.max(-0.5, Math.min(0.5, (0.5 - harshness) + (globalFlex || 0)));
-  return flexDraw(lo, hi, effectiveFlex);
-}
-
-// Legacy: retained for API compatibility
-function runDP(govMandates, parties, minForVotes, initAgainst) {
-  const a0 = initAgainst || 0;
-  let dp = _dpA;
-  let dpN = _dpB;
-  dp.fill(0);
-
-  dp[govMandates * DP_MAX + a0] = 1.0;
-  let fMin = govMandates;
-  let fMax = govMandates;
-  let aMin = a0;
-  let aMax = a0;
-
-  for (let pi = 0; pi < parties.length; pi++) {
-    const party = parties[pi];
-    const m = party.m;
-    const pF = party.pFor;
-    const pAb = party.pAbstain;
-    const pAg = party.pAgainst;
-
-    const newFMax = Math.min(fMax + m, DP_MAX - 1);
-    const newAMax = Math.min(aMax + m, DP_MAX - 1);
-
-    for (let f = fMin; f <= newFMax; f++) {
-      const row = f * DP_MAX;
-      for (let a = aMin; a <= newAMax; a++) {
-        dpN[row + a] = 0;
-      }
-    }
-
-    for (let f = fMin; f <= fMax; f++) {
-      const row = f * DP_MAX;
-      for (let a = aMin; a <= aMax; a++) {
-        const prob = dp[row + a];
-        if (prob < 1e-15) continue;
-
-        const fNew = f + m;
-        if (fNew < DP_MAX) dpN[fNew * DP_MAX + a] += prob * pF;
-
-        const aNew = a + m;
-        if (aNew < DP_MAX) dpN[row + aNew] += prob * pAg;
-
-        dpN[row + a] += prob * pAb;
-      }
-    }
-
-    const tmp = dp;
-    dp = dpN;
-    dpN = tmp;
-    fMax = newFMax;
-    aMax = newAMax;
-  }
-
-  // Danish negative parliamentarism: a government survives as long as a
-  // majority (90 of 179) does NOT vote against. The passage condition is:
-  // 1. forVotes >= minForVotes (default 70): minimum base of support
-  // 2. againstVotes < 90: no absolute majority actively opposes
-  // This replaces the old forVotes > againstVotes check, which made it
-  // nearly impossible for minority governments to survive when opposition
-  // parties vote against (as they should) rather than abstain.
-  const mistillidLimit = 90;
-  let pPassage = 0;
-  const startF = Math.max(fMin, minForVotes);
-  for (let f = startF; f <= fMax; f++) {
-    const row = f * DP_MAX;
-    const aLimit = Math.min(mistillidLimit - 1, aMax);
-    for (let a = aMin; a <= aLimit; a++) {
-      pPassage += dp[row + a];
-    }
-  }
-
-  _dpA = dp;
-  _dpB = dpN;
-  return pPassage;
-}
-
 function relationshipValue(party, otherId, key, fallback) {
   if (!party || !party.relationships || !otherId) return fallback;
   const rel = party.relationships[otherId];
   if (!rel || rel[key] == null) return fallback;
   return rel[key];
-}
-
-function splitVote(pFor, abstainShare) {
-  const pForClamped = clamp01(pFor);
-  const share = clamp01(abstainShare);
-  const remainder = 1 - pForClamped;
-  const pAbstain = remainder * share;
-  return {
-    pFor: pForClamped,
-    pAbstain,
-    pAgainst: Math.max(0, 1 - pForClamped - pAbstain)
-  };
-}
-
-function computePositionBasedPFor(party, platform, coalition, cfg) {
-  let supportScore = 0;
-  let totalWeight = 0;
-
-  for (const dimension of DIMENSIONS) {
-    const position = party.positions[dimension];
-    const weight = position.weight;
-    const dist = Math.abs((platform[dimension] || 0) - position.ideal) / SCALE_MAX[dimension];
-
-    if (isWithinRange(platform[dimension], position)) {
-      supportScore += weight * (1 - dist * 0.6);
-    } else {
-      supportScore -= weight * (0.5 + distancePastFloor(platform[dimension], position, dimension));
-    }
-
-    totalWeight += weight;
-  }
-
-  if (totalWeight === 0) return 0.5;
-
-  const normalized = supportScore / totalWeight;
-  const sensitivity = cfg.voteSensitivity || 4.0;
-  let pFor = 1 / (1 + Math.exp(-sensitivity * normalized));
-  const govSide = getGovSide(coalition);
-
-  if (party.bloc === govSide) {
-    pFor *= 1.15;
-  } else if (party.bloc !== "swing" && govSide !== "swing" && party.bloc !== govSide) {
-    pFor *= 0.70;
-  }
-
-  return clamp01(pFor);
-}
-
-function computeAbstainShare(party, coalition) {
-  const members = coalition && Array.isArray(coalition.government) ? coalition.government : [];
-  if (members.length === 0) return 0.5;
-
-  let totalDist = 0;
-  let count = 0;
-
-  for (const id of members) {
-    const govParty = PARTIES_MAP[id];
-    if (!govParty) continue;
-    totalDist += policyDistance(party, govParty);
-    count++;
-  }
-
-  const avgDist = count ? totalDist / count : 0.5;
-  let share = clamp01(0.85 - avgDist * 0.8);
-
-  // Parties that reject the PM lean toward voting against rather than
-  // abstaining, but with a moderate floor — the original raw pmAcceptance
-  // multiplier was too harsh and made minority governments impossible.
-  if (coalition.leader) {
-    const pmAcceptance = relationshipValue(party, coalition.leader, "asPM", 1.0);
-    share *= Math.max(0.30, pmAcceptance);
-  }
-
-  return share;
 }
 
 function blocBudgetVote(partyId, coalition, cfg) {
@@ -354,113 +177,6 @@ function blocBudgetVote(partyId, coalition, cfg) {
   return { pFor, pAbstain, pAgainst };
 }
 
-function evalBudgetVote(partyId, coalition, platform, cfg) {
-  const party = PARTIES_MAP[partyId];
-  if (!party) {
-    return { pFor: 0, pAbstain: 0.5, pAgainst: 0.5 };
-  }
-
-  if (party.pmDemand && coalition.leader !== partyId) {
-    return { pFor: 0, pAbstain: 0.02, pAgainst: 0.98 };
-  }
-
-  // M demands PM (cfg toggle, default off): M votes against any government
-  // where Løkke is not PM.
-  if (partyId === "M" && cfg.mDemandPM && coalition.leader !== "M") {
-    return { pFor: 0, pAbstain: 0.02, pAgainst: 0.98 };
-  }
-
-  if (partyId === "M" && cfg.mDemandGov && !coalition.government.includes("M")) {
-    return { pFor: 0, pAbstain: 0.02, pAgainst: 0.98 };
-  }
-
-  // S demands government participation (default on): S votes against any
-  // government it is not part of, just like M's mDemandGov.
-  const sDemandGov = cfg.sDemandGov != null ? cfg.sDemandGov : true;
-  if (partyId === "S" && sDemandGov && !coalition.government.includes("S")) {
-    return { pFor: 0, pAbstain: 0.02, pAgainst: 0.98 };
-  }
-
-  if (coalition.government.includes(partyId)) {
-    let pFor = 0.98;
-
-    for (const dimension of DIMENSIONS) {
-      const position = party.positions[dimension];
-      if (position.weight >= 0.7 && !isWithinRange(platform[dimension], position)) {
-        pFor *= 0.85;
-      }
-    }
-
-    return {
-      pFor,
-      pAbstain: (1 - pFor) * 0.75,
-      pAgainst: (1 - pFor) * 0.25
-    };
-  }
-
-  const forstPosition = party.positions.forstaaelsespapir;
-  if (forstPosition.weight >= 0.95 && forstPosition.ideal === 0) {
-    const hasForst = Array.isArray(coalition.support)
-      && coalition.support.some(entry => entry.party === partyId && entry.type === "forstaaelsespapir");
-    let pFor;
-    const flexibility = 0.5 - (party.globalHarshness || 0);
-
-    if (hasForst) {
-      pFor = flexDraw(0.80, 0.95, flexibility);
-      const immigration = party.positions.immigration;
-      if (
-        immigration.weight > 0.7 &&
-        Math.abs((platform.immigration || 0) - immigration.ideal) > 2
-      ) {
-        pFor *= 0.85;
-      }
-    } else {
-      pFor = flexDraw(0.02, 0.10, flexibility);
-    }
-
-    // Apply relationship modifiers: even with a forståelsespapir, a support
-    // party's willingness to vote for the budget is tempered by who is actually
-    // in the government. EL won't blindly support a government containing
-    // parties it deeply opposes (e.g. M) at full strength.
-    // Use sqrt-softened product: a formal written agreement dampens but doesn't
-    // eliminate discomfort. Without softening, moderate values like 0.68 × 0.55
-    // × 0.90 = 0.34 would nearly kill support even for plausible arrangements.
-    let relMod = relationshipValue(party, coalition.leader, "asPM", 1.0);
-    for (const member of coalition.government) {
-      if (member === coalition.leader) continue;
-      relMod *= relationshipValue(party, member, "tolerateInGov", 1.0);
-    }
-    pFor *= Math.sqrt(relMod);
-
-    return splitVote(pFor, computeAbstainShare(party, coalition));
-  }
-
-  let pFor = computePositionBasedPFor(party, platform, coalition, cfg);
-
-  // Participation demand penalty: parties that strongly demand cabinet seats
-  // reduce their support when excluded, to pressure the formateur into including them.
-  // SF "government or nothing," RV "I'm a power person," etc.
-  const govPref = party.participationPref ? party.participationPref.government : 0;
-  if (govPref >= 0.50) {
-    const pmAcceptance = relationshipValue(party, coalition.leader, "asPM", 1.0);
-    if (pmAcceptance > 0.20) {
-      // This is a government they'd want to be in — penalize exclusion
-      // Quadratic: stronger demand = much steeper penalty
-      const exclusionFactor = Math.max(0.05, 1 - govPref * govPref);
-      pFor *= exclusionFactor;
-    }
-  }
-
-  pFor *= relationshipValue(party, coalition.leader, "asPM", 1.0);
-
-  for (const member of coalition.government) {
-    if (member === coalition.leader) continue;
-    pFor *= relationshipValue(party, member, "tolerateInGov", 1.0);
-  }
-
-  return splitVote(pFor, computeAbstainShare(party, coalition));
-}
-
 function evalNABudgetVote(seatId, coalition, cfg) {
   const alignments = cfg._naAlignments || cfg.naAlignments || {};
   const alignment = alignments[seatId] || "flexible";
@@ -507,46 +223,6 @@ function confidenceCheck(government, mandates, cfg) {
   }
 
   return { passes: opposition < 90, opposition };
-}
-
-function identifyConditioningPair(coalition, nonGovParties, cfg) {
-  const govSide = getGovSide(coalition);
-  const pivotParty = nonGovParties.find(entry => entry.id === "M") || null;
-
-  if (!pivotParty) return null;
-
-  if (govSide === "red" || govSide === "center") {
-    const flankParties = nonGovParties.filter(entry => entry.id === "EL" || entry.id === "ALT");
-    if (flankParties.length > 0) {
-      return {
-        flankParties,
-        pivotParty,
-        penalty: cfg.elMPenalty || 0.70,
-        boost: cfg.elMBoost || 1.10
-      };
-    }
-  }
-
-  if (govSide === "blue") {
-    const flankParties = nonGovParties.filter(entry => entry.id === "DF");
-    if (flankParties.length > 0) {
-      return {
-        flankParties,
-        pivotParty,
-        penalty: cfg.dfMPenalty || 0.75,
-        boost: cfg.dfMBoost || 1.15
-      };
-    }
-  }
-
-  return null;
-}
-
-function adjustVoteEntry(entry, pForMultiplier) {
-  const pFor = clamp01(entry.pFor * pForMultiplier);
-  const remaining = Math.max(0, 1 - entry.pFor);
-  const abstainShare = remaining > 1e-12 ? entry.pAbstain / remaining : 0;
-  return splitVote(pFor, abstainShare);
 }
 
 function computePpassage(coalition, platform, mandates, cfg) {
@@ -720,36 +396,6 @@ function frederiksenBonus(coalition, redPreference) {
   }
 
   return (1.0 + midterBase - centristEdge * 0.4) * noise;
-}
-
-function determineFormateurOrder(mandates, cfg) {
-  // Manual override: user can force formateur order
-  if (cfg.formateurOverride === "red") return false;   // red first
-  if (cfg.formateurOverride === "blue") return true;   // blue first
-
-  const blueBloc = (mandates.V || 0) + (mandates.LA || 0) + (mandates.KF || 0)
-    + (mandates.DD || 0) + (mandates.DF || 0) + (mandates.BP || 0);
-  const redBloc = (mandates.S || 0) + (mandates.SF || 0) + (mandates.EL || 0)
-    + (mandates.ALT || 0) + (mandates.RV || 0);
-
-  let effectivePBF;
-  if (cfg._pBlueFormateurExplicit) {
-    effectivePBF = cfg.pBlueFormateur;
-  } else if (blueBloc >= 90) {
-    effectivePBF = 0.95;
-  } else if (redBloc >= 90) {
-    effectivePBF = 0.02;
-  } else {
-    const mPref = cfg.mPmPref || "neutral";
-    const mBlueBloc = blueBloc + (mandates.M || 0);
-    if (mPref === "V" && mBlueBloc >= 90) effectivePBF = 0.55;
-    else if (mPref === "V") effectivePBF = 0.35;
-    else if (mPref === "M") effectivePBF = 0.20;
-    else if (mPref === "neutral") effectivePBF = 0.12;
-    else effectivePBF = 0.05;
-  }
-
-  return Math.random() < effectivePBF;
 }
 
 function determineForstaaelsespapir(government, outsideParties, platform, cfg) {
@@ -1013,13 +659,11 @@ function buildConfig(userParams) {
     precedentWeight: 0,
     mDemandGov: true,
     sDemandGov: true,
-    mPmPref: "neutral",
     // Frederiksen appointed as kongelig undersøger (March 2026): red forms first.
     formateurOverride: "red",
     redPreference: 0.5,
     maxFormationRounds: 1,
     flexIncrement: 0.05,
-    voteSensitivity: 4.0,
     formateurPull: 0.3,
     floorThreshold: 0.7,
     mistillidThreshold: 0.10
@@ -1034,18 +678,7 @@ function buildConfig(userParams) {
     }
   }
 
-  if ((userParams.cfg || {}).pBlueFormateur != null || userParams.pBlueFormateur != null) {
-    cfg.pBlueFormateur = (userParams.cfg || {}).pBlueFormateur != null
-      ? userParams.cfg.pBlueFormateur
-      : userParams.pBlueFormateur;
-    cfg._pBlueFormateurExplicit = true;
-  }
-
   const passthroughKeys = [
-    "elMPenalty",
-    "elMBoost",
-    "dfMPenalty",
-    "dfMBoost",
     "forstMinAcceptance",
     "connectedThreshold",
     "mwccFullBonus",
@@ -1109,16 +742,12 @@ function simulate(userParams, N) {
       PARTIES_MAP.DF.relationships.M.inGov = 0.08;
     }
 
-    // M PM preference variation (Løkke genuinely uncertain)
-    const _mRoll = Math.random();
-    const _iterMPmPref = _mRoll < 0.40 ? "neutral" : _mRoll < 0.70 ? "S" : "V";
-
     // Viability threshold CI
     const _iterViability = Math.max(0.50, Math.min(0.85, normDraw(0.70, 0.06)));
 
     try {
       const naAlignments = drawNAAlignments(cfg);
-      const iterCfg = { ...cfg, mPmPref: _iterMPmPref, viabilityThreshold: _iterViability };
+      const iterCfg = { ...cfg, viabilityThreshold: _iterViability };
       const result = selectGovernment(mandates, naAlignments, iterCfg, coalitions);
 
       if (!result) {
@@ -1209,8 +838,6 @@ function simulate(userParams, N) {
 
 const exportedSim5Engine = {
   simulate,
-  runDP,
-  evalBudgetVote,
   blocBudgetVote,
   computePpassage,
   scoreCoalition,
