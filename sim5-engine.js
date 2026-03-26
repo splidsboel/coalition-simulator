@@ -178,23 +178,27 @@ function blocBudgetVote(partyId, coalition, cfg) {
 }
 
 function evalNABudgetVote(seatId, coalition, cfg) {
+  // Strong norm: NA mandates never participate in toppling a government.
+  // They either vote FOR or abstain — voting against is near-zero.
+  // This reflects that Greenlandic and Faroese MFs focus on constituency
+  // issues and avoid taking sides in Danish bloc politics on confidence matters.
   const alignments = cfg._naAlignments || cfg.naAlignments || {};
   const alignment = alignments[seatId] || "flexible";
   const govSide = getGovSide(coalition);
 
   if (alignment === "red") {
-    if (govSide === "red") return { pFor: 0.78, pAbstain: 0.17, pAgainst: 0.05 };
-    if (govSide === "blue") return { pFor: 0.05, pAbstain: 0.17, pAgainst: 0.78 };
-    return { pFor: 0.42, pAbstain: 0.38, pAgainst: 0.20 };
+    if (govSide === "red") return { pFor: 0.80, pAbstain: 0.18, pAgainst: 0.02 };
+    if (govSide === "blue") return { pFor: 0.05, pAbstain: 0.93, pAgainst: 0.02 };
+    return { pFor: 0.42, pAbstain: 0.55, pAgainst: 0.03 };
   }
 
   if (alignment === "blue") {
-    if (govSide === "blue") return { pFor: 0.78, pAbstain: 0.17, pAgainst: 0.05 };
-    if (govSide === "red") return { pFor: 0.05, pAbstain: 0.17, pAgainst: 0.78 };
-    return { pFor: 0.42, pAbstain: 0.38, pAgainst: 0.20 };
+    if (govSide === "blue") return { pFor: 0.80, pAbstain: 0.18, pAgainst: 0.02 };
+    if (govSide === "red") return { pFor: 0.05, pAbstain: 0.93, pAgainst: 0.02 };
+    return { pFor: 0.42, pAbstain: 0.55, pAgainst: 0.03 };
   }
 
-  return { pFor: 0.40, pAbstain: 0.40, pAgainst: 0.20 };
+  return { pFor: 0.40, pAbstain: 0.57, pAgainst: 0.03 };
 }
 
 function confidenceCheck(government, mandates, cfg) {
