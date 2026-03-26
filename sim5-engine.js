@@ -107,10 +107,28 @@ function blocBudgetVote(partyId, coalition, cfg) {
   }
 
   // EL forståelsespapir path (empirically calibrated from calibration.md)
+  // 1C: Centrist/blue partners in government reduce EL's willingness to
+  // support — EL voted against FL 2014 under Thorning (S+SF+RV) due to
+  // centrist RV. Each non-red partner applies a penalty (~0.08).
   if (partyId === "EL") {
     const hasForst = Array.isArray(coalition.support)
       && coalition.support.some(s => s.party === "EL" && s.type === "forstaaelsespapir");
-    if (hasForst) return { pFor: 0.93, pAbstain: 0.05, pAgainst: 0.02 };
+    const centristCount = govIds.filter(id => {
+      const p = PARTIES_MAP[id];
+      return p && p.bloc !== "red";
+    }).length;
+
+    if (hasForst) {
+      const elForstRate = Math.max(0.50, 0.93 - centristCount * 0.08);
+      return { pFor: elForstRate, pAbstain: (1 - elForstRate) * 0.71, pAgainst: (1 - elForstRate) * 0.29 };
+    }
+    // 1B: Informal EL support tier — without forståelsespapir, EL still
+    // negotiated case-by-case under Thorning (voted FOR 2012, 2013, 2015).
+    // Red-side governments get an intermediate ~45% FOR rate; non-red get 3%.
+    if (govSide === "red") {
+      const informalRate = Math.max(0.15, 0.45 - centristCount * 0.08);
+      return { pFor: informalRate, pAbstain: (1 - informalRate) * 0.40, pAgainst: (1 - informalRate) * 0.60 };
+    }
     return { pFor: 0.03, pAbstain: 0.07, pAgainst: 0.90 };
   }
 
@@ -172,7 +190,27 @@ function blocBudgetVote(partyId, coalition, cfg) {
   }
 
   const pFor = Math.min(0.95, Math.max(0.01, base));
-  const pAgainst = Math.max(0.02, (1 - pFor) * 0.7);
+
+  // 1A: Opposition abstention norm — the largest opposite-bloc party
+  // (main opposition) tends to abstain rather than actively topple a
+  // government via budget rejection (historical Danish norm). Flip the
+  // against:abstain ratio for that party: ~30:70 instead of 70:30.
+  const oppositeBloc = govSide === "red" ? "blue" : (govSide === "blue" ? "red" : null);
+  let isMainOpposition = false;
+  if (oppositeBloc && party.bloc === oppositeBloc) {
+    let largestId = null;
+    let largestMandates = 0;
+    for (const p of PARTIES_LIST) {
+      if (p.bloc === oppositeBloc && !govIds.includes(p.id) && p.mandates > largestMandates) {
+        largestMandates = p.mandates;
+        largestId = p.id;
+      }
+    }
+    isMainOpposition = (partyId === largestId);
+  }
+
+  const againstShare = isMainOpposition ? 0.3 : 0.7;
+  const pAgainst = Math.max(0.02, (1 - pFor) * againstShare);
   const pAbstain = Math.max(0, 1 - pFor - pAgainst);
   return { pFor, pAbstain, pAgainst };
 }
