@@ -1357,6 +1357,14 @@ onmessage = function(e) {
                         <span class="toggle-track"></span>
                       </label>
                     </div>
+                    <div class="field">
+                      <div class="field-header">
+                        <span class="field-label">Tolerance for EL som støtteparti</span>
+                        <span class="value-pill" id="control-mElTolerate-value">0,35</span>
+                      </div>
+                      <p class="field-desc">M's villighed til at acceptere EL som ekstern støtteparti via forståelsespapir. Påvirker sandsynligheden for at forståelsespapiret lykkes. Lav = Løkke holder "ingen venstrefløjsafhængighed"-linjen. Høj = Løkke accepterer pragmatisk.</p>
+                      <input type="range" id="control-mElTolerate" min="0" max="0.7" step="0.05" value="0.35">
+                    </div>
                     <div class="field inline">
                       <div>
                         <div class="field-label">Kræver statsministerpost</div>
@@ -1720,6 +1728,7 @@ onmessage = function(e) {
           viabilityThreshold: Number(document.getElementById("control-viabilityThreshold").value),
           N: Number(document.getElementById("control-N").value),
           mDemandGov: document.getElementById("party-M-demandgov").checked,
+          mElTolerate: Number(document.getElementById("control-mElTolerate").value),
           sDemandGov: document.getElementById("party-S-demandgov").checked,
           mDemandPM: document.getElementById("party-M-demandpm").checked,
           formateurOverride: document.getElementById("control-formateurOverride").value,
@@ -1767,6 +1776,7 @@ onmessage = function(e) {
         document.getElementById("control-viabilityThreshold").value = params.viabilityThreshold;
         document.getElementById("control-N").value = params.N;
         document.getElementById("party-M-demandgov").checked = params.mDemandGov;
+        if (params.mElTolerate != null) document.getElementById("control-mElTolerate").value = params.mElTolerate;
         document.getElementById("party-S-pmdemand").checked = params.pmDemand;
         const sDemandGovEl = document.getElementById("party-S-demandgov");
         if (sDemandGovEl) sDemandGovEl.checked = params.sDemandGov != null ? params.sDemandGov : true;

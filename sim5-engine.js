@@ -699,7 +699,8 @@ function buildConfig(userParams) {
     "naRedShift",
     "formateurOverride",
     "sDemandGov",
-    "mDemandPM"
+    "mDemandPM",
+    "mElTolerate"
   ];
 
   for (const key of passthroughKeys) {
@@ -719,6 +720,12 @@ function simulate(userParams, N) {
   const iterations = Number.isFinite(N) ? N : 3000;
   const mandates = buildMandates(params);
   const cfg = buildConfig(params);
+  // Apply user-adjustable M→EL tolerance (dashboard slider)
+  const _origMEL = PARTIES_MAP.M.relationships.EL.tolerateInGov;
+  if (cfg.mElTolerate != null) {
+    PARTIES_MAP.M.relationships.EL.tolerateInGov = cfg.mElTolerate;
+  }
+
   const coalitions = enumerateCoalitions(PARTIES_LIST, mandates, cfg);
 
   const agg = {
@@ -736,6 +743,10 @@ function simulate(userParams, N) {
     const _savedMSF = PARTIES_MAP.M.relationships.SF.inGov;
     PARTIES_MAP.SF.relationships.M.inGov = clamp01(normDraw(_savedSFM, 0.06));
     PARTIES_MAP.M.relationships.SF.inGov = clamp01(normDraw(_savedMSF, 0.06));
+
+    // M→EL tolerateInGov CI: central unknown — will Løkke accept EL as external support?
+    const _savedMEL = PARTIES_MAP.M.relationships.EL.tolerateInGov;
+    PARTIES_MAP.M.relationships.EL.tolerateInGov = clamp01(normDraw(_savedMEL, 0.10));
 
     // M↔DF stochastic relaxation (12% of draws)
     let _dfRelaxed = false;
@@ -830,6 +841,7 @@ function simulate(userParams, N) {
       // Restore per-iteration CI values
       PARTIES_MAP.SF.relationships.M.inGov = _savedSFM;
       PARTIES_MAP.M.relationships.SF.inGov = _savedMSF;
+      PARTIES_MAP.M.relationships.EL.tolerateInGov = _savedMEL;
       if (_dfRelaxed) {
         PARTIES_MAP.M.relationships.DF.tolerateInGov = _savedMDF.mdf_t;
         PARTIES_MAP.DF.relationships.M.tolerateInGov = _savedMDF.dfm_t;
@@ -876,6 +888,9 @@ function simulate(userParams, N) {
       ? +((agg.formationRounds.distribution[round] / formed) * 100).toFixed(1)
       : 0;
   }
+
+  // Restore M→EL tolerance
+  PARTIES_MAP.M.relationships.EL.tolerateInGov = _origMEL;
 
   return {
     N: iterations,
