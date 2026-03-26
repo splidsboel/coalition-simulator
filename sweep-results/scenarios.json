@@ -1,0 +1,1248 @@
+{
+  "meta": {
+    "generatedAt": "2026-03-25T22:08:42.031Z",
+    "N": 500,
+    "totalScenarios": 23,
+    "phase": "scenarios"
+  },
+  "scenarios": {
+    "Løkke kingmaker hard": {
+      "params": {
+        "mDemandGov": true,
+        "mDemandPM": true,
+        "mPmPref": "M"
+      },
+      "pm": {
+        "S": 87.6,
+        "V": 12.4
+      },
+      "govType": {
+        "red": 87.2,
+        "cross": 12.8
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 87.2,
+      "mInGov": 0,
+      "noGov": 0,
+      "avgRounds": 1.94,
+      "roundsDist": {
+        "1": 8,
+        "2": 89.6,
+        "3": 2.4
+      },
+      "formateurOrder": {
+        "blå først": 20.8,
+        "rød først": 79.2
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 87.2,
+          "avgPPassage": 0.861
+        },
+        {
+          "govt": "V+SF",
+          "pct": 5.2,
+          "avgPPassage": 0.831
+        },
+        {
+          "govt": "V+RV",
+          "pct": 4.4,
+          "avgPPassage": 0.755
+        },
+        {
+          "govt": "V+DF+SF",
+          "pct": 1,
+          "avgPPassage": 0.851
+        },
+        {
+          "govt": "V+DD+SF",
+          "pct": 0.6,
+          "avgPPassage": 0.871
+        }
+      ]
+    },
+    "Løkke yields": {
+      "params": {
+        "mDemandGov": false,
+        "mPmPref": "S",
+        "flexibility": 0.2
+      },
+      "pm": {
+        "S": 88.2,
+        "V": 11.8
+      },
+      "govType": {
+        "red": 83.4,
+        "cross": 12,
+        "center-left": 4.6
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 83.4,
+      "mInGov": 4.8,
+      "noGov": 0,
+      "avgRounds": 1.91,
+      "roundsDist": {
+        "1": 9.4,
+        "2": 90.6
+      },
+      "formateurOrder": {
+        "rød først": 94,
+        "blå først": 6
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 83.4,
+          "avgPPassage": 0.917
+        },
+        {
+          "govt": "V+RV",
+          "pct": 5.6,
+          "avgPPassage": 0.862
+        },
+        {
+          "govt": "V+SF",
+          "pct": 5,
+          "avgPPassage": 0.886
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 4,
+          "avgPPassage": 0.929
+        },
+        {
+          "govt": "V+DD+SF",
+          "pct": 0.6,
+          "avgPPassage": 0.906
+        }
+      ]
+    },
+    "Maximum gridlock": {
+      "params": {
+        "viabilityThreshold": 0.9,
+        "flexibility": -0.2,
+        "maxFormationRounds": 1
+      },
+      "pm": {},
+      "govType": {
+        "none": 100
+      },
+      "topCoalition": "none",
+      "topPct": 0,
+      "mInGov": 0,
+      "noGov": 100,
+      "avgRounds": 0,
+      "roundsDist": {},
+      "formateurOrder": {},
+      "topFive": []
+    },
+    "SF blocks": {
+      "params": {
+        "flexibility": -0.3,
+        "redPreference": 0.9
+      },
+      "pm": {
+        "V": 7.4,
+        "S": 92.6
+      },
+      "govType": {
+        "cross": 7.4,
+        "red": 87.8,
+        "center-left": 4.8
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 87.8,
+      "mInGov": 5,
+      "noGov": 0,
+      "avgRounds": 1.97,
+      "roundsDist": {
+        "1": 5.4,
+        "2": 92.4,
+        "3": 2.2
+      },
+      "formateurOrder": {
+        "blå først": 11.4,
+        "rød først": 88.6
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 87.8,
+          "avgPPassage": 0.86
+        },
+        {
+          "govt": "V+RV",
+          "pct": 3.2,
+          "avgPPassage": 0.761
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 2.8,
+          "avgPPassage": 0.925
+        },
+        {
+          "govt": "V+SF",
+          "pct": 2.6,
+          "avgPPassage": 0.83
+        },
+        {
+          "govt": "S+M+RV",
+          "pct": 2,
+          "avgPPassage": 0.728
+        }
+      ]
+    },
+    "Blue surprise": {
+      "params": {
+        "mPmPref": "V",
+        "formateurOverride": "blue",
+        "flexibility": 0.2
+      },
+      "pm": {
+        "V": 37.4,
+        "S": 62.6
+      },
+      "govType": {
+        "cross": 37.8,
+        "red": 50.6,
+        "center-left": 11.6
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 50.6,
+      "mInGov": 12.999999999999998,
+      "noGov": 0,
+      "avgRounds": 1.93,
+      "roundsDist": {
+        "1": 7.2,
+        "2": 92.6,
+        "3": 0.2
+      },
+      "formateurOrder": {
+        "blå først": 100
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 50.6,
+          "avgPPassage": 0.862
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 10.2,
+          "avgPPassage": 0.926
+        },
+        {
+          "govt": "V+SF",
+          "pct": 7.6,
+          "avgPPassage": 0.828
+        },
+        {
+          "govt": "V+RV",
+          "pct": 6,
+          "avgPPassage": 0.759
+        },
+        {
+          "govt": "V+DF+SF",
+          "pct": 5.8,
+          "avgPPassage": 0.849
+        }
+      ]
+    },
+    "Grand compromise": {
+      "params": {
+        "flexibility": 0.4,
+        "redPreference": 0.3,
+        "viabilityThreshold": 0.6
+      },
+      "pm": {
+        "V": 11.8,
+        "S": 88.2
+      },
+      "govType": {
+        "cross": 13.4,
+        "center-left": 34.8,
+        "red": 51.8
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 51.8,
+      "mInGov": 36.800000000000004,
+      "noGov": 0,
+      "avgRounds": 1.92,
+      "roundsDist": {
+        "1": 8.4,
+        "2": 91.6
+      },
+      "formateurOrder": {
+        "blå først": 10.2,
+        "rød først": 89.8
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 51.8,
+          "avgPPassage": 0.863
+        },
+        {
+          "govt": "S+M+RV",
+          "pct": 19,
+          "avgPPassage": 0.723
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 15.8,
+          "avgPPassage": 0.926
+        },
+        {
+          "govt": "V+RV",
+          "pct": 5.6,
+          "avgPPassage": 0.756
+        },
+        {
+          "govt": "V+SF",
+          "pct": 3.8,
+          "avgPPassage": 0.829
+        }
+      ]
+    },
+    "Historical precedent": {
+      "params": {
+        "precedentWeight": 0.04
+      },
+      "pm": {
+        "S": 90.8,
+        "V": 9.2
+      },
+      "govType": {
+        "red": 78.8,
+        "center-left": 11,
+        "cross": 10.2
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 78.8,
+      "mInGov": 11.6,
+      "noGov": 0,
+      "avgRounds": 1.95,
+      "roundsDist": {
+        "1": 5.8,
+        "2": 93.4,
+        "3": 0.8
+      },
+      "formateurOrder": {
+        "rød først": 88,
+        "blå først": 12
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 78.8,
+          "avgPPassage": 0.861
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 9,
+          "avgPPassage": 0.926
+        },
+        {
+          "govt": "V+SF",
+          "pct": 4.2,
+          "avgPPassage": 0.828
+        },
+        {
+          "govt": "V+RV",
+          "pct": 2,
+          "avgPPassage": 0.763
+        },
+        {
+          "govt": "S+M+RV",
+          "pct": 2,
+          "avgPPassage": 0.731
+        }
+      ]
+    },
+    "Pure position-driven": {
+      "params": {
+        "voteSensitivity": 8,
+        "distPenalty": 3,
+        "passageExponent": 1
+      },
+      "pm": {
+        "S": 86.6,
+        "V": 13.4
+      },
+      "govType": {
+        "red": 53,
+        "cross": 13.4,
+        "center-left": 33.6
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 53,
+      "mInGov": 34,
+      "noGov": 0,
+      "avgRounds": 1.9,
+      "roundsDist": {
+        "1": 9.8,
+        "2": 90.2
+      },
+      "formateurOrder": {
+        "rød først": 87.4,
+        "blå først": 12.6
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 53,
+          "avgPPassage": 0.863
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 32.6,
+          "avgPPassage": 0.931
+        },
+        {
+          "govt": "V+SF",
+          "pct": 5.4,
+          "avgPPassage": 0.879
+        },
+        {
+          "govt": "V+RV",
+          "pct": 5,
+          "avgPPassage": 0.768
+        },
+        {
+          "govt": "V+LA+RV",
+          "pct": 1,
+          "avgPPassage": 0.837
+        }
+      ]
+    },
+    "Pure power-driven": {
+      "params": {
+        "voteSensitivity": 1,
+        "distPenalty": 0.5,
+        "passageExponent": 3
+      },
+      "pm": {
+        "S": 100
+      },
+      "govType": {
+        "red": 61,
+        "center-left": 38.8,
+        "cross": 0.2
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 61,
+      "mInGov": 39,
+      "noGov": 0,
+      "avgRounds": 2.01,
+      "roundsDist": {
+        "2": 98.8,
+        "3": 1.2
+      },
+      "formateurOrder": {
+        "rød først": 87.8,
+        "blå først": 12.2
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 61,
+          "avgPPassage": 0.845
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 37,
+          "avgPPassage": 0.916
+        },
+        {
+          "govt": "S+M+RV",
+          "pct": 1.4,
+          "avgPPassage": 0.725
+        },
+        {
+          "govt": "S+M+RV+SF",
+          "pct": 0.4,
+          "avgPPassage": 0.995
+        },
+        {
+          "govt": "S+M+V",
+          "pct": 0.2,
+          "avgPPassage": 0.906
+        }
+      ]
+    },
+    "Frederiksen full red": {
+      "params": {
+        "redPreference": 1
+      },
+      "pm": {
+        "S": 90.6,
+        "V": 9.4
+      },
+      "govType": {
+        "red": 86.4,
+        "cross": 9.4,
+        "center-left": 4.2
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 86.4,
+      "mInGov": 4.4,
+      "noGov": 0,
+      "avgRounds": 1.95,
+      "roundsDist": {
+        "1": 5.8,
+        "2": 93.6,
+        "3": 0.6
+      },
+      "formateurOrder": {
+        "rød først": 86,
+        "blå først": 14
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 86.4,
+          "avgPPassage": 0.861
+        },
+        {
+          "govt": "V+RV",
+          "pct": 4.2,
+          "avgPPassage": 0.757
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 2.4,
+          "avgPPassage": 0.928
+        },
+        {
+          "govt": "V+SF",
+          "pct": 2,
+          "avgPPassage": 0.827
+        },
+        {
+          "govt": "S+M+RV",
+          "pct": 1.8,
+          "avgPPassage": 0.728
+        }
+      ]
+    },
+    "M doesn't demand gov": {
+      "params": {
+        "mDemandGov": false
+      },
+      "pm": {
+        "S": 86.8,
+        "V": 13.2
+      },
+      "govType": {
+        "red": 81.8,
+        "cross": 13.8,
+        "center-left": 4.4
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 81.8,
+      "mInGov": 4.800000000000001,
+      "noGov": 0,
+      "avgRounds": 1.91,
+      "roundsDist": {
+        "1": 9,
+        "2": 91
+      },
+      "formateurOrder": {
+        "rød først": 88.2,
+        "blå først": 11.8
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 81.8,
+          "avgPPassage": 0.916
+        },
+        {
+          "govt": "V+RV",
+          "pct": 5.8,
+          "avgPPassage": 0.858
+        },
+        {
+          "govt": "V+SF",
+          "pct": 4.4,
+          "avgPPassage": 0.886
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 3.6,
+          "avgPPassage": 0.93
+        },
+        {
+          "govt": "V+DD+SF",
+          "pct": 1,
+          "avgPPassage": 0.91
+        }
+      ]
+    },
+    "mPmPref=S_formateurOverride=endogenous": {
+      "params": {
+        "mPmPref": "S",
+        "formateurOverride": "endogenous"
+      },
+      "pm": {
+        "S": 91,
+        "V": 9
+      },
+      "govType": {
+        "red": 77.8,
+        "cross": 9.4,
+        "center-left": 12.8
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 77.8,
+      "mInGov": 13.2,
+      "noGov": 0,
+      "avgRounds": 1.94,
+      "roundsDist": {
+        "1": 7.4,
+        "2": 91.6,
+        "3": 1
+      },
+      "formateurOrder": {
+        "rød først": 94,
+        "blå først": 6
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 77.8,
+          "avgPPassage": 0.862
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 9.4,
+          "avgPPassage": 0.925
+        },
+        {
+          "govt": "V+SF",
+          "pct": 4.6,
+          "avgPPassage": 0.829
+        },
+        {
+          "govt": "V+RV",
+          "pct": 3.2,
+          "avgPPassage": 0.758
+        },
+        {
+          "govt": "S+M+RV",
+          "pct": 3,
+          "avgPPassage": 0.738
+        }
+      ]
+    },
+    "mPmPref=S_formateurOverride=red": {
+      "params": {
+        "mPmPref": "S",
+        "formateurOverride": "red"
+      },
+      "pm": {
+        "S": 92.4,
+        "V": 7.6
+      },
+      "govType": {
+        "red": 79.6,
+        "cross": 7.8,
+        "center-left": 12.6
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 79.6,
+      "mInGov": 12.799999999999999,
+      "noGov": 0,
+      "avgRounds": 1.93,
+      "roundsDist": {
+        "1": 7.6,
+        "2": 92.2,
+        "3": 0.2
+      },
+      "formateurOrder": {
+        "rød først": 100
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 79.6,
+          "avgPPassage": 0.862
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 9.2,
+          "avgPPassage": 0.927
+        },
+        {
+          "govt": "V+SF",
+          "pct": 4,
+          "avgPPassage": 0.828
+        },
+        {
+          "govt": "V+RV",
+          "pct": 3.6,
+          "avgPPassage": 0.755
+        },
+        {
+          "govt": "S+M+RV",
+          "pct": 3.4,
+          "avgPPassage": 0.728
+        }
+      ]
+    },
+    "mPmPref=S_formateurOverride=blue": {
+      "params": {
+        "mPmPref": "S",
+        "formateurOverride": "blue"
+      },
+      "pm": {
+        "S": 65.2,
+        "V": 34.8
+      },
+      "govType": {
+        "red": 54.2,
+        "center-left": 11,
+        "cross": 34.8
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 54.2,
+      "mInGov": 12.4,
+      "noGov": 0,
+      "avgRounds": 1.92,
+      "roundsDist": {
+        "1": 8.2,
+        "2": 91.2,
+        "3": 0.6
+      },
+      "formateurOrder": {
+        "blå først": 100
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 54.2,
+          "avgPPassage": 0.862
+        },
+        {
+          "govt": "V+SF",
+          "pct": 9.6,
+          "avgPPassage": 0.829
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 8,
+          "avgPPassage": 0.927
+        },
+        {
+          "govt": "V+DD+SF",
+          "pct": 5,
+          "avgPPassage": 0.859
+        },
+        {
+          "govt": "V+RV",
+          "pct": 4.6,
+          "avgPPassage": 0.755
+        }
+      ]
+    },
+    "mPmPref=neutral_formateurOverride=endogenous": {
+      "params": {
+        "mPmPref": "neutral",
+        "formateurOverride": "endogenous"
+      },
+      "pm": {
+        "S": 90.4,
+        "V": 9.6
+      },
+      "govType": {
+        "red": 74.6,
+        "center-left": 15.4,
+        "cross": 10
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 74.6,
+      "mInGov": 15.799999999999999,
+      "noGov": 0,
+      "avgRounds": 1.94,
+      "roundsDist": {
+        "1": 6.6,
+        "2": 92.6,
+        "3": 0.8
+      },
+      "formateurOrder": {
+        "blå først": 10.6,
+        "rød først": 89.4
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 74.6,
+          "avgPPassage": 0.862
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 12.4,
+          "avgPPassage": 0.927
+        },
+        {
+          "govt": "V+RV",
+          "pct": 5.2,
+          "avgPPassage": 0.764
+        },
+        {
+          "govt": "S+M+RV",
+          "pct": 2.8,
+          "avgPPassage": 0.726
+        },
+        {
+          "govt": "V+SF",
+          "pct": 2.2,
+          "avgPPassage": 0.827
+        }
+      ]
+    },
+    "mPmPref=neutral_formateurOverride=red": {
+      "params": {
+        "mPmPref": "neutral",
+        "formateurOverride": "red"
+      },
+      "pm": {
+        "S": 92.6,
+        "V": 7.4
+      },
+      "govType": {
+        "red": 78.4,
+        "cross": 7.8,
+        "center-left": 13.8
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 78.4,
+      "mInGov": 13.8,
+      "noGov": 0,
+      "avgRounds": 1.93,
+      "roundsDist": {
+        "1": 7,
+        "2": 92.6,
+        "3": 0.4
+      },
+      "formateurOrder": {
+        "rød først": 100
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 78.4,
+          "avgPPassage": 0.862
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 11.4,
+          "avgPPassage": 0.927
+        },
+        {
+          "govt": "V+SF",
+          "pct": 3.8,
+          "avgPPassage": 0.83
+        },
+        {
+          "govt": "V+RV",
+          "pct": 3.4,
+          "avgPPassage": 0.759
+        },
+        {
+          "govt": "S+M+RV",
+          "pct": 2.4,
+          "avgPPassage": 0.735
+        }
+      ]
+    },
+    "mPmPref=neutral_formateurOverride=blue": {
+      "params": {
+        "mPmPref": "neutral",
+        "formateurOverride": "blue"
+      },
+      "pm": {
+        "V": 34,
+        "S": 66
+      },
+      "govType": {
+        "cross": 34.2,
+        "red": 55.4,
+        "center-left": 10.4
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 55.4,
+      "mInGov": 11.799999999999999,
+      "noGov": 0,
+      "avgRounds": 1.94,
+      "roundsDist": {
+        "1": 6.4,
+        "2": 93.2,
+        "3": 0.4
+      },
+      "formateurOrder": {
+        "blå først": 100
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 55.4,
+          "avgPPassage": 0.863
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 7.4,
+          "avgPPassage": 0.925
+        },
+        {
+          "govt": "V+RV",
+          "pct": 7.2,
+          "avgPPassage": 0.756
+        },
+        {
+          "govt": "V+SF",
+          "pct": 7,
+          "avgPPassage": 0.829
+        },
+        {
+          "govt": "V+LA+RV",
+          "pct": 4.6,
+          "avgPPassage": 0.848
+        }
+      ]
+    },
+    "mPmPref=V_formateurOverride=endogenous": {
+      "params": {
+        "mPmPref": "V",
+        "formateurOverride": "endogenous"
+      },
+      "pm": {
+        "S": 80.2,
+        "V": 19.8
+      },
+      "govType": {
+        "red": 67.6,
+        "center-left": 12.6,
+        "cross": 19.8
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 67.6,
+      "mInGov": 13,
+      "noGov": 0,
+      "avgRounds": 1.93,
+      "roundsDist": {
+        "1": 7.4,
+        "2": 92.2,
+        "3": 0.4
+      },
+      "formateurOrder": {
+        "blå først": 52.8,
+        "rød først": 47.2
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 67.6,
+          "avgPPassage": 0.86
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 9.6,
+          "avgPPassage": 0.927
+        },
+        {
+          "govt": "V+SF",
+          "pct": 6.2,
+          "avgPPassage": 0.83
+        },
+        {
+          "govt": "V+RV",
+          "pct": 4.6,
+          "avgPPassage": 0.76
+        },
+        {
+          "govt": "S+M+RV",
+          "pct": 3,
+          "avgPPassage": 0.735
+        }
+      ]
+    },
+    "mPmPref=V_formateurOverride=red": {
+      "params": {
+        "mPmPref": "V",
+        "formateurOverride": "red"
+      },
+      "pm": {
+        "S": 93,
+        "V": 7
+      },
+      "govType": {
+        "center-left": 14,
+        "cross": 7.2,
+        "red": 78.8
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 78.8,
+      "mInGov": 14.2,
+      "noGov": 0,
+      "avgRounds": 1.94,
+      "roundsDist": {
+        "1": 7,
+        "2": 92.4,
+        "3": 0.6
+      },
+      "formateurOrder": {
+        "rød først": 100
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 78.8,
+          "avgPPassage": 0.861
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 11.4,
+          "avgPPassage": 0.928
+        },
+        {
+          "govt": "V+RV",
+          "pct": 4,
+          "avgPPassage": 0.758
+        },
+        {
+          "govt": "V+SF",
+          "pct": 3,
+          "avgPPassage": 0.827
+        },
+        {
+          "govt": "S+M+RV",
+          "pct": 2.6,
+          "avgPPassage": 0.732
+        }
+      ]
+    },
+    "mPmPref=V_formateurOverride=blue": {
+      "params": {
+        "mPmPref": "V",
+        "formateurOverride": "blue"
+      },
+      "pm": {
+        "V": 37.4,
+        "S": 62.6
+      },
+      "govType": {
+        "cross": 37.4,
+        "red": 55,
+        "center-left": 7.6
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 55,
+      "mInGov": 8.4,
+      "noGov": 0,
+      "avgRounds": 1.92,
+      "roundsDist": {
+        "1": 8.4,
+        "2": 91.4,
+        "3": 0.2
+      },
+      "formateurOrder": {
+        "blå først": 100
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 55,
+          "avgPPassage": 0.861
+        },
+        {
+          "govt": "V+SF",
+          "pct": 9.4,
+          "avgPPassage": 0.829
+        },
+        {
+          "govt": "V+RV",
+          "pct": 8.4,
+          "avgPPassage": 0.761
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 6.8,
+          "avgPPassage": 0.927
+        },
+        {
+          "govt": "V+DF+SF",
+          "pct": 4.8,
+          "avgPPassage": 0.849
+        }
+      ]
+    },
+    "mPmPref=M_formateurOverride=endogenous": {
+      "params": {
+        "mPmPref": "M",
+        "formateurOverride": "endogenous"
+      },
+      "pm": {
+        "S": 85.6,
+        "V": 14.4
+      },
+      "govType": {
+        "red": 72,
+        "center-left": 13.6,
+        "cross": 14.4
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 72,
+      "mInGov": 13.799999999999999,
+      "noGov": 0,
+      "avgRounds": 1.92,
+      "roundsDist": {
+        "1": 9.2,
+        "2": 90,
+        "3": 0.8
+      },
+      "formateurOrder": {
+        "blå først": 19,
+        "rød først": 81
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 72,
+          "avgPPassage": 0.862
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 10.6,
+          "avgPPassage": 0.926
+        },
+        {
+          "govt": "V+SF",
+          "pct": 5.6,
+          "avgPPassage": 0.83
+        },
+        {
+          "govt": "V+RV",
+          "pct": 4.6,
+          "avgPPassage": 0.758
+        },
+        {
+          "govt": "S+M+RV",
+          "pct": 3,
+          "avgPPassage": 0.726
+        }
+      ]
+    },
+    "mPmPref=M_formateurOverride=red": {
+      "params": {
+        "mPmPref": "M",
+        "formateurOverride": "red"
+      },
+      "pm": {
+        "S": 94.4,
+        "V": 5.6
+      },
+      "govType": {
+        "center-left": 16.4,
+        "red": 78,
+        "cross": 5.6
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 78,
+      "mInGov": 16.4,
+      "noGov": 0,
+      "avgRounds": 1.95,
+      "roundsDist": {
+        "1": 5.4,
+        "2": 93.8,
+        "3": 0.8
+      },
+      "formateurOrder": {
+        "rød først": 100
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 78,
+          "avgPPassage": 0.862
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 13.2,
+          "avgPPassage": 0.928
+        },
+        {
+          "govt": "V+RV",
+          "pct": 3,
+          "avgPPassage": 0.76
+        },
+        {
+          "govt": "S+M+RV",
+          "pct": 3,
+          "avgPPassage": 0.73
+        },
+        {
+          "govt": "V+SF",
+          "pct": 2.6,
+          "avgPPassage": 0.83
+        }
+      ]
+    },
+    "mPmPref=M_formateurOverride=blue": {
+      "params": {
+        "mPmPref": "M",
+        "formateurOverride": "blue"
+      },
+      "pm": {
+        "S": 66.6,
+        "V": 33.4
+      },
+      "govType": {
+        "red": 57.2,
+        "center-left": 9.4,
+        "cross": 33.4
+      },
+      "topCoalition": "S+RV+SF",
+      "topPct": 57.2,
+      "mInGov": 10.4,
+      "noGov": 0,
+      "avgRounds": 1.92,
+      "roundsDist": {
+        "1": 8.6,
+        "2": 91,
+        "3": 0.4
+      },
+      "formateurOrder": {
+        "blå først": 100
+      },
+      "topFive": [
+        {
+          "govt": "S+RV+SF",
+          "pct": 57.2,
+          "avgPPassage": 0.861
+        },
+        {
+          "govt": "S+M+SF",
+          "pct": 8.4,
+          "avgPPassage": 0.927
+        },
+        {
+          "govt": "V+SF",
+          "pct": 8.4,
+          "avgPPassage": 0.829
+        },
+        {
+          "govt": "V+RV",
+          "pct": 5.8,
+          "avgPPassage": 0.758
+        },
+        {
+          "govt": "V+KF+RV",
+          "pct": 5,
+          "avgPPassage": 0.756
+        }
+      ]
+    }
+  }
+}
