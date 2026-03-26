@@ -801,12 +801,16 @@ function simulate(userParams, N) {
           const forstPartier = (result.support || []).map(s => s.party);
 
           // 2. Loose mainland støttepartier: same-bloc, not in govt, not forst
+          // Exclude parties whose support is binary on forståelsespapir (EL):
+          // without a formal agreement their support is negligible (~3%)
           const looseSupport = [];
           const forstSet = new Set(forstPartier);
           for (const party of PARTIES_LIST) {
             if (govSet.has(party.id) || forstSet.has(party.id)) continue;
+            // Skip forståelsespapir-dependent parties that didn't get one
+            const forstPos = party.positions.forstaaelsespapir;
+            if (forstPos && forstPos.weight >= 0.95 && forstPos.ideal === 0) continue;
             if (party.bloc === govSide && party.participationPref) {
-              // Include if they'd plausibly support (same bloc, not demanding govt)
               const govPref = party.participationPref.government || 0;
               if (govPref < 0.50) looseSupport.push(party.id);
             }
