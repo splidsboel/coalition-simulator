@@ -10,14 +10,14 @@ The simulator models Danish government formation after the 24 March 2026 electio
 
 **Current baseline output (N=2000):**
 
-| Coalition | Pct | P(passage) |
-|-----------|-----|------------|
-| S+M+RV+SF | ~51% | 0.996 |
-| S+M+SF | ~30% | 0.933 |
-| S+RV+SF | ~10% | 0.739 |
-| V+KF+LA+M | ~5% | 0.125 |
-| S+M+RV | ~2% | 0.662 |
-| NoGov | ~2% | — |
+| Coalition | Pct | P(passage) | Support |
+|-----------|-----|------------|---------|
+| S+M+RV+SF | ~47% | 0.968 | [EL] forst, ALT loose |
+| S+M+SF | ~20% | 0.930 | [EL] forst, ALT, NA |
+| S+RV+SF | ~17% | 0.758 | [EL] forst, ALT, NA |
+| V+KF+LA+M | ~8% | 0.132 | DF, DD, BP loose |
+| S+M+RV | ~3% | 0.675 | [EL] forst, ALT, NA |
+| NoGov | ~4% | — | |
 
 **Key files:**
 - `sim5-parties.js` — party data (positions, relationships, harshness)
@@ -33,10 +33,10 @@ The simulator models Danish government formation after the 24 March 2026 electio
 
 Each Monte Carlo iteration:
 
-1. **CI parameter variation** — draw per-iteration values for uncertain parameters (SF↔M relationship, M↔DF relaxation, M's PM preference, viability threshold)
+1. **CI parameter variation** — draw per-iteration values for uncertain parameters (SF↔M relationship, M→EL tolerance, M↔DF relaxation, viability threshold). CI is disabled for any parameter the user explicitly set via a slider.
 2. **NA alignment draw** — each North Atlantic seat drawn as red/flexible/blue
-3. **S formateur round** — Frederiksen explores all coalitions (up to 4 parties). For each: confidence check → dyad acceptance → forståelsespapir → bloc P(passage) → score. Best-scoring viable coalition wins.
-4. **Blue formateur round** (if S fails) — V-led coalitions tried with lower viability threshold (desperation: Hartling precedent)
+3. **S formateur attempts** — Frederiksen explores all coalitions (up to 4 parties). Each attempt: confidence check → dyad acceptance → forståelsespapir negotiation → bloc P(passage) → score. Best-scoring viable coalition wins. Number of attempts controlled by `maxFormationRounds` (default 1), each with slightly increasing flexibility.
+4. **Blue formateur round** (if all S attempts fail) — V-led coalitions tried with lower viability threshold (desperation: Hartling precedent)
 5. **Result** — government formed or NoGov
 
 ### Bloc voting model
@@ -49,13 +49,11 @@ Each Monte Carlo iteration:
 
 ### Formateur protocol
 
-Two rounds, not stochastic:
+S formateur attempts, then blue fallback:
 
-1. **Round 1: S formateur (certain).** Frederiksen was appointed as kongelig undersøger post-election. She explores all S-led coalitions (up to 4 parties). The viability threshold (default 0.70) sets her minimum acceptable P(negotiation success).
+1. **S formateur (certain).** Frederiksen was appointed as kongelig undersøger post-election. She explores all S-led coalitions (up to 4 parties). The viability threshold (default 0.70) sets her minimum acceptable P(negotiation success). The `maxFormationRounds` slider (default 1) controls how many attempts she makes, each with a fresh dyad acceptance draw and slightly higher flexibility (+0.05 per attempt).
 
-2. **Round 2: Blue formateur (if round 1 fails).** A blue party leader gets the mandate. Uses a much lower viability threshold (default 0.10) because this is a desperation situation — the alternative is no government. This reflects Danish negative parliamentarism: a government with marginal budget passage can still function via vekslende flertal (changing majorities per issue), as Hartling demonstrated with 22 seats in 1973-75.
-
-The dashboard's "Forhandlingsforsøg" slider controls how many attempts the S formateur makes (each with slightly increasing flexibility, giving fresh dyad acceptance draws). Default is 1 — Frederiksen explores all coalitions once, and if no dyad acceptance passes, the mandate moves to blue.
+2. **Blue formateur (if all S attempts fail).** A blue party leader gets the mandate. Uses a much lower viability threshold (default 0.10) because this is a desperation situation — the alternative is no government. This reflects Danish negative parliamentarism: a government with marginal budget passage can still function via vekslende flertal (changing majorities per issue), as Hartling demonstrated with 22 seats in 1973-75.
 
 The "Første formateur" dropdown allows a counterfactual where blue goes first. In this mode, blue rounds use the desperation threshold and S is the fallback with normal threshold.
 
@@ -79,6 +77,8 @@ For each non-government party, a single bloc support probability is computed. Th
 EL's voting is binary on whether a forståelsespapir exists — this is the single most well-calibrated parameter in the model, based on EL's complete voting record (see `research/calibration.md`):
 - With forståelsespapir: 93% FOR (empirical: 0.92-0.95)
 - Without: 3% FOR (empirical: 0.02-0.05)
+
+The forståelsespapir negotiation is **probabilistic** (see section below).
 
 ### 3. Bloc alignment base rate
 
@@ -127,6 +127,27 @@ The 70/30 against-to-abstain ratio reflects that parties opposing a government a
 
 ---
 
+## Forståelsespapir negotiation
+
+The forståelsespapir is probabilistic, not automatic. For a party that demands one (EL: forstaaelsespapir weight ≥ 0.95, ideal = 0):
+
+1. **Veto check:** if ANY government party has `tolerateInGov < 0.05` for the requesting party, the deal is vetoed entirely. This gives each government party effective veto power.
+2. **Probability:** P(deal) = average `tolerateInGov` across all government parties. Must also exceed a minimum threshold (0.20).
+3. **Stochastic draw:** if `Math.random() < avgTolerate`, the deal succeeds.
+
+**Example for S+M+RV+SF → EL:**
+- S→EL tolerateInGov: 0.75 (S negotiated the 2019 forståelsespapir)
+- M→EL tolerateInGov: 0.35 (default; adjustable via slider)
+- RV→EL tolerateInGov: 0.84
+- SF→EL tolerateInGov: 0.78
+- Average: 0.68 → ~68% chance of forståelsespapir
+
+**The M–EL slider** (`mElTolerate`) is the central unknown. At 0: M vetoes → EL never gets forst with any M-containing government. At 0.50+: deal is likely. This is exposed as the most prominent dashboard control.
+
+**Display logic:** parties whose support depends on a forståelsespapir (EL) are only shown as støtteparti when they actually get one. Without it, their 3% FOR doesn't qualify as meaningful support.
+
+---
+
 ## Dyad acceptance: per-party minimum
 
 Before a coalition is evaluated for budget passage, each party in the coalition must accept being in government with the others. The check:
@@ -170,6 +191,8 @@ Danish government history: 1-party (7-11 govts), 2-party (10 govts), 3-party (6 
 
 Each Monte Carlo iteration draws several uncertain parameters from confidence intervals. This replaces the old model's ad hoc scoring noise with principled parameter uncertainty.
 
+**Slider-overrides-CI principle:** when the user moves a slider from its default, the CI variation for that parameter is disabled. The user is expressing a view — the model respects it exactly. CI only applies to parameters left at their defaults.
+
 ### SF↔M relationship strength
 
 ```
@@ -178,6 +201,14 @@ M→SF inGov: draw from N(0.68, 0.06), clamped [0.40, 0.90]
 ```
 
 **Rationale:** SF's openness to M is the most consequential uncertain parameter. Dyhr says "Løkke has become a different person" but grassroots resistance exists. The sigma of 0.06 reflects genuine uncertainty about whether the SF-M deal can be made on any given attempt.
+
+### M→EL tolerateInGov
+
+```
+draw from N(0.35, 0.10), clamped [0, 1]
+```
+
+**Rationale:** will Løkke accept EL as external support? His "no far-left dependency" red line is the central unknown. Experts treat it as a negotiating position. The wide sigma (0.10) reflects genuine uncertainty. **Disabled when user moves the M–EL slider.**
 
 ### M↔DF stochastic relaxation
 
@@ -188,23 +219,13 @@ M→SF inGov: draw from N(0.68, 0.06), clamped [0.40, 0.90]
 
 **Rationale:** DF→M is "devour him and his people every single day" (Messerschmidt). Hard zero is the baseline. But DF "has not ruled out being a support party for a blue government where M is also a support party." The 12% relaxation rate represents the low but nonzero probability of pragmatic M-DF cooperation.
 
-### M PM preference
-
-```
-40% neutral, 30% S-leaning, 30% V-leaning
-```
-
-**Rationale:** Løkke is genuinely agnostic between Frederiksen and Troels Lund Poulsen. He prefers a cross-bloc government but the direction is uncertain. This affects the pBlueFormateur calculation in the legacy formateur path (though the current hard-coded two-round protocol doesn't use it directly — it's retained for future flexibility).
-
-**Note:** This CI variation is currently drawn but not consumed by `selectGovernment`, which hard-codes S first → blue second. It would become active if the formateur protocol were changed to use `determineFormateurOrder`.
-
 ### Viability threshold
 
 ```
 draw from N(0.70, 0.06), clamped [0.50, 0.85]
 ```
 
-**Rationale:** the formateur's risk tolerance is not fixed. Sometimes Frederiksen might accept a 60% deal; sometimes she insists on 80%. The variation produces realistic spread in outcomes — when the threshold draws low, marginal coalitions like S+RV+SF (P=0.74) become viable; when high, only S+M+RV+SF (P=0.996) passes.
+**Rationale:** the formateur's risk tolerance is not fixed. Sometimes Frederiksen might accept a 60% deal; sometimes she insists on 80%. **Disabled when user moves the viability slider.**
 
 ---
 
@@ -220,6 +241,92 @@ These values were changed from their initial extraction based on cross-referenci
 | SF→M inGov | 0.65 | 0.72 | Dyhr: "Løkke er faktisk blevet en anden som formand for Moderaterne." Explicit repeated openness since early 2024. |
 | M→SF inGov | 0.60 | 0.68 | M is "un-dogmatic and solution-oriented." SF is the primary partner in the consensus scenario. |
 | SF→M tolerateInGov | 0.00 | 0.65 | Bug fix: was blocking S+M+RV viability. SF willing to join government with M (inGov=0.72) but coded as unwilling to tolerate M from outside (0.00). Toleration should be the lower bar. |
+| S→EL tolerateInGov | 0.00 | 0.75 | S negotiated the 2019-22 forståelsespapir with EL. S clearly tolerates EL as external support. |
+| M→EL tolerateInGov | 0.00 | 0.35 | Experts treat M's "no far-left dependency" as negotiating position. M reluctantly accepts EL as external support because the alternative is worse. Adjustable via dashboard slider. |
+
+---
+
+## NA seats
+
+Four North Atlantic mandates (2 Faroese, 2 Greenlandic). Each is drawn per iteration as red, flexible, or blue:
+
+| Seat | pRed | pFlexible | pBlue | Notes |
+|------|------|-----------|-------|-------|
+| FO-JF (Javnaðarflokkurin) | 0.95 | 0.05 | 0.00 | Predictable red |
+| FO-SB (Sambandsflokkurin) | 0.00 | 0.05 | 0.95 | Predictable blue |
+| GL-NAL (Naleraq) | 0.50 | 0.40 | 0.10 | Swing — pro-independence, transactional |
+| GL-IA (Inuit Ataqatigiit) | 0.65 | 0.30 | 0.05 | Red-leaning but refused to pre-commit |
+
+### NA voting norms
+
+NA seats vote in budgets via `evalNABudgetVote` (not replaced by bloc voting since these are individual MFs, not party blocs). **Strong norm: NA MFs never vote against a government.** They either vote FOR or abstain — they avoid participating in toppling governments.
+
+- Aligned with government side: 80% FOR, 18% abstain, 2% against
+- Flexible: 40% FOR, 57% abstain, 3% against
+- Opposed: 5% FOR, 93% abstain, 2% against
+
+**Exception:** Greenlandic seats (GL-NAL, GL-IA) actively oppose governments containing DF (80% against). DF's proposal for a Danish referendum on Greenlandic independence is an existential sovereignty threat.
+
+### Support display
+
+NA seats are shown as støttepartier in the dashboard **only when they help a coalition reach 90 mandates.** S+M+RV+SF (82 seats + EL 11 + ALT 5 = 98) doesn't need NA display. S+M+SF (72 + 11 + 5 = 88) does.
+
+NA seats are displayed with flag-colored dots (red/white for Greenland, blue/white/red for Faroe) and a separate "+" from mainland støttepartier.
+
+---
+
+## Support party display
+
+The dashboard shows three tiers of support, each with a "+" separator:
+
+1. **Forståelsespapir** (e.g., [EL]): formal agreement, shown in brackets. Only appears if the probabilistic forståelsespapir negotiation succeeded.
+2. **Loose støttepartier** (e.g., ALT, or DF/DD/BP for blue): same-bloc parties without formal agreement but likely to vote FOR. Must have govPref < 0.50 (not demanding government). Parties whose support is binary on forståelsespapir (EL) are excluded from loose display if they didn't get one.
+3. **NA seats** (flag-colored dots): only shown when the coalition + mainland support < 90 mandates.
+
+---
+
+## Dashboard parameters
+
+### Main scenario controls
+
+| Control | Parameter | Default | Description |
+|---------|-----------|---------|-------------|
+| M–EL forståelsespapir | `mElTolerate` | 0.35 | M's tolerance for EL as external support. At 0: M vetoes, no EL forst for M-containing govts. At 0.50+: deal likely. Central unknown in formation. **Overrides CI when changed.** |
+| Fleksibilitet | `flexibility` | 0 | Global negotiation pressure. Negative = parties hold fast. Positive = parties stretch. |
+| Rød præference | `redPreference` | 0.5 | Frederiksen's preference for red vs. broad coalitions. Feeds into `frederiksenBonus`. |
+| Viabilitetstærskel | `viabilityThreshold` | 0.70 | S formateur's minimum P(negotiation success). Blue fallback uses 0.10. **Overrides CI when changed.** |
+| Forhandlingsforsøg | `maxFormationRounds` | 1 | Attempts within S formateur's mandate. Each: fresh dyad draw, +0.05 flexibility. |
+| Første formateur | `formateurOverride` | "red" | "Red" = S first (standard). "Blue" = counterfactual. |
+| Iterationer | `N` | 500 | Monte Carlo iterations. |
+
+### Party-level controls
+
+| Control | Parameter | Description |
+|---------|-----------|-------------|
+| M kræver regering | `mDemandGov` | M votes against any government excluding M. |
+| S kræver regering | `sDemandGov` | S votes against any government excluding S. |
+| M kræver statsminister | `mDemandPM` | M votes against any govt where Løkke isn't PM. |
+| Parti-harshness sliders | `globalHarshness` | Per-party negotiation rigidity. |
+
+### Advanced controls
+
+| Control | Parameter | Default | Description |
+|---------|-----------|---------|-------------|
+| Stabilitetseksponent | `passageExponent` | 2.0 | P(passage)^exponent in scoring. Higher = prefer stable govts. |
+| Afstandsstraff | `distPenalty` | 1.5 | Ideological distance penalty in scoring. |
+| Formatørtræk | `formateurPull` | 0.3 | Extra weight formateur gets in platform negotiation. |
+| Gulvtærskel | `floorThreshold` | 0.7 | Min position weight for floor enforcement in negotiation. |
+
+### Presets
+
+| Preset | Settings | Scenario |
+|--------|----------|----------|
+| Baseline | all defaults | Standard post-election prediction |
+| Bred midte | redPreference: 0.3, flexibility: 0.1 | Frederiksen prefers broad centre coalition |
+| Rød blok | redPreference: 0.8 | Frederiksen prefers pure red coalition |
+| Løkke → blå | mPmPref: "V", mDemandGov: false | M aligns blue, doesn't demand government |
+| Maksimalt pres | flexibility: 0.3, maxFormationRounds: 3 | Maximum negotiation pressure, multiple attempts |
+| SF blokerer M | flexibility: -0.2 | SF refuses to compromise on M |
 
 ---
 
@@ -236,53 +343,3 @@ The sim5 engine originally used a per-mandate dynamic programming (DP) model for
 | `determineFormateurOrder()` | Stochastic formateur draw | Hard-coded two-round protocol |
 
 **Why replaced:** The per-mandate DP model treated each of a party's mandates as an independent coin flip. With DF at P(FOR)=0.04 per mandate, getting all 16 DF seats to vote FOR was vanishingly unlikely. But Danish parties vote as blocs — either all 16 vote FOR or all 16 vote AGAINST. The DP model made minority governments structurally unviable and blue governments arithmetically impossible.
-
----
-
-## NA seats
-
-Four North Atlantic mandates (2 Faroese, 2 Greenlandic). Each is drawn per iteration as red, flexible, or blue:
-
-| Seat | pRed | pFlexible | pBlue | Notes |
-|------|------|-----------|-------|-------|
-| FO-JF (Javnaðarflokkurin) | 0.95 | 0.05 | 0.00 | Predictable red |
-| FO-SB (Sambandsflokkurin) | 0.00 | 0.05 | 0.95 | Predictable blue |
-| GL-NAL (Naleraq) | 0.50 | 0.40 | 0.10 | Swing — pro-independence, transactional |
-| GL-IA (Inuit Ataqatigiit) | 0.65 | 0.30 | 0.05 | Red-leaning but refused to pre-commit |
-
-NA seats vote in budgets via `evalNABudgetVote` (still live — not replaced by bloc voting since these are individual MFs, not party blocs):
-- Aligned with government side: 80% FOR, 15% abstain, 5% against
-- Flexible: 40% FOR, 40% abstain, 20% against
-- Opposed: 5% FOR, 15% abstain, 80% against
-
----
-
-## Dashboard parameters
-
-### Live controls (affect simulation output)
-
-| Control | Parameter | Default | Description |
-|---------|-----------|---------|-------------|
-| Fleksibilitet | `flexibility` | 0 | Global negotiation pressure. Negative = parties hold fast. Positive = parties stretch. |
-| Rød præference | `redPreference` | 0.5 | Frederiksen's preference for red vs. broad coalitions. Feeds into `frederiksenBonus`. |
-| M kræver regeringsdeltagelse | `mDemandGov` | true | M votes against any government excluding M. |
-| S kræver regeringsdeltagelse | `sDemandGov` | true | S votes against any government excluding S. |
-| Viabilitetstærskel | `viabilityThreshold` | 0.70 | S formateur's minimum P(negotiation success). Blue formateur uses fixed 0.10. |
-| Forhandlingsforsøg | `maxFormationRounds` | 1 | Attempts within S formateur's mandate. Each attempt: fresh dyad draw, slightly higher flexibility. |
-| Første formateur | `formateurOverride` | "red" | "Red" = S first (standard). "Blue" = counterfactual blue-first scenario. |
-| Iterationer | `N` | 500 | Monte Carlo iterations. More = more precise, slower. |
-| Stabilitetseksponent | `passageExponent` | 2.0 | Risk aversion in scoring: P(passage)^exponent. Higher = prefer stable governments. |
-| Afstandsstraff | `distPenalty` | 1.5 | How much ideological distance penalizes coalition scores. |
-| Formatørtræk | `formateurPull` | 0.3 | Extra weight the formateur gets in platform negotiation. |
-| Gulvtærskel | `floorThreshold` | 0.7 | Minimum position weight for floor enforcement in platform negotiation. |
-
-### Presets
-
-| Preset | Settings | Scenario |
-|--------|----------|----------|
-| Baseline | all defaults | Standard post-election |
-| Bred midte | redPreference: 0.3, flexibility: 0.1 | Frederiksen prefers broad centre coalition |
-| Rød blok | redPreference: 0.8 | Frederiksen prefers pure red coalition |
-| Løkke → blå | mPmPref: "V", mDemandGov: false | M aligns blue, doesn't demand government |
-| Maksimalt pres | flexibility: 0.3, maxFormationRounds: 3 | Maximum negotiation pressure, multiple attempts |
-| SF blokerer M | flexibility: -0.2 | SF refuses to compromise on M |

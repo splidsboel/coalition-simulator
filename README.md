@@ -96,14 +96,13 @@ Per Monte Carlo iteration:
 
 | Parameter | Default | Description |
 |---|---|---|
+| `mElTolerate` | 0.35 | M's tolerance for EL as external support via forståelsespapir. At 0: M vetoes. The central unknown. |
 | `flexibility` | 0 | Global negotiation pressure (-0.3 to +0.5) |
 | `redPreference` | 0.5 | Frederiksen's preference for red vs. broad coalitions |
 | `mDemandGov` | `true` | M insists on government participation |
-| `viabilityThreshold` | 0.60 | Minimum P(negotiation success) for S formateur |
-| `blueViabilityThreshold` | 0.10 | Minimum P(negotiation success) for blue formateur (desperation round) |
-| `passageExponent` | 2.0 | Risk aversion in scoring (higher = prefer stable govts) |
+| `viabilityThreshold` | 0.70 | Minimum P(negotiation success) for S formateur |
 
-Most parameters are adjustable in the dashboard. Per-iteration CI variation on M's orientation (40% neutral, 30% S-leaning, 30% V-leaning) and SF↔M relationship strength runs automatically.
+Most parameters are adjustable in the dashboard. Per-iteration CI variation on SF↔M relationship strength, M→EL tolerance, M↔DF relaxation, and viability threshold runs automatically — but is disabled for any parameter the user explicitly sets via slider. See `research/model-spec.md` for full documentation.
 
 ## Daily updates
 
