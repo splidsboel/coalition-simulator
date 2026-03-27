@@ -1324,7 +1324,7 @@
       const DEFAULTS = {
         flexibility: 0,
         redPreference: 0.5,
-        mPmPref: "neutral",
+        mBlueOrientation: 0.30,
         formateurOverride: "red",
         maxFormationRounds: 1,
         viabilityThreshold: 0.75,
@@ -1344,7 +1344,7 @@
         "Baseline": {},
         "Bred midte": { redPreference: 0.3, flexibility: 0.1 },
         "Rød blok": { redPreference: 0.8 },
-        "Løkke → blå": { mPmPref: "V", mDemandGov: false },
+        "Løkke → blå": { mBlueOrientation: 0.80, mDemandGov: false },
         "Maksimalt pres": { flexibility: 0.3, maxFormationRounds: 3 },
         "SF blokerer M": { flexibility: -0.2 }
       };
@@ -1680,14 +1680,10 @@ onmessage = function(e) {
             <div class="field">
               <div class="field-header">
                 <span class="field-label">Løkkes orientering</span>
+                <span class="value-pill" id="control-mBlueOrientation-value">30 %</span>
               </div>
-              <p class="field-desc">Hvilken regeringsleder foretrækker Løkke? Påvirker to ting: (1) M's sandsynlighed for at stemme for/imod en rød hhv. blå finanslov, og (2) sandsynligheden for at blå blok får første formateurforsøg i kongerunden.</p>
-              <select id="control-mPmPref" data-control="mPmPref">
-                <option value="S">Foretrækker Frederiksen (S)</option>
-                <option value="neutral">Neutral / ingen præference</option>
-                <option value="V">Foretrækker Troels Lund (V)</option>
-                <option value="M">Vil selv være statsminister</option>
-              </select>
+              <p class="field-desc">Sandsynligheden for at Løkke forfølger en blå koalition i stedet for at samarbejde med Frederiksen. Hver iteration trækker M en strategisk orientering: ved 0 % samarbejder M altid med rød, ved 100 % forfølger M altid blå. Ved blå orientering nægter M at deltage i S-ledede regeringer og stemmer imod deres finanslov.</p>
+              <input type="range" id="control-mBlueOrientation" data-control="mBlueOrientation" min="0" max="1" step="0.05" value="0.30">
             </div>
 
             <div class="field">
@@ -2012,7 +2008,7 @@ onmessage = function(e) {
         return {
           flexibility: Number(document.getElementById("control-flexibility").value),
           redPreference: Number(document.getElementById("control-redPreference").value),
-          mPmPref: document.getElementById("control-mPmPref").value,
+          mBlueOrientation: Number(document.getElementById("control-mBlueOrientation").value),
           maxFormationRounds: Number(document.getElementById("control-maxFormationRounds").value),
           viabilityThreshold: Number(document.getElementById("control-viabilityThreshold").value),
           N: Number(document.getElementById("control-N").value),
@@ -2042,7 +2038,7 @@ onmessage = function(e) {
         const base = {
           flexibility: DEFAULTS.flexibility,
           redPreference: DEFAULTS.redPreference,
-          mPmPref: DEFAULTS.mPmPref,
+          mBlueOrientation: DEFAULTS.mBlueOrientation,
           formateurOverride: DEFAULTS.formateurOverride,
           maxFormationRounds: DEFAULTS.maxFormationRounds,
           viabilityThreshold: DEFAULTS.viabilityThreshold,
@@ -2064,7 +2060,7 @@ onmessage = function(e) {
 
         document.getElementById("control-flexibility").value = params.flexibility;
         document.getElementById("control-redPreference").value = params.redPreference;
-        document.getElementById("control-mPmPref").value = params.mPmPref;
+        document.getElementById("control-mBlueOrientation").value = params.mBlueOrientation != null ? params.mBlueOrientation : DEFAULTS.mBlueOrientation;
         document.getElementById("control-formateurOverride").value = params.formateurOverride != null ? params.formateurOverride : DEFAULTS.formateurOverride;
         document.getElementById("control-maxFormationRounds").value = params.maxFormationRounds;
         document.getElementById("control-viabilityThreshold").value = params.viabilityThreshold;
@@ -2985,7 +2981,7 @@ onmessage = function(e) {
       }
 
       // ==================== TIMELINE TAB ====================
-      const TIMELINE_DATA = [{"date":"2026-03-24","coalitions":{"S+RV+SF":43.7,"S+M+RV+SF":17.5,"S+M+RV":8.5,"S+M+SF":8.5,"V+KF+LA+M":7,"V+KF+M":3.2,"S+SF":2.7,"V+LA+M":2.1},"noGov":0,"formationStage":"valgaften","changelog":["Udgangspunkt: kalibrering fra valgaften, f\u00f8r forhandlingssignaler"]},{"date":"2026-03-26","coalitions":{"S+RV+SF":42,"S+M+RV+SF":18.6,"S+M+SF":10.7,"V+KF+LA+M":9,"S+M+RV":4.6,"V+KF+M":3.3,"V+LA+M":2.6,"S+SF":2.2,"V+M":0.9,"V+LA":0.8},"noGov":0,"formationStage":"forhandlinger","changelog":["M\u2019s strategiske orientering: L\u00f8kke forhandler med begge blokke simultant (50/50 r\u00f8d/bl\u00e5)","N\u00e5r M forf\u00f8lger bl\u00e5: M blokerer r\u00f8de finanslove og n\u00e6gter at deltage i S-ledede regeringer","H\u00f8jere viabilitetst\u00e6rskel (0,70\u21920,75): format\u00f8ren er mere risikoavers","SF forhandler h\u00e5rdere efter mistillidstrussel mod enhver regering uden SF","Konservative \u00e5bner d\u00f8ren til S: Juul \u00bbhar ikke udelukket\u00ab samarbejde","S bl\u00f8der op p\u00e5 formueskat: \u00bbet middel, ikke et m\u00e5l\u00ab","RV signalerer maksimal fleksibilitet: \u00bbdet mindst besv\u00e6rlige parti\u00ab"]}];
+      const TIMELINE_DATA = [{"date":"2026-03-24","coalitions":{"S+RV+SF":35.1,"S+M+RV+SF":24.6,"S+M+SF":13,"S+M+RV":11.3,"V+KF+LA+M":5.2,"S+SF":2.2,"V+KF+M":1.8,"V+LA+M":1.3},"noGov":0,"formationStage":"valgaften","changelog":["Udgangspunkt: kalibrering fra valgaften, f\u00f8r forhandlingssignaler"]},{"date":"2026-03-26","coalitions":{"S+RV+SF":34.6,"S+M+RV+SF":26.7,"S+M+SF":14.7,"S+M+RV":6.4,"V+KF+LA+M":5.9,"V+KF+M":2.2,"S+SF":2.1,"V+LA+M":1.9},"noGov":0,"formationStage":"forhandlinger","changelog":["L\u00f8kkes strategiske orientering: 30 % sandsynlighed for at forf\u00f8lge bl\u00e5 koalition","N\u00e5r M forf\u00f8lger bl\u00e5: M blokerer r\u00f8de finanslove og n\u00e6gter S-ledet regering","H\u00f8jere viabilitetst\u00e6rskel (0,70\u21920,75)","SF forhandler h\u00e5rdere efter mistillidstrussel","Konservative \u00e5bner d\u00f8ren til S","S bl\u00f8der op p\u00e5 formueskat","RV signalerer maksimal fleksibilitet"]}];
       let timelineData = TIMELINE_DATA;
 
       function renderTimeline() {
@@ -3407,20 +3403,6 @@ onmessage = function(e) {
             scheduleSimulation();
           });
         });
-
-        // Linkage: Løkkes orientering "Vil selv" ↔ M "Kræver statsministerpost"
-        const mPmPrefSelect = document.getElementById("control-mPmPref");
-        const mDemandPMToggle = document.getElementById("party-M-demandpm");
-        if (mPmPrefSelect && mDemandPMToggle) {
-          mPmPrefSelect.addEventListener("change", () => {
-            if (state.suppressControlEvents) return;
-            if (mPmPrefSelect.value === "M") {
-              mDemandPMToggle.checked = true;
-            } else {
-              mDemandPMToggle.checked = false;
-            }
-          });
-        }
 
         document.querySelectorAll(".preset-button").forEach(button => {
           button.addEventListener("click", () => {

@@ -1099,7 +1099,7 @@ function simulate(userParams, N) {
     // with S-led coalitions) or pursue blue (block S-led, support blue).
     // This captures the outside-option effect from bargaining theory: M's
     // behavior in red negotiations depends on M's assessment of blue alternatives.
-    const _mBlueProb = cfg.mBlueOrientation != null ? cfg.mBlueOrientation : 0.50;
+    const _mBlueProb = cfg.mBlueOrientation != null ? cfg.mBlueOrientation : 0.30;
     const _mPursuesBlue = Math.random() < _mBlueProb;
 
     // When M pursues blue: temporarily make M hostile to S-led coalitions
