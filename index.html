@@ -1232,10 +1232,14 @@
       <section class="panel panel-center">
         <div class="center-tabs">
           <button type="button" class="center-tab active" data-tab="results">Resultater</button>
+          <button type="button" class="center-tab" data-tab="builder">Koalitionsbygger</button>
+          <button type="button" class="center-tab" data-tab="timeline">Tidslinje</button>
           <button type="button" class="center-tab" data-tab="sensitivity">Hvad påvirker resultatet?</button>
           <button type="button" class="center-tab" data-tab="methodology">Sådan virker modellen</button>
         </div>
         <div class="card table-card" id="resultsCard" data-tab-content="results"></div>
+        <div class="card" id="builderCard" data-tab-content="builder" style="display:none;"></div>
+        <div class="card" id="timelineCard" data-tab-content="timeline" style="display:none;"></div>
         <div class="card" id="sensitivityCard" data-tab-content="sensitivity" style="display:none;"></div>
         <div class="card" id="methodologyCard" data-tab-content="methodology" style="display:none;"></div>
       </section>
@@ -2983,6 +2987,363 @@ onmessage = function(e) {
         state.sensitivityRendered = true;
       }
 
+      // ==================== TIMELINE TAB ====================
+      const TIMELINE_DATA = [{"date":"2026-03-24","coalitions":{"S+M+RV+SF":36,"S+RV+SF":23.2,"S+M+SF":19.2,"S+M+RV":12.6,"S+SF":4,"V+KF+LA+M":1.1},"noGov":0,"formationStage":"valgaften","changelog":["Udgangspunkt: kalibrering fra valgaften, f\u00f8r forhandlingssignaler"]},{"date":"2026-03-26","coalitions":{"S+M+RV+SF":33.6,"S+RV+SF":23.9,"S+M+SF":19,"S+M+RV":13.7,"S+SF":4.5,"V+KF+LA+M":1},"noGov":0,"formationStage":"forhandlinger","changelog":["SF forhandler h\u00e5rdere efter mistillidstrussel: \u00bbSF stemmer for et mistillidsvotum mod enhver regering, SF ikke er en del af\u00ab","SF kr\u00e6ver regeringsdeltagelse endnu st\u00e6rkere (n\u00e6sten absolut krav)","Konservative \u00e5bner d\u00f8ren til S: Juul \u00bbhar ikke udelukket\u00ab samarbejde, inviteret til forhandlinger","S bl\u00f8der op p\u00e5 formueskat: Frederiksen kalder den \u00bbet middel, ikke et m\u00e5l\u00ab","RV signalerer maksimal fleksibilitet: Lidegaard kalder partiet \u00bbdet mindst besv\u00e6rlige\u00ab"]}];
+      let timelineData = TIMELINE_DATA;
+
+      function renderTimeline() {
+        const card = document.getElementById("timelineCard");
+        if (card.querySelector("svg")) return; // already rendered
+
+        if (!timelineData || timelineData.length < 1) {
+          card.innerHTML = `<div class="card-header"><strong>Tidslinje</strong></div><div class="card-body"><p>Ingen data endnu.</p></div>`;
+          return;
+        }
+
+        // Find top coalitions across all dates
+        const coalFreq = {};
+        for (const entry of timelineData) {
+          for (const [govt, pct] of Object.entries(entry.coalitions)) {
+            coalFreq[govt] = (coalFreq[govt] || 0) + pct;
+          }
+        }
+        const topCoals = Object.entries(coalFreq)
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 6)
+          .map(e => e[0]);
+
+        const COAL_COLORS = {
+          "S+M+RV+SF": "#1e3a5f",
+          "S+RV+SF": "#c0392b",
+          "S+M+SF": "#e67e22",
+          "S+M+RV": "#6a1b9a",
+          "S+SF": "#27ae60",
+          "V+KF+LA+M": "#2980b9"
+        };
+        const fallbackColors = ["#7f8c8d", "#d4a017", "#8e44ad", "#16a085", "#e74c3c", "#34495e"];
+        let colorIdx = 0;
+        function coalColor(govt) {
+          if (COAL_COLORS[govt]) return COAL_COLORS[govt];
+          COAL_COLORS[govt] = fallbackColors[colorIdx++ % fallbackColors.length];
+          return COAL_COLORS[govt];
+        }
+
+        // Build SVG chart
+        const W = 600, H = 300, pad = { t: 20, r: 20, b: 40, l: 45 };
+        const plotW = W - pad.l - pad.r;
+        const plotH = H - pad.t - pad.b;
+        const dates = timelineData.map(e => e.date);
+        const maxPct = Math.max(50, ...topCoals.flatMap(g => timelineData.map(e => e.coalitions[g] || 0)));
+
+        function x(i) { return pad.l + (dates.length === 1 ? plotW / 2 : i / (dates.length - 1) * plotW); }
+        function y(pct) { return pad.t + plotH - (pct / maxPct * plotH); }
+
+        // Grid lines
+        let gridLines = "";
+        for (let pct = 0; pct <= maxPct; pct += 10) {
+          const yy = y(pct);
+          gridLines += `<line x1="${pad.l}" y1="${yy}" x2="${W - pad.r}" y2="${yy}" stroke="#e8e4de" stroke-width="1"/>`;
+          gridLines += `<text x="${pad.l - 6}" y="${yy + 4}" text-anchor="end" fill="#8a7e72" font-size="11" font-family="var(--mono)">${Math.round(pct)}%</text>`;
+        }
+
+        // Date labels
+        let dateLabels = "";
+        dates.forEach((d, i) => {
+          const short = d.slice(5); // MM-DD
+          dateLabels += `<text x="${x(i)}" y="${H - 8}" text-anchor="middle" fill="#8a7e72" font-size="11" font-family="var(--mono)">${short}</text>`;
+        });
+
+        // Lines and dots for each coalition
+        let lines = "";
+        for (const govt of topCoals) {
+          const color = coalColor(govt);
+          const points = dates.map((_, i) => {
+            const pct = timelineData[i].coalitions[govt] || 0;
+            return `${x(i)},${y(pct)}`;
+          });
+          if (dates.length === 1) {
+            // Single point — just a dot
+            const pct = timelineData[0].coalitions[govt] || 0;
+            lines += `<circle cx="${x(0)}" cy="${y(pct)}" r="4" fill="${color}"/>`;
+          } else {
+            lines += `<polyline points="${points.join(" ")}" fill="none" stroke="${color}" stroke-width="2.5" stroke-linejoin="round"/>`;
+            points.forEach((p, i) => {
+              lines += `<circle cx="${x(i)}" cy="${y(timelineData[i].coalitions[govt] || 0)}" r="3.5" fill="${color}" stroke="#fff" stroke-width="1.5"/>`;
+            });
+          }
+        }
+
+        // Legend
+        const legend = topCoals.map(govt => `
+          <span style="display:inline-flex; align-items:center; gap:4px; margin-right:12px; font-size:0.8rem;">
+            <span style="display:inline-block; width:12px; height:3px; background:${coalColor(govt)}; border-radius:2px;"></span>
+            ${escapeHtml(govt)}
+          </span>
+        `).join("");
+
+        // Changelog
+        const changelogHtml = timelineData.map(entry => `
+          <div style="margin-bottom:12px;">
+            <strong style="font-size:0.85rem;">${escapeHtml(entry.date)}</strong>
+            <span style="color:var(--muted); font-size:0.78rem; margin-left:6px;">${escapeHtml(entry.formationStage)}</span>
+            <ul style="margin:4px 0 0 18px; padding:0; font-size:0.78rem; color:var(--muted);">
+              ${entry.changelog.map(c => `<li>${escapeHtml(c)}</li>`).join("")}
+            </ul>
+          </div>
+        `).join("");
+
+        card.innerHTML = `
+          <div class="card-header"><strong>Tidslinje: koalitionssandsynligheder over tid</strong></div>
+          <div class="card-body">
+            <p class="field-desc" style="margin:0 0 12px;">Hvordan de mest sandsynlige koalitioner har udviklet sig i takt med forhandlingerne. Baseret på daglige parameteroppdateringer fra nyhedsovervågning.</p>
+            <div style="overflow-x:auto;">
+              <svg viewBox="0 0 ${W} ${H}" style="width:100%; max-width:${W}px; height:auto; display:block; margin:0 auto;">
+                ${gridLines}
+                ${dateLabels}
+                ${lines}
+              </svg>
+            </div>
+            <div style="margin:10px 0 16px; text-align:center; line-height:2;">${legend}</div>
+            <div style="border-top:1px solid var(--border); padding-top:14px;">
+              <p class="field-label" style="margin:0 0 8px;"><strong>Ændringslog</strong></p>
+              ${changelogHtml}
+            </div>
+          </div>
+        `;
+      }
+
+      // ==================== COALITION BUILDER ====================
+      const PARTY_LETTERS = { S:"A", SF:"F", M:"M", EL:"Ø", ALT:"Å", RV:"B", V:"V", LA:"I", KF:"C", DF:"O", DD:"Æ", BP:"H" };
+      const BUILDER_ORDER = ["EL", "ALT", "SF", "S", "RV", "M", "KF", "V", "DD", "LA", "DF", "BP"];
+      let builderState = { selected: new Set(), formateur: "red", supportOverrides: null };
+
+
+      function builderSupportParties(govMembers) {
+        const govSet = new Set(govMembers);
+        const govSide = Sim5Coalitions.classifyGovType(govMembers);
+        const isRed = govSide === "red" || govSide === "center-left";
+        const isBlue = govSide === "blue" || govSide === "center-right";
+        const blocSide = isRed ? "red" : isBlue ? "blue" : null;
+        const support = [];
+        for (const party of Sim5Parties.PARTIES_LIST) {
+          if (govSet.has(party.id)) continue;
+          if (party.positions?.forstaaelsespapir?.weight >= 0.95 && party.positions?.forstaaelsespapir?.ideal === 0) {
+            support.push({ id: party.id, mandates: party.mandates, type: "forst" });
+            continue;
+          }
+          if (blocSide && party.bloc === blocSide && party.participationPref) {
+            if ((party.participationPref.government || 0) < 0.50)
+              support.push({ id: party.id, mandates: party.mandates, type: "loose" });
+          }
+        }
+        return support;
+      }
+
+      function getBuilderSupport() {
+        const selArr = [...builderState.selected];
+        if (selArr.length === 0) return [];
+        // If user hasn't overridden, use auto-detected
+        if (!builderState.supportOverrides) return builderSupportParties(selArr);
+        // Return user's manual selection
+        return [...builderState.supportOverrides].map(id => {
+          const p = Sim5Parties.PARTIES_MAP[id];
+          return p ? { id, mandates: p.mandates, type: "manual" } : null;
+        }).filter(Boolean);
+      }
+
+      function renderBuilder() {
+        const card = document.getElementById("builderCard");
+        const parties = BUILDER_ORDER.map(id => Sim5Parties.PARTIES_MAP[id]).filter(Boolean);
+        const selArr = [...builderState.selected];
+        const govSet = new Set(selArr);
+        const totalSeats = selArr.reduce((s, id) => s + (Sim5Parties.PARTIES_MAP[id]?.mandates || 0), 0);
+        const threshold = 90;
+
+        // Support: auto-detected or user-overridden
+        const autoSupport = selArr.length > 0 ? builderSupportParties(selArr) : [];
+        if (!builderState.supportOverrides && selArr.length > 0) {
+          // Seed overrides from auto on first render with parties selected
+          builderState.supportOverrides = new Set(autoSupport.map(s => s.id));
+        }
+        const support = getBuilderSupport();
+        const supportSet = new Set(support.map(s => s.id));
+        const supportSeats = support.reduce((s, p) => s + p.mandates, 0);
+        const totalWithSupport = totalSeats + supportSeats;
+
+        // Eligible support parties: any non-government party
+        const eligibleSupport = parties.filter(p => !govSet.has(p.id));
+
+        // Horizontal mandate bar
+        const govSegments = BUILDER_ORDER.filter(id => govSet.has(id)).map(id => {
+          const p = Sim5Parties.PARTIES_MAP[id];
+          return `<div style="flex:${p.mandates} 0 0;background:${partyColor(id)};height:100%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.72rem;font-weight:600;overflow:hidden;white-space:nowrap;transition:flex 0.2s;" title="${id}: ${p.mandates}">${p.mandates >= 6 ? id + "\u2009" + p.mandates : p.mandates >= 4 ? "" + p.mandates : ""}</div>`;
+        }).join("");
+        const supportSegments = BUILDER_ORDER.filter(id => supportSet.has(id)).map(id => {
+          const p = Sim5Parties.PARTIES_MAP[id];
+          return `<div style="flex:${p.mandates} 0 0;background:${partyColor(id)};opacity:0.3;height:100%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.65rem;font-weight:500;overflow:hidden;transition:flex 0.2s;" title="${id}: ${p.mandates} (st\u00f8tte)">${p.mandates >= 6 ? id : ""}</div>`;
+        }).join("");
+        const emptyFlex = Math.max(0, 179 - totalWithSupport);
+        const thresholdPct = (threshold / 179) * 100;
+
+        // Party button grid
+        const partyGrid = parties.map(p => {
+          const sel = govSet.has(p.id);
+          const letter = PARTY_LETTERS[p.id] || p.id[0];
+          return `<button type="button" class="builder-party-btn" data-party="${p.id}" style="display:flex;align-items:center;gap:6px;background:none;border:none;cursor:pointer;padding:5px 6px;border-radius:6px;${sel ? "background:var(--light-bg);" : ""}"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;font-size:0.78rem;font-weight:700;color:#fff;background:${partyColor(p.id)};opacity:${sel ? 1 : 0.3};transition:opacity 0.15s;flex-shrink:0;">${escapeHtml(letter)}</span><span style="font-size:0.82rem;font-weight:500;opacity:${sel ? 1 : 0.45};">${p.mandates}</span></button>`;
+        }).join("");
+
+        // Support party toggle pills
+        const supportPills = selArr.length > 0 ? eligibleSupport.map(p => {
+          const active = supportSet.has(p.id);
+          return `<button type="button" class="builder-support-pill" data-support="${p.id}" style="display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:12px;border:1px solid ${active ? partyColor(p.id) : "var(--border)"};background:${active ? partyColor(p.id) + "18" : "#fff"};cursor:pointer;font-size:0.72rem;opacity:${active ? 1 : 0.5};transition:all 0.15s;"><span style="width:6px;height:6px;border-radius:50%;background:${partyColor(p.id)};"></span>${p.id}</button>`;
+        }).join("") : "";
+
+        // Coalition label with støttepartier
+        let coalLabel = selArr.length > 0 ? selArr.join(" + ") : "";
+        if (coalLabel && support.length > 0) {
+          coalLabel += ` <span style="color:var(--muted);font-weight:400;">(${support.map(s => s.id).join(", ")})</span>`;
+        }
+
+        const isRedF = builderState.formateur === "red";
+
+        card.innerHTML = `
+          <div class="card-header"><strong>Koalitionsbygger</strong><span class="field-note">Klik p\u00e5 partier for at bygge en koalition</span></div>
+          <div class="card-body">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px 12px; margin-bottom:16px;">${partyGrid}</div>
+            ${selArr.length > 0 ? `<div style="margin-bottom:10px;">
+              <p style="font-size:0.75rem;color:var(--muted);margin:0 0 4px;">St\u00f8ttepartier <span style="font-size:0.68rem;">(klik for at til/frav\u00e6lge)</span></p>
+              <div style="display:flex;flex-wrap:wrap;gap:4px;">${supportPills}</div>
+            </div>` : ""}
+            <div style="margin-bottom:14px;">
+              <div style="position:relative;height:36px;background:#f0ede8;border-radius:6px;overflow:visible;display:flex;">
+                ${govSegments}${supportSegments}
+                <div style="flex:${emptyFlex} 0 0;height:100%;"></div>
+                <div style="position:absolute;left:${thresholdPct}%;top:-4px;bottom:-4px;border-left:2px dashed #888;pointer-events:none;"></div>
+                <span style="position:absolute;left:${thresholdPct}%;top:-16px;transform:translateX(-50%);font-size:0.65rem;color:#888;font-weight:600;">90</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-top:4px;">
+                <span style="font-size:0.78rem;font-weight:600;color:${totalWithSupport >= threshold ? "var(--accent)" : "var(--muted)"};">${totalSeats} mandater${supportSeats > 0 ? ` <span style="font-weight:400;color:var(--muted);">(+${supportSeats} st\u00f8tte = ${totalWithSupport})</span>` : ""}</span>
+                <span style="font-size:0.72rem;color:var(--muted);">af 179</span>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;margin-bottom:14px;">
+              <button type="button" id="builder-test-btn" style="padding:8px 20px;background:var(--accent);color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:0.85rem;font-weight:500;" ${selArr.length < 1 ? "disabled" : ""}>Test koalition</button>
+              <button type="button" id="builder-clear-btn" style="padding:8px 14px;background:#eee;color:var(--ink);border:none;border-radius:4px;cursor:pointer;font-size:0.85rem;" ${selArr.length < 1 ? "disabled" : ""}>Ryd</button>
+              <button type="button" id="builder-formateur-toggle" style="margin-left:auto;padding:5px 12px;border:1px solid var(--border);border-radius:4px;cursor:pointer;font-size:0.75rem;background:${isRedF ? "#E91C34" : "#11418D"};color:#fff;">${isRedF ? "R\u00f8d f\u00f8rste format\u00f8r" : "Bl\u00e5 f\u00f8rste format\u00f8r"}</button>
+            </div>
+            <p style="font-size:0.88rem;margin:0 0 6px;font-weight:500;min-height:1.3em;">${coalLabel}</p>
+            <div id="builder-result"></div>
+          </div>
+        `;
+
+        // Bind party toggle buttons
+        card.querySelectorAll(".builder-party-btn").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const id = btn.dataset.party;
+            if (builderState.selected.has(id)) builderState.selected.delete(id);
+            else builderState.selected.add(id);
+            // Reset support overrides when government changes (auto-recalculate)
+            builderState.supportOverrides = null;
+            renderBuilder();
+          });
+        });
+        // Support pill toggles
+        card.querySelectorAll(".builder-support-pill").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const id = btn.dataset.support;
+            if (!builderState.supportOverrides) {
+              builderState.supportOverrides = new Set(autoSupport.map(s => s.id));
+            }
+            if (builderState.supportOverrides.has(id)) builderState.supportOverrides.delete(id);
+            else builderState.supportOverrides.add(id);
+            renderBuilder();
+          });
+        });
+        card.querySelector("#builder-test-btn")?.addEventListener("click", runBuilderTest);
+        card.querySelector("#builder-clear-btn")?.addEventListener("click", () => {
+          builderState.selected.clear();
+          builderState.supportOverrides = null;
+          renderBuilder();
+        });
+        card.querySelector("#builder-formateur-toggle")?.addEventListener("click", () => {
+          builderState.formateur = builderState.formateur === "red" ? "blue" : "red";
+          renderBuilder();
+        });
+      }
+
+      function runBuilderTest() {
+        if (builderState.selected.size < 1) return;
+        const resultDiv = document.getElementById("builder-result");
+        resultDiv.innerHTML = `<p style="color:var(--muted);font-size:0.85rem;">Simulerer...</p>`;
+        setTimeout(() => {
+        const members = [...builderState.selected];
+        const sorted = members.sort((a, b) => {
+          const pa = Sim5Parties.PARTIES_MAP[a], pb = Sim5Parties.PARTIES_MAP[b];
+          if (pa?.pmEligible && !pb?.pmEligible) return -1;
+          if (!pa?.pmEligible && pb?.pmEligible) return 1;
+          return (pb?.mandates || 0) - (pa?.mandates || 0);
+        });
+        const cfg = collectParams();
+        cfg.formateurOverride = builderState.formateur;
+        try {
+          const platform = Sim5Coalitions.negotiatePlatform(sorted, cfg);
+          if (!platform) { resultDiv.innerHTML = `<p style="color:#c0392b;font-weight:500;">Koalitionen kunne ikke forhandle en platform.</p>`; return; }
+          const coalitionSeatsTotal = sorted.reduce((s, id) => s + (Sim5Parties.PARTIES_MAP[id]?.mandates || 0), 0);
+          const concessions = Sim5Coalitions.computeConcessions(sorted, platform);
+          // Compute P(passage) and governability directly
+          const mandates = {};
+          Sim5Parties.PARTIES_LIST.forEach(p => { mandates[p.id] = p.mandates; });
+          const coalObj = { government: sorted, leader: sorted[0], platform };
+          const pPassage = Sim5Engine.computePpassage(coalObj, platform, mandates, cfg);
+          const govProfile = Sim5Engine.governabilityProfile(coalObj, platform, mandates);
+          // Simulation for probability (set-based match)
+          const result = Sim5Engine.simulate(cfg, 500);
+          const memberSet = new Set(sorted);
+          const matchingEntries = result.topCoalitions.filter(c => {
+            const cm = c.govt.split("+");
+            return cm.length === memberSet.size && cm.every(m => memberSet.has(m));
+          });
+          const simPct = matchingEntries.reduce((s, c) => s + c.pct, 0);
+          // Support (use user's toggle state)
+          const support = getBuilderSupport();
+          const supportSeats = support.reduce((s, p) => s + p.mandates, 0);
+          const totalWithSupport = coalitionSeatsTotal + supportSeats;
+          const supportLabel = support.length > 0
+            ? support.map(s => `<span style="display:inline-flex;align-items:center;gap:3px;margin-right:8px;"><span class="party-dot" style="background:${partyColor(s.id)};width:8px;height:8px;opacity:${s.type === "forst" ? 0.9 : 0.5};"></span><span style="font-size:0.78rem;">${s.id} (${s.mandates})</span></span>`).join("")
+            : `<span style="font-size:0.78rem;color:var(--muted);">Ingen identificeret</span>`;
+          const policyDimensions = Sim5Parties.DIMENSIONS.filter(d => d !== "forstaaelsespapir");
+          const platformRows = policyDimensions.map(dimension => {
+            const val = platform[dimension]; const max = Sim5Parties.SCALE_MAX[dimension];
+            const labels = DIMENSION_VALUE_LABELS[dimension]; const label = labels ? (labels[val] || val) : val;
+            const pctPos = max > 0 ? (val / max) * 100 : 0;
+            return `<tr><th>${escapeHtml(DIMENSION_LABELS[dimension] || dimension)}</th><td><div style="display:flex;align-items:center;gap:6px;"><div style="flex:0 0 60px;height:6px;background:#eee;border-radius:3px;position:relative;"><div style="position:absolute;left:${pctPos}%;top:-1px;width:8px;height:8px;background:#254264;border-radius:50%;transform:translateX(-50%);"></div></div><span style="font-size:0.78rem;">${escapeHtml(String(label))}</span></div></td></tr>`;
+          }).join("");
+          const profileRows = policyDimensions.map(dimension => {
+            const feasibility = ((govProfile[dimension] || {}).feasibility || 0) * 100;
+            return `<div class="bar-row"><span>${escapeHtml(DIMENSION_LABELS[dimension] || dimension)}</span><div class="bar-track"><div class="bar-fill ${feasibility >= 60 ? "" : "warn"}" style="width:${feasibility}%"></div></div><span class="mono">${formatPct(feasibility)}</span></div>`;
+          }).join("");
+          const concessionRows = sorted.map(id => {
+            const total = ((concessions[id] || {}).total || 0) * 100;
+            return `<div class="bar-row" style="color:${partyColor(id)}"><span>${escapeHtml(id)} \u00b7 ${escapeHtml(partyName(id))}</span><div class="bar-track"><div class="bar-fill party" style="width:${total}%;color:${partyColor(id)}"></div></div><span class="mono">${formatPct(total)}</span></div>`;
+          }).join("");
+          const govType = Sim5Coalitions.classifyGovType(sorted);
+          resultDiv.innerHTML = `
+            <div style="border:1px solid var(--border);border-radius:4px;padding:14px;margin-top:10px;">
+              <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px;">
+                <div class="metric-card" style="flex:1;min-width:80px;"><small>Sandsynlighed</small><strong class="mono">${simPct > 0 ? formatPct(simPct, 0) : "< 1 %"}</strong></div>
+                <div class="metric-card" style="flex:1;min-width:80px;"><small>P(finanslov)</small><strong class="mono">${formatPct(pPassage * 100, 0)}</strong></div>
+                <div class="metric-card" style="flex:1;min-width:80px;"><small>Mandater</small><strong class="mono">${coalitionSeatsTotal}${totalWithSupport > coalitionSeatsTotal ? ` <span style="font-size:0.72rem;color:var(--muted);">(${totalWithSupport})</span>` : ""}</strong></div>
+                <div class="metric-card" style="flex:1;min-width:80px;"><small>Type</small><strong>${escapeHtml(GOV_TYPE_LABELS[govType] || govType)}</strong></div>
+              </div>
+              <div style="margin-bottom:12px;"><p style="font-size:0.82rem;font-weight:500;margin:0 0 4px;">Sandsynlige st\u00f8ttepartier</p><div style="display:flex;flex-wrap:wrap;align-items:center;gap:2px;">${supportLabel}</div></div>
+              <details open style="margin-bottom:10px;"><summary style="cursor:pointer;font-weight:500;font-size:0.88rem;">Forhandlet platform</summary><table class="detail-table" style="margin-top:6px;">${platformRows}</table></details>
+              <details style="margin-bottom:10px;"><summary style="cursor:pointer;font-weight:500;font-size:0.88rem;">Regeringsduelighed</summary><div class="bar-list" style="margin-top:6px;">${profileRows}</div></details>
+              <details><summary style="cursor:pointer;font-weight:500;font-size:0.88rem;">Indr\u00f8mmelser</summary><div class="bar-list" style="margin-top:6px;">${concessionRows}</div></details>
+            </div>`;
+        } catch (err) { resultDiv.innerHTML = `<p style="color:#c0392b;">Fejl: ${escapeHtml(err.message)}</p>`; }
+        }, 10);
+      }
+
       function bindControlEvents() {
         document.getElementById("run-button").addEventListener("click", () => triggerRun());
 
@@ -3049,6 +3410,10 @@ onmessage = function(e) {
             });
             if (target === "sensitivity") {
               renderSensitivity();
+            } else if (target === "timeline") {
+              renderTimeline();
+            } else if (target === "builder") {
+              renderBuilder();
             }
           });
         });

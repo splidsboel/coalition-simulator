@@ -1,0 +1,70 @@
+{
+  "date": "2026-03-26",
+  "summary": "Frederiksen appointed formateur after swift kongerunde. SF issued no-confidence ultimatum. Løkke positioned as kingmaker with deliberate ambiguity. Konservative kept door open to S. Frederiksen softened on wealth tax. RV declared itself 'least difficult party'.",
+  "developments": [
+    {
+      "description": "SF issued explicit no-confidence ultimatum: 'SF will vote for a motion of no confidence against any government that SF is not part of'",
+      "source": "Pia Olsen Dyhr, kongerunde statement, 25 March",
+      "impact": "SF globalHarshness up, participationPref.government up"
+    },
+    {
+      "description": "Konservative kept door open to Socialdemokratiet — Juul 'has not ruled out' working with S, accepted invitation to Frederiksen's talks",
+      "source": "Mona Juul to DR, 25 March; invitation confirmed 26 March",
+      "impact": "KF→S inGov up"
+    },
+    {
+      "description": "Frederiksen softened on wealth tax: 'a means to an end, can of course be replaced with something else'",
+      "source": "Frederiksen to Jyllands-Posten, 26 March",
+      "impact": "S wealthTax weight down"
+    },
+    {
+      "description": "RV positioned as most flexible party: 'We are probably the least difficult when it comes to which letter combinations you can make'",
+      "source": "Martin Lidegaard, 25 March",
+      "impact": "RV globalHarshness down"
+    }
+  ],
+  "parameterChanges": [
+    {
+      "party": "SF",
+      "parameter": "globalHarshness",
+      "oldValue": 0.59,
+      "newValue": 0.64,
+      "justification": "Explicit no-confidence ultimatum is harder than earlier 'doesn't believe in ultimatums' framing (kongerunde, 25/3)"
+    },
+    {
+      "party": "SF",
+      "parameter": "participationPref.government",
+      "oldValue": 0.92,
+      "newValue": 0.96,
+      "justification": "Near-absolute commitment to government participation (kongerunde statement, 25/3)"
+    },
+    {
+      "party": "KF",
+      "parameter": "relationships.S.inGov",
+      "oldValue": 0.38,
+      "newValue": 0.43,
+      "justification": "Juul 'has not ruled out' working with S; invited to and accepted Frederiksen's talks (DR, 25-26/3)"
+    },
+    {
+      "party": "S",
+      "parameter": "positions.wealthTax.weight",
+      "oldValue": 0.35,
+      "newValue": 0.25,
+      "justification": "Frederiksen: wealth tax is 'a means to an end, can be replaced' (Jyllands-Posten, 26/3)"
+    },
+    {
+      "party": "RV",
+      "parameter": "globalHarshness",
+      "oldValue": 0.33,
+      "newValue": 0.28,
+      "justification": "Lidegaard: 'probably the least difficult party' — signals maximum flexibility (25/3)"
+    }
+  ],
+  "formateurUpdate": {
+    "appointed": true,
+    "formateurParty": "S",
+    "notes": "Frederiksen appointed kongelig undersøger on 25 March after 84 mandates pointed to her. Bilateral talks begin 27 March."
+  },
+  "formationStage": "forhandlinger",
+  "confidenceAssessment": "medium — signals are public and clear, but parameter magnitude is uncertain"
+}

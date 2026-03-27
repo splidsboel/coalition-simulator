@@ -20,8 +20,21 @@ Danish government formation model for the 2026 election. Bloc voting, two-round 
 node -e "const e = require('./sim5-engine.js'); console.log(JSON.stringify(e.simulate({}, 500), null, 2))"
 ```
 
-## Current output (~N=2000)
+## Current output (~N=5000, post 2026-03-26 update)
 
-S+M+RV+SF ~47%, S+M+SF ~20%, S+RV+SF ~17%, V+KF+LA+M ~8%, NoGov ~4%.
+S+M+RV+SF ~34%, S+RV+SF ~24%, S+M+SF ~19%, S+M+RV ~14%, S+SF ~5%, V+KF+LA+M ~1%.
 
-The M-EL forståelsespapir slider is the most consequential parameter.
+The SF-M bilateral relationship is the single most consequential parameter (28pp range).
+
+## Daily update pipeline
+
+`daily-update/` contains the parameter update pipeline: research prompt, apply script, timeseries.
+See `daily-update/historical/timeseries.json` for the coalition probability timeline.
+
+## Dashboard tabs
+
+- **Resultater**: top 10 coalitions with forståelsespapir split, platform, governability
+- **Koalitionsbygger**: click parties to test custom coalitions
+- **Tidslinje**: coalition probabilities over time (from daily updates)
+- **Hvad påvirker resultatet?**: Sobol sensitivity analysis, response curves
+- **Sådan virker modellen**: methodology documentation

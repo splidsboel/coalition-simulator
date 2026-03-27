@@ -1,37 +1,50 @@
 [
   {
-    "date": "2026-03-25",
-    "pmS": 90,
-    "pmV": 10,
+    "date": "2026-03-24",
+    "coalitions": {
+      "S+M+RV+SF": 36,
+      "S+RV+SF": 23.2,
+      "S+M+SF": 19.2,
+      "S+M+RV": 12.6,
+      "S+SF": 4,
+      "V+KF+LA+M": 1.1,
+      "S+KF+M+RV": 0.8,
+      "V+KF+M": 0.6,
+      "S+KF+M+V": 0.6,
+      "S+M+V": 0.5,
+      "S+M+RV+V": 0.4,
+      "V+KF": 0.2
+    },
     "noGov": 0,
-    "topCoalition": "S+RV+SF",
-    "topCoalitionPct": 73.2,
-    "mInGov": 16.8,
-    "topFive": [
-      {
-        "govt": "S+RV+SF",
-        "pct": 73.2
-      },
-      {
-        "govt": "S+M+SF",
-        "pct": 11.8
-      },
-      {
-        "govt": "V+RV",
-        "pct": 4.8
-      },
-      {
-        "govt": "V+SF",
-        "pct": 4.4
-      },
-      {
-        "govt": "S+M+RV",
-        "pct": 4.4
-      }
-    ],
-    "formationStage": "kongerunde",
+    "formationStage": "valgaften",
     "changelog": [
-      "Initial calibration from post-election party briefs"
+      "Udgangspunkt: kalibrering fra valgaften, før forhandlingssignaler"
+    ]
+  },
+  {
+    "date": "2026-03-26",
+    "coalitions": {
+      "S+M+RV+SF": 33.6,
+      "S+RV+SF": 23.9,
+      "S+M+SF": 19,
+      "S+M+RV": 13.7,
+      "S+SF": 4.5,
+      "V+KF+LA+M": 1,
+      "S+KF+M+V": 0.9,
+      "S+M+V": 0.8,
+      "S+KF+M+RV": 0.7,
+      "V+LA+M": 0.4,
+      "V+KF+M": 0.4,
+      "S+M+RV+V": 0.2
+    },
+    "noGov": 0,
+    "formationStage": "forhandlinger",
+    "changelog": [
+      "SF forhandler hårdere efter mistillidstrussel: »SF stemmer for et mistillidsvotum mod enhver regering, SF ikke er en del af«",
+      "SF kræver regeringsdeltagelse endnu stærkere (næsten absolut krav)",
+      "Konservative åbner døren til S: Juul »har ikke udelukket« samarbejde, inviteret til forhandlinger",
+      "S bløder op på formueskat: Frederiksen kalder den »et middel, ikke et mål«",
+      "RV signalerer maksimal fleksibilitet: Lidegaard kalder partiet »det mindst besværlige«"
     ]
   }
 ]

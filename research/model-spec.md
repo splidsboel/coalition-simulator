@@ -16,21 +16,19 @@ The simulator asks two questions about each possible coalition. First, can it pa
 
 ---
 
-## Current baseline output (N=10,000)
+## Current baseline output (N=5,000, post 2026-03-26 update)
 
-| Coalition | Pct | Support | Seats |
-|-----------|-----|---------|-------|
-| S+M+RV+SF | ~24% | [EL] forst, ALT loose | 98 |
-| S+RV+SF | ~22% | [EL] forst, ALT loose, NA | 87 |
-| S+M+SF | ~13% | [EL] forst, ALT loose, NA | 93 |
-| S+M+RV | ~13% | [EL] forst, ALT loose, NA | 81 |
-| S+M+RV+SF | ~10% | ALT loose, NA | 90 + afhold |
-| S+M+SF | ~6% | ALT loose, NA | 82 + afhold |
-| S+SF | ~5% | [EL] forst, ALT loose, NA | 77 + afhold |
-| V+KF+LA+M | ~1% | DF, DD, BP loose | 61 + afhold |
+| Coalition | Pct (aggregated) | Support | Seats |
+|-----------|-----------------|---------|-------|
+| S+M+RV+SF | ~34% | [EL] forst, ALT loose | 98 |
+| S+RV+SF | ~24% | [EL] forst, ALT loose, NA | 87 |
+| S+M+SF | ~19% | [EL] forst, ALT loose, NA | 93 |
+| S+M+RV | ~14% | [EL] forst, ALT loose, NA | 81 |
+| S+SF | ~5% | [EL] forst, ALT loose, NA | 77 + skift. flertal |
+| V+KF+LA+M | ~1% | DF, DD, BP loose | 61 + skift. flertal |
 | NoGov | 0% | | |
 
-Coalitions are now split by forståelsespapir status: S+M+RV+SF with EL forst (24%, 98 seats) is a different political configuration from S+M+RV+SF without it (10%, relying on ALT+NA+opposition abstention). When the total including support is below 90, the coalition survives through opposition abstention ("afhold") — the Danish norm that the main opposition party abstains rather than votes against the budget.
+Coalitions are split by forståelsespapir status in the dashboard (e.g., S+M+RV+SF with EL forst vs. without). When the total including support is below 90, the coalition survives through shifting majorities ("skift. flertal") -- the Danish norm of opposition abstention and cross-bloc budget negotiation.
 
 The distribution reflects genuine uncertainty about the SF--M relationship, M--EL tolerance, and how formateurs trade off budget arithmetic against coalition quality.
 

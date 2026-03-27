@@ -20,7 +20,7 @@ const S = {
   globalHarshness: 0.45,
 
   positions: {
-    wealthTax: { ideal: 2, floor: 4, ceiling: 2, weight: 0.35 },
+    wealthTax: { ideal: 2, floor: 4, ceiling: 2, weight: 0.25 },  // UPDATE 2026-03-26: Frederiksen called wealth tax "a means to an end, can be replaced" — softening signal
     climateTgt: { ideal: 2, floor: 3, ceiling: 2, weight: 0.45 },
     natureLaw: { ideal: 1, floor: 2, ceiling: 1, weight: 0.20 },
     pesticideBan: { ideal: 1, floor: 1, ceiling: 1, weight: 0.90 },
@@ -127,14 +127,15 @@ const SF = {
   pmDemand: false,
 
   participationPref: {
-    government: 0.92,
+    government: 0.96,
     stoettepartiForst: 0.00,
     stoettepartiLoose: 0.00,
-    opposition: 0.08
+    opposition: 0.04
   },
 
   // FIXED: lowered from 0.68 to 0.59 because SF's brief combines a hard participation-format demand (government or opposition) with explicit issue-level flexibility: Dyhr says she does not believe in ultimatums and repeatedly opens the door to Moderaterne (SF.md).
-  globalHarshness: 0.59,
+  // UPDATE 2026-03-26: raised to 0.64 after kongerunde — SF's explicit no-confidence ultimatum ("SF will vote for a motion of no confidence against any government that SF is not part of") is harder than the earlier "doesn't believe in ultimatums" framing.
+  globalHarshness: 0.64,
 
   positions: {
     wealthTax: { ideal: 1, floor: 4, ceiling: 1, weight: 0.45 },
@@ -588,7 +589,7 @@ const RV = {
     opposition: 0.12
   },
 
-  globalHarshness: 0.33,
+  globalHarshness: 0.28,  // UPDATE 2026-03-26: Lidegaard: "probably the least difficult party" — most flexible actor
 
   positions: {
     wealthTax: { ideal: 4, floor: 3, ceiling: 4, weight: 0.74 },
@@ -951,7 +952,7 @@ const KF = {
 
   relationships: {
     S: {
-      inGov: 0.38,
+      inGov: 0.43,  // UPDATE 2026-03-26: Juul "has not ruled out" working with S; invited to Frederiksen's talks
       asSupport: 0.60,
       tolerateInGov: 0.72,
       asPM: 0.22
