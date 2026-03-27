@@ -2726,7 +2726,7 @@ onmessage = function(e) {
         const accent = curve.color || "#2f855a";
         const start = values[0] || 0;
         const end = values[values.length - 1] || 0;
-        const axisFont = "font-family:var(--mono,monospace); font-size:8px; fill:#8a7e72;";
+        const axisFont = "font-family:var(--mono,monospace); font-size:6.5px; fill:#a09888;";
         const range = curve.range || [0, 1];
         return `
           <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeHtml(curve.label)}: ${formatPctShort(start)} til ${formatPctShort(end)} procent">
@@ -2747,6 +2747,51 @@ onmessage = function(e) {
         `;
       }
 
+      function buildMultiCoalitionChart(config) {
+        const width = 520;
+        const height = 180;
+        const plotLeft = 32;
+        const plotRight = width - 12;
+        const plotTop = 14;
+        const plotBottom = height - 28;
+        const plotWidth = plotRight - plotLeft;
+        const plotHeight = plotBottom - plotTop;
+        const yMax = 50;
+        const axisFont = "font-family:var(--mono,monospace); font-size:6.5px; fill:#a09888;";
+        const range = config.range || [0, 1];
+
+        const seriesPaths = config.series.map(s => {
+          const steps = Math.max(s.values.length - 1, 1);
+          const points = s.values.map((v, i) => ({
+            x: plotLeft + (i / steps) * plotWidth,
+            y: plotBottom - (clamp(v, 0, yMax) / yMax) * plotHeight
+          }));
+          return `<path d="${buildLinePath(points)}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />`;
+        }).join("\n            ");
+
+        const legendItems = config.series.map(s =>
+          `<span style="display:inline-flex;align-items:center;gap:3px;margin-right:10px;font-size:11px;color:#5a5247;"><span style="display:inline-block;width:10px;height:3px;background:${s.color};border-radius:1px;"></span>${escapeHtml(s.label)}</span>`
+        ).join("");
+
+        return `
+          <div class="sensitivity-multi-chart" style="margin:12px 0;">
+            <p class="field-label" style="margin-bottom:4px;">${escapeHtml(config.title)}</p>
+            <div style="margin-bottom:4px;">${legendItems}</div>
+            <svg viewBox="0 0 ${width} ${height}" role="img" style="width:100%;max-width:${width}px;">
+              <rect x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" fill="#faf9f7" stroke="#d7d0c6" stroke-width="1" rx="3" />
+              <line x1="${plotLeft}" y1="${plotBottom}" x2="${plotRight}" y2="${plotBottom}" stroke="#ddd4c9" stroke-width="1" />
+              <line x1="${plotLeft}" y1="${plotTop + plotHeight * 0.5}" x2="${plotRight}" y2="${plotTop + plotHeight * 0.5}" stroke="#ece5dc" stroke-width="1" stroke-dasharray="4 4" />
+              ${seriesPaths}
+              <text x="${plotLeft}" y="${height - 6}" style="${axisFont}" text-anchor="start">${formatDecimal(range[0], 2)}</text>
+              <text x="${plotRight}" y="${height - 6}" style="${axisFont}" text-anchor="end">${formatDecimal(range[1], 2)}</text>
+              <text x="${plotLeft - 4}" y="${plotTop + 4}" style="${axisFont}" text-anchor="end">${yMax}%</text>
+              <text x="${plotLeft - 4}" y="${plotBottom + 1}" style="${axisFont}" text-anchor="end">0%</text>
+            </svg>
+            ${config.caption ? `<p class="field-desc" style="margin-top:4px;font-size:11px;">${escapeHtml(config.caption)}</p>` : ""}
+          </div>
+        `;
+      }
+
       function buildSensitivityCurveCards(curves) {
         return `
           <div class="sensitivity-curves">
@@ -2758,10 +2803,11 @@ onmessage = function(e) {
               return `
                 <article class="sensitivity-curve-card${curve.featured ? " featured" : ""}">
                   <p class="field-label sensitivity-curve-label">${escapeHtml(curve.label)}</p>
+                  ${curve.caption ? `<p class="field-desc sensitivity-curve-caption">${escapeHtml(curve.caption)}</p>` : ""}
                   <div class="sensitivity-sparkline">
                     ${buildSensitivitySparklineSvg(curve)}
                   </div>
-                  <p class="field-desc sensitivity-curve-meta">${rangeLabel} · ${formatPctShort(start)} %→${formatPctShort(end)} %, Δ${delta} pp</p>
+                  <p class="field-desc sensitivity-curve-meta">${formatPctShort(start)} %→${formatPctShort(end)} %, Δ${delta} pp</p>
                 </article>
               `;
             }).join("")}
@@ -2795,17 +2841,18 @@ onmessage = function(e) {
 
         // Structural parameter sparklines (from highres-1d-sweeps.jsonl)
         const structuralCurves = [
-          { label: "Viabilitetstærskel", values: [27, 29, 31, 26, 27, 32, 32, 34, 35], range: [0.41, 0.84], color: "#1e3a5f", featured: true },
-          { label: "Rød præference", values: [24, 26, 28, 31, 30, 31, 26, 24, 20], range: [0.02, 0.98], color: "#2c5282" },
-          { label: "Fleksibilitet", values: [22, 23, 31, 29, 35, 36, 35, 38, 32], range: [-0.29, 0.49], color: "#3a6ea5" },
-          { label: "Oppositionens tilbageholdenhed", values: [29, 31, 32, 35, 31, 35, 35, 36, 39], range: [0.11, 0.69], color: "#d97706" },
-          { label: "Budgetpassage vs kvalitet (w)", values: [28, 26, 32, 30, 34, 29, 34, 36, 30], range: [0.31, 0.89], color: "#b45309" },
+          { label: "Viabilitetstærskel", caption: "Formatørens minimumskrav til budgetpassage. Højere = kun sikre koalitioner forsøges.", values: [27, 29, 31, 26, 27, 32, 32, 34, 35], range: [0.41, 0.84], color: "#1e3a5f", featured: true },
+          { label: "Rød præference", caption: "Foretrækker Frederiksen en ren rød eller en bred midterregering?", values: [24, 26, 28, 31, 30, 31, 26, 24, 20], range: [0.02, 0.98], color: "#2c5282" },
+          { label: "Fleksibilitet", caption: "Forhandlingspres. Negativt = partier holder fast. Positivt = kompromisvillighed stiger.", values: [22, 23, 31, 29, 35, 36, 35, 38, 32], range: [-0.29, 0.49], color: "#3a6ea5" },
+          { label: "Oppositionens tilbageholdenhed", caption: "Stemmer det største oppositionsparti imod eller undlader at stemme? Dansk norm: undlade.", values: [29, 31, 32, 35, 31, 35, 35, 36, 39], range: [0.11, 0.69], color: "#d97706" },
+          { label: "Budgetpassage vs kvalitet (w)", caption: "Vægter formatøren budgetsikkerhed (høj) eller politisk kvalitet (lav)?", values: [28, 26, 32, 30, 34, 29, 34, 36, 30], range: [0.31, 0.89], color: "#b45309" },
         ];
 
         // Bilateral relationship sparklines (from bilateral-1d-sweeps.jsonl)
         const bilateralCurves = [
           {
             label: "SF accepterer M i regering",
+            caption: "Hvor villig er SF til at sidde i regering med M? Den mest afgørende bilateral.",
             values: [9, 12, 16, 20, 24, 28, 32, 35, 37],
             range: [0.2, 0.98],
             color: "#24704a",
@@ -2813,24 +2860,28 @@ onmessage = function(e) {
           },
           {
             label: "M accepterer SF i regering",
+            caption: "Hvor villig er M til at sidde i regering med SF?",
             values: [11, 14, 18, 22, 26, 30, 34, 37, 38],
             range: [0.2, 0.95],
             color: "#2f855a"
           },
           {
             label: "RV accepterer M i regering",
+            caption: "Hvor villig er RV til at sidde i regering med M?",
             values: [14, 16, 18, 20, 22, 24, 26, 27, 28],
             range: [0.3, 0.98],
             color: "#3f9366"
           },
           {
             label: "M accepterer RV i regering",
+            caption: "Hvor villig er M til at sidde i regering med RV?",
             values: [21, 24, 26, 28, 30, 32, 33, 34, 34],
             range: [0.4, 0.98],
             color: "#5aa57a"
           },
           {
             label: "S accepterer RV i regering",
+            caption: "Hvor villig er S til at sidde i regering med RV?",
             values: [24, 26, 28, 29, 30, 31, 31, 31, 31],
             range: [0.4, 1.0],
             color: "#76b78f"
@@ -2863,6 +2914,33 @@ onmessage = function(e) {
                 <p class="field-label methodology-heading"><strong>Partirelationer der afgør det</strong></p>
                 <p class="field-desc methodology-copy">&quot;SF accepterer M i regering&quot; betyder SFs villighed til at sidde i en regering sammen med M (og omvendt for den modsatte retning). Det er den enkeltfaktor, der påvirker koalitionsfordelingen mest — mere end nogen strukturel parameter. Kurverne viser, hvordan sandsynligheden for S+M+RV+SF ændrer sig, når én bilateral relation varieres fra lav accept til høj accept.</p>
                 ${buildSensitivityCurveCards(bilateralCurves)}
+              </section>
+
+              <section class="field-group methodology-section sensitivity-section sensitivity-section-card">
+                <p class="field-label methodology-heading"><strong>Hvilken type Frederiksen-regering?</strong></p>
+                <p class="field-desc methodology-copy">Frederiksen bliver statsminister i ~99 % af simuleringerne. Men <em>hvilken</em> type regering ændrer sig markant med to nøgleparametre:</p>
+                ${buildMultiCoalitionChart({
+                  title: "SF accepterer M i regering (lav → høj)",
+                  series: [
+                    { label: "S+M+RV+SF", color: "#1e3a5f", values: [14, 15, 20, 17, 22, 26, 28, 32, 31] },
+                    { label: "S+RV+SF", color: "#c0392b", values: [40, 36, 30, 36, 29, 30, 29, 26, 24] },
+                    { label: "S+M+SF", color: "#e67e22", values: [8, 11, 14, 15, 20, 19, 21, 20, 22] },
+                    { label: "S+M+RV", color: "#6a1b9a", values: [16, 19, 16, 17, 15, 12, 11, 11, 13] },
+                  ],
+                  range: [0.20, 0.98],
+                  caption: "Når SF bliver mere villig til at acceptere M, stiger S+M+RV+SF (mørkeblå) på bekostning af S+RV+SF (rød). M-frie koalitioner dominerer, når SF er skeptisk."
+                })}
+                ${buildMultiCoalitionChart({
+                  title: "Rød præference (bred midte → ren rød)",
+                  series: [
+                    { label: "S+M+RV+SF", color: "#1e3a5f", values: [24, 26, 28, 31, 30, 31, 26, 24, 20] },
+                    { label: "S+RV+SF", color: "#c0392b", values: [12, 16, 18, 21, 23, 25, 33, 34, 44] },
+                    { label: "S+M+SF", color: "#e67e22", values: [17, 21, 17, 19, 20, 19, 17, 17, 15] },
+                    { label: "S+M+RV", color: "#6a1b9a", values: [36, 27, 27, 20, 14, 13, 15, 11, 8] },
+                  ],
+                  range: [0.02, 0.98],
+                  caption: "Når Frederiksen foretrækker rød blok, stiger S+RV+SF (rød) markant. Når hun foretrækker bred midte, dominerer S+M+RV (lilla) — en smal centrumkoalition."
+                })}
               </section>
 
               <section class="field-group methodology-section sensitivity-section sensitivity-section-card" style="margin-bottom:0;">
