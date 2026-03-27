@@ -1327,7 +1327,7 @@
         mPmPref: "neutral",
         formateurOverride: "red",
         maxFormationRounds: 1,
-        viabilityThreshold: 0.7,
+        viabilityThreshold: 0.75,
         N: 500,
         mDemandGov: true,
         sDemandGov: true,
@@ -1715,7 +1715,7 @@ onmessage = function(e) {
                 <span class="value-pill" id="control-viabilityThreshold-value">0,70</span>
               </div>
               <p class="field-desc">Minimum sandsynlighed for at S-formatøren kan forhandle en budgetaftale med tilstrækkeligt mange støttepartier. Høj tærskel = kræver sikre aftaler. Lav = tager chancer. Blå formatøren (runde 2) bruger altid en lavere tærskel (0,10) da situationen er mere desperat.</p>
-              <input type="range" id="control-viabilityThreshold" data-control="viabilityThreshold" min="0.3" max="0.9" step="0.05" value="0.7">
+              <input type="range" id="control-viabilityThreshold" data-control="viabilityThreshold" min="0.3" max="0.9" step="0.05" value="0.75">
             </div>
 
             <button type="button" id="run-button" class="run-button dirty">Kør simulering ▶</button>
@@ -2988,7 +2988,7 @@ onmessage = function(e) {
       }
 
       // ==================== TIMELINE TAB ====================
-      const TIMELINE_DATA = [{"date":"2026-03-24","coalitions":{"S+M+RV+SF":36,"S+RV+SF":23.2,"S+M+SF":19.2,"S+M+RV":12.6,"S+SF":4,"V+KF+LA+M":1.1},"noGov":0,"formationStage":"valgaften","changelog":["Udgangspunkt: kalibrering fra valgaften, f\u00f8r forhandlingssignaler"]},{"date":"2026-03-26","coalitions":{"S+M+RV+SF":33.6,"S+RV+SF":23.9,"S+M+SF":19,"S+M+RV":13.7,"S+SF":4.5,"V+KF+LA+M":1},"noGov":0,"formationStage":"forhandlinger","changelog":["SF forhandler h\u00e5rdere efter mistillidstrussel: \u00bbSF stemmer for et mistillidsvotum mod enhver regering, SF ikke er en del af\u00ab","SF kr\u00e6ver regeringsdeltagelse endnu st\u00e6rkere (n\u00e6sten absolut krav)","Konservative \u00e5bner d\u00f8ren til S: Juul \u00bbhar ikke udelukket\u00ab samarbejde, inviteret til forhandlinger","S bl\u00f8der op p\u00e5 formueskat: Frederiksen kalder den \u00bbet middel, ikke et m\u00e5l\u00ab","RV signalerer maksimal fleksibilitet: Lidegaard kalder partiet \u00bbdet mindst besv\u00e6rlige\u00ab"]}];
+      const TIMELINE_DATA = [{"date":"2026-03-24","coalitions":{"S+M+RV+SF":36,"S+RV+SF":23.2,"S+M+SF":19.2,"S+M+RV":12.6,"S+SF":4,"V+KF+LA+M":1.1},"noGov":0,"formationStage":"valgaften","changelog":["Udgangspunkt: kalibrering fra valgaften, f\u00f8r forhandlingssignaler"]},{"date":"2026-03-26","coalitions":{"S+M+RV+SF":47.8,"S+RV+SF":35.8,"V+KF+LA+M":6.7,"V+KF+M":2.9,"V+LA+M":2.3,"V+DD+LA+M":0.8,"V+LA":0.7,"V+KF":0.7},"noGov":0,"formationStage":"forhandlinger","changelog":["Kongerundens mandat: Frederiksen skal danne regering med SF og RV \u2014 indsn\u00e6vrer format\u00f8rens muligheder","H\u00f8jere viabilitetst\u00e6rskel (0,70\u21920,75): format\u00f8ren er mere risikoavers end antaget","Bl\u00e5 blok f\u00e5r en runde hvis mandatet fejler (historisk m\u00f8nster: 1988, 2015)","SF forhandler h\u00e5rdere efter mistillidstrussel mod enhver regering uden SF","Konservative \u00e5bner d\u00f8ren til S: Juul \u00bbhar ikke udelukket\u00ab samarbejde","S bl\u00f8der op p\u00e5 formueskat: \u00bbet middel, ikke et m\u00e5l\u00ab","RV signalerer maksimal fleksibilitet: \u00bbdet mindst besv\u00e6rlige parti\u00ab"]}];
       let timelineData = TIMELINE_DATA;
 
       function renderTimeline() {

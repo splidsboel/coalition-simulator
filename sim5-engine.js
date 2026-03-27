@@ -595,7 +595,7 @@ function withLeaderFirst(government, leader) {
 }
 
 function selectGovernment(mandates, naAlignments, cfg, coalitions) {
-  const viabilityThreshold = cfg.viabilityThreshold != null ? cfg.viabilityThreshold : 0.70;
+  const viabilityThreshold = cfg.viabilityThreshold != null ? cfg.viabilityThreshold : 0.75;
   const blueViabilityThreshold = cfg.blueViabilityThreshold != null ? cfg.blueViabilityThreshold : 0.10;
   const redPreference = cfg.redPreference != null ? cfg.redPreference : 0.5;
   const maxRedRounds = cfg.maxFormationRounds != null ? cfg.maxFormationRounds : 3;
@@ -703,24 +703,78 @@ function selectGovernment(mandates, naAlignments, cfg, coalitions) {
     return null;
   }
 
-  // S formateur rounds: Frederiksen tries with increasing flexibility
-  for (let round = 0; round < maxRedRounds; round++) {
-    const roundFlex = Math.min(0.5, (cfg.flexibility || 0) + round * flexIncrement);
-    const roundCfg = { ...cfg, flexibility: roundFlex, _naAlignments: naAlignments };
-    const result = tryGroup(sLed, sLedBonus, roundCfg, viabilityThreshold);
-    if (result) {
-      result.formationRound = round + 1;
-      result.formateurOrder = "rød først";
-      return result;
+  // S formateur round 1: mandate-constrained
+  // The kongerunde mandate specifies which parties Frederiksen must include.
+  // Default: SF + RV (from King Frederik's statement: "government with
+  // participation of SF and Radikale Venstre"). If mandateParties is null
+  // or empty, round 1 is unconstrained (pre-kongerunde or counterfactual).
+  const mandateParties = cfg.mandateParties !== undefined ? cfg.mandateParties : ["SF", "RV"];
+  const hasMandateConstraint = mandateParties && mandateParties.length > 0;
+
+  if (hasMandateConstraint) {
+    const mandateSet = new Set(mandateParties);
+    const mandateCoalitions = sLed.filter(c =>
+      [...mandateSet].every(mp => c.government.includes(mp))
+    );
+    for (let round = 0; round < maxRedRounds; round++) {
+      const roundFlex = Math.min(0.5, (cfg.flexibility || 0) + round * flexIncrement);
+      const roundCfg = { ...cfg, flexibility: roundFlex, _naAlignments: naAlignments };
+      const result = tryGroup(mandateCoalitions, sLedBonus, roundCfg, viabilityThreshold);
+      if (result) {
+        result.formationRound = round + 1;
+        result.formateurOrder = "rød først";
+        return result;
+      }
+    }
+
+    // Mandate failed. Historically, the King tries the other bloc before
+    // giving the first formateur a broader mandate (1988: Schlüter→Anker;
+    // 2015: Thorning→Løkke). Blue gets a turn next.
+    const blueAfterMandateNum = maxRedRounds + 1;
+    const blueAfterMandateFlex = Math.min(0.5, (cfg.flexibility || 0) + blueAfterMandateNum * flexIncrement);
+    const blueAfterMandateCfg = { ...cfg, flexibility: blueAfterMandateFlex, _naAlignments: naAlignments };
+    const blueAfterMandate = tryGroup(blueLed, blueBonus, blueAfterMandateCfg, blueViabilityThreshold)
+      || tryGroup(mLed, mLedBonus, blueAfterMandateCfg, blueViabilityThreshold);
+    if (blueAfterMandate) {
+      blueAfterMandate.formationRound = blueAfterMandateNum;
+      blueAfterMandate.formateurOrder = "blå først";
+      return blueAfterMandate;
+    }
+
+    // Round 3: expanded S mandate — S tries all S-led coalitions with lower
+    // threshold (third kongerunde, broader authority, increasing desperation)
+    const expandedThreshold = Math.max(0.50, viabilityThreshold - 0.10);
+    const expandedNum = blueAfterMandateNum + 1;
+    const expandedFlex = Math.min(0.5, (cfg.flexibility || 0) + expandedNum * flexIncrement);
+    const expandedCfg = { ...cfg, flexibility: expandedFlex, _naAlignments: naAlignments };
+    const expandedResult = tryGroup(sLed, sLedBonus, expandedCfg, expandedThreshold);
+    if (expandedResult) {
+      expandedResult.formationRound = expandedNum;
+      expandedResult.formateurOrder = "rød først";
+      return expandedResult;
+    }
+  } else {
+    // No mandate constraint (pre-kongerunde or counterfactual): try all S-led
+    for (let round = 0; round < maxRedRounds; round++) {
+      const roundFlex = Math.min(0.5, (cfg.flexibility || 0) + round * flexIncrement);
+      const roundCfg = { ...cfg, flexibility: roundFlex, _naAlignments: naAlignments };
+      const result = tryGroup(sLed, sLedBonus, roundCfg, viabilityThreshold);
+      if (result) {
+        result.formationRound = round + 1;
+        result.formateurOrder = "rød først";
+        return result;
+      }
     }
   }
 
-  // Blue formateur round: desperation fallback with lower threshold
-  const blueCfg = { ...cfg, flexibility: (cfg.flexibility || 0) + maxRedRounds * flexIncrement, _naAlignments: naAlignments };
+  // Blue formateur round (for unconstrained path, or final blue attempt after expanded S)
+  const blueRoundNum = hasMandateConstraint ? maxRedRounds + 3 : maxRedRounds + 1;
+  const blueFlex = (cfg.flexibility || 0) + (blueRoundNum - 1) * flexIncrement;
+  const blueCfg = { ...cfg, flexibility: Math.min(0.5, blueFlex), _naAlignments: naAlignments };
   const result = tryGroup(blueLed, blueBonus, blueCfg, blueViabilityThreshold)
     || tryGroup(mLed, mLedBonus, blueCfg, blueViabilityThreshold);
   if (result) {
-    result.formationRound = maxRedRounds + 1;
+    result.formationRound = blueRoundNum;
     result.formateurOrder = "blå først";
     return result;
   }
@@ -728,16 +782,17 @@ function selectGovernment(mandates, naAlignments, cfg, coalitions) {
   // Desperation fallback: historical precedent shows government always forms.
   // 1975: four dronningerunder. 1988: four rounds. Hartling: 22 seats.
   // Progressive threshold reduction until something works.
+  const desperationRoundNum = blueRoundNum + 1;
   const desperationCfg = {
     ...cfg,
-    flexibility: (cfg.flexibility || 0) + (maxRedRounds + 1) * flexIncrement,
+    flexibility: Math.min(0.5, (cfg.flexibility || 0) + (desperationRoundNum - 1) * flexIncrement),
     _naAlignments: naAlignments
   };
   const desperationResult = tryGroup(sLed, sLedBonus, desperationCfg, 0.05)
     || tryGroup(blueLed, blueBonus, desperationCfg, 0.05)
     || tryGroup(mLed, mLedBonus, desperationCfg, 0.05);
   if (desperationResult) {
-    desperationResult.formationRound = maxRedRounds + 2;
+    desperationResult.formationRound = desperationRoundNum;
     desperationResult.formateurOrder = "desperation";
     return desperationResult;
   }
@@ -826,7 +881,7 @@ function buildMandates(userParams) {
 function buildConfig(userParams) {
   const defaults = {
     flexibility: 0,
-    viabilityThreshold: 0.70,
+    viabilityThreshold: 0.75,
     blueViabilityThreshold: 0.10,
     minForVotes: 70,
     distPenalty: 1.5,
@@ -911,7 +966,7 @@ function simulate(userParams, N) {
   // When a user moves a slider (or a sweep injects a value), the CI should
   // not override it. CI only applies to parameters left at their defaults.
   const CI_DEFAULTS = {
-    mElTolerate: 0.35, viabilityThreshold: 0.70, passageWeight: 0.65,
+    mElTolerate: 0.35, viabilityThreshold: 0.75, passageWeight: 0.65,
     elInformalRate: 0.45, elCentristPenalty: 0.08, elForstBase: 0.93,
     rescueBase: 0.10, oppositionAbstention: 0.30, distPenalty: 1.50,
     parsimonySpread: 1.0, mdfCooperationProb: 0.12
@@ -966,7 +1021,7 @@ function simulate(userParams, N) {
     // positions and sweep-injected values are respected exactly.
     const _iterViability = isUserSet("viabilityThreshold")
       ? cfg.viabilityThreshold
-      : Math.max(0.50, Math.min(0.85, normDraw(0.70, 0.06)));
+      : Math.max(0.55, Math.min(0.90, normDraw(0.75, 0.06)));
     const _iterPassageWeight = isUserSet("passageWeight")
       ? cfg.passageWeight
       : Math.max(0.50, Math.min(0.90, normDraw(0.65, 0.08)));

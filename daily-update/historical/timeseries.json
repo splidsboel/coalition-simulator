@@ -7,13 +7,7 @@
       "S+M+SF": 19.2,
       "S+M+RV": 12.6,
       "S+SF": 4,
-      "V+KF+LA+M": 1.1,
-      "S+KF+M+RV": 0.8,
-      "V+KF+M": 0.6,
-      "S+KF+M+V": 0.6,
-      "S+M+V": 0.5,
-      "S+M+RV+V": 0.4,
-      "V+KF": 0.2
+      "V+KF+LA+M": 1.1
     },
     "noGov": 0,
     "formationStage": "valgaften",
@@ -24,27 +18,30 @@
   {
     "date": "2026-03-26",
     "coalitions": {
-      "S+M+RV+SF": 33.6,
-      "S+RV+SF": 23.9,
-      "S+M+SF": 19,
-      "S+M+RV": 13.7,
-      "S+SF": 4.5,
-      "V+KF+LA+M": 1,
-      "S+KF+M+V": 0.9,
-      "S+M+V": 0.8,
-      "S+KF+M+RV": 0.7,
-      "V+LA+M": 0.4,
-      "V+KF+M": 0.4,
-      "S+M+RV+V": 0.2
+      "S+M+RV+SF": 47.800000000000004,
+      "S+RV+SF": 35.8,
+      "V+KF+LA+M": 6.7,
+      "V+KF+M": 2.9,
+      "V+LA+M": 2.3,
+      "V+DD+LA+M": 0.8,
+      "V+LA": 0.7,
+      "V+KF": 0.7,
+      "V+M": 0.7,
+      "V+DD+KF+M": 0.6,
+      "V+KF+LA": 0.6,
+      "V+DD+M": 0.2,
+      "V+DD": 0.1
     },
     "noGov": 0,
     "formationStage": "forhandlinger",
     "changelog": [
-      "SF forhandler hårdere efter mistillidstrussel: »SF stemmer for et mistillidsvotum mod enhver regering, SF ikke er en del af«",
-      "SF kræver regeringsdeltagelse endnu stærkere (næsten absolut krav)",
-      "Konservative åbner døren til S: Juul »har ikke udelukket« samarbejde, inviteret til forhandlinger",
-      "S bløder op på formueskat: Frederiksen kalder den »et middel, ikke et mål«",
-      "RV signalerer maksimal fleksibilitet: Lidegaard kalder partiet »det mindst besværlige«"
+      "Kongerundens mandat: Frederiksen skal danne regering med SF og RV — indsnævrer formatørens muligheder",
+      "Højere viabilitetstærskel (0,70→0,75): formatøren er mere risikoavers end antaget",
+      "Blå blok får en runde hvis mandatet fejler (historisk mønster: 1988, 2015)",
+      "SF forhandler hårdere efter mistillidstrussel mod enhver regering uden SF",
+      "Konservative åbner døren til S: Juul »har ikke udelukket« samarbejde",
+      "S bløder op på formueskat: »et middel, ikke et mål«",
+      "RV signalerer maksimal fleksibilitet: »det mindst besværlige parti«"
     ]
   }
 ]
