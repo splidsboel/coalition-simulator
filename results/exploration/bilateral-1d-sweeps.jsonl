@@ -1,0 +1,725 @@
+{"param":"SF accepts M in govt","value":0.2156,"S+M+RV+SF":8.6,"S+RV+SF":39.8,"S+M+SF":10.2,"S+M+RV":19.6,"S+SF":7.2,"V+KF+LA+M":5.4,"noGov":0}
+{"param":"SF accepts M in govt","value":0.2468,"S+M+RV+SF":13.8,"S+RV+SF":39.8,"S+M+SF":8.4,"S+M+RV":16.4,"S+SF":5.4,"V+KF+LA+M":7,"noGov":0}
+{"param":"SF accepts M in govt","value":0.278,"S+M+RV+SF":14.2,"S+RV+SF":35.2,"S+M+SF":10,"S+M+RV":19.2,"S+SF":6.2,"V+KF+LA+M":4.8,"noGov":0}
+{"param":"SF accepts M in govt","value":0.3092,"S+M+RV+SF":14.6,"S+RV+SF":36,"S+M+SF":11,"S+M+RV":19.2,"S+SF":5.8,"V+KF+LA+M":4.8,"noGov":0}
+{"param":"SF accepts M in govt","value":0.3404,"S+M+RV+SF":19.2,"S+RV+SF":32.4,"S+M+SF":12.8,"S+M+RV":17.6,"S+SF":6.8,"V+KF+LA+M":3.6,"noGov":0}
+{"param":"SF accepts M in govt","value":0.3716,"S+M+RV+SF":19.6,"S+RV+SF":30,"S+M+SF":14.2,"S+M+RV":16.2,"S+SF":5.6,"V+KF+LA+M":5.4,"noGov":0}
+{"param":"SF accepts M in govt","value":0.4028,"S+M+RV+SF":20.6,"S+RV+SF":31.8,"S+M+SF":13,"S+M+RV":17.2,"S+SF":5.6,"V+KF+LA+M":3.2,"noGov":0}
+{"param":"SF accepts M in govt","value":0.434,"S+M+RV+SF":17,"S+RV+SF":35.8,"S+M+SF":14.6,"S+M+RV":17.2,"S+SF":4,"V+KF+LA+M":4.2,"noGov":0}
+{"param":"SF accepts M in govt","value":0.4652,"S+M+RV+SF":20,"S+RV+SF":30.4,"S+M+SF":17.4,"S+M+RV":17.2,"S+SF":5,"V+KF+LA+M":2.6,"noGov":0}
+{"param":"SF accepts M in govt","value":0.4964,"S+M+RV+SF":22.4,"S+RV+SF":29.4,"S+M+SF":19.6,"S+M+RV":14.8,"S+SF":5.8,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"SF accepts M in govt","value":0.5276,"S+M+RV+SF":27,"S+RV+SF":28.2,"S+M+SF":16.6,"S+M+RV":14.6,"S+SF":4.2,"V+KF+LA+M":2,"noGov":0}
+{"param":"SF accepts M in govt","value":0.5588,"S+M+RV+SF":26.2,"S+RV+SF":30,"S+M+SF":18.8,"S+M+RV":12.2,"S+SF":4.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF accepts M in govt","value":0.59,"S+M+RV+SF":26.4,"S+RV+SF":27.2,"S+M+SF":20,"S+M+RV":14.2,"S+SF":4.6,"V+KF+LA+M":2,"noGov":0}
+{"param":"SF accepts M in govt","value":0.6212,"S+M+RV+SF":28,"S+RV+SF":28.8,"S+M+SF":20.6,"S+M+RV":11.2,"S+SF":5,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF accepts M in govt","value":0.6524,"S+M+RV+SF":29.8,"S+RV+SF":29.2,"S+M+SF":19.4,"S+M+RV":13.2,"S+SF":2.2,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"SF accepts M in govt","value":0.6836,"S+M+RV+SF":32,"S+RV+SF":26.2,"S+M+SF":20,"S+M+RV":11.4,"S+SF":4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"SF accepts M in govt","value":0.7148,"S+M+RV+SF":30.2,"S+RV+SF":24.8,"S+M+SF":22.6,"S+M+RV":13.6,"S+SF":4.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"SF accepts M in govt","value":0.746,"S+M+RV+SF":31,"S+RV+SF":24.2,"S+M+SF":22,"S+M+RV":12.6,"S+SF":4.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"SF accepts M in govt","value":0.7772,"S+M+RV+SF":30.8,"S+RV+SF":24.6,"S+M+SF":25.2,"S+M+RV":10.6,"S+SF":2,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"SF accepts M in govt","value":0.8084,"S+M+RV+SF":33.8,"S+RV+SF":21.8,"S+M+SF":20.2,"S+M+RV":13.2,"S+SF":3.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF accepts M in govt","value":0.8396,"S+M+RV+SF":35.2,"S+RV+SF":21.6,"S+M+SF":22.8,"S+M+RV":13.4,"S+SF":3.2,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"SF accepts M in govt","value":0.8708,"S+M+RV+SF":30.4,"S+RV+SF":24.2,"S+M+SF":22.8,"S+M+RV":12,"S+SF":5,"V+KF+LA+M":0,"noGov":0}
+{"param":"SF accepts M in govt","value":0.902,"S+M+RV+SF":33.4,"S+RV+SF":23.4,"S+M+SF":23.6,"S+M+RV":10.4,"S+SF":4.2,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"SF accepts M in govt","value":0.9332,"S+M+RV+SF":32.8,"S+RV+SF":24.4,"S+M+SF":21.4,"S+M+RV":11.4,"S+SF":3.8,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"SF accepts M in govt","value":0.9644,"S+M+RV+SF":37,"S+RV+SF":22.6,"S+M+SF":20.4,"S+M+RV":12.2,"S+SF":3.4,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"M accepts SF in govt","value":0.215,"S+M+RV+SF":11,"S+RV+SF":40.8,"S+M+SF":9.6,"S+M+RV":16.2,"S+SF":6.8,"V+KF+LA+M":3.6,"noGov":0}
+{"param":"M accepts SF in govt","value":0.245,"S+M+RV+SF":11.6,"S+RV+SF":38.4,"S+M+SF":11.6,"S+M+RV":17.6,"S+SF":5.6,"V+KF+LA+M":4,"noGov":0}
+{"param":"M accepts SF in govt","value":0.275,"S+M+RV+SF":16.4,"S+RV+SF":34.4,"S+M+SF":10.2,"S+M+RV":18.6,"S+SF":6.2,"V+KF+LA+M":4.6,"noGov":0}
+{"param":"M accepts SF in govt","value":0.305,"S+M+RV+SF":17,"S+RV+SF":34.4,"S+M+SF":9.2,"S+M+RV":18.8,"S+SF":8,"V+KF+LA+M":4.2,"noGov":0}
+{"param":"M accepts SF in govt","value":0.335,"S+M+RV+SF":13.8,"S+RV+SF":35.6,"S+M+SF":13.2,"S+M+RV":19,"S+SF":5.4,"V+KF+LA+M":3.2,"noGov":0}
+{"param":"M accepts SF in govt","value":0.365,"S+M+RV+SF":20.2,"S+RV+SF":32.8,"S+M+SF":11.8,"S+M+RV":17.4,"S+SF":6.2,"V+KF+LA+M":3,"noGov":0}
+{"param":"M accepts SF in govt","value":0.395,"S+M+RV+SF":19.8,"S+RV+SF":30.8,"S+M+SF":15.8,"S+M+RV":13.8,"S+SF":7.8,"V+KF+LA+M":3.2,"noGov":0}
+{"param":"M accepts SF in govt","value":0.425,"S+M+RV+SF":21.8,"S+RV+SF":32,"S+M+SF":15.6,"S+M+RV":15.8,"S+SF":5,"V+KF+LA+M":2.8,"noGov":0}
+{"param":"M accepts SF in govt","value":0.455,"S+M+RV+SF":23,"S+RV+SF":30.6,"S+M+SF":15.8,"S+M+RV":16.4,"S+SF":5,"V+KF+LA+M":3,"noGov":0}
+{"param":"M accepts SF in govt","value":0.485,"S+M+RV+SF":25.6,"S+RV+SF":31.4,"S+M+SF":15.6,"S+M+RV":14.6,"S+SF":5.2,"V+KF+LA+M":2,"noGov":0}
+{"param":"M accepts SF in govt","value":0.515,"S+M+RV+SF":25,"S+RV+SF":28.4,"S+M+SF":19.2,"S+M+RV":16,"S+SF":3.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M accepts SF in govt","value":0.545,"S+M+RV+SF":27.2,"S+RV+SF":26.4,"S+M+SF":18.4,"S+M+RV":14.4,"S+SF":5.4,"V+KF+LA+M":2,"noGov":0}
+{"param":"M accepts SF in govt","value":0.575,"S+M+RV+SF":27.4,"S+RV+SF":24.8,"S+M+SF":23,"S+M+RV":13,"S+SF":3.6,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"M accepts SF in govt","value":0.605,"S+M+RV+SF":26.4,"S+RV+SF":26.2,"S+M+SF":22,"S+M+RV":11.8,"S+SF":4.6,"V+KF+LA+M":2.8,"noGov":0}
+{"param":"M accepts SF in govt","value":0.635,"S+M+RV+SF":28,"S+RV+SF":25.8,"S+M+SF":19.2,"S+M+RV":15.2,"S+SF":6.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"M accepts SF in govt","value":0.665,"S+M+RV+SF":33.2,"S+RV+SF":24,"S+M+SF":19.8,"S+M+RV":13.4,"S+SF":3.6,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"M accepts SF in govt","value":0.695,"S+M+RV+SF":32.2,"S+RV+SF":23.2,"S+M+SF":19,"S+M+RV":16.2,"S+SF":4.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"M accepts SF in govt","value":0.725,"S+M+RV+SF":32,"S+RV+SF":23.8,"S+M+SF":23.2,"S+M+RV":10.2,"S+SF":4,"V+KF+LA+M":2,"noGov":0}
+{"param":"M accepts SF in govt","value":0.755,"S+M+RV+SF":31,"S+RV+SF":25.6,"S+M+SF":21.8,"S+M+RV":10.2,"S+SF":5.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"M accepts SF in govt","value":0.785,"S+M+RV+SF":37,"S+RV+SF":23.8,"S+M+SF":20.8,"S+M+RV":11.4,"S+SF":2.8,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"M accepts SF in govt","value":0.815,"S+M+RV+SF":33.8,"S+RV+SF":20.4,"S+M+SF":22,"S+M+RV":14.4,"S+SF":3.8,"V+KF+LA+M":1,"noGov":0}
+{"param":"M accepts SF in govt","value":0.845,"S+M+RV+SF":34.8,"S+RV+SF":23.2,"S+M+SF":20.2,"S+M+RV":15.6,"S+SF":2.4,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"M accepts SF in govt","value":0.875,"S+M+RV+SF":34.2,"S+RV+SF":21.4,"S+M+SF":24.6,"S+M+RV":11,"S+SF":5.2,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"M accepts SF in govt","value":0.905,"S+M+RV+SF":36,"S+RV+SF":21,"S+M+SF":21.8,"S+M+RV":13.2,"S+SF":3.4,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"M accepts SF in govt","value":0.935,"S+M+RV+SF":38.2,"S+RV+SF":19.4,"S+M+SF":21.2,"S+M+RV":12.8,"S+SF":3,"V+KF+LA+M":1,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.117,"S+M+RV+SF":29.4,"S+RV+SF":29.6,"S+M+SF":23.2,"S+M+RV":7.2,"S+SF":3.8,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.151,"S+M+RV+SF":31.2,"S+RV+SF":24.8,"S+M+SF":23,"S+M+RV":10.2,"S+SF":3.8,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.185,"S+M+RV+SF":32.6,"S+RV+SF":23.6,"S+M+SF":23.6,"S+M+RV":8,"S+SF":4.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.219,"S+M+RV+SF":31.8,"S+RV+SF":22.4,"S+M+SF":24.6,"S+M+RV":8.8,"S+SF":3,"V+KF+LA+M":2,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.253,"S+M+RV+SF":33,"S+RV+SF":26.4,"S+M+SF":20.6,"S+M+RV":10,"S+SF":3.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.287,"S+M+RV+SF":32.6,"S+RV+SF":25,"S+M+SF":24,"S+M+RV":9.6,"S+SF":3.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.321,"S+M+RV+SF":29.2,"S+RV+SF":22.8,"S+M+SF":26.4,"S+M+RV":9.6,"S+SF":5.4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.355,"S+M+RV+SF":34,"S+RV+SF":20.6,"S+M+SF":25,"S+M+RV":11.6,"S+SF":2.4,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.389,"S+M+RV+SF":29.4,"S+RV+SF":26,"S+M+SF":23.6,"S+M+RV":11,"S+SF":5.6,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.423,"S+M+RV+SF":31.4,"S+RV+SF":28.8,"S+M+SF":19.6,"S+M+RV":10.2,"S+SF":4.4,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.457,"S+M+RV+SF":34.8,"S+RV+SF":23.6,"S+M+SF":23.8,"S+M+RV":11.8,"S+SF":2.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.491,"S+M+RV+SF":34.6,"S+RV+SF":21.8,"S+M+SF":22.4,"S+M+RV":10,"S+SF":3.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.525,"S+M+RV+SF":31.8,"S+RV+SF":26.2,"S+M+SF":23.8,"S+M+RV":9.4,"S+SF":3.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.559,"S+M+RV+SF":31.8,"S+RV+SF":21.6,"S+M+SF":22.6,"S+M+RV":13.4,"S+SF":4.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.593,"S+M+RV+SF":32.6,"S+RV+SF":22.8,"S+M+SF":21.6,"S+M+RV":13,"S+SF":4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.627,"S+M+RV+SF":34.4,"S+RV+SF":25.6,"S+M+SF":17.2,"S+M+RV":13.8,"S+SF":3.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.661,"S+M+RV+SF":34.4,"S+RV+SF":22.8,"S+M+SF":21.8,"S+M+RV":10.8,"S+SF":4.6,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.695,"S+M+RV+SF":34.4,"S+RV+SF":24.6,"S+M+SF":16.2,"S+M+RV":14.4,"S+SF":3.8,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.729,"S+M+RV+SF":28.6,"S+RV+SF":27,"S+M+SF":21.2,"S+M+RV":15.8,"S+SF":3.4,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.763,"S+M+RV+SF":32,"S+RV+SF":21.8,"S+M+SF":20.2,"S+M+RV":16.4,"S+SF":5,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.797,"S+M+RV+SF":33.6,"S+RV+SF":22.6,"S+M+SF":19.6,"S+M+RV":13,"S+SF":3.8,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.831,"S+M+RV+SF":32,"S+RV+SF":23.6,"S+M+SF":21,"S+M+RV":14.4,"S+SF":4.4,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.865,"S+M+RV+SF":32.8,"S+RV+SF":21.4,"S+M+SF":22.4,"S+M+RV":15.2,"S+SF":2.6,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.899,"S+M+RV+SF":32.4,"S+RV+SF":24.6,"S+M+SF":22,"S+M+RV":13,"S+SF":2.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF tolerates M from outside","value":0.933,"S+M+RV+SF":32.6,"S+RV+SF":24.8,"S+M+SF":20,"S+M+RV":13.2,"S+SF":4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.2156,"S+M+RV+SF":29.2,"S+RV+SF":25,"S+M+SF":21,"S+M+RV":13.8,"S+SF":3.4,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.2468,"S+M+RV+SF":31,"S+RV+SF":27.8,"S+M+SF":21,"S+M+RV":11.8,"S+SF":3.8,"V+KF+LA+M":1,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.278,"S+M+RV+SF":30,"S+RV+SF":24.4,"S+M+SF":22.8,"S+M+RV":14.2,"S+SF":1.8,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.3092,"S+M+RV+SF":36.6,"S+RV+SF":24.2,"S+M+SF":20.8,"S+M+RV":11.4,"S+SF":3.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.3404,"S+M+RV+SF":33.6,"S+RV+SF":22.8,"S+M+SF":21,"S+M+RV":14,"S+SF":3.8,"V+KF+LA+M":2,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.3716,"S+M+RV+SF":32.4,"S+RV+SF":24.2,"S+M+SF":22.4,"S+M+RV":12.6,"S+SF":2.4,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.4028,"S+M+RV+SF":33.4,"S+RV+SF":24.4,"S+M+SF":23.2,"S+M+RV":11.2,"S+SF":3.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.434,"S+M+RV+SF":33.6,"S+RV+SF":25.4,"S+M+SF":22,"S+M+RV":12.4,"S+SF":2.8,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.4652,"S+M+RV+SF":31.8,"S+RV+SF":24.6,"S+M+SF":23.2,"S+M+RV":11.2,"S+SF":2.8,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.4964,"S+M+RV+SF":31,"S+RV+SF":24.2,"S+M+SF":25.2,"S+M+RV":10.6,"S+SF":3.6,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.5276,"S+M+RV+SF":31.8,"S+RV+SF":24.6,"S+M+SF":20.6,"S+M+RV":15,"S+SF":2.8,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.5588,"S+M+RV+SF":33.2,"S+RV+SF":25,"S+M+SF":21,"S+M+RV":10.2,"S+SF":2.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.59,"S+M+RV+SF":33.4,"S+RV+SF":22.2,"S+M+SF":22.6,"S+M+RV":12.2,"S+SF":4.8,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.6212,"S+M+RV+SF":32.2,"S+RV+SF":25.6,"S+M+SF":20.8,"S+M+RV":12.2,"S+SF":4,"V+KF+LA+M":2,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.6524,"S+M+RV+SF":31.6,"S+RV+SF":25,"S+M+SF":21.2,"S+M+RV":11.6,"S+SF":4.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.6836,"S+M+RV+SF":33,"S+RV+SF":19.2,"S+M+SF":24.6,"S+M+RV":12.2,"S+SF":2.6,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.7148,"S+M+RV+SF":35.6,"S+RV+SF":21.6,"S+M+SF":21.6,"S+M+RV":12.4,"S+SF":2.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.746,"S+M+RV+SF":32.4,"S+RV+SF":24.8,"S+M+SF":22.8,"S+M+RV":10.6,"S+SF":3.2,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.7772,"S+M+RV+SF":34.2,"S+RV+SF":22,"S+M+SF":18.6,"S+M+RV":15,"S+SF":3.4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.8084,"S+M+RV+SF":33.8,"S+RV+SF":25.2,"S+M+SF":19.8,"S+M+RV":9.8,"S+SF":4.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.8396,"S+M+RV+SF":31.2,"S+RV+SF":25,"S+M+SF":20.8,"S+M+RV":15,"S+SF":2.4,"V+KF+LA+M":2,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.8708,"S+M+RV+SF":31,"S+RV+SF":25.6,"S+M+SF":20.8,"S+M+RV":12,"S+SF":5,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.902,"S+M+RV+SF":30,"S+RV+SF":26.8,"S+M+SF":21,"S+M+RV":14.2,"S+SF":2.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.9332,"S+M+RV+SF":28,"S+RV+SF":27.8,"S+M+SF":23.8,"S+M+RV":12.2,"S+SF":3.4,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"M tolerates SF from outside","value":0.9644,"S+M+RV+SF":30.4,"S+RV+SF":25.6,"S+M+SF":19.6,"S+M+RV":13.6,"S+SF":6.4,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"M tolerates EL as support","value":0.016,"S+M+RV+SF":35.4,"S+RV+SF":27.6,"S+M+SF":18,"S+M+RV":5,"S+SF":5,"V+KF+LA+M":3,"noGov":0}
+{"param":"M tolerates EL as support","value":0.048,"S+M+RV+SF":35.6,"S+RV+SF":26.4,"S+M+SF":20.4,"S+M+RV":6.2,"S+SF":5.2,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"M tolerates EL as support","value":0.08,"S+M+RV+SF":30.8,"S+RV+SF":27.8,"S+M+SF":23,"S+M+RV":8.2,"S+SF":4.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"M tolerates EL as support","value":0.112,"S+M+RV+SF":34,"S+RV+SF":28.6,"S+M+SF":19.6,"S+M+RV":5.8,"S+SF":4.8,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"M tolerates EL as support","value":0.144,"S+M+RV+SF":34.6,"S+RV+SF":25.8,"S+M+SF":22.4,"S+M+RV":7.8,"S+SF":4,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"M tolerates EL as support","value":0.176,"S+M+RV+SF":34.4,"S+RV+SF":20.8,"S+M+SF":25.2,"S+M+RV":10,"S+SF":3.4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"M tolerates EL as support","value":0.208,"S+M+RV+SF":33,"S+RV+SF":27,"S+M+SF":19.4,"S+M+RV":12.2,"S+SF":2.6,"V+KF+LA+M":2,"noGov":0}
+{"param":"M tolerates EL as support","value":0.24,"S+M+RV+SF":35.4,"S+RV+SF":28.6,"S+M+SF":19,"S+M+RV":9,"S+SF":3.8,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"M tolerates EL as support","value":0.272,"S+M+RV+SF":32.2,"S+RV+SF":23.6,"S+M+SF":22.6,"S+M+RV":11.6,"S+SF":3.8,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"M tolerates EL as support","value":0.304,"S+M+RV+SF":31.8,"S+RV+SF":25,"S+M+SF":22.4,"S+M+RV":11.4,"S+SF":3.4,"V+KF+LA+M":2.4,"noGov":0}
+{"param":"M tolerates EL as support","value":0.336,"S+M+RV+SF":33.4,"S+RV+SF":23.4,"S+M+SF":22.2,"S+M+RV":12.4,"S+SF":3.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"M tolerates EL as support","value":0.368,"S+M+RV+SF":31,"S+RV+SF":28.6,"S+M+SF":20,"S+M+RV":11.4,"S+SF":4.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M tolerates EL as support","value":0.4,"S+M+RV+SF":32,"S+RV+SF":24.2,"S+M+SF":21,"S+M+RV":12,"S+SF":2.8,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"M tolerates EL as support","value":0.432,"S+M+RV+SF":33.8,"S+RV+SF":22.8,"S+M+SF":22.8,"S+M+RV":12,"S+SF":3.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"M tolerates EL as support","value":0.464,"S+M+RV+SF":27,"S+RV+SF":26,"S+M+SF":27.6,"S+M+RV":13,"S+SF":2.6,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"M tolerates EL as support","value":0.496,"S+M+RV+SF":34.8,"S+RV+SF":24.4,"S+M+SF":19.6,"S+M+RV":13.4,"S+SF":2.8,"V+KF+LA+M":1,"noGov":0}
+{"param":"M tolerates EL as support","value":0.528,"S+M+RV+SF":33.4,"S+RV+SF":22.8,"S+M+SF":20.8,"S+M+RV":14.4,"S+SF":3.6,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M tolerates EL as support","value":0.56,"S+M+RV+SF":32,"S+RV+SF":25.4,"S+M+SF":20.4,"S+M+RV":15,"S+SF":2.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M tolerates EL as support","value":0.592,"S+M+RV+SF":32.2,"S+RV+SF":25,"S+M+SF":20.6,"S+M+RV":14.8,"S+SF":2,"V+KF+LA+M":1,"noGov":0}
+{"param":"M tolerates EL as support","value":0.624,"S+M+RV+SF":34,"S+RV+SF":21,"S+M+SF":20,"S+M+RV":12.6,"S+SF":5.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"M tolerates EL as support","value":0.656,"S+M+RV+SF":31.6,"S+RV+SF":24,"S+M+SF":21.2,"S+M+RV":15.6,"S+SF":2.2,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"M tolerates EL as support","value":0.688,"S+M+RV+SF":30.6,"S+RV+SF":23.6,"S+M+SF":23.8,"S+M+RV":12.2,"S+SF":3.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"M tolerates EL as support","value":0.72,"S+M+RV+SF":30.8,"S+RV+SF":26.4,"S+M+SF":20.2,"S+M+RV":15.2,"S+SF":2.6,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M tolerates EL as support","value":0.752,"S+M+RV+SF":31.4,"S+RV+SF":22.8,"S+M+SF":24.2,"S+M+RV":14.6,"S+SF":2.8,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"M tolerates EL as support","value":0.784,"S+M+RV+SF":33,"S+RV+SF":24.6,"S+M+SF":19.4,"S+M+RV":12.8,"S+SF":3.6,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.116,"S+M+RV+SF":36.2,"S+RV+SF":23,"S+M+SF":20.8,"S+M+RV":11.8,"S+SF":4.4,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.148,"S+M+RV+SF":30,"S+RV+SF":21.4,"S+M+SF":25.2,"S+M+RV":13.8,"S+SF":3.4,"V+KF+LA+M":1,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.18,"S+M+RV+SF":31.2,"S+RV+SF":25.2,"S+M+SF":21.4,"S+M+RV":15.2,"S+SF":3,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.212,"S+M+RV+SF":35.4,"S+RV+SF":22.2,"S+M+SF":20.8,"S+M+RV":11.6,"S+SF":4.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.244,"S+M+RV+SF":35.6,"S+RV+SF":21.8,"S+M+SF":21.4,"S+M+RV":10.6,"S+SF":3.8,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.276,"S+M+RV+SF":30.6,"S+RV+SF":22.8,"S+M+SF":24,"S+M+RV":10.6,"S+SF":5.6,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.308,"S+M+RV+SF":38.6,"S+RV+SF":22.6,"S+M+SF":19.8,"S+M+RV":11.6,"S+SF":3.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.34,"S+M+RV+SF":35.6,"S+RV+SF":19.4,"S+M+SF":24,"S+M+RV":14.2,"S+SF":1.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.372,"S+M+RV+SF":33.2,"S+RV+SF":22.2,"S+M+SF":24.4,"S+M+RV":14,"S+SF":2.8,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.404,"S+M+RV+SF":31.4,"S+RV+SF":23.4,"S+M+SF":19.6,"S+M+RV":15,"S+SF":4.6,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.436,"S+M+RV+SF":34.6,"S+RV+SF":24.4,"S+M+SF":20.2,"S+M+RV":12.2,"S+SF":3.4,"V+KF+LA+M":1,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.468,"S+M+RV+SF":32.4,"S+RV+SF":25.4,"S+M+SF":18.8,"S+M+RV":13.8,"S+SF":4,"V+KF+LA+M":2,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.5,"S+M+RV+SF":30.8,"S+RV+SF":24.8,"S+M+SF":21.8,"S+M+RV":13.8,"S+SF":4.2,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.532,"S+M+RV+SF":28.8,"S+RV+SF":27.2,"S+M+SF":22.4,"S+M+RV":11.8,"S+SF":3.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.564,"S+M+RV+SF":32.8,"S+RV+SF":21.6,"S+M+SF":22.8,"S+M+RV":13.8,"S+SF":4.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.596,"S+M+RV+SF":33,"S+RV+SF":24.6,"S+M+SF":19,"S+M+RV":12.8,"S+SF":4.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.628,"S+M+RV+SF":32.2,"S+RV+SF":24.6,"S+M+SF":19.2,"S+M+RV":14.6,"S+SF":4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.66,"S+M+RV+SF":29.4,"S+RV+SF":25.6,"S+M+SF":22.2,"S+M+RV":15.6,"S+SF":3.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.692,"S+M+RV+SF":39,"S+RV+SF":23.6,"S+M+SF":21.4,"S+M+RV":9,"S+SF":4,"V+KF+LA+M":0.4,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.724,"S+M+RV+SF":34.6,"S+RV+SF":24,"S+M+SF":22.8,"S+M+RV":10.4,"S+SF":3.8,"V+KF+LA+M":0.2,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.756,"S+M+RV+SF":31.8,"S+RV+SF":26,"S+M+SF":22.8,"S+M+RV":10.6,"S+SF":3.6,"V+KF+LA+M":0.4,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.788,"S+M+RV+SF":30,"S+RV+SF":24.2,"S+M+SF":22.8,"S+M+RV":11.8,"S+SF":3.2,"V+KF+LA+M":2.4,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.82,"S+M+RV+SF":31.6,"S+RV+SF":23.6,"S+M+SF":19.8,"S+M+RV":13.8,"S+SF":4.6,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.852,"S+M+RV+SF":31.8,"S+RV+SF":26.2,"S+M+SF":19,"S+M+RV":11.2,"S+SF":4.2,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"EL tolerates M in govt","value":0.884,"S+M+RV+SF":33.2,"S+RV+SF":24.6,"S+M+SF":21.6,"S+M+RV":10.2,"S+SF":4.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"S tolerates EL as support","value":0.313,"S+M+RV+SF":32.8,"S+RV+SF":23.8,"S+M+SF":24.6,"S+M+RV":10,"S+SF":2.6,"V+KF+LA+M":2,"noGov":0}
+{"param":"S tolerates EL as support","value":0.339,"S+M+RV+SF":31.8,"S+RV+SF":26.4,"S+M+SF":21.8,"S+M+RV":9.2,"S+SF":3.4,"V+KF+LA+M":2.4,"noGov":0}
+{"param":"S tolerates EL as support","value":0.365,"S+M+RV+SF":36,"S+RV+SF":23,"S+M+SF":21.2,"S+M+RV":10.2,"S+SF":2.8,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"S tolerates EL as support","value":0.391,"S+M+RV+SF":32.6,"S+RV+SF":22.8,"S+M+SF":24.4,"S+M+RV":10,"S+SF":2.2,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"S tolerates EL as support","value":0.417,"S+M+RV+SF":34.6,"S+RV+SF":24.6,"S+M+SF":19.8,"S+M+RV":10.8,"S+SF":3.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"S tolerates EL as support","value":0.443,"S+M+RV+SF":31.4,"S+RV+SF":21.6,"S+M+SF":25.2,"S+M+RV":12.2,"S+SF":3,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"S tolerates EL as support","value":0.469,"S+M+RV+SF":32.8,"S+RV+SF":25.4,"S+M+SF":21.6,"S+M+RV":10.8,"S+SF":3.6,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"S tolerates EL as support","value":0.495,"S+M+RV+SF":34.6,"S+RV+SF":22.2,"S+M+SF":21.8,"S+M+RV":11.2,"S+SF":5.2,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"S tolerates EL as support","value":0.521,"S+M+RV+SF":31.2,"S+RV+SF":24.2,"S+M+SF":20.8,"S+M+RV":13.4,"S+SF":3.4,"V+KF+LA+M":2.4,"noGov":0}
+{"param":"S tolerates EL as support","value":0.547,"S+M+RV+SF":32.6,"S+RV+SF":23.2,"S+M+SF":21.4,"S+M+RV":12.4,"S+SF":2.6,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"S tolerates EL as support","value":0.573,"S+M+RV+SF":34.2,"S+RV+SF":24,"S+M+SF":22.8,"S+M+RV":10.2,"S+SF":3.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"S tolerates EL as support","value":0.599,"S+M+RV+SF":34.2,"S+RV+SF":22.4,"S+M+SF":21.6,"S+M+RV":13.2,"S+SF":2.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"S tolerates EL as support","value":0.625,"S+M+RV+SF":32.2,"S+RV+SF":27.6,"S+M+SF":22.8,"S+M+RV":8.8,"S+SF":3.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"S tolerates EL as support","value":0.651,"S+M+RV+SF":31.2,"S+RV+SF":22.2,"S+M+SF":22.6,"S+M+RV":15.2,"S+SF":3,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"S tolerates EL as support","value":0.677,"S+M+RV+SF":27.2,"S+RV+SF":24.6,"S+M+SF":27.2,"S+M+RV":13.6,"S+SF":2.8,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"S tolerates EL as support","value":0.703,"S+M+RV+SF":33.8,"S+RV+SF":21.8,"S+M+SF":23.2,"S+M+RV":13,"S+SF":3.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"S tolerates EL as support","value":0.729,"S+M+RV+SF":31.4,"S+RV+SF":21.6,"S+M+SF":22,"S+M+RV":12.4,"S+SF":4,"V+KF+LA+M":3,"noGov":0}
+{"param":"S tolerates EL as support","value":0.755,"S+M+RV+SF":31.4,"S+RV+SF":22.6,"S+M+SF":21,"S+M+RV":14.4,"S+SF":4.2,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"S tolerates EL as support","value":0.781,"S+M+RV+SF":31.8,"S+RV+SF":21.8,"S+M+SF":22.6,"S+M+RV":12.6,"S+SF":5,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"S tolerates EL as support","value":0.807,"S+M+RV+SF":32.6,"S+RV+SF":22.2,"S+M+SF":20.2,"S+M+RV":13.6,"S+SF":5.4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"S tolerates EL as support","value":0.833,"S+M+RV+SF":34.4,"S+RV+SF":24,"S+M+SF":19,"S+M+RV":12.2,"S+SF":3.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"S tolerates EL as support","value":0.859,"S+M+RV+SF":30.4,"S+RV+SF":27,"S+M+SF":21.6,"S+M+RV":10.8,"S+SF":4.2,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"S tolerates EL as support","value":0.885,"S+M+RV+SF":31.6,"S+RV+SF":24,"S+M+SF":22,"S+M+RV":13.8,"S+SF":4.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"S tolerates EL as support","value":0.911,"S+M+RV+SF":29.2,"S+RV+SF":24.2,"S+M+SF":23.6,"S+M+RV":15,"S+SF":3,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"S tolerates EL as support","value":0.937,"S+M+RV+SF":28.2,"S+RV+SF":27.2,"S+M+SF":21,"S+M+RV":13.6,"S+SF":4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.3136,"S+M+RV+SF":34.8,"S+RV+SF":21.2,"S+M+SF":21.8,"S+M+RV":13.8,"S+SF":2.8,"V+KF+LA+M":2,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.3408,"S+M+RV+SF":35.8,"S+RV+SF":21.6,"S+M+SF":21,"S+M+RV":9.8,"S+SF":4.6,"V+KF+LA+M":2,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.368,"S+M+RV+SF":33.4,"S+RV+SF":24,"S+M+SF":24.8,"S+M+RV":10.2,"S+SF":3,"V+KF+LA+M":1,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.3952,"S+M+RV+SF":32,"S+RV+SF":21.4,"S+M+SF":23.2,"S+M+RV":10.8,"S+SF":5.2,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.4224,"S+M+RV+SF":35.6,"S+RV+SF":24,"S+M+SF":22.8,"S+M+RV":9.4,"S+SF":3.2,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.4496,"S+M+RV+SF":31.6,"S+RV+SF":24.2,"S+M+SF":23.2,"S+M+RV":11.2,"S+SF":3,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.4768,"S+M+RV+SF":32.4,"S+RV+SF":20.6,"S+M+SF":23.4,"S+M+RV":11,"S+SF":6,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.504,"S+M+RV+SF":31,"S+RV+SF":23.8,"S+M+SF":24.6,"S+M+RV":8.8,"S+SF":4.2,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.5312,"S+M+RV+SF":30.6,"S+RV+SF":24.8,"S+M+SF":22.4,"S+M+RV":10.2,"S+SF":3.8,"V+KF+LA+M":2,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.5584,"S+M+RV+SF":31.6,"S+RV+SF":22.8,"S+M+SF":24.4,"S+M+RV":11,"S+SF":3.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.5856,"S+M+RV+SF":31.4,"S+RV+SF":24.6,"S+M+SF":22.4,"S+M+RV":10.2,"S+SF":4.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.6128,"S+M+RV+SF":31.8,"S+RV+SF":22.2,"S+M+SF":24.8,"S+M+RV":9.8,"S+SF":4.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.64,"S+M+RV+SF":30.8,"S+RV+SF":25.8,"S+M+SF":25.4,"S+M+RV":10.8,"S+SF":2.6,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.6672,"S+M+RV+SF":31.6,"S+RV+SF":23.4,"S+M+SF":22,"S+M+RV":11,"S+SF":5.4,"V+KF+LA+M":1,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.6944,"S+M+RV+SF":32,"S+RV+SF":23.2,"S+M+SF":21.8,"S+M+RV":12.8,"S+SF":4.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.7216,"S+M+RV+SF":33.6,"S+RV+SF":25.2,"S+M+SF":21.2,"S+M+RV":9.6,"S+SF":4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.7488,"S+M+RV+SF":35.4,"S+RV+SF":24.4,"S+M+SF":19.8,"S+M+RV":10.8,"S+SF":3.6,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.776,"S+M+RV+SF":32.2,"S+RV+SF":20.2,"S+M+SF":21.4,"S+M+RV":14.4,"S+SF":4,"V+KF+LA+M":2.4,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.8032,"S+M+RV+SF":31.8,"S+RV+SF":23.4,"S+M+SF":22.6,"S+M+RV":10,"S+SF":5.6,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.8304,"S+M+RV+SF":31.4,"S+RV+SF":24.4,"S+M+SF":20,"S+M+RV":12.2,"S+SF":4.8,"V+KF+LA+M":2.4,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.8576,"S+M+RV+SF":32.2,"S+RV+SF":21.6,"S+M+SF":20.8,"S+M+RV":14,"S+SF":4.6,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.8848,"S+M+RV+SF":31.8,"S+RV+SF":25.2,"S+M+SF":20.6,"S+M+RV":13.2,"S+SF":4,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.912,"S+M+RV+SF":34,"S+RV+SF":25.4,"S+M+SF":18.8,"S+M+RV":11.8,"S+SF":3.2,"V+KF+LA+M":2.4,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.9392,"S+M+RV+SF":27.6,"S+RV+SF":23.8,"S+M+SF":22.8,"S+M+RV":16.2,"S+SF":4.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"RV tolerates EL as support","value":0.9664,"S+M+RV+SF":33.4,"S+RV+SF":22.6,"S+M+SF":19.4,"S+M+RV":12.8,"S+SF":5.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.3136,"S+M+RV+SF":34.2,"S+RV+SF":21.4,"S+M+SF":23.8,"S+M+RV":13,"S+SF":1.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.3408,"S+M+RV+SF":34.4,"S+RV+SF":24.2,"S+M+SF":19,"S+M+RV":13.8,"S+SF":2.2,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.368,"S+M+RV+SF":34,"S+RV+SF":20,"S+M+SF":22.6,"S+M+RV":11.4,"S+SF":3.8,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.3952,"S+M+RV+SF":33.2,"S+RV+SF":21.8,"S+M+SF":20.2,"S+M+RV":13,"S+SF":3.6,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.4224,"S+M+RV+SF":36.2,"S+RV+SF":22.4,"S+M+SF":19.6,"S+M+RV":13.8,"S+SF":2.4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.4496,"S+M+RV+SF":33,"S+RV+SF":20.6,"S+M+SF":23.8,"S+M+RV":12.8,"S+SF":3.6,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.4768,"S+M+RV+SF":34.6,"S+RV+SF":20.4,"S+M+SF":21.6,"S+M+RV":14,"S+SF":4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.504,"S+M+RV+SF":32.6,"S+RV+SF":23.4,"S+M+SF":22.8,"S+M+RV":12.2,"S+SF":2.6,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.5312,"S+M+RV+SF":34.4,"S+RV+SF":21.8,"S+M+SF":22,"S+M+RV":12.4,"S+SF":3.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.5584,"S+M+RV+SF":32.2,"S+RV+SF":24.4,"S+M+SF":21.6,"S+M+RV":13,"S+SF":2.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.5856,"S+M+RV+SF":30.8,"S+RV+SF":25,"S+M+SF":23.2,"S+M+RV":13,"S+SF":3.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.6128,"S+M+RV+SF":32.6,"S+RV+SF":22.8,"S+M+SF":24,"S+M+RV":12.2,"S+SF":2.2,"V+KF+LA+M":2.4,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.64,"S+M+RV+SF":31.6,"S+RV+SF":22,"S+M+SF":21.6,"S+M+RV":14,"S+SF":3.2,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.6672,"S+M+RV+SF":31.6,"S+RV+SF":23.6,"S+M+SF":23.8,"S+M+RV":11.8,"S+SF":3.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.6944,"S+M+RV+SF":29.4,"S+RV+SF":23,"S+M+SF":24.6,"S+M+RV":14.4,"S+SF":2,"V+KF+LA+M":0.4,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.7216,"S+M+RV+SF":33.6,"S+RV+SF":23.2,"S+M+SF":19.4,"S+M+RV":14.2,"S+SF":3.2,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.7488,"S+M+RV+SF":29,"S+RV+SF":23.2,"S+M+SF":22.2,"S+M+RV":15.6,"S+SF":4,"V+KF+LA+M":1,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.776,"S+M+RV+SF":31.4,"S+RV+SF":24.2,"S+M+SF":22.2,"S+M+RV":13.2,"S+SF":3,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.8032,"S+M+RV+SF":31,"S+RV+SF":24,"S+M+SF":21.6,"S+M+RV":11.8,"S+SF":5,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.8304,"S+M+RV+SF":29.2,"S+RV+SF":27,"S+M+SF":21.8,"S+M+RV":13,"S+SF":4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.8576,"S+M+RV+SF":26.8,"S+RV+SF":26.4,"S+M+SF":21.4,"S+M+RV":14,"S+SF":3.2,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.8848,"S+M+RV+SF":33.6,"S+RV+SF":24.8,"S+M+SF":19.6,"S+M+RV":12.8,"S+SF":4,"V+KF+LA+M":1,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.912,"S+M+RV+SF":29.8,"S+RV+SF":25.8,"S+M+SF":24.8,"S+M+RV":11.4,"S+SF":2.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.9392,"S+M+RV+SF":32.8,"S+RV+SF":27.2,"S+M+SF":17.2,"S+M+RV":13.8,"S+SF":4,"V+KF+LA+M":1,"noGov":0}
+{"param":"SF tolerates EL as support","value":0.9664,"S+M+RV+SF":32.2,"S+RV+SF":20.6,"S+M+SF":21.6,"S+M+RV":15.2,"S+SF":5.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"RV accepts M in govt","value":0.3136,"S+M+RV+SF":14.2,"S+RV+SF":34.6,"S+M+SF":27.8,"S+M+RV":7.4,"S+SF":6,"V+KF+LA+M":3.4,"noGov":0}
+{"param":"RV accepts M in govt","value":0.3408,"S+M+RV+SF":15.6,"S+RV+SF":29.2,"S+M+SF":29,"S+M+RV":10,"S+SF":7,"V+KF+LA+M":2,"noGov":0}
+{"param":"RV accepts M in govt","value":0.368,"S+M+RV+SF":15.4,"S+RV+SF":36.6,"S+M+SF":28.6,"S+M+RV":4.4,"S+SF":4.2,"V+KF+LA+M":4.4,"noGov":0}
+{"param":"RV accepts M in govt","value":0.3952,"S+M+RV+SF":20.2,"S+RV+SF":27,"S+M+SF":27.2,"S+M+RV":9.8,"S+SF":5.4,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"RV accepts M in govt","value":0.4224,"S+M+RV+SF":19,"S+RV+SF":32.4,"S+M+SF":26.6,"S+M+RV":7.8,"S+SF":5.2,"V+KF+LA+M":3,"noGov":0}
+{"param":"RV accepts M in govt","value":0.4496,"S+M+RV+SF":21,"S+RV+SF":25.8,"S+M+SF":29.2,"S+M+RV":9.4,"S+SF":5.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"RV accepts M in govt","value":0.4768,"S+M+RV+SF":24.4,"S+RV+SF":30.6,"S+M+SF":24.4,"S+M+RV":9.2,"S+SF":3.6,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"RV accepts M in govt","value":0.504,"S+M+RV+SF":20.4,"S+RV+SF":31.2,"S+M+SF":24,"S+M+RV":11.6,"S+SF":5.2,"V+KF+LA+M":2.4,"noGov":0}
+{"param":"RV accepts M in govt","value":0.5312,"S+M+RV+SF":20.6,"S+RV+SF":29.8,"S+M+SF":29.4,"S+M+RV":9.4,"S+SF":5,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"RV accepts M in govt","value":0.5584,"S+M+RV+SF":24.6,"S+RV+SF":27.8,"S+M+SF":26.2,"S+M+RV":9.8,"S+SF":4,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"RV accepts M in govt","value":0.5856,"S+M+RV+SF":26.6,"S+RV+SF":28,"S+M+SF":24.6,"S+M+RV":9.4,"S+SF":5.4,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"RV accepts M in govt","value":0.6128,"S+M+RV+SF":25.6,"S+RV+SF":29.8,"S+M+SF":24.4,"S+M+RV":9.8,"S+SF":4.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"RV accepts M in govt","value":0.64,"S+M+RV+SF":29.4,"S+RV+SF":22.8,"S+M+SF":25.8,"S+M+RV":12.4,"S+SF":4.6,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"RV accepts M in govt","value":0.6672,"S+M+RV+SF":28.4,"S+RV+SF":25.6,"S+M+SF":24.4,"S+M+RV":13.2,"S+SF":4.2,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"RV accepts M in govt","value":0.6944,"S+M+RV+SF":31.4,"S+RV+SF":24.4,"S+M+SF":22.4,"S+M+RV":12.8,"S+SF":4.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"RV accepts M in govt","value":0.7216,"S+M+RV+SF":32,"S+RV+SF":21.4,"S+M+SF":23.4,"S+M+RV":12.8,"S+SF":3.6,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"RV accepts M in govt","value":0.7488,"S+M+RV+SF":30.6,"S+RV+SF":24.8,"S+M+SF":21.6,"S+M+RV":10.8,"S+SF":4.2,"V+KF+LA+M":2,"noGov":0}
+{"param":"RV accepts M in govt","value":0.776,"S+M+RV+SF":33.2,"S+RV+SF":22.6,"S+M+SF":21.4,"S+M+RV":11.4,"S+SF":5.2,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"RV accepts M in govt","value":0.8032,"S+M+RV+SF":33.8,"S+RV+SF":23.2,"S+M+SF":21.8,"S+M+RV":11,"S+SF":4.6,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"RV accepts M in govt","value":0.8304,"S+M+RV+SF":33.8,"S+RV+SF":24.2,"S+M+SF":22.6,"S+M+RV":9.6,"S+SF":3.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"RV accepts M in govt","value":0.8576,"S+M+RV+SF":31.4,"S+RV+SF":24.4,"S+M+SF":21.4,"S+M+RV":12.6,"S+SF":4.4,"V+KF+LA+M":1,"noGov":0}
+{"param":"RV accepts M in govt","value":0.8848,"S+M+RV+SF":34,"S+RV+SF":25,"S+M+SF":20.8,"S+M+RV":11.4,"S+SF":2,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"RV accepts M in govt","value":0.912,"S+M+RV+SF":32.6,"S+RV+SF":27.6,"S+M+SF":19.2,"S+M+RV":11.2,"S+SF":3.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"RV accepts M in govt","value":0.9392,"S+M+RV+SF":33.2,"S+RV+SF":22,"S+M+SF":20.4,"S+M+RV":14.8,"S+SF":3.4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"RV accepts M in govt","value":0.9664,"S+M+RV+SF":27.6,"S+RV+SF":27.6,"S+M+SF":24.2,"S+M+RV":11.8,"S+SF":3,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M accepts RV in govt","value":0.4116,"S+M+RV+SF":21.4,"S+RV+SF":26.6,"S+M+SF":30,"S+M+RV":8,"S+SF":6.2,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"M accepts RV in govt","value":0.4348,"S+M+RV+SF":21.8,"S+RV+SF":28.4,"S+M+SF":27,"S+M+RV":7.8,"S+SF":5.8,"V+KF+LA+M":3.2,"noGov":0}
+{"param":"M accepts RV in govt","value":0.458,"S+M+RV+SF":23,"S+RV+SF":27.2,"S+M+SF":29.2,"S+M+RV":9.2,"S+SF":5.4,"V+KF+LA+M":1,"noGov":0}
+{"param":"M accepts RV in govt","value":0.4812,"S+M+RV+SF":25.2,"S+RV+SF":29,"S+M+SF":25.2,"S+M+RV":8.6,"S+SF":5,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"M accepts RV in govt","value":0.5044,"S+M+RV+SF":24,"S+RV+SF":29.8,"S+M+SF":27,"S+M+RV":9.2,"S+SF":4.4,"V+KF+LA+M":2,"noGov":0}
+{"param":"M accepts RV in govt","value":0.5276,"S+M+RV+SF":27,"S+RV+SF":27.2,"S+M+SF":20.8,"S+M+RV":10.8,"S+SF":6.8,"V+KF+LA+M":2.8,"noGov":0}
+{"param":"M accepts RV in govt","value":0.5508,"S+M+RV+SF":29.2,"S+RV+SF":25,"S+M+SF":24.2,"S+M+RV":9.6,"S+SF":7,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"M accepts RV in govt","value":0.574,"S+M+RV+SF":30.4,"S+RV+SF":27.4,"S+M+SF":22.8,"S+M+RV":8.4,"S+SF":4.8,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"M accepts RV in govt","value":0.5972,"S+M+RV+SF":28.2,"S+RV+SF":26.6,"S+M+SF":24.4,"S+M+RV":9.4,"S+SF":3.6,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"M accepts RV in govt","value":0.6204,"S+M+RV+SF":30.8,"S+RV+SF":25.8,"S+M+SF":26.2,"S+M+RV":7,"S+SF":4.2,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"M accepts RV in govt","value":0.6436,"S+M+RV+SF":31.8,"S+RV+SF":29.2,"S+M+SF":19.8,"S+M+RV":10,"S+SF":4.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"M accepts RV in govt","value":0.6668,"S+M+RV+SF":30.8,"S+RV+SF":28.4,"S+M+SF":20.2,"S+M+RV":10.8,"S+SF":4,"V+KF+LA+M":1,"noGov":0}
+{"param":"M accepts RV in govt","value":0.69,"S+M+RV+SF":31.2,"S+RV+SF":22,"S+M+SF":21.6,"S+M+RV":14.6,"S+SF":2.2,"V+KF+LA+M":2,"noGov":0}
+{"param":"M accepts RV in govt","value":0.7132,"S+M+RV+SF":29.6,"S+RV+SF":26,"S+M+SF":20.2,"S+M+RV":13.6,"S+SF":4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M accepts RV in govt","value":0.7364,"S+M+RV+SF":33.2,"S+RV+SF":23.2,"S+M+SF":21.6,"S+M+RV":12,"S+SF":5,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"M accepts RV in govt","value":0.7596,"S+M+RV+SF":33.4,"S+RV+SF":23.8,"S+M+SF":22.6,"S+M+RV":11.4,"S+SF":4.2,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"M accepts RV in govt","value":0.7828,"S+M+RV+SF":29.2,"S+RV+SF":27.2,"S+M+SF":21.2,"S+M+RV":14,"S+SF":3,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M accepts RV in govt","value":0.806,"S+M+RV+SF":31,"S+RV+SF":24.6,"S+M+SF":19.8,"S+M+RV":13.2,"S+SF":4.4,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"M accepts RV in govt","value":0.8292,"S+M+RV+SF":30.8,"S+RV+SF":27.4,"S+M+SF":18.6,"S+M+RV":13.8,"S+SF":5.2,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"M accepts RV in govt","value":0.8524,"S+M+RV+SF":30.6,"S+RV+SF":25,"S+M+SF":22.6,"S+M+RV":12.6,"S+SF":4.2,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"M accepts RV in govt","value":0.8756,"S+M+RV+SF":27,"S+RV+SF":23.4,"S+M+SF":24.4,"S+M+RV":14.4,"S+SF":4.6,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"M accepts RV in govt","value":0.8988,"S+M+RV+SF":31.4,"S+RV+SF":23.8,"S+M+SF":23.6,"S+M+RV":11.8,"S+SF":3,"V+KF+LA+M":1,"noGov":0}
+{"param":"M accepts RV in govt","value":0.922,"S+M+RV+SF":28.6,"S+RV+SF":22.8,"S+M+SF":23.2,"S+M+RV":14.4,"S+SF":4.8,"V+KF+LA+M":2,"noGov":0}
+{"param":"M accepts RV in govt","value":0.9452,"S+M+RV+SF":31.2,"S+RV+SF":26.8,"S+M+SF":19.2,"S+M+RV":13.4,"S+SF":4.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"M accepts RV in govt","value":0.9684,"S+M+RV+SF":33.6,"S+RV+SF":26.4,"S+M+SF":20.8,"S+M+RV":10.6,"S+SF":4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"S accepts RV in govt","value":0.412,"S+M+RV+SF":23.8,"S+RV+SF":16.2,"S+M+SF":30.4,"S+M+RV":10.4,"S+SF":7,"V+KF+LA+M":4.4,"noGov":0}
+{"param":"S accepts RV in govt","value":0.436,"S+M+RV+SF":20.6,"S+RV+SF":19,"S+M+SF":33.4,"S+M+RV":8.6,"S+SF":6.4,"V+KF+LA+M":5.6,"noGov":0}
+{"param":"S accepts RV in govt","value":0.46,"S+M+RV+SF":19.6,"S+RV+SF":19.2,"S+M+SF":33.8,"S+M+RV":8.6,"S+SF":6.6,"V+KF+LA+M":3,"noGov":0}
+{"param":"S accepts RV in govt","value":0.484,"S+M+RV+SF":21.8,"S+RV+SF":17.4,"S+M+SF":30.4,"S+M+RV":12.4,"S+SF":5.6,"V+KF+LA+M":4,"noGov":0}
+{"param":"S accepts RV in govt","value":0.508,"S+M+RV+SF":24,"S+RV+SF":20,"S+M+SF":28.6,"S+M+RV":10,"S+SF":8,"V+KF+LA+M":2.8,"noGov":0}
+{"param":"S accepts RV in govt","value":0.532,"S+M+RV+SF":25.2,"S+RV+SF":20.6,"S+M+SF":25.6,"S+M+RV":11,"S+SF":6.8,"V+KF+LA+M":3.8,"noGov":0}
+{"param":"S accepts RV in govt","value":0.556,"S+M+RV+SF":28.2,"S+RV+SF":20,"S+M+SF":27.2,"S+M+RV":12.6,"S+SF":4,"V+KF+LA+M":2.8,"noGov":0}
+{"param":"S accepts RV in govt","value":0.58,"S+M+RV+SF":26,"S+RV+SF":19.4,"S+M+SF":28.4,"S+M+RV":13,"S+SF":3.8,"V+KF+LA+M":2.6,"noGov":0}
+{"param":"S accepts RV in govt","value":0.604,"S+M+RV+SF":28.2,"S+RV+SF":22.8,"S+M+SF":22.6,"S+M+RV":13,"S+SF":4.8,"V+KF+LA+M":3,"noGov":0}
+{"param":"S accepts RV in govt","value":0.628,"S+M+RV+SF":29.2,"S+RV+SF":23,"S+M+SF":25.2,"S+M+RV":10,"S+SF":4.2,"V+KF+LA+M":3.8,"noGov":0}
+{"param":"S accepts RV in govt","value":0.652,"S+M+RV+SF":28.8,"S+RV+SF":24,"S+M+SF":21.8,"S+M+RV":12.8,"S+SF":5.8,"V+KF+LA+M":3,"noGov":0}
+{"param":"S accepts RV in govt","value":0.676,"S+M+RV+SF":27.6,"S+RV+SF":20.6,"S+M+SF":25.6,"S+M+RV":13.2,"S+SF":6.8,"V+KF+LA+M":2.4,"noGov":0}
+{"param":"S accepts RV in govt","value":0.7,"S+M+RV+SF":36.2,"S+RV+SF":20.2,"S+M+SF":23.4,"S+M+RV":11.2,"S+SF":3.2,"V+KF+LA+M":2.4,"noGov":0}
+{"param":"S accepts RV in govt","value":0.724,"S+M+RV+SF":28.2,"S+RV+SF":24.4,"S+M+SF":22.6,"S+M+RV":13.2,"S+SF":5,"V+KF+LA+M":1,"noGov":0}
+{"param":"S accepts RV in govt","value":0.748,"S+M+RV+SF":31.6,"S+RV+SF":24.2,"S+M+SF":22.8,"S+M+RV":10.2,"S+SF":5,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"S accepts RV in govt","value":0.772,"S+M+RV+SF":33.2,"S+RV+SF":20.8,"S+M+SF":20.2,"S+M+RV":13.8,"S+SF":3.8,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"S accepts RV in govt","value":0.796,"S+M+RV+SF":35,"S+RV+SF":24.8,"S+M+SF":17.6,"S+M+RV":11.6,"S+SF":4.2,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"S accepts RV in govt","value":0.82,"S+M+RV+SF":31.6,"S+RV+SF":26.2,"S+M+SF":20.2,"S+M+RV":12.4,"S+SF":3.8,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"S accepts RV in govt","value":0.844,"S+M+RV+SF":31.4,"S+RV+SF":25,"S+M+SF":20.2,"S+M+RV":12.2,"S+SF":5,"V+KF+LA+M":1,"noGov":0}
+{"param":"S accepts RV in govt","value":0.868,"S+M+RV+SF":27.4,"S+RV+SF":26,"S+M+SF":21,"S+M+RV":14.8,"S+SF":3,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"S accepts RV in govt","value":0.892,"S+M+RV+SF":33,"S+RV+SF":22,"S+M+SF":23.4,"S+M+RV":11,"S+SF":3.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"S accepts RV in govt","value":0.916,"S+M+RV+SF":33.2,"S+RV+SF":24,"S+M+SF":20.6,"S+M+RV":13.4,"S+SF":3.6,"V+KF+LA+M":0.2,"noGov":0}
+{"param":"S accepts RV in govt","value":0.94,"S+M+RV+SF":34.6,"S+RV+SF":25,"S+M+SF":19.2,"S+M+RV":10.4,"S+SF":5.6,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"S accepts RV in govt","value":0.964,"S+M+RV+SF":35.8,"S+RV+SF":21,"S+M+SF":21.2,"S+M+RV":12.4,"S+SF":4.4,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"S accepts RV in govt","value":0.988,"S+M+RV+SF":31.2,"S+RV+SF":24.4,"S+M+SF":21.2,"S+M+RV":14.8,"S+SF":3.6,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"S accepts V in govt","value":0.012,"S+M+RV+SF":33.8,"S+RV+SF":23.4,"S+M+SF":24.4,"S+M+RV":9.2,"S+SF":5.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"S accepts V in govt","value":0.036,"S+M+RV+SF":30.6,"S+RV+SF":25.6,"S+M+SF":27.2,"S+M+RV":9.2,"S+SF":3.6,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"S accepts V in govt","value":0.06,"S+M+RV+SF":31.6,"S+RV+SF":25,"S+M+SF":23.2,"S+M+RV":12.8,"S+SF":3.8,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"S accepts V in govt","value":0.084,"S+M+RV+SF":37,"S+RV+SF":23.4,"S+M+SF":21.2,"S+M+RV":10.6,"S+SF":2.4,"V+KF+LA+M":2,"noGov":0}
+{"param":"S accepts V in govt","value":0.108,"S+M+RV+SF":32,"S+RV+SF":25.8,"S+M+SF":21.6,"S+M+RV":13.6,"S+SF":2.6,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"S accepts V in govt","value":0.132,"S+M+RV+SF":32.8,"S+RV+SF":22.8,"S+M+SF":20.2,"S+M+RV":13.6,"S+SF":5.4,"V+KF+LA+M":2,"noGov":0}
+{"param":"S accepts V in govt","value":0.156,"S+M+RV+SF":35,"S+RV+SF":22.8,"S+M+SF":21.2,"S+M+RV":13,"S+SF":4,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"S accepts V in govt","value":0.18,"S+M+RV+SF":34.4,"S+RV+SF":23,"S+M+SF":20.2,"S+M+RV":13.4,"S+SF":2.4,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"S accepts V in govt","value":0.204,"S+M+RV+SF":35,"S+RV+SF":24.2,"S+M+SF":22.8,"S+M+RV":9.4,"S+SF":2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"S accepts V in govt","value":0.228,"S+M+RV+SF":37,"S+RV+SF":22.4,"S+M+SF":20,"S+M+RV":14.2,"S+SF":2.4,"V+KF+LA+M":1,"noGov":0}
+{"param":"S accepts V in govt","value":0.252,"S+M+RV+SF":31.6,"S+RV+SF":23.6,"S+M+SF":22.4,"S+M+RV":14.2,"S+SF":2.6,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"S accepts V in govt","value":0.276,"S+M+RV+SF":32.4,"S+RV+SF":24.4,"S+M+SF":20.6,"S+M+RV":13.2,"S+SF":4.2,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"S accepts V in govt","value":0.3,"S+M+RV+SF":31.6,"S+RV+SF":24.8,"S+M+SF":19.6,"S+M+RV":11.8,"S+SF":4.8,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"S accepts V in govt","value":0.324,"S+M+RV+SF":35.8,"S+RV+SF":23.8,"S+M+SF":19.6,"S+M+RV":11.6,"S+SF":4.2,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"S accepts V in govt","value":0.348,"S+M+RV+SF":31.2,"S+RV+SF":25.8,"S+M+SF":19.8,"S+M+RV":15,"S+SF":3.6,"V+KF+LA+M":0.4,"noGov":0}
+{"param":"S accepts V in govt","value":0.372,"S+M+RV+SF":32,"S+RV+SF":24.2,"S+M+SF":18.4,"S+M+RV":12.2,"S+SF":5.6,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"S accepts V in govt","value":0.396,"S+M+RV+SF":31.6,"S+RV+SF":23.6,"S+M+SF":25.6,"S+M+RV":12,"S+SF":2.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"S accepts V in govt","value":0.42,"S+M+RV+SF":28.8,"S+RV+SF":26.2,"S+M+SF":24.2,"S+M+RV":11.2,"S+SF":2.6,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"S accepts V in govt","value":0.444,"S+M+RV+SF":34.8,"S+RV+SF":23,"S+M+SF":21.6,"S+M+RV":11.2,"S+SF":3.4,"V+KF+LA+M":0.2,"noGov":0}
+{"param":"S accepts V in govt","value":0.468,"S+M+RV+SF":34,"S+RV+SF":22.6,"S+M+SF":19.4,"S+M+RV":14.6,"S+SF":3.4,"V+KF+LA+M":0.4,"noGov":0}
+{"param":"S accepts V in govt","value":0.492,"S+M+RV+SF":30.8,"S+RV+SF":21,"S+M+SF":21.6,"S+M+RV":13.2,"S+SF":4.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"S accepts V in govt","value":0.516,"S+M+RV+SF":32,"S+RV+SF":23,"S+M+SF":19.6,"S+M+RV":12.6,"S+SF":3.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"S accepts V in govt","value":0.54,"S+M+RV+SF":32.4,"S+RV+SF":26,"S+M+SF":19,"S+M+RV":12.8,"S+SF":3.4,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"S accepts V in govt","value":0.564,"S+M+RV+SF":30.8,"S+RV+SF":20.2,"S+M+SF":22.6,"S+M+RV":12.4,"S+SF":3.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"S accepts V in govt","value":0.588,"S+M+RV+SF":31,"S+RV+SF":24.4,"S+M+SF":18.6,"S+M+RV":14.4,"S+SF":3.6,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"KF accepts S in govt","value":0.063,"S+M+RV+SF":31.6,"S+RV+SF":24.2,"S+M+SF":20.2,"S+M+RV":15.4,"S+SF":5,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"KF accepts S in govt","value":0.089,"S+M+RV+SF":33.4,"S+RV+SF":22.8,"S+M+SF":23.2,"S+M+RV":12.8,"S+SF":3.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"KF accepts S in govt","value":0.115,"S+M+RV+SF":29.8,"S+RV+SF":23.4,"S+M+SF":19.8,"S+M+RV":16.8,"S+SF":5.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"KF accepts S in govt","value":0.141,"S+M+RV+SF":34.6,"S+RV+SF":25.4,"S+M+SF":22.2,"S+M+RV":11.4,"S+SF":2.6,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"KF accepts S in govt","value":0.167,"S+M+RV+SF":35.4,"S+RV+SF":24,"S+M+SF":19.2,"S+M+RV":11,"S+SF":4.6,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"KF accepts S in govt","value":0.193,"S+M+RV+SF":32.4,"S+RV+SF":23.6,"S+M+SF":23.8,"S+M+RV":11.2,"S+SF":4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"KF accepts S in govt","value":0.219,"S+M+RV+SF":32,"S+RV+SF":23.6,"S+M+SF":22.4,"S+M+RV":12.2,"S+SF":3.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"KF accepts S in govt","value":0.245,"S+M+RV+SF":32.4,"S+RV+SF":24,"S+M+SF":20.8,"S+M+RV":11.2,"S+SF":4,"V+KF+LA+M":2.4,"noGov":0}
+{"param":"KF accepts S in govt","value":0.271,"S+M+RV+SF":33,"S+RV+SF":22.4,"S+M+SF":22,"S+M+RV":14,"S+SF":4.2,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"KF accepts S in govt","value":0.297,"S+M+RV+SF":28.4,"S+RV+SF":24,"S+M+SF":21.6,"S+M+RV":16.4,"S+SF":4,"V+KF+LA+M":1,"noGov":0}
+{"param":"KF accepts S in govt","value":0.323,"S+M+RV+SF":33,"S+RV+SF":24,"S+M+SF":21.2,"S+M+RV":13,"S+SF":4.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"KF accepts S in govt","value":0.349,"S+M+RV+SF":29.8,"S+RV+SF":26.4,"S+M+SF":20.6,"S+M+RV":13.4,"S+SF":5.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"KF accepts S in govt","value":0.375,"S+M+RV+SF":31,"S+RV+SF":25.2,"S+M+SF":19.8,"S+M+RV":13.8,"S+SF":4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"KF accepts S in govt","value":0.401,"S+M+RV+SF":31.4,"S+RV+SF":27,"S+M+SF":21.2,"S+M+RV":11.8,"S+SF":3.4,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"KF accepts S in govt","value":0.427,"S+M+RV+SF":31.2,"S+RV+SF":26.4,"S+M+SF":19,"S+M+RV":13.6,"S+SF":5.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"KF accepts S in govt","value":0.453,"S+M+RV+SF":34.2,"S+RV+SF":23.4,"S+M+SF":20,"S+M+RV":12.8,"S+SF":4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"KF accepts S in govt","value":0.479,"S+M+RV+SF":33.8,"S+RV+SF":25.8,"S+M+SF":17.4,"S+M+RV":12.4,"S+SF":2.4,"V+KF+LA+M":1,"noGov":0}
+{"param":"KF accepts S in govt","value":0.505,"S+M+RV+SF":27,"S+RV+SF":23.8,"S+M+SF":24,"S+M+RV":14.2,"S+SF":2.8,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"KF accepts S in govt","value":0.531,"S+M+RV+SF":28.6,"S+RV+SF":26.2,"S+M+SF":21,"S+M+RV":12.4,"S+SF":4,"V+KF+LA+M":1,"noGov":0}
+{"param":"KF accepts S in govt","value":0.557,"S+M+RV+SF":29.6,"S+RV+SF":25,"S+M+SF":20.6,"S+M+RV":14,"S+SF":3.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"KF accepts S in govt","value":0.583,"S+M+RV+SF":33.4,"S+RV+SF":21.4,"S+M+SF":23.2,"S+M+RV":13.6,"S+SF":2.8,"V+KF+LA+M":0.2,"noGov":0}
+{"param":"KF accepts S in govt","value":0.609,"S+M+RV+SF":30.4,"S+RV+SF":26,"S+M+SF":22,"S+M+RV":12.6,"S+SF":3.8,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"KF accepts S in govt","value":0.635,"S+M+RV+SF":29.2,"S+RV+SF":21.2,"S+M+SF":22,"S+M+RV":16,"S+SF":5.2,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"KF accepts S in govt","value":0.661,"S+M+RV+SF":32.8,"S+RV+SF":24,"S+M+SF":19.4,"S+M+RV":11.4,"S+SF":4,"V+KF+LA+M":2,"noGov":0}
+{"param":"KF accepts S in govt","value":0.687,"S+M+RV+SF":31.6,"S+RV+SF":24.4,"S+M+SF":22.2,"S+M+RV":10.4,"S+SF":5.6,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.215,"S+M+RV+SF":31.8,"S+RV+SF":22.6,"S+M+SF":20.2,"S+M+RV":13.6,"S+SF":4.6,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.245,"S+M+RV+SF":26.2,"S+RV+SF":24.2,"S+M+SF":25.4,"S+M+RV":12.4,"S+SF":4.2,"V+KF+LA+M":2.6,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.275,"S+M+RV+SF":33.4,"S+RV+SF":24.6,"S+M+SF":22.2,"S+M+RV":10.8,"S+SF":3.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.305,"S+M+RV+SF":30.8,"S+RV+SF":24.4,"S+M+SF":22.8,"S+M+RV":12.4,"S+SF":4.8,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.335,"S+M+RV+SF":33,"S+RV+SF":25.8,"S+M+SF":20.6,"S+M+RV":10,"S+SF":2.8,"V+KF+LA+M":2,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.365,"S+M+RV+SF":31.4,"S+RV+SF":23.6,"S+M+SF":22,"S+M+RV":13.2,"S+SF":3.4,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.395,"S+M+RV+SF":35.2,"S+RV+SF":25.2,"S+M+SF":17.8,"S+M+RV":12.8,"S+SF":3.4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.425,"S+M+RV+SF":31.4,"S+RV+SF":26.8,"S+M+SF":21.6,"S+M+RV":11.8,"S+SF":3.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.455,"S+M+RV+SF":32.4,"S+RV+SF":23.8,"S+M+SF":19.8,"S+M+RV":12.8,"S+SF":4.6,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.485,"S+M+RV+SF":33,"S+RV+SF":24,"S+M+SF":19.6,"S+M+RV":12.4,"S+SF":4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.515,"S+M+RV+SF":35.2,"S+RV+SF":24.4,"S+M+SF":21,"S+M+RV":10.2,"S+SF":4.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.545,"S+M+RV+SF":30.8,"S+RV+SF":22.2,"S+M+SF":27.6,"S+M+RV":10.4,"S+SF":3.6,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.575,"S+M+RV+SF":30,"S+RV+SF":24.6,"S+M+SF":21.8,"S+M+RV":11.8,"S+SF":5.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.605,"S+M+RV+SF":30.4,"S+RV+SF":26.8,"S+M+SF":22.8,"S+M+RV":12.4,"S+SF":4,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.635,"S+M+RV+SF":33.6,"S+RV+SF":22.8,"S+M+SF":23.4,"S+M+RV":11.4,"S+SF":3,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.665,"S+M+RV+SF":32.4,"S+RV+SF":28.4,"S+M+SF":19.6,"S+M+RV":11.2,"S+SF":3.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.695,"S+M+RV+SF":30.2,"S+RV+SF":24.8,"S+M+SF":22.6,"S+M+RV":11.6,"S+SF":4.4,"V+KF+LA+M":1,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.725,"S+M+RV+SF":31.6,"S+RV+SF":25.6,"S+M+SF":20.8,"S+M+RV":12.6,"S+SF":4.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.755,"S+M+RV+SF":31.2,"S+RV+SF":25.8,"S+M+SF":21.2,"S+M+RV":13.6,"S+SF":4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.785,"S+M+RV+SF":39.8,"S+RV+SF":19,"S+M+SF":19.4,"S+M+RV":11.4,"S+SF":4.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.815,"S+M+RV+SF":32.4,"S+RV+SF":25.4,"S+M+SF":20.4,"S+M+RV":12.8,"S+SF":3.2,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.845,"S+M+RV+SF":31,"S+RV+SF":25.4,"S+M+SF":21.6,"S+M+RV":11.8,"S+SF":4,"V+KF+LA+M":2,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.875,"S+M+RV+SF":33,"S+RV+SF":22,"S+M+SF":22.4,"S+M+RV":14.8,"S+SF":1.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.905,"S+M+RV+SF":32.2,"S+RV+SF":24,"S+M+SF":20.4,"S+M+RV":13.4,"S+SF":4.8,"V+KF+LA+M":2,"noGov":0}
+{"param":"KF tolerates S in govt","value":0.935,"S+M+RV+SF":30.6,"S+RV+SF":24.4,"S+M+SF":21.4,"S+M+RV":14.8,"S+SF":4.2,"V+KF+LA+M":2,"noGov":0}
+{"param":"DF tolerates M","value":0.01,"S+M+RV+SF":30.8,"S+RV+SF":27.8,"S+M+SF":20.8,"S+M+RV":12.4,"S+SF":3,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"DF tolerates M","value":0.03,"S+M+RV+SF":30.4,"S+RV+SF":23.8,"S+M+SF":21.2,"S+M+RV":14.6,"S+SF":3.6,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"DF tolerates M","value":0.05,"S+M+RV+SF":27.4,"S+RV+SF":27,"S+M+SF":21.4,"S+M+RV":13,"S+SF":3.8,"V+KF+LA+M":2.4,"noGov":0}
+{"param":"DF tolerates M","value":0.07,"S+M+RV+SF":37.2,"S+RV+SF":23,"S+M+SF":19.6,"S+M+RV":12.6,"S+SF":3.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"DF tolerates M","value":0.09,"S+M+RV+SF":31.2,"S+RV+SF":25,"S+M+SF":23.6,"S+M+RV":12,"S+SF":3.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"DF tolerates M","value":0.11,"S+M+RV+SF":30.4,"S+RV+SF":24,"S+M+SF":22,"S+M+RV":12.2,"S+SF":3.6,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"DF tolerates M","value":0.13,"S+M+RV+SF":29,"S+RV+SF":26.8,"S+M+SF":20.6,"S+M+RV":14,"S+SF":2.6,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"DF tolerates M","value":0.15,"S+M+RV+SF":33,"S+RV+SF":23.8,"S+M+SF":22,"S+M+RV":13.2,"S+SF":3.2,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"DF tolerates M","value":0.17,"S+M+RV+SF":30.8,"S+RV+SF":23.4,"S+M+SF":22.6,"S+M+RV":13.4,"S+SF":3.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"DF tolerates M","value":0.19,"S+M+RV+SF":34.4,"S+RV+SF":22.2,"S+M+SF":22.8,"S+M+RV":12,"S+SF":3.8,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"DF tolerates M","value":0.21,"S+M+RV+SF":29,"S+RV+SF":25.8,"S+M+SF":22.2,"S+M+RV":13,"S+SF":4.8,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"DF tolerates M","value":0.23,"S+M+RV+SF":34,"S+RV+SF":24.6,"S+M+SF":20.6,"S+M+RV":11.4,"S+SF":4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"DF tolerates M","value":0.25,"S+M+RV+SF":30.2,"S+RV+SF":23.4,"S+M+SF":22.8,"S+M+RV":13.8,"S+SF":3.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"DF tolerates M","value":0.27,"S+M+RV+SF":34.2,"S+RV+SF":24,"S+M+SF":18.4,"S+M+RV":14.4,"S+SF":3.6,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"DF tolerates M","value":0.29,"S+M+RV+SF":33.2,"S+RV+SF":23.2,"S+M+SF":23,"S+M+RV":10.8,"S+SF":4.2,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"DF tolerates M","value":0.31,"S+M+RV+SF":35.2,"S+RV+SF":23.4,"S+M+SF":20.4,"S+M+RV":10,"S+SF":3.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"DF tolerates M","value":0.33,"S+M+RV+SF":30,"S+RV+SF":25.4,"S+M+SF":22.4,"S+M+RV":13.2,"S+SF":2.6,"V+KF+LA+M":2,"noGov":0}
+{"param":"DF tolerates M","value":0.35,"S+M+RV+SF":28.8,"S+RV+SF":24.4,"S+M+SF":22.4,"S+M+RV":14.8,"S+SF":4.2,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"DF tolerates M","value":0.37,"S+M+RV+SF":33,"S+RV+SF":21.2,"S+M+SF":20,"S+M+RV":15.6,"S+SF":4.2,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"DF tolerates M","value":0.39,"S+M+RV+SF":31.4,"S+RV+SF":22.4,"S+M+SF":23.4,"S+M+RV":13.6,"S+SF":3.6,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"DF tolerates M","value":0.41,"S+M+RV+SF":32.6,"S+RV+SF":26.4,"S+M+SF":18.6,"S+M+RV":14.4,"S+SF":3.6,"V+KF+LA+M":0.4,"noGov":0}
+{"param":"DF tolerates M","value":0.43,"S+M+RV+SF":30.6,"S+RV+SF":23.6,"S+M+SF":23,"S+M+RV":12.8,"S+SF":4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"DF tolerates M","value":0.45,"S+M+RV+SF":29.6,"S+RV+SF":23.6,"S+M+SF":23.4,"S+M+RV":13.2,"S+SF":5.4,"V+KF+LA+M":1,"noGov":0}
+{"param":"DF tolerates M","value":0.47,"S+M+RV+SF":26.6,"S+RV+SF":26,"S+M+SF":22.6,"S+M+RV":13.6,"S+SF":4.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"DF tolerates M","value":0.49,"S+M+RV+SF":36,"S+RV+SF":21.6,"S+M+SF":19.8,"S+M+RV":11,"S+SF":2.8,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"DF supports V-led govt","value":0.3136,"S+M+RV+SF":29,"S+RV+SF":22.6,"S+M+SF":25,"S+M+RV":13.8,"S+SF":3.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"DF supports V-led govt","value":0.3408,"S+M+RV+SF":32,"S+RV+SF":25.4,"S+M+SF":22,"S+M+RV":10.8,"S+SF":3.6,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"DF supports V-led govt","value":0.368,"S+M+RV+SF":33.6,"S+RV+SF":23,"S+M+SF":21.2,"S+M+RV":14.4,"S+SF":3.8,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"DF supports V-led govt","value":0.3952,"S+M+RV+SF":32,"S+RV+SF":25.4,"S+M+SF":21.4,"S+M+RV":11.8,"S+SF":3.8,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"DF supports V-led govt","value":0.4224,"S+M+RV+SF":30.2,"S+RV+SF":22.2,"S+M+SF":23,"S+M+RV":13.8,"S+SF":4.6,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"DF supports V-led govt","value":0.4496,"S+M+RV+SF":34.8,"S+RV+SF":25.2,"S+M+SF":20.2,"S+M+RV":11.2,"S+SF":3.2,"V+KF+LA+M":2,"noGov":0}
+{"param":"DF supports V-led govt","value":0.4768,"S+M+RV+SF":30.6,"S+RV+SF":24.6,"S+M+SF":20.6,"S+M+RV":14.4,"S+SF":4.4,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"DF supports V-led govt","value":0.504,"S+M+RV+SF":36,"S+RV+SF":23.6,"S+M+SF":20.6,"S+M+RV":12,"S+SF":3,"V+KF+LA+M":1,"noGov":0}
+{"param":"DF supports V-led govt","value":0.5312,"S+M+RV+SF":29.4,"S+RV+SF":26.4,"S+M+SF":20,"S+M+RV":15,"S+SF":3.8,"V+KF+LA+M":1,"noGov":0}
+{"param":"DF supports V-led govt","value":0.5584,"S+M+RV+SF":30,"S+RV+SF":28.8,"S+M+SF":20,"S+M+RV":12.8,"S+SF":4,"V+KF+LA+M":1,"noGov":0}
+{"param":"DF supports V-led govt","value":0.5856,"S+M+RV+SF":35.4,"S+RV+SF":23.6,"S+M+SF":19.6,"S+M+RV":11.6,"S+SF":4.4,"V+KF+LA+M":1,"noGov":0}
+{"param":"DF supports V-led govt","value":0.6128,"S+M+RV+SF":32.6,"S+RV+SF":23.6,"S+M+SF":21.4,"S+M+RV":14.2,"S+SF":3.4,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"DF supports V-led govt","value":0.64,"S+M+RV+SF":30,"S+RV+SF":26.6,"S+M+SF":19.6,"S+M+RV":12.8,"S+SF":5,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"DF supports V-led govt","value":0.6672,"S+M+RV+SF":28.8,"S+RV+SF":25.8,"S+M+SF":24.6,"S+M+RV":12.6,"S+SF":3.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"DF supports V-led govt","value":0.6944,"S+M+RV+SF":26.8,"S+RV+SF":27.4,"S+M+SF":22.6,"S+M+RV":11.8,"S+SF":4.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"DF supports V-led govt","value":0.7216,"S+M+RV+SF":34.2,"S+RV+SF":22,"S+M+SF":21.4,"S+M+RV":12.2,"S+SF":5,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"DF supports V-led govt","value":0.7488,"S+M+RV+SF":30,"S+RV+SF":28.2,"S+M+SF":21,"S+M+RV":14,"S+SF":3,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"DF supports V-led govt","value":0.776,"S+M+RV+SF":32.4,"S+RV+SF":28.6,"S+M+SF":18.2,"S+M+RV":11.8,"S+SF":2.6,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"DF supports V-led govt","value":0.8032,"S+M+RV+SF":31.6,"S+RV+SF":25.4,"S+M+SF":20.2,"S+M+RV":13,"S+SF":4,"V+KF+LA+M":1,"noGov":0}
+{"param":"DF supports V-led govt","value":0.8304,"S+M+RV+SF":33.6,"S+RV+SF":26.4,"S+M+SF":19.4,"S+M+RV":11.8,"S+SF":3.2,"V+KF+LA+M":0.2,"noGov":0}
+{"param":"DF supports V-led govt","value":0.8576,"S+M+RV+SF":31.6,"S+RV+SF":22.6,"S+M+SF":18.6,"S+M+RV":16,"S+SF":4.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"DF supports V-led govt","value":0.8848,"S+M+RV+SF":30.2,"S+RV+SF":26.8,"S+M+SF":22.4,"S+M+RV":13,"S+SF":2.8,"V+KF+LA+M":2,"noGov":0}
+{"param":"DF supports V-led govt","value":0.912,"S+M+RV+SF":33.2,"S+RV+SF":25,"S+M+SF":21.8,"S+M+RV":12.4,"S+SF":2.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"DF supports V-led govt","value":0.9392,"S+M+RV+SF":33,"S+RV+SF":22.8,"S+M+SF":22.2,"S+M+RV":10.8,"S+SF":4.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"DF supports V-led govt","value":0.9664,"S+M+RV+SF":32.4,"S+RV+SF":22.2,"S+M+SF":22.8,"S+M+RV":12.8,"S+SF":2.2,"V+KF+LA+M":2,"noGov":0}
+{"param":"V accepts KF in govt","value":0.4116,"S+M+RV+SF":29.2,"S+RV+SF":23.2,"S+M+SF":25,"S+M+RV":13.6,"S+SF":3.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"V accepts KF in govt","value":0.4348,"S+M+RV+SF":33.6,"S+RV+SF":24,"S+M+SF":21.2,"S+M+RV":11.8,"S+SF":4.2,"V+KF+LA+M":0.2,"noGov":0}
+{"param":"V accepts KF in govt","value":0.458,"S+M+RV+SF":30.2,"S+RV+SF":28.6,"S+M+SF":17.4,"S+M+RV":12.8,"S+SF":3.4,"V+KF+LA+M":1,"noGov":0}
+{"param":"V accepts KF in govt","value":0.4812,"S+M+RV+SF":29.6,"S+RV+SF":26.4,"S+M+SF":19.8,"S+M+RV":12.8,"S+SF":5.6,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"V accepts KF in govt","value":0.5044,"S+M+RV+SF":31.8,"S+RV+SF":24.2,"S+M+SF":20,"S+M+RV":12.6,"S+SF":3.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"V accepts KF in govt","value":0.5276,"S+M+RV+SF":33,"S+RV+SF":22.4,"S+M+SF":23.4,"S+M+RV":11.4,"S+SF":3.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"V accepts KF in govt","value":0.5508,"S+M+RV+SF":32,"S+RV+SF":25.4,"S+M+SF":21.6,"S+M+RV":10.8,"S+SF":4.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"V accepts KF in govt","value":0.574,"S+M+RV+SF":33,"S+RV+SF":24.4,"S+M+SF":24.4,"S+M+RV":10,"S+SF":3.6,"V+KF+LA+M":0.4,"noGov":0}
+{"param":"V accepts KF in govt","value":0.5972,"S+M+RV+SF":29.6,"S+RV+SF":26.2,"S+M+SF":23,"S+M+RV":12,"S+SF":4,"V+KF+LA+M":1,"noGov":0}
+{"param":"V accepts KF in govt","value":0.6204,"S+M+RV+SF":29.2,"S+RV+SF":26.4,"S+M+SF":20.6,"S+M+RV":14.4,"S+SF":4,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"V accepts KF in govt","value":0.6436,"S+M+RV+SF":33.6,"S+RV+SF":22.4,"S+M+SF":23.6,"S+M+RV":11.8,"S+SF":2.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"V accepts KF in govt","value":0.6668,"S+M+RV+SF":31,"S+RV+SF":26.6,"S+M+SF":19.8,"S+M+RV":13.6,"S+SF":2.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"V accepts KF in govt","value":0.69,"S+M+RV+SF":32.2,"S+RV+SF":27.8,"S+M+SF":18,"S+M+RV":12.2,"S+SF":4.6,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"V accepts KF in govt","value":0.7132,"S+M+RV+SF":28.4,"S+RV+SF":24.8,"S+M+SF":21.4,"S+M+RV":14.6,"S+SF":4.4,"V+KF+LA+M":1,"noGov":0}
+{"param":"V accepts KF in govt","value":0.7364,"S+M+RV+SF":31.6,"S+RV+SF":24,"S+M+SF":21.4,"S+M+RV":12.8,"S+SF":2.4,"V+KF+LA+M":2.4,"noGov":0}
+{"param":"V accepts KF in govt","value":0.7596,"S+M+RV+SF":26.2,"S+RV+SF":24.8,"S+M+SF":24,"S+M+RV":13.4,"S+SF":4.8,"V+KF+LA+M":1,"noGov":0}
+{"param":"V accepts KF in govt","value":0.7828,"S+M+RV+SF":32.2,"S+RV+SF":24.6,"S+M+SF":20,"S+M+RV":13.6,"S+SF":4,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"V accepts KF in govt","value":0.806,"S+M+RV+SF":37.4,"S+RV+SF":24.4,"S+M+SF":18.4,"S+M+RV":11,"S+SF":4,"V+KF+LA+M":0.4,"noGov":0}
+{"param":"V accepts KF in govt","value":0.8292,"S+M+RV+SF":30.2,"S+RV+SF":27.8,"S+M+SF":17.2,"S+M+RV":14.8,"S+SF":4.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"V accepts KF in govt","value":0.8524,"S+M+RV+SF":30.2,"S+RV+SF":23.8,"S+M+SF":21.6,"S+M+RV":14.8,"S+SF":3.6,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"V accepts KF in govt","value":0.8756,"S+M+RV+SF":33.6,"S+RV+SF":23.6,"S+M+SF":18.6,"S+M+RV":13.2,"S+SF":4.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"V accepts KF in govt","value":0.8988,"S+M+RV+SF":32.2,"S+RV+SF":24.4,"S+M+SF":19.8,"S+M+RV":14.4,"S+SF":3.8,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"V accepts KF in govt","value":0.922,"S+M+RV+SF":33.2,"S+RV+SF":23.6,"S+M+SF":20.6,"S+M+RV":14,"S+SF":3.2,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"V accepts KF in govt","value":0.9452,"S+M+RV+SF":33.4,"S+RV+SF":23.6,"S+M+SF":20.2,"S+M+RV":14,"S+SF":2.4,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"V accepts KF in govt","value":0.9684,"S+M+RV+SF":30.8,"S+RV+SF":25,"S+M+SF":21,"S+M+RV":13.4,"S+SF":3.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"V accepts M in govt","value":0.412,"S+M+RV+SF":32.4,"S+RV+SF":24.2,"S+M+SF":22.8,"S+M+RV":11.2,"S+SF":5,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"V accepts M in govt","value":0.436,"S+M+RV+SF":27.6,"S+RV+SF":24.2,"S+M+SF":21.6,"S+M+RV":14.4,"S+SF":4.8,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"V accepts M in govt","value":0.46,"S+M+RV+SF":32.2,"S+RV+SF":24.2,"S+M+SF":18.6,"S+M+RV":16,"S+SF":4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"V accepts M in govt","value":0.484,"S+M+RV+SF":29.4,"S+RV+SF":27.4,"S+M+SF":18.4,"S+M+RV":12.8,"S+SF":6.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"V accepts M in govt","value":0.508,"S+M+RV+SF":32.2,"S+RV+SF":26.2,"S+M+SF":22.4,"S+M+RV":9,"S+SF":3.8,"V+KF+LA+M":1,"noGov":0}
+{"param":"V accepts M in govt","value":0.532,"S+M+RV+SF":30.6,"S+RV+SF":27.6,"S+M+SF":21.6,"S+M+RV":11.4,"S+SF":3.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"V accepts M in govt","value":0.556,"S+M+RV+SF":27.2,"S+RV+SF":28.4,"S+M+SF":20.4,"S+M+RV":14.4,"S+SF":4.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"V accepts M in govt","value":0.58,"S+M+RV+SF":31.8,"S+RV+SF":22.4,"S+M+SF":23.2,"S+M+RV":13.2,"S+SF":3,"V+KF+LA+M":2,"noGov":0}
+{"param":"V accepts M in govt","value":0.604,"S+M+RV+SF":33.4,"S+RV+SF":27.6,"S+M+SF":20.4,"S+M+RV":10.2,"S+SF":3,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"V accepts M in govt","value":0.628,"S+M+RV+SF":30.8,"S+RV+SF":21.4,"S+M+SF":23.8,"S+M+RV":15,"S+SF":3.6,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"V accepts M in govt","value":0.652,"S+M+RV+SF":30.2,"S+RV+SF":25.8,"S+M+SF":20.2,"S+M+RV":14.2,"S+SF":5,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"V accepts M in govt","value":0.676,"S+M+RV+SF":31.8,"S+RV+SF":23.8,"S+M+SF":23.8,"S+M+RV":11,"S+SF":4.8,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"V accepts M in govt","value":0.7,"S+M+RV+SF":33.4,"S+RV+SF":24.2,"S+M+SF":22.2,"S+M+RV":11,"S+SF":3.2,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"V accepts M in govt","value":0.724,"S+M+RV+SF":28.6,"S+RV+SF":28.2,"S+M+SF":22.6,"S+M+RV":11.8,"S+SF":3.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"V accepts M in govt","value":0.748,"S+M+RV+SF":30.2,"S+RV+SF":24.8,"S+M+SF":21.4,"S+M+RV":13,"S+SF":3.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"V accepts M in govt","value":0.772,"S+M+RV+SF":31.4,"S+RV+SF":28,"S+M+SF":19.4,"S+M+RV":11.6,"S+SF":3.4,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"V accepts M in govt","value":0.796,"S+M+RV+SF":33.8,"S+RV+SF":25.4,"S+M+SF":18.2,"S+M+RV":13.4,"S+SF":4.2,"V+KF+LA+M":2,"noGov":0}
+{"param":"V accepts M in govt","value":0.82,"S+M+RV+SF":31.6,"S+RV+SF":22.8,"S+M+SF":22,"S+M+RV":14,"S+SF":2.8,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"V accepts M in govt","value":0.844,"S+M+RV+SF":32.8,"S+RV+SF":25,"S+M+SF":20.4,"S+M+RV":13,"S+SF":3.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"V accepts M in govt","value":0.868,"S+M+RV+SF":29.8,"S+RV+SF":24,"S+M+SF":21.2,"S+M+RV":15,"S+SF":3.6,"V+KF+LA+M":2,"noGov":0}
+{"param":"V accepts M in govt","value":0.892,"S+M+RV+SF":31.6,"S+RV+SF":23.6,"S+M+SF":22.6,"S+M+RV":14,"S+SF":3,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"V accepts M in govt","value":0.916,"S+M+RV+SF":29.6,"S+RV+SF":24.8,"S+M+SF":25.6,"S+M+RV":10.8,"S+SF":3,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"V accepts M in govt","value":0.94,"S+M+RV+SF":31.6,"S+RV+SF":24.6,"S+M+SF":18.8,"S+M+RV":12.4,"S+SF":4.8,"V+KF+LA+M":2.8,"noGov":0}
+{"param":"V accepts M in govt","value":0.964,"S+M+RV+SF":33.2,"S+RV+SF":21.4,"S+M+SF":22.4,"S+M+RV":13.8,"S+SF":3.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"V accepts M in govt","value":0.988,"S+M+RV+SF":33.6,"S+RV+SF":21.4,"S+M+SF":22.8,"S+M+RV":11.2,"S+SF":4.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"EL accepts M in govt","value":0.008,"S+M+RV+SF":31,"S+RV+SF":27.4,"S+M+SF":18.8,"S+M+RV":13,"S+SF":3.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL accepts M in govt","value":0.024,"S+M+RV+SF":31.4,"S+RV+SF":24,"S+M+SF":21.6,"S+M+RV":12.6,"S+SF":4.2,"V+KF+LA+M":2,"noGov":0}
+{"param":"EL accepts M in govt","value":0.04,"S+M+RV+SF":34.6,"S+RV+SF":22,"S+M+SF":22.2,"S+M+RV":11.8,"S+SF":3.4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"EL accepts M in govt","value":0.056,"S+M+RV+SF":29.8,"S+RV+SF":24,"S+M+SF":22.6,"S+M+RV":13,"S+SF":3,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"EL accepts M in govt","value":0.072,"S+M+RV+SF":31.6,"S+RV+SF":21.8,"S+M+SF":21.2,"S+M+RV":16.4,"S+SF":3.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"EL accepts M in govt","value":0.088,"S+M+RV+SF":30,"S+RV+SF":21.2,"S+M+SF":23.6,"S+M+RV":15.6,"S+SF":3.8,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"EL accepts M in govt","value":0.104,"S+M+RV+SF":32.2,"S+RV+SF":22.8,"S+M+SF":23,"S+M+RV":14,"S+SF":2,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"EL accepts M in govt","value":0.12,"S+M+RV+SF":31.8,"S+RV+SF":27.2,"S+M+SF":19.4,"S+M+RV":12,"S+SF":3.2,"V+KF+LA+M":2,"noGov":0}
+{"param":"EL accepts M in govt","value":0.136,"S+M+RV+SF":30.6,"S+RV+SF":22.6,"S+M+SF":24.2,"S+M+RV":13.6,"S+SF":2.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"EL accepts M in govt","value":0.152,"S+M+RV+SF":33.8,"S+RV+SF":26.6,"S+M+SF":17.8,"S+M+RV":13,"S+SF":3.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL accepts M in govt","value":0.168,"S+M+RV+SF":31.6,"S+RV+SF":23.8,"S+M+SF":17,"S+M+RV":15,"S+SF":5.2,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"EL accepts M in govt","value":0.184,"S+M+RV+SF":29.8,"S+RV+SF":24.8,"S+M+SF":21.6,"S+M+RV":12.4,"S+SF":4,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"EL accepts M in govt","value":0.2,"S+M+RV+SF":32,"S+RV+SF":25.6,"S+M+SF":19.6,"S+M+RV":11.2,"S+SF":4,"V+KF+LA+M":2,"noGov":0}
+{"param":"EL accepts M in govt","value":0.216,"S+M+RV+SF":33.8,"S+RV+SF":25.2,"S+M+SF":19.4,"S+M+RV":11,"S+SF":4.8,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"EL accepts M in govt","value":0.232,"S+M+RV+SF":32.6,"S+RV+SF":24.6,"S+M+SF":18.2,"S+M+RV":12.8,"S+SF":5.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"EL accepts M in govt","value":0.248,"S+M+RV+SF":29.6,"S+RV+SF":23.6,"S+M+SF":23.6,"S+M+RV":12.4,"S+SF":4.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL accepts M in govt","value":0.264,"S+M+RV+SF":29,"S+RV+SF":27.6,"S+M+SF":19.8,"S+M+RV":12,"S+SF":4.6,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"EL accepts M in govt","value":0.28,"S+M+RV+SF":34.4,"S+RV+SF":24.6,"S+M+SF":21.4,"S+M+RV":11.6,"S+SF":3.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"EL accepts M in govt","value":0.296,"S+M+RV+SF":32.2,"S+RV+SF":22.4,"S+M+SF":20.4,"S+M+RV":14.4,"S+SF":4.6,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"EL accepts M in govt","value":0.312,"S+M+RV+SF":34,"S+RV+SF":24.4,"S+M+SF":22,"S+M+RV":10.6,"S+SF":2.8,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"EL accepts M in govt","value":0.328,"S+M+RV+SF":32.8,"S+RV+SF":21.4,"S+M+SF":24,"S+M+RV":11.8,"S+SF":4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL accepts M in govt","value":0.344,"S+M+RV+SF":32.2,"S+RV+SF":28,"S+M+SF":16.6,"S+M+RV":13.4,"S+SF":5.4,"V+KF+LA+M":0.2,"noGov":0}
+{"param":"EL accepts M in govt","value":0.36,"S+M+RV+SF":31.6,"S+RV+SF":25.8,"S+M+SF":21.8,"S+M+RV":11.4,"S+SF":4.4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"EL accepts M in govt","value":0.376,"S+M+RV+SF":30.8,"S+RV+SF":25.2,"S+M+SF":19.2,"S+M+RV":15.8,"S+SF":3.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL accepts M in govt","value":0.392,"S+M+RV+SF":29.2,"S+RV+SF":25.6,"S+M+SF":24.6,"S+M+RV":12.6,"S+SF":3.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.115,"S+M+RV+SF":32.4,"S+RV+SF":22.8,"S+M+SF":21.2,"S+M+RV":13.8,"S+SF":4.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.145,"S+M+RV+SF":34.2,"S+RV+SF":25.4,"S+M+SF":22.4,"S+M+RV":11.4,"S+SF":2.2,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.175,"S+M+RV+SF":29.4,"S+RV+SF":27.4,"S+M+SF":21,"S+M+RV":11.4,"S+SF":4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.205,"S+M+RV+SF":34,"S+RV+SF":23.4,"S+M+SF":20,"S+M+RV":11.8,"S+SF":3.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.235,"S+M+RV+SF":31.2,"S+RV+SF":25.6,"S+M+SF":21.2,"S+M+RV":13,"S+SF":3.6,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.265,"S+M+RV+SF":34,"S+RV+SF":27,"S+M+SF":17.2,"S+M+RV":10.8,"S+SF":4.8,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.295,"S+M+RV+SF":31.4,"S+RV+SF":23.8,"S+M+SF":26,"S+M+RV":10.2,"S+SF":4.2,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.325,"S+M+RV+SF":34.6,"S+RV+SF":23,"S+M+SF":20.4,"S+M+RV":13.6,"S+SF":3.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.355,"S+M+RV+SF":34.2,"S+RV+SF":23,"S+M+SF":21.4,"S+M+RV":11.2,"S+SF":4.8,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.385,"S+M+RV+SF":33.8,"S+RV+SF":25,"S+M+SF":21,"S+M+RV":12.2,"S+SF":4,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.415,"S+M+RV+SF":30.2,"S+RV+SF":24.4,"S+M+SF":21.6,"S+M+RV":12.6,"S+SF":3.8,"V+KF+LA+M":1,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.445,"S+M+RV+SF":39.4,"S+RV+SF":19.8,"S+M+SF":23,"S+M+RV":9,"S+SF":4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.475,"S+M+RV+SF":33.6,"S+RV+SF":22.8,"S+M+SF":22.2,"S+M+RV":10.8,"S+SF":5.6,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.505,"S+M+RV+SF":33.8,"S+RV+SF":22.8,"S+M+SF":21.8,"S+M+RV":13.2,"S+SF":3.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.535,"S+M+RV+SF":31.4,"S+RV+SF":26,"S+M+SF":20.4,"S+M+RV":12.4,"S+SF":4.6,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.565,"S+M+RV+SF":33.2,"S+RV+SF":20.6,"S+M+SF":23.6,"S+M+RV":14,"S+SF":3,"V+KF+LA+M":0.4,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.595,"S+M+RV+SF":36.4,"S+RV+SF":19.2,"S+M+SF":20.4,"S+M+RV":13,"S+SF":4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.625,"S+M+RV+SF":31.8,"S+RV+SF":26.6,"S+M+SF":21.6,"S+M+RV":13.8,"S+SF":2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.655,"S+M+RV+SF":32.8,"S+RV+SF":22.6,"S+M+SF":23.4,"S+M+RV":11.8,"S+SF":3.8,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.685,"S+M+RV+SF":33.2,"S+RV+SF":23,"S+M+SF":21.4,"S+M+RV":13.8,"S+SF":2.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.715,"S+M+RV+SF":33.8,"S+RV+SF":20.2,"S+M+SF":24.6,"S+M+RV":13.8,"S+SF":3.2,"V+KF+LA+M":0.4,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.745,"S+M+RV+SF":33.6,"S+RV+SF":25,"S+M+SF":20.8,"S+M+RV":11.6,"S+SF":4,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.775,"S+M+RV+SF":35.8,"S+RV+SF":23.2,"S+M+SF":21.4,"S+M+RV":11.2,"S+SF":3.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.805,"S+M+RV+SF":31.4,"S+RV+SF":27,"S+M+SF":20,"S+M+RV":10.4,"S+SF":3.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"EL tolerates RV in govt","value":0.835,"S+M+RV+SF":28.6,"S+RV+SF":25.4,"S+M+SF":22.4,"S+M+RV":15,"S+SF":4.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"S negotiation harshness","value":0.163,"S+M+RV+SF":32.6,"S+RV+SF":22.4,"S+M+SF":18.6,"S+M+RV":16.2,"S+SF":3.2,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"S negotiation harshness","value":0.189,"S+M+RV+SF":30,"S+RV+SF":24.2,"S+M+SF":20,"S+M+RV":16.2,"S+SF":3.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"S negotiation harshness","value":0.215,"S+M+RV+SF":32,"S+RV+SF":20.8,"S+M+SF":23.6,"S+M+RV":14.2,"S+SF":3.8,"V+KF+LA+M":0.4,"noGov":0}
+{"param":"S negotiation harshness","value":0.241,"S+M+RV+SF":31.8,"S+RV+SF":28.2,"S+M+SF":21,"S+M+RV":11.8,"S+SF":2.8,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"S negotiation harshness","value":0.267,"S+M+RV+SF":31.8,"S+RV+SF":23.6,"S+M+SF":19.8,"S+M+RV":12.4,"S+SF":5.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"S negotiation harshness","value":0.293,"S+M+RV+SF":29.6,"S+RV+SF":20.2,"S+M+SF":23,"S+M+RV":16.2,"S+SF":5.4,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"S negotiation harshness","value":0.319,"S+M+RV+SF":32.6,"S+RV+SF":25.8,"S+M+SF":23.2,"S+M+RV":10.8,"S+SF":2.8,"V+KF+LA+M":1,"noGov":0}
+{"param":"S negotiation harshness","value":0.345,"S+M+RV+SF":29.2,"S+RV+SF":25.4,"S+M+SF":24.2,"S+M+RV":11.2,"S+SF":4.6,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"S negotiation harshness","value":0.371,"S+M+RV+SF":33.2,"S+RV+SF":24.8,"S+M+SF":21.8,"S+M+RV":11.4,"S+SF":4,"V+KF+LA+M":1,"noGov":0}
+{"param":"S negotiation harshness","value":0.397,"S+M+RV+SF":29.6,"S+RV+SF":25,"S+M+SF":21.4,"S+M+RV":14.6,"S+SF":4.4,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"S negotiation harshness","value":0.423,"S+M+RV+SF":29.4,"S+RV+SF":26.8,"S+M+SF":19.6,"S+M+RV":13.6,"S+SF":4.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"S negotiation harshness","value":0.449,"S+M+RV+SF":30,"S+RV+SF":24.6,"S+M+SF":21.4,"S+M+RV":12.6,"S+SF":4.8,"V+KF+LA+M":1,"noGov":0}
+{"param":"S negotiation harshness","value":0.475,"S+M+RV+SF":32.8,"S+RV+SF":25.4,"S+M+SF":20.2,"S+M+RV":13,"S+SF":3.4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"S negotiation harshness","value":0.501,"S+M+RV+SF":33,"S+RV+SF":26.4,"S+M+SF":19.2,"S+M+RV":13.4,"S+SF":2.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"S negotiation harshness","value":0.527,"S+M+RV+SF":33.6,"S+RV+SF":21.8,"S+M+SF":21.6,"S+M+RV":12.4,"S+SF":3.2,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"S negotiation harshness","value":0.553,"S+M+RV+SF":32.8,"S+RV+SF":21.8,"S+M+SF":24.8,"S+M+RV":12.4,"S+SF":2.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"S negotiation harshness","value":0.579,"S+M+RV+SF":35.2,"S+RV+SF":23.8,"S+M+SF":21,"S+M+RV":11.2,"S+SF":4,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"S negotiation harshness","value":0.605,"S+M+RV+SF":36.6,"S+RV+SF":27,"S+M+SF":18,"S+M+RV":12,"S+SF":2.2,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"S negotiation harshness","value":0.631,"S+M+RV+SF":31.2,"S+RV+SF":24.6,"S+M+SF":24,"S+M+RV":12,"S+SF":2.6,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"S negotiation harshness","value":0.657,"S+M+RV+SF":30.4,"S+RV+SF":23,"S+M+SF":23.6,"S+M+RV":13.6,"S+SF":3.8,"V+KF+LA+M":1,"noGov":0}
+{"param":"S negotiation harshness","value":0.683,"S+M+RV+SF":30.6,"S+RV+SF":23.8,"S+M+SF":21.4,"S+M+RV":14,"S+SF":3,"V+KF+LA+M":2.4,"noGov":0}
+{"param":"S negotiation harshness","value":0.709,"S+M+RV+SF":33.8,"S+RV+SF":25.2,"S+M+SF":21.2,"S+M+RV":10,"S+SF":4.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"S negotiation harshness","value":0.735,"S+M+RV+SF":34.2,"S+RV+SF":22.6,"S+M+SF":19.6,"S+M+RV":11,"S+SF":6.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"S negotiation harshness","value":0.761,"S+M+RV+SF":33,"S+RV+SF":23.2,"S+M+SF":25.2,"S+M+RV":9.2,"S+SF":4.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"S negotiation harshness","value":0.787,"S+M+RV+SF":28.8,"S+RV+SF":30.2,"S+M+SF":18.6,"S+M+RV":12.6,"S+SF":4,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"SF negotiation harshness","value":0.213,"S+M+RV+SF":32,"S+RV+SF":24.8,"S+M+SF":20,"S+M+RV":13.2,"S+SF":3.8,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"SF negotiation harshness","value":0.239,"S+M+RV+SF":33.4,"S+RV+SF":25.2,"S+M+SF":21.2,"S+M+RV":12.8,"S+SF":3,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"SF negotiation harshness","value":0.265,"S+M+RV+SF":35.2,"S+RV+SF":23,"S+M+SF":19.2,"S+M+RV":13.6,"S+SF":3.8,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"SF negotiation harshness","value":0.291,"S+M+RV+SF":31,"S+RV+SF":26.6,"S+M+SF":20.6,"S+M+RV":11.6,"S+SF":3.2,"V+KF+LA+M":0.2,"noGov":0}
+{"param":"SF negotiation harshness","value":0.317,"S+M+RV+SF":29.4,"S+RV+SF":27.8,"S+M+SF":21.2,"S+M+RV":14.2,"S+SF":2.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"SF negotiation harshness","value":0.343,"S+M+RV+SF":34.6,"S+RV+SF":22.6,"S+M+SF":20.2,"S+M+RV":12.4,"S+SF":2.6,"V+KF+LA+M":2,"noGov":0}
+{"param":"SF negotiation harshness","value":0.369,"S+M+RV+SF":33.4,"S+RV+SF":23.8,"S+M+SF":20.2,"S+M+RV":12.8,"S+SF":5,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"SF negotiation harshness","value":0.395,"S+M+RV+SF":33.8,"S+RV+SF":22.8,"S+M+SF":24,"S+M+RV":10.4,"S+SF":3.8,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"SF negotiation harshness","value":0.421,"S+M+RV+SF":31.4,"S+RV+SF":22.8,"S+M+SF":21.8,"S+M+RV":12,"S+SF":5.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"SF negotiation harshness","value":0.447,"S+M+RV+SF":33,"S+RV+SF":23.8,"S+M+SF":20.2,"S+M+RV":13.4,"S+SF":3.8,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"SF negotiation harshness","value":0.473,"S+M+RV+SF":32,"S+RV+SF":22.8,"S+M+SF":21.8,"S+M+RV":13.4,"S+SF":4.4,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"SF negotiation harshness","value":0.499,"S+M+RV+SF":30.4,"S+RV+SF":24,"S+M+SF":21.8,"S+M+RV":14,"S+SF":4.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF negotiation harshness","value":0.525,"S+M+RV+SF":34.4,"S+RV+SF":22.4,"S+M+SF":22.2,"S+M+RV":12.8,"S+SF":3.6,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"SF negotiation harshness","value":0.551,"S+M+RV+SF":31,"S+RV+SF":22.8,"S+M+SF":23.4,"S+M+RV":13.6,"S+SF":4.2,"V+KF+LA+M":2.6,"noGov":0}
+{"param":"SF negotiation harshness","value":0.577,"S+M+RV+SF":32.2,"S+RV+SF":23.8,"S+M+SF":22.6,"S+M+RV":13.2,"S+SF":3.8,"V+KF+LA+M":1,"noGov":0}
+{"param":"SF negotiation harshness","value":0.603,"S+M+RV+SF":26.6,"S+RV+SF":24.2,"S+M+SF":25.6,"S+M+RV":12.8,"S+SF":5,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"SF negotiation harshness","value":0.629,"S+M+RV+SF":29.8,"S+RV+SF":24,"S+M+SF":25,"S+M+RV":13.2,"S+SF":2.8,"V+KF+LA+M":1,"noGov":0}
+{"param":"SF negotiation harshness","value":0.655,"S+M+RV+SF":30.2,"S+RV+SF":25.6,"S+M+SF":21.4,"S+M+RV":12.2,"S+SF":4.2,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"SF negotiation harshness","value":0.681,"S+M+RV+SF":32.8,"S+RV+SF":23.4,"S+M+SF":19.8,"S+M+RV":13.8,"S+SF":3.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF negotiation harshness","value":0.707,"S+M+RV+SF":33.2,"S+RV+SF":22,"S+M+SF":21.4,"S+M+RV":11.6,"S+SF":5.6,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"SF negotiation harshness","value":0.733,"S+M+RV+SF":28.8,"S+RV+SF":27.2,"S+M+SF":20.6,"S+M+RV":13,"S+SF":5,"V+KF+LA+M":0.4,"noGov":0}
+{"param":"SF negotiation harshness","value":0.759,"S+M+RV+SF":32.4,"S+RV+SF":25.6,"S+M+SF":20,"S+M+RV":11.4,"S+SF":4.6,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"SF negotiation harshness","value":0.785,"S+M+RV+SF":32.6,"S+RV+SF":25,"S+M+SF":18.8,"S+M+RV":13.8,"S+SF":3.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"SF negotiation harshness","value":0.811,"S+M+RV+SF":31.2,"S+RV+SF":24,"S+M+SF":21.6,"S+M+RV":13.4,"S+SF":4,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"SF negotiation harshness","value":0.837,"S+M+RV+SF":30.8,"S+RV+SF":28.4,"S+M+SF":18.4,"S+M+RV":13.8,"S+SF":3.6,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"M negotiation harshness","value":0.062,"S+M+RV+SF":34.8,"S+RV+SF":21.6,"S+M+SF":20,"S+M+RV":13.4,"S+SF":4,"V+KF+LA+M":2,"noGov":0}
+{"param":"M negotiation harshness","value":0.086,"S+M+RV+SF":32.6,"S+RV+SF":22.4,"S+M+SF":21.6,"S+M+RV":13.4,"S+SF":4.6,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"M negotiation harshness","value":0.11,"S+M+RV+SF":33.4,"S+RV+SF":21.8,"S+M+SF":25.4,"S+M+RV":11.6,"S+SF":2.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"M negotiation harshness","value":0.134,"S+M+RV+SF":33.6,"S+RV+SF":23.2,"S+M+SF":21.6,"S+M+RV":12.8,"S+SF":3.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M negotiation harshness","value":0.158,"S+M+RV+SF":29.6,"S+RV+SF":23.4,"S+M+SF":22.2,"S+M+RV":12.8,"S+SF":4.4,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"M negotiation harshness","value":0.182,"S+M+RV+SF":32.6,"S+RV+SF":24,"S+M+SF":21.4,"S+M+RV":12.8,"S+SF":3.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"M negotiation harshness","value":0.206,"S+M+RV+SF":32.2,"S+RV+SF":24.6,"S+M+SF":23.8,"S+M+RV":12.2,"S+SF":3.4,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"M negotiation harshness","value":0.23,"S+M+RV+SF":28.8,"S+RV+SF":22,"S+M+SF":24.4,"S+M+RV":14,"S+SF":4.6,"V+KF+LA+M":2,"noGov":0}
+{"param":"M negotiation harshness","value":0.254,"S+M+RV+SF":30.2,"S+RV+SF":26.8,"S+M+SF":21.2,"S+M+RV":12,"S+SF":4.6,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M negotiation harshness","value":0.278,"S+M+RV+SF":28.8,"S+RV+SF":26,"S+M+SF":21.8,"S+M+RV":15.2,"S+SF":4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M negotiation harshness","value":0.302,"S+M+RV+SF":30.4,"S+RV+SF":25.8,"S+M+SF":22.8,"S+M+RV":12.4,"S+SF":4.2,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"M negotiation harshness","value":0.326,"S+M+RV+SF":34.8,"S+RV+SF":24,"S+M+SF":22.2,"S+M+RV":12,"S+SF":3.6,"V+KF+LA+M":0.4,"noGov":0}
+{"param":"M negotiation harshness","value":0.35,"S+M+RV+SF":32.2,"S+RV+SF":26.2,"S+M+SF":24.2,"S+M+RV":12.2,"S+SF":2.6,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"M negotiation harshness","value":0.374,"S+M+RV+SF":27,"S+RV+SF":25.8,"S+M+SF":23.2,"S+M+RV":13.4,"S+SF":4.6,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"M negotiation harshness","value":0.398,"S+M+RV+SF":33.6,"S+RV+SF":21.8,"S+M+SF":20.2,"S+M+RV":13.8,"S+SF":3.6,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M negotiation harshness","value":0.422,"S+M+RV+SF":35,"S+RV+SF":20.6,"S+M+SF":19.6,"S+M+RV":13.8,"S+SF":5.8,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"M negotiation harshness","value":0.446,"S+M+RV+SF":30.8,"S+RV+SF":28.8,"S+M+SF":20.4,"S+M+RV":11.6,"S+SF":2.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M negotiation harshness","value":0.47,"S+M+RV+SF":32,"S+RV+SF":21.4,"S+M+SF":22,"S+M+RV":15.6,"S+SF":3.6,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M negotiation harshness","value":0.494,"S+M+RV+SF":34.2,"S+RV+SF":20.6,"S+M+SF":22.4,"S+M+RV":13,"S+SF":3,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"M negotiation harshness","value":0.518,"S+M+RV+SF":29.2,"S+RV+SF":24.2,"S+M+SF":25.2,"S+M+RV":10.6,"S+SF":4.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"M negotiation harshness","value":0.542,"S+M+RV+SF":31.6,"S+RV+SF":23.6,"S+M+SF":21.4,"S+M+RV":12.4,"S+SF":3.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"M negotiation harshness","value":0.566,"S+M+RV+SF":29.4,"S+RV+SF":26,"S+M+SF":21.4,"S+M+RV":14.2,"S+SF":3.2,"V+KF+LA+M":0.4,"noGov":0}
+{"param":"M negotiation harshness","value":0.59,"S+M+RV+SF":34.4,"S+RV+SF":23.6,"S+M+SF":22.8,"S+M+RV":9.6,"S+SF":3.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"M negotiation harshness","value":0.614,"S+M+RV+SF":29.4,"S+RV+SF":27.4,"S+M+SF":20.4,"S+M+RV":13.8,"S+SF":3.2,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"M negotiation harshness","value":0.638,"S+M+RV+SF":28.4,"S+RV+SF":28,"S+M+SF":20,"S+M+RV":12.2,"S+SF":4.6,"V+KF+LA+M":2.4,"noGov":0}
+{"param":"RV negotiation harshness","value":0.162,"S+M+RV+SF":33.2,"S+RV+SF":26.6,"S+M+SF":20.4,"S+M+RV":11,"S+SF":5,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"RV negotiation harshness","value":0.186,"S+M+RV+SF":30,"S+RV+SF":28.8,"S+M+SF":23.4,"S+M+RV":8.4,"S+SF":4.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"RV negotiation harshness","value":0.21,"S+M+RV+SF":31.2,"S+RV+SF":25.8,"S+M+SF":20.2,"S+M+RV":11.6,"S+SF":4.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"RV negotiation harshness","value":0.234,"S+M+RV+SF":33.4,"S+RV+SF":22.4,"S+M+SF":21.6,"S+M+RV":12.4,"S+SF":4.4,"V+KF+LA+M":2,"noGov":0}
+{"param":"RV negotiation harshness","value":0.258,"S+M+RV+SF":34,"S+RV+SF":25.8,"S+M+SF":20.8,"S+M+RV":10.8,"S+SF":3,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"RV negotiation harshness","value":0.282,"S+M+RV+SF":35.2,"S+RV+SF":22.6,"S+M+SF":22.4,"S+M+RV":11.4,"S+SF":3.4,"V+KF+LA+M":1,"noGov":0}
+{"param":"RV negotiation harshness","value":0.306,"S+M+RV+SF":30.2,"S+RV+SF":27.8,"S+M+SF":20.4,"S+M+RV":12,"S+SF":3.6,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"RV negotiation harshness","value":0.33,"S+M+RV+SF":34.4,"S+RV+SF":24.6,"S+M+SF":20.8,"S+M+RV":11.6,"S+SF":3.8,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"RV negotiation harshness","value":0.354,"S+M+RV+SF":33.2,"S+RV+SF":22,"S+M+SF":22.8,"S+M+RV":12.8,"S+SF":4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"RV negotiation harshness","value":0.378,"S+M+RV+SF":34.4,"S+RV+SF":25.2,"S+M+SF":20.8,"S+M+RV":12.2,"S+SF":2.8,"V+KF+LA+M":0.4,"noGov":0}
+{"param":"RV negotiation harshness","value":0.402,"S+M+RV+SF":30.6,"S+RV+SF":24.6,"S+M+SF":22.8,"S+M+RV":12,"S+SF":4.2,"V+KF+LA+M":2,"noGov":0}
+{"param":"RV negotiation harshness","value":0.426,"S+M+RV+SF":36,"S+RV+SF":22,"S+M+SF":20.2,"S+M+RV":11.2,"S+SF":4.4,"V+KF+LA+M":2,"noGov":0}
+{"param":"RV negotiation harshness","value":0.45,"S+M+RV+SF":32.6,"S+RV+SF":21.6,"S+M+SF":21.4,"S+M+RV":15,"S+SF":2.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"RV negotiation harshness","value":0.474,"S+M+RV+SF":31,"S+RV+SF":22.6,"S+M+SF":22.6,"S+M+RV":12.8,"S+SF":4.6,"V+KF+LA+M":2,"noGov":0}
+{"param":"RV negotiation harshness","value":0.498,"S+M+RV+SF":36.8,"S+RV+SF":23.8,"S+M+SF":18.6,"S+M+RV":11,"S+SF":4,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"RV negotiation harshness","value":0.522,"S+M+RV+SF":31,"S+RV+SF":23.2,"S+M+SF":22.6,"S+M+RV":13,"S+SF":4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"RV negotiation harshness","value":0.546,"S+M+RV+SF":29.8,"S+RV+SF":25.8,"S+M+SF":20,"S+M+RV":12,"S+SF":5.4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"RV negotiation harshness","value":0.57,"S+M+RV+SF":29.6,"S+RV+SF":27.6,"S+M+SF":21.4,"S+M+RV":12,"S+SF":3,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"RV negotiation harshness","value":0.594,"S+M+RV+SF":29.2,"S+RV+SF":25.6,"S+M+SF":23.2,"S+M+RV":11.8,"S+SF":4.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"RV negotiation harshness","value":0.618,"S+M+RV+SF":30.6,"S+RV+SF":24.8,"S+M+SF":20.6,"S+M+RV":13,"S+SF":5.4,"V+KF+LA+M":0.4,"noGov":0}
+{"param":"RV negotiation harshness","value":0.642,"S+M+RV+SF":27.6,"S+RV+SF":22.6,"S+M+SF":23.4,"S+M+RV":14,"S+SF":4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"RV negotiation harshness","value":0.666,"S+M+RV+SF":33.2,"S+RV+SF":20.6,"S+M+SF":22.8,"S+M+RV":14.8,"S+SF":4.2,"V+KF+LA+M":0.2,"noGov":0}
+{"param":"RV negotiation harshness","value":0.69,"S+M+RV+SF":34.2,"S+RV+SF":26.4,"S+M+SF":19.6,"S+M+RV":11.6,"S+SF":4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"RV negotiation harshness","value":0.714,"S+M+RV+SF":33.6,"S+RV+SF":24,"S+M+SF":20.6,"S+M+RV":12,"S+SF":5,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"RV negotiation harshness","value":0.738,"S+M+RV+SF":36,"S+RV+SF":22,"S+M+SF":20.8,"S+M+RV":11.2,"S+SF":4.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL negotiation harshness","value":0.313,"S+M+RV+SF":26.6,"S+RV+SF":24.8,"S+M+SF":24.4,"S+M+RV":13.2,"S+SF":3.8,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"EL negotiation harshness","value":0.339,"S+M+RV+SF":29.6,"S+RV+SF":23.8,"S+M+SF":23.8,"S+M+RV":12,"S+SF":3,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL negotiation harshness","value":0.365,"S+M+RV+SF":34.4,"S+RV+SF":24.2,"S+M+SF":20.6,"S+M+RV":12.6,"S+SF":3.6,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"EL negotiation harshness","value":0.391,"S+M+RV+SF":32.2,"S+RV+SF":26,"S+M+SF":20.4,"S+M+RV":15,"S+SF":3,"V+KF+LA+M":2,"noGov":0}
+{"param":"EL negotiation harshness","value":0.417,"S+M+RV+SF":32.8,"S+RV+SF":23.4,"S+M+SF":19.2,"S+M+RV":13.8,"S+SF":3.6,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"EL negotiation harshness","value":0.443,"S+M+RV+SF":32,"S+RV+SF":24.2,"S+M+SF":21.8,"S+M+RV":13,"S+SF":4.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"EL negotiation harshness","value":0.469,"S+M+RV+SF":28,"S+RV+SF":22.6,"S+M+SF":22.2,"S+M+RV":15.6,"S+SF":4.2,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL negotiation harshness","value":0.495,"S+M+RV+SF":33.4,"S+RV+SF":25.6,"S+M+SF":19.2,"S+M+RV":11.4,"S+SF":3.6,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"EL negotiation harshness","value":0.521,"S+M+RV+SF":31.8,"S+RV+SF":23.6,"S+M+SF":22.4,"S+M+RV":11.2,"S+SF":3.8,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"EL negotiation harshness","value":0.547,"S+M+RV+SF":30.6,"S+RV+SF":25.8,"S+M+SF":21.2,"S+M+RV":14.2,"S+SF":2.6,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL negotiation harshness","value":0.573,"S+M+RV+SF":31.8,"S+RV+SF":26.4,"S+M+SF":22,"S+M+RV":12,"S+SF":2.6,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL negotiation harshness","value":0.599,"S+M+RV+SF":35.2,"S+RV+SF":22.6,"S+M+SF":22.2,"S+M+RV":11.4,"S+SF":4.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"EL negotiation harshness","value":0.625,"S+M+RV+SF":36.8,"S+RV+SF":21.8,"S+M+SF":18.8,"S+M+RV":11.6,"S+SF":4.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"EL negotiation harshness","value":0.651,"S+M+RV+SF":29.6,"S+RV+SF":24.6,"S+M+SF":24.4,"S+M+RV":13.4,"S+SF":4.4,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"EL negotiation harshness","value":0.677,"S+M+RV+SF":33.2,"S+RV+SF":24,"S+M+SF":20,"S+M+RV":13.8,"S+SF":3.4,"V+KF+LA+M":1,"noGov":0}
+{"param":"EL negotiation harshness","value":0.703,"S+M+RV+SF":33.2,"S+RV+SF":24.4,"S+M+SF":19.6,"S+M+RV":11.4,"S+SF":5.2,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"EL negotiation harshness","value":0.729,"S+M+RV+SF":33.4,"S+RV+SF":23.6,"S+M+SF":21.4,"S+M+RV":13.6,"S+SF":3.8,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"EL negotiation harshness","value":0.755,"S+M+RV+SF":30.4,"S+RV+SF":25.6,"S+M+SF":19.6,"S+M+RV":13.8,"S+SF":3.6,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"EL negotiation harshness","value":0.781,"S+M+RV+SF":32.2,"S+RV+SF":22.2,"S+M+SF":22.6,"S+M+RV":15.4,"S+SF":3.6,"V+KF+LA+M":0.4,"noGov":0}
+{"param":"EL negotiation harshness","value":0.807,"S+M+RV+SF":32.6,"S+RV+SF":25,"S+M+SF":19.2,"S+M+RV":13,"S+SF":4.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"EL negotiation harshness","value":0.833,"S+M+RV+SF":31.6,"S+RV+SF":24.4,"S+M+SF":17.4,"S+M+RV":15.2,"S+SF":4.8,"V+KF+LA+M":1,"noGov":0}
+{"param":"EL negotiation harshness","value":0.859,"S+M+RV+SF":31.6,"S+RV+SF":25.6,"S+M+SF":22.6,"S+M+RV":10,"S+SF":3.8,"V+KF+LA+M":1,"noGov":0}
+{"param":"EL negotiation harshness","value":0.885,"S+M+RV+SF":27.8,"S+RV+SF":24.6,"S+M+SF":23,"S+M+RV":16,"S+SF":2,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"EL negotiation harshness","value":0.911,"S+M+RV+SF":32.4,"S+RV+SF":23.8,"S+M+SF":19.2,"S+M+RV":11.8,"S+SF":4,"V+KF+LA+M":2,"noGov":0}
+{"param":"EL negotiation harshness","value":0.937,"S+M+RV+SF":31.2,"S+RV+SF":22.4,"S+M+SF":23.2,"S+M+RV":12.2,"S+SF":4.4,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"V negotiation harshness","value":0.162,"S+M+RV+SF":30.6,"S+RV+SF":24.2,"S+M+SF":22.4,"S+M+RV":11.8,"S+SF":4.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"V negotiation harshness","value":0.186,"S+M+RV+SF":32.2,"S+RV+SF":25.6,"S+M+SF":21.8,"S+M+RV":11.8,"S+SF":3.6,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"V negotiation harshness","value":0.21,"S+M+RV+SF":30.2,"S+RV+SF":26.6,"S+M+SF":17.8,"S+M+RV":14.6,"S+SF":2,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"V negotiation harshness","value":0.234,"S+M+RV+SF":38.2,"S+RV+SF":24.2,"S+M+SF":19.4,"S+M+RV":10.8,"S+SF":3.8,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"V negotiation harshness","value":0.258,"S+M+RV+SF":32.6,"S+RV+SF":21.2,"S+M+SF":20.6,"S+M+RV":16,"S+SF":1.8,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"V negotiation harshness","value":0.282,"S+M+RV+SF":29.2,"S+RV+SF":25.4,"S+M+SF":24.6,"S+M+RV":12,"S+SF":3.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"V negotiation harshness","value":0.306,"S+M+RV+SF":31.8,"S+RV+SF":22.4,"S+M+SF":21.2,"S+M+RV":13.8,"S+SF":3.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"V negotiation harshness","value":0.33,"S+M+RV+SF":31,"S+RV+SF":25.4,"S+M+SF":24.2,"S+M+RV":8.8,"S+SF":4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"V negotiation harshness","value":0.354,"S+M+RV+SF":33.8,"S+RV+SF":22,"S+M+SF":18.8,"S+M+RV":12.4,"S+SF":5.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"V negotiation harshness","value":0.378,"S+M+RV+SF":31.6,"S+RV+SF":24.4,"S+M+SF":22.6,"S+M+RV":10.8,"S+SF":4.2,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"V negotiation harshness","value":0.402,"S+M+RV+SF":33.4,"S+RV+SF":21.4,"S+M+SF":22.4,"S+M+RV":11.6,"S+SF":4.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"V negotiation harshness","value":0.426,"S+M+RV+SF":30.6,"S+RV+SF":25.2,"S+M+SF":20,"S+M+RV":12.8,"S+SF":5,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"V negotiation harshness","value":0.45,"S+M+RV+SF":30.8,"S+RV+SF":24.2,"S+M+SF":18.8,"S+M+RV":15.2,"S+SF":5.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"V negotiation harshness","value":0.474,"S+M+RV+SF":32.6,"S+RV+SF":22,"S+M+SF":22.6,"S+M+RV":13.8,"S+SF":3.6,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"V negotiation harshness","value":0.498,"S+M+RV+SF":31.6,"S+RV+SF":25.8,"S+M+SF":20.2,"S+M+RV":12.6,"S+SF":4.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"V negotiation harshness","value":0.522,"S+M+RV+SF":30.8,"S+RV+SF":25.6,"S+M+SF":19.6,"S+M+RV":12.8,"S+SF":4,"V+KF+LA+M":2,"noGov":0}
+{"param":"V negotiation harshness","value":0.546,"S+M+RV+SF":34,"S+RV+SF":22.6,"S+M+SF":21.6,"S+M+RV":10.2,"S+SF":3.8,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"V negotiation harshness","value":0.57,"S+M+RV+SF":37,"S+RV+SF":19.6,"S+M+SF":19.2,"S+M+RV":12.8,"S+SF":5.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"V negotiation harshness","value":0.594,"S+M+RV+SF":32.6,"S+RV+SF":25.4,"S+M+SF":17.2,"S+M+RV":14.6,"S+SF":3.6,"V+KF+LA+M":2,"noGov":0}
+{"param":"V negotiation harshness","value":0.618,"S+M+RV+SF":28.2,"S+RV+SF":27,"S+M+SF":22.2,"S+M+RV":12.4,"S+SF":3.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"V negotiation harshness","value":0.642,"S+M+RV+SF":34.2,"S+RV+SF":25.6,"S+M+SF":20.8,"S+M+RV":11.2,"S+SF":4.2,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"V negotiation harshness","value":0.666,"S+M+RV+SF":29.4,"S+RV+SF":23.8,"S+M+SF":23,"S+M+RV":14.2,"S+SF":3.2,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"V negotiation harshness","value":0.69,"S+M+RV+SF":29.4,"S+RV+SF":25.2,"S+M+SF":22.2,"S+M+RV":11.8,"S+SF":4.8,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"V negotiation harshness","value":0.714,"S+M+RV+SF":33.6,"S+RV+SF":23.4,"S+M+SF":20.8,"S+M+RV":12.6,"S+SF":5,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"V negotiation harshness","value":0.738,"S+M+RV+SF":32.8,"S+RV+SF":20.8,"S+M+SF":21.4,"S+M+RV":14,"S+SF":3.8,"V+KF+LA+M":1,"noGov":0}
+{"param":"KF negotiation harshness","value":0.112,"S+M+RV+SF":33,"S+RV+SF":25,"S+M+SF":20.4,"S+M+RV":12.4,"S+SF":4.4,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"KF negotiation harshness","value":0.136,"S+M+RV+SF":30.6,"S+RV+SF":25,"S+M+SF":22,"S+M+RV":13.6,"S+SF":3.6,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"KF negotiation harshness","value":0.16,"S+M+RV+SF":32.2,"S+RV+SF":24.6,"S+M+SF":23,"S+M+RV":11,"S+SF":4.6,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"KF negotiation harshness","value":0.184,"S+M+RV+SF":33.6,"S+RV+SF":27.4,"S+M+SF":18.4,"S+M+RV":12,"S+SF":4.2,"V+KF+LA+M":0.2,"noGov":0}
+{"param":"KF negotiation harshness","value":0.208,"S+M+RV+SF":31.2,"S+RV+SF":21.4,"S+M+SF":21.2,"S+M+RV":13,"S+SF":5,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"KF negotiation harshness","value":0.232,"S+M+RV+SF":29.4,"S+RV+SF":25.8,"S+M+SF":23.8,"S+M+RV":12.8,"S+SF":3.8,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"KF negotiation harshness","value":0.256,"S+M+RV+SF":28.6,"S+RV+SF":25.6,"S+M+SF":20.4,"S+M+RV":13.8,"S+SF":4.8,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"KF negotiation harshness","value":0.28,"S+M+RV+SF":28,"S+RV+SF":26.6,"S+M+SF":22.8,"S+M+RV":12.2,"S+SF":4.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"KF negotiation harshness","value":0.304,"S+M+RV+SF":32.6,"S+RV+SF":24,"S+M+SF":22.4,"S+M+RV":10.4,"S+SF":4.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"KF negotiation harshness","value":0.328,"S+M+RV+SF":31.8,"S+RV+SF":24,"S+M+SF":19.8,"S+M+RV":14.6,"S+SF":4.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"KF negotiation harshness","value":0.352,"S+M+RV+SF":32.4,"S+RV+SF":25.4,"S+M+SF":18.8,"S+M+RV":13.6,"S+SF":4.6,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"KF negotiation harshness","value":0.376,"S+M+RV+SF":33.2,"S+RV+SF":22.8,"S+M+SF":19.6,"S+M+RV":12.4,"S+SF":4.6,"V+KF+LA+M":2.2,"noGov":0}
+{"param":"KF negotiation harshness","value":0.4,"S+M+RV+SF":33,"S+RV+SF":26.4,"S+M+SF":19.8,"S+M+RV":11.8,"S+SF":4.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"KF negotiation harshness","value":0.424,"S+M+RV+SF":29.6,"S+RV+SF":23,"S+M+SF":24.8,"S+M+RV":13.4,"S+SF":3.4,"V+KF+LA+M":1,"noGov":0}
+{"param":"KF negotiation harshness","value":0.448,"S+M+RV+SF":34.2,"S+RV+SF":25.4,"S+M+SF":19,"S+M+RV":13.4,"S+SF":3.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"KF negotiation harshness","value":0.472,"S+M+RV+SF":32.6,"S+RV+SF":22,"S+M+SF":22,"S+M+RV":12.8,"S+SF":5.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"KF negotiation harshness","value":0.496,"S+M+RV+SF":31.8,"S+RV+SF":27.8,"S+M+SF":19,"S+M+RV":11.2,"S+SF":3.6,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"KF negotiation harshness","value":0.52,"S+M+RV+SF":32.4,"S+RV+SF":26.4,"S+M+SF":20.8,"S+M+RV":11.4,"S+SF":3.4,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"KF negotiation harshness","value":0.544,"S+M+RV+SF":32.2,"S+RV+SF":25,"S+M+SF":22.4,"S+M+RV":11.6,"S+SF":3.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"KF negotiation harshness","value":0.568,"S+M+RV+SF":31,"S+RV+SF":23,"S+M+SF":19.8,"S+M+RV":16,"S+SF":3.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"KF negotiation harshness","value":0.592,"S+M+RV+SF":31.2,"S+RV+SF":25,"S+M+SF":20.8,"S+M+RV":13.6,"S+SF":3.6,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"KF negotiation harshness","value":0.616,"S+M+RV+SF":32,"S+RV+SF":24.4,"S+M+SF":22.8,"S+M+RV":11.4,"S+SF":3.8,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"KF negotiation harshness","value":0.64,"S+M+RV+SF":29.8,"S+RV+SF":26,"S+M+SF":24.8,"S+M+RV":11.6,"S+SF":1.8,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"KF negotiation harshness","value":0.664,"S+M+RV+SF":30.6,"S+RV+SF":29.4,"S+M+SF":19.4,"S+M+RV":12.2,"S+SF":3.6,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"KF negotiation harshness","value":0.688,"S+M+RV+SF":29.4,"S+RV+SF":22.6,"S+M+SF":24.4,"S+M+RV":12.8,"S+SF":4.6,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"DF negotiation harshness","value":0.4116,"S+M+RV+SF":32.6,"S+RV+SF":24.4,"S+M+SF":20.2,"S+M+RV":13.4,"S+SF":3,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"DF negotiation harshness","value":0.4348,"S+M+RV+SF":32.2,"S+RV+SF":22.8,"S+M+SF":22.8,"S+M+RV":11.6,"S+SF":4.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"DF negotiation harshness","value":0.458,"S+M+RV+SF":31.6,"S+RV+SF":23.6,"S+M+SF":22.8,"S+M+RV":11.4,"S+SF":4.4,"V+KF+LA+M":2,"noGov":0}
+{"param":"DF negotiation harshness","value":0.4812,"S+M+RV+SF":31.2,"S+RV+SF":28,"S+M+SF":18,"S+M+RV":13.8,"S+SF":3.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"DF negotiation harshness","value":0.5044,"S+M+RV+SF":29.4,"S+RV+SF":25.2,"S+M+SF":22,"S+M+RV":13.6,"S+SF":3.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"DF negotiation harshness","value":0.5276,"S+M+RV+SF":31.6,"S+RV+SF":26.4,"S+M+SF":19.8,"S+M+RV":12.8,"S+SF":3.6,"V+KF+LA+M":1,"noGov":0}
+{"param":"DF negotiation harshness","value":0.5508,"S+M+RV+SF":33,"S+RV+SF":23,"S+M+SF":19.2,"S+M+RV":15.8,"S+SF":2.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"DF negotiation harshness","value":0.574,"S+M+RV+SF":34.6,"S+RV+SF":20.4,"S+M+SF":20.6,"S+M+RV":12.8,"S+SF":5.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"DF negotiation harshness","value":0.5972,"S+M+RV+SF":29.2,"S+RV+SF":24.4,"S+M+SF":22.6,"S+M+RV":14,"S+SF":4.8,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"DF negotiation harshness","value":0.6204,"S+M+RV+SF":31.4,"S+RV+SF":27.2,"S+M+SF":20.6,"S+M+RV":11.8,"S+SF":3.4,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"DF negotiation harshness","value":0.6436,"S+M+RV+SF":32.2,"S+RV+SF":23,"S+M+SF":23,"S+M+RV":11.6,"S+SF":4.2,"V+KF+LA+M":0.8,"noGov":0}
+{"param":"DF negotiation harshness","value":0.6668,"S+M+RV+SF":31.6,"S+RV+SF":23.8,"S+M+SF":21.6,"S+M+RV":11.4,"S+SF":5.2,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"DF negotiation harshness","value":0.69,"S+M+RV+SF":33,"S+RV+SF":23.2,"S+M+SF":22.4,"S+M+RV":12.4,"S+SF":4.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"DF negotiation harshness","value":0.7132,"S+M+RV+SF":34.2,"S+RV+SF":24.8,"S+M+SF":20,"S+M+RV":13,"S+SF":4,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"DF negotiation harshness","value":0.7364,"S+M+RV+SF":29.6,"S+RV+SF":24.6,"S+M+SF":20.4,"S+M+RV":14,"S+SF":3.2,"V+KF+LA+M":1,"noGov":0}
+{"param":"DF negotiation harshness","value":0.7596,"S+M+RV+SF":37,"S+RV+SF":20.2,"S+M+SF":20,"S+M+RV":14.2,"S+SF":4,"V+KF+LA+M":0.4,"noGov":0}
+{"param":"DF negotiation harshness","value":0.7828,"S+M+RV+SF":29,"S+RV+SF":25.6,"S+M+SF":20,"S+M+RV":14.4,"S+SF":3.2,"V+KF+LA+M":2,"noGov":0}
+{"param":"DF negotiation harshness","value":0.806,"S+M+RV+SF":29.4,"S+RV+SF":22.4,"S+M+SF":24,"S+M+RV":14.2,"S+SF":4.2,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"DF negotiation harshness","value":0.8292,"S+M+RV+SF":32,"S+RV+SF":25.4,"S+M+SF":19.6,"S+M+RV":13.2,"S+SF":4.2,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"DF negotiation harshness","value":0.8524,"S+M+RV+SF":29.6,"S+RV+SF":24.2,"S+M+SF":21,"S+M+RV":14,"S+SF":4.8,"V+KF+LA+M":1.2,"noGov":0}
+{"param":"DF negotiation harshness","value":0.8756,"S+M+RV+SF":33,"S+RV+SF":25.6,"S+M+SF":20.4,"S+M+RV":13,"S+SF":2.8,"V+KF+LA+M":1.4,"noGov":0}
+{"param":"DF negotiation harshness","value":0.8988,"S+M+RV+SF":32.8,"S+RV+SF":26.4,"S+M+SF":18.8,"S+M+RV":13,"S+SF":3.8,"V+KF+LA+M":1.8,"noGov":0}
+{"param":"DF negotiation harshness","value":0.922,"S+M+RV+SF":32,"S+RV+SF":26.6,"S+M+SF":19.8,"S+M+RV":10.4,"S+SF":5.2,"V+KF+LA+M":0.6,"noGov":0}
+{"param":"DF negotiation harshness","value":0.9452,"S+M+RV+SF":29.4,"S+RV+SF":26,"S+M+SF":23,"S+M+RV":12.6,"S+SF":4,"V+KF+LA+M":1.6,"noGov":0}
+{"param":"DF negotiation harshness","value":0.9684,"S+M+RV+SF":26.8,"S+RV+SF":27,"S+M+SF":23,"S+M+RV":11.6,"S+SF":5.2,"V+KF+LA+M":1.4,"noGov":0}

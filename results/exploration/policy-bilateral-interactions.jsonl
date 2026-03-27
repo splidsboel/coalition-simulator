@@ -1,0 +1,507 @@
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.23,"S+M+RV+SF":10.25,"S+RV+SF":45.25,"S+M+SF":7.75,"S+M+RV":18.75,"S+SF":5,"V+KF+LA+M":4,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.29,"S+M+RV+SF":15,"S+RV+SF":38.5,"S+M+SF":10.75,"S+M+RV":15,"S+SF":6.75,"V+KF+LA+M":6.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.35,"S+M+RV+SF":18.25,"S+RV+SF":37,"S+M+SF":12.75,"S+M+RV":14.75,"S+SF":6,"V+KF+LA+M":3.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.41,"S+M+RV+SF":17.75,"S+RV+SF":39,"S+M+SF":13.25,"S+M+RV":13.25,"S+SF":6.5,"V+KF+LA+M":3.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.47,"S+M+RV+SF":19.5,"S+RV+SF":34,"S+M+SF":16,"S+M+RV":16.75,"S+SF":6,"V+KF+LA+M":2.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.53,"S+M+RV+SF":22,"S+RV+SF":30.25,"S+M+SF":19,"S+M+RV":14.75,"S+SF":5.5,"V+KF+LA+M":2.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.59,"S+M+RV+SF":25.5,"S+RV+SF":34,"S+M+SF":16.5,"S+M+RV":13,"S+SF":4.25,"V+KF+LA+M":2.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.65,"S+M+RV+SF":29.75,"S+RV+SF":25.75,"S+M+SF":17.75,"S+M+RV":14,"S+SF":6,"V+KF+LA+M":2,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.71,"S+M+RV+SF":26.75,"S+RV+SF":25,"S+M+SF":20.5,"S+M+RV":15,"S+SF":6.75,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.77,"S+M+RV+SF":34.75,"S+RV+SF":21.5,"S+M+SF":21.5,"S+M+RV":12.75,"S+SF":3.5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.83,"S+M+RV+SF":37.5,"S+RV+SF":23,"S+M+SF":20.5,"S+M+RV":12.75,"S+SF":2.5,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.89,"S+M+RV+SF":31.25,"S+RV+SF":23.5,"S+M+SF":22.5,"S+M+RV":13.75,"S+SF":3.5,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.95,"S+M+RV+SF":27.75,"S+RV+SF":27.75,"S+M+SF":22.5,"S+M+RV":9.5,"S+SF":5.25,"V+KF+LA+M":1,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.23,"S+M+RV+SF":7.75,"S+RV+SF":43,"S+M+SF":7.75,"S+M+RV":19,"S+SF":6,"V+KF+LA+M":6.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.29,"S+M+RV+SF":16,"S+RV+SF":37.75,"S+M+SF":13.25,"S+M+RV":13.75,"S+SF":5.75,"V+KF+LA+M":5.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.35,"S+M+RV+SF":11.5,"S+RV+SF":40.25,"S+M+SF":10.5,"S+M+RV":20.5,"S+SF":6.25,"V+KF+LA+M":3.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.41,"S+M+RV+SF":20.25,"S+RV+SF":34.25,"S+M+SF":15.75,"S+M+RV":14.5,"S+SF":5.75,"V+KF+LA+M":2.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.47,"S+M+RV+SF":21.75,"S+RV+SF":31,"S+M+SF":15.75,"S+M+RV":16.5,"S+SF":6,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.53,"S+M+RV+SF":24,"S+RV+SF":31.25,"S+M+SF":17,"S+M+RV":14,"S+SF":5.5,"V+KF+LA+M":2.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.59,"S+M+RV+SF":27.5,"S+RV+SF":29.25,"S+M+SF":17.5,"S+M+RV":14,"S+SF":4.5,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.65,"S+M+RV+SF":27,"S+RV+SF":29.75,"S+M+SF":18,"S+M+RV":13.25,"S+SF":6,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.71,"S+M+RV+SF":29.5,"S+RV+SF":25.75,"S+M+SF":19,"S+M+RV":13,"S+SF":4.75,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.77,"S+M+RV+SF":26.75,"S+RV+SF":27.75,"S+M+SF":22.75,"S+M+RV":12.75,"S+SF":3,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.83,"S+M+RV+SF":32,"S+RV+SF":22.25,"S+M+SF":23.25,"S+M+RV":13.5,"S+SF":5.5,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.89,"S+M+RV+SF":30.5,"S+RV+SF":31,"S+M+SF":19,"S+M+RV":8.5,"S+SF":5.25,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":0,"bilateralVal":0.95,"S+M+RV+SF":31.25,"S+RV+SF":25.75,"S+M+SF":22,"S+M+RV":11.5,"S+SF":3,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.23,"S+M+RV+SF":13,"S+RV+SF":38,"S+M+SF":10.75,"S+M+RV":19.25,"S+SF":7.25,"V+KF+LA+M":5.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.29,"S+M+RV+SF":13.25,"S+RV+SF":37.25,"S+M+SF":13.25,"S+M+RV":20.25,"S+SF":5.75,"V+KF+LA+M":3.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.35,"S+M+RV+SF":19.25,"S+RV+SF":31.25,"S+M+SF":15,"S+M+RV":17.25,"S+SF":5,"V+KF+LA+M":4.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.41,"S+M+RV+SF":19,"S+RV+SF":31,"S+M+SF":14.5,"S+M+RV":16.5,"S+SF":7.5,"V+KF+LA+M":4,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.47,"S+M+RV+SF":19.25,"S+RV+SF":35.75,"S+M+SF":18.25,"S+M+RV":15,"S+SF":3,"V+KF+LA+M":2.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.53,"S+M+RV+SF":23.5,"S+RV+SF":28.5,"S+M+SF":15,"S+M+RV":17.5,"S+SF":4.5,"V+KF+LA+M":4.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.59,"S+M+RV+SF":29,"S+RV+SF":28.25,"S+M+SF":20.5,"S+M+RV":12.25,"S+SF":3.5,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.65,"S+M+RV+SF":31.25,"S+RV+SF":28.75,"S+M+SF":18.25,"S+M+RV":13,"S+SF":3,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.71,"S+M+RV+SF":29.75,"S+RV+SF":24,"S+M+SF":21.5,"S+M+RV":15.75,"S+SF":3,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.77,"S+M+RV+SF":31.25,"S+RV+SF":23.5,"S+M+SF":24.25,"S+M+RV":12.75,"S+SF":3.25,"V+KF+LA+M":1,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.83,"S+M+RV+SF":35,"S+RV+SF":21.5,"S+M+SF":24.75,"S+M+RV":11.25,"S+SF":2.5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.89,"S+M+RV+SF":34.5,"S+RV+SF":21,"S+M+SF":24.75,"S+M+RV":11.25,"S+SF":3,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.95,"S+M+RV+SF":32,"S+RV+SF":22,"S+M+SF":25.75,"S+M+RV":12,"S+SF":2.5,"V+KF+LA+M":1,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.23,"S+M+RV+SF":10,"S+RV+SF":40.5,"S+M+SF":11,"S+M+RV":20.5,"S+SF":4.75,"V+KF+LA+M":4.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.29,"S+M+RV+SF":15.5,"S+RV+SF":35.75,"S+M+SF":9.75,"S+M+RV":19.75,"S+SF":7,"V+KF+LA+M":4,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.35,"S+M+RV+SF":17.25,"S+RV+SF":34.25,"S+M+SF":12.75,"S+M+RV":17.75,"S+SF":6.5,"V+KF+LA+M":4.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.41,"S+M+RV+SF":21.75,"S+RV+SF":31,"S+M+SF":15,"S+M+RV":17,"S+SF":7.25,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.47,"S+M+RV+SF":20.25,"S+RV+SF":32.25,"S+M+SF":15.75,"S+M+RV":16.5,"S+SF":6,"V+KF+LA+M":3.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.53,"S+M+RV+SF":24.5,"S+RV+SF":29.25,"S+M+SF":16.75,"S+M+RV":16,"S+SF":4.75,"V+KF+LA+M":3.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.59,"S+M+RV+SF":30.5,"S+RV+SF":24.75,"S+M+SF":19.75,"S+M+RV":13.75,"S+SF":4.75,"V+KF+LA+M":2,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.65,"S+M+RV+SF":33.25,"S+RV+SF":24,"S+M+SF":18,"S+M+RV":13.75,"S+SF":4.5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.71,"S+M+RV+SF":32,"S+RV+SF":24.75,"S+M+SF":20.75,"S+M+RV":11.25,"S+SF":4.25,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.77,"S+M+RV+SF":33.5,"S+RV+SF":21.75,"S+M+SF":23,"S+M+RV":11.25,"S+SF":4.75,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.83,"S+M+RV+SF":35.25,"S+RV+SF":25.25,"S+M+SF":19.75,"S+M+RV":12.25,"S+SF":3.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.89,"S+M+RV+SF":31.5,"S+RV+SF":23.25,"S+M+SF":26,"S+M+RV":13.5,"S+SF":2.75,"V+KF+LA+M":0.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.95,"S+M+RV+SF":30.75,"S+RV+SF":21,"S+M+SF":27.75,"S+M+RV":12.5,"S+SF":3.5,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.23,"S+M+RV+SF":12.25,"S+RV+SF":38.75,"S+M+SF":10.5,"S+M+RV":18.25,"S+SF":6,"V+KF+LA+M":4.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.29,"S+M+RV+SF":16.25,"S+RV+SF":37.5,"S+M+SF":15.5,"S+M+RV":14.75,"S+SF":5.5,"V+KF+LA+M":3,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.35,"S+M+RV+SF":17.25,"S+RV+SF":33.25,"S+M+SF":13.25,"S+M+RV":18,"S+SF":4.75,"V+KF+LA+M":3.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.41,"S+M+RV+SF":19.75,"S+RV+SF":32.75,"S+M+SF":14.5,"S+M+RV":13.5,"S+SF":8,"V+KF+LA+M":4.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.47,"S+M+RV+SF":22.75,"S+RV+SF":28.25,"S+M+SF":16.75,"S+M+RV":15.25,"S+SF":6,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.53,"S+M+RV+SF":24.5,"S+RV+SF":31.75,"S+M+SF":21.25,"S+M+RV":13.5,"S+SF":3,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.59,"S+M+RV+SF":27,"S+RV+SF":28.75,"S+M+SF":19.75,"S+M+RV":15.25,"S+SF":3,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.65,"S+M+RV+SF":33.5,"S+RV+SF":22,"S+M+SF":18.5,"S+M+RV":16.75,"S+SF":2.5,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.71,"S+M+RV+SF":27.5,"S+RV+SF":28.5,"S+M+SF":19.5,"S+M+RV":15,"S+SF":4.5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.77,"S+M+RV+SF":33,"S+RV+SF":26.5,"S+M+SF":18.75,"S+M+RV":10.75,"S+SF":3.75,"V+KF+LA+M":3,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.83,"S+M+RV+SF":30.5,"S+RV+SF":22.25,"S+M+SF":23.5,"S+M+RV":14.25,"S+SF":4,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.89,"S+M+RV+SF":32,"S+RV+SF":22.75,"S+M+SF":23,"S+M+RV":13.75,"S+SF":3.5,"V+KF+LA+M":1,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":1,"bilateralVal":0.95,"S+M+RV+SF":31.5,"S+RV+SF":23.5,"S+M+SF":26,"S+M+RV":12.25,"S+SF":3,"V+KF+LA+M":1,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.23,"S+M+RV+SF":10,"S+RV+SF":37.75,"S+M+SF":11.25,"S+M+RV":20.25,"S+SF":6.5,"V+KF+LA+M":7.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.29,"S+M+RV+SF":13.25,"S+RV+SF":39.75,"S+M+SF":11,"S+M+RV":17.75,"S+SF":6.5,"V+KF+LA+M":2.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.35,"S+M+RV+SF":18,"S+RV+SF":32,"S+M+SF":13.75,"S+M+RV":18.5,"S+SF":6.25,"V+KF+LA+M":4.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.41,"S+M+RV+SF":18,"S+RV+SF":33,"S+M+SF":12.5,"S+M+RV":17.5,"S+SF":6.75,"V+KF+LA+M":4.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.47,"S+M+RV+SF":24.75,"S+RV+SF":28.5,"S+M+SF":17.25,"S+M+RV":15,"S+SF":5,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.53,"S+M+RV+SF":25.5,"S+RV+SF":27.25,"S+M+SF":17.5,"S+M+RV":12.5,"S+SF":5.5,"V+KF+LA+M":3.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.59,"S+M+RV+SF":24.5,"S+RV+SF":28.75,"S+M+SF":21,"S+M+RV":14,"S+SF":4.75,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.65,"S+M+RV+SF":31.75,"S+RV+SF":24,"S+M+SF":21.75,"S+M+RV":12,"S+SF":4.5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.71,"S+M+RV+SF":29.5,"S+RV+SF":24.5,"S+M+SF":23.75,"S+M+RV":11.25,"S+SF":3.75,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.77,"S+M+RV+SF":32.75,"S+RV+SF":26,"S+M+SF":21.5,"S+M+RV":11.25,"S+SF":3,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.83,"S+M+RV+SF":32.25,"S+RV+SF":24.25,"S+M+SF":23.75,"S+M+RV":11.25,"S+SF":5,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.89,"S+M+RV+SF":34.5,"S+RV+SF":22.25,"S+M+SF":22.5,"S+M+RV":12.75,"S+SF":3,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.95,"S+M+RV+SF":26.5,"S+RV+SF":26,"S+M+SF":26.75,"S+M+RV":13,"S+SF":2.25,"V+KF+LA+M":1,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.23,"S+M+RV+SF":15,"S+RV+SF":36.5,"S+M+SF":9.75,"S+M+RV":17,"S+SF":8,"V+KF+LA+M":3,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.29,"S+M+RV+SF":15.75,"S+RV+SF":33.5,"S+M+SF":11.25,"S+M+RV":19,"S+SF":7.25,"V+KF+LA+M":3.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.35,"S+M+RV+SF":15.25,"S+RV+SF":34.75,"S+M+SF":16.75,"S+M+RV":16,"S+SF":4.75,"V+KF+LA+M":4,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.41,"S+M+RV+SF":18.5,"S+RV+SF":36,"S+M+SF":14,"S+M+RV":16.5,"S+SF":5,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.47,"S+M+RV+SF":27,"S+RV+SF":28.5,"S+M+SF":13.25,"S+M+RV":15.25,"S+SF":6,"V+KF+LA+M":3,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.53,"S+M+RV+SF":22.75,"S+RV+SF":30.25,"S+M+SF":17.25,"S+M+RV":17.5,"S+SF":4,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.59,"S+M+RV+SF":28,"S+RV+SF":26.5,"S+M+SF":16.75,"S+M+RV":17,"S+SF":4,"V+KF+LA+M":2.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.65,"S+M+RV+SF":31,"S+RV+SF":24,"S+M+SF":21.75,"S+M+RV":13.75,"S+SF":3,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.71,"S+M+RV+SF":31,"S+RV+SF":25,"S+M+SF":18.25,"S+M+RV":13.75,"S+SF":5.75,"V+KF+LA+M":2.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.77,"S+M+RV+SF":32.25,"S+RV+SF":21.75,"S+M+SF":24,"S+M+RV":13.75,"S+SF":3.25,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.83,"S+M+RV+SF":31,"S+RV+SF":26.25,"S+M+SF":25,"S+M+RV":11.25,"S+SF":2.75,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.89,"S+M+RV+SF":36.5,"S+RV+SF":21.75,"S+M+SF":24.25,"S+M+RV":9.5,"S+SF":3.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.95,"S+M+RV+SF":30,"S+RV+SF":27,"S+M+SF":23.25,"S+M+RV":10.25,"S+SF":4.25,"V+KF+LA+M":0,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.23,"S+M+RV+SF":10,"S+RV+SF":41.75,"S+M+SF":9.25,"S+M+RV":18,"S+SF":5.75,"V+KF+LA+M":4.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.29,"S+M+RV+SF":12.5,"S+RV+SF":42.25,"S+M+SF":11.75,"S+M+RV":16.75,"S+SF":6,"V+KF+LA+M":4.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.35,"S+M+RV+SF":15.25,"S+RV+SF":35.75,"S+M+SF":12,"S+M+RV":19.5,"S+SF":6.25,"V+KF+LA+M":3,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.41,"S+M+RV+SF":21.5,"S+RV+SF":34.25,"S+M+SF":14,"S+M+RV":15,"S+SF":4.5,"V+KF+LA+M":4.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.47,"S+M+RV+SF":23.25,"S+RV+SF":31.75,"S+M+SF":16,"S+M+RV":15.75,"S+SF":5.5,"V+KF+LA+M":2,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.53,"S+M+RV+SF":24,"S+RV+SF":26,"S+M+SF":16.75,"S+M+RV":18.75,"S+SF":4,"V+KF+LA+M":4.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.59,"S+M+RV+SF":31.75,"S+RV+SF":25.5,"S+M+SF":21.75,"S+M+RV":9.75,"S+SF":4.75,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.65,"S+M+RV+SF":28.5,"S+RV+SF":30,"S+M+SF":19.25,"S+M+RV":11.25,"S+SF":5,"V+KF+LA+M":1,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.71,"S+M+RV+SF":36.25,"S+RV+SF":28.5,"S+M+SF":19.5,"S+M+RV":8.25,"S+SF":3,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.77,"S+M+RV+SF":35,"S+RV+SF":21.25,"S+M+SF":21.5,"S+M+RV":11,"S+SF":4,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.83,"S+M+RV+SF":31,"S+RV+SF":24,"S+M+SF":25,"S+M+RV":12.25,"S+SF":2,"V+KF+LA+M":1,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.89,"S+M+RV+SF":32.5,"S+RV+SF":23.75,"S+M+SF":21.5,"S+M+RV":12.25,"S+SF":5.5,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":2,"bilateralVal":0.95,"S+M+RV+SF":37.25,"S+RV+SF":20.75,"S+M+SF":22,"S+M+RV":13.75,"S+SF":2.75,"V+KF+LA+M":0.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.23,"S+M+RV+SF":10.5,"S+RV+SF":37.75,"S+M+SF":12.5,"S+M+RV":16.75,"S+SF":9.75,"V+KF+LA+M":3.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.29,"S+M+RV+SF":16,"S+RV+SF":34.5,"S+M+SF":9.75,"S+M+RV":21.5,"S+SF":6.75,"V+KF+LA+M":4.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.35,"S+M+RV+SF":13.5,"S+RV+SF":35.75,"S+M+SF":13.75,"S+M+RV":18.75,"S+SF":6,"V+KF+LA+M":5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.41,"S+M+RV+SF":21.5,"S+RV+SF":34.75,"S+M+SF":14,"S+M+RV":13.25,"S+SF":4.75,"V+KF+LA+M":4.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.47,"S+M+RV+SF":21.5,"S+RV+SF":32.25,"S+M+SF":15.75,"S+M+RV":14.25,"S+SF":5.75,"V+KF+LA+M":3.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.53,"S+M+RV+SF":28.25,"S+RV+SF":27.75,"S+M+SF":15.25,"S+M+RV":14.25,"S+SF":5,"V+KF+LA+M":2,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.59,"S+M+RV+SF":21.5,"S+RV+SF":26.25,"S+M+SF":21.5,"S+M+RV":17.25,"S+SF":4.25,"V+KF+LA+M":3.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.65,"S+M+RV+SF":33,"S+RV+SF":23.5,"S+M+SF":20.25,"S+M+RV":13,"S+SF":5.25,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.71,"S+M+RV+SF":30.75,"S+RV+SF":29,"S+M+SF":19.25,"S+M+RV":12.5,"S+SF":3,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.77,"S+M+RV+SF":30.75,"S+RV+SF":26.75,"S+M+SF":20,"S+M+RV":13,"S+SF":3.75,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.83,"S+M+RV+SF":33.25,"S+RV+SF":24.25,"S+M+SF":25,"S+M+RV":8.5,"S+SF":4,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.89,"S+M+RV+SF":28,"S+RV+SF":26,"S+M+SF":25,"S+M+RV":11.25,"S+SF":4.5,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.95,"S+M+RV+SF":36,"S+RV+SF":24,"S+M+SF":21,"S+M+RV":11.5,"S+SF":2,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.23,"S+M+RV+SF":10.25,"S+RV+SF":40.5,"S+M+SF":7,"S+M+RV":16.5,"S+SF":7.5,"V+KF+LA+M":6,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.29,"S+M+RV+SF":11.75,"S+RV+SF":40.25,"S+M+SF":8.25,"S+M+RV":18.75,"S+SF":6.5,"V+KF+LA+M":6,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.35,"S+M+RV+SF":15.5,"S+RV+SF":36.25,"S+M+SF":13.75,"S+M+RV":16.5,"S+SF":7.5,"V+KF+LA+M":4.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.41,"S+M+RV+SF":17.75,"S+RV+SF":34,"S+M+SF":12.75,"S+M+RV":15.5,"S+SF":8,"V+KF+LA+M":3.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.47,"S+M+RV+SF":20.5,"S+RV+SF":36,"S+M+SF":14.75,"S+M+RV":13.25,"S+SF":4.5,"V+KF+LA+M":3.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.53,"S+M+RV+SF":24.5,"S+RV+SF":30.25,"S+M+SF":19.5,"S+M+RV":13.25,"S+SF":4.25,"V+KF+LA+M":2.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.59,"S+M+RV+SF":28.25,"S+RV+SF":30.5,"S+M+SF":19.25,"S+M+RV":12.25,"S+SF":5.5,"V+KF+LA+M":2,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.65,"S+M+RV+SF":30.5,"S+RV+SF":27.75,"S+M+SF":20,"S+M+RV":10.5,"S+SF":5.5,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.71,"S+M+RV+SF":31.5,"S+RV+SF":27.5,"S+M+SF":18.75,"S+M+RV":11.25,"S+SF":5,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.77,"S+M+RV+SF":31,"S+RV+SF":25,"S+M+SF":21.5,"S+M+RV":10.75,"S+SF":4.5,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.83,"S+M+RV+SF":34.25,"S+RV+SF":26,"S+M+SF":21,"S+M+RV":11.5,"S+SF":3.5,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.89,"S+M+RV+SF":35.75,"S+RV+SF":23.5,"S+M+SF":24,"S+M+RV":9.75,"S+SF":2.75,"V+KF+LA+M":1,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.95,"S+M+RV+SF":36.75,"S+RV+SF":25,"S+M+SF":20,"S+M+RV":10.5,"S+SF":3.5,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.23,"S+M+RV+SF":12.5,"S+RV+SF":44.5,"S+M+SF":7.75,"S+M+RV":15.25,"S+SF":4.5,"V+KF+LA+M":5.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.29,"S+M+RV+SF":11.5,"S+RV+SF":36.75,"S+M+SF":10.75,"S+M+RV":18.25,"S+SF":9.25,"V+KF+LA+M":3.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.35,"S+M+RV+SF":18.5,"S+RV+SF":36.25,"S+M+SF":14.5,"S+M+RV":16.25,"S+SF":3.5,"V+KF+LA+M":3.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.41,"S+M+RV+SF":20,"S+RV+SF":31.5,"S+M+SF":12.75,"S+M+RV":14.75,"S+SF":7.5,"V+KF+LA+M":3.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.47,"S+M+RV+SF":19.5,"S+RV+SF":34,"S+M+SF":15.75,"S+M+RV":15.75,"S+SF":5,"V+KF+LA+M":2.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.53,"S+M+RV+SF":22.75,"S+RV+SF":34.5,"S+M+SF":16,"S+M+RV":15,"S+SF":2.5,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.59,"S+M+RV+SF":26.75,"S+RV+SF":31.25,"S+M+SF":19.25,"S+M+RV":12.25,"S+SF":5,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.65,"S+M+RV+SF":29.25,"S+RV+SF":26.75,"S+M+SF":18.5,"S+M+RV":12.75,"S+SF":5.75,"V+KF+LA+M":2,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.71,"S+M+RV+SF":27.5,"S+RV+SF":30,"S+M+SF":22,"S+M+RV":11,"S+SF":3.5,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.77,"S+M+RV+SF":33.75,"S+RV+SF":25.5,"S+M+SF":20.25,"S+M+RV":10,"S+SF":4.25,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.83,"S+M+RV+SF":29.5,"S+RV+SF":28.25,"S+M+SF":23.75,"S+M+RV":10,"S+SF":4.75,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.89,"S+M+RV+SF":33.5,"S+RV+SF":23.75,"S+M+SF":22.5,"S+M+RV":13.75,"S+SF":2.25,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":3,"bilateralVal":0.95,"S+M+RV+SF":28.75,"S+RV+SF":23.75,"S+M+SF":26.25,"S+M+RV":10,"S+SF":4.75,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.23,"S+M+RV+SF":9.5,"S+RV+SF":42,"S+M+SF":8.5,"S+M+RV":15.75,"S+SF":8,"V+KF+LA+M":7.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.29,"S+M+RV+SF":13,"S+RV+SF":39.75,"S+M+SF":10.25,"S+M+RV":15,"S+SF":8.25,"V+KF+LA+M":3.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.35,"S+M+RV+SF":16.75,"S+RV+SF":36.25,"S+M+SF":11.75,"S+M+RV":17,"S+SF":5,"V+KF+LA+M":5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.41,"S+M+RV+SF":16.25,"S+RV+SF":41.25,"S+M+SF":14.25,"S+M+RV":12.25,"S+SF":5.25,"V+KF+LA+M":3.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.47,"S+M+RV+SF":21.25,"S+RV+SF":37,"S+M+SF":14.25,"S+M+RV":13,"S+SF":3.75,"V+KF+LA+M":3,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.53,"S+M+RV+SF":22.75,"S+RV+SF":32.25,"S+M+SF":17.25,"S+M+RV":11.75,"S+SF":8,"V+KF+LA+M":2.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.59,"S+M+RV+SF":25.5,"S+RV+SF":33.25,"S+M+SF":19.25,"S+M+RV":13,"S+SF":4,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.65,"S+M+RV+SF":29,"S+RV+SF":28,"S+M+SF":21.75,"S+M+RV":13,"S+SF":4,"V+KF+LA+M":1,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.71,"S+M+RV+SF":28.75,"S+RV+SF":29,"S+M+SF":19.75,"S+M+RV":10.5,"S+SF":4.75,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.77,"S+M+RV+SF":28.25,"S+RV+SF":31,"S+M+SF":20.25,"S+M+RV":10.25,"S+SF":4.5,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.83,"S+M+RV+SF":32.75,"S+RV+SF":27.75,"S+M+SF":20.5,"S+M+RV":9.25,"S+SF":6,"V+KF+LA+M":0.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.89,"S+M+RV+SF":32.5,"S+RV+SF":27,"S+M+SF":19.25,"S+M+RV":11.5,"S+SF":3.75,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.95,"S+M+RV+SF":31.25,"S+RV+SF":29.25,"S+M+SF":22.5,"S+M+RV":8,"S+SF":5.25,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.23,"S+M+RV+SF":11,"S+RV+SF":40,"S+M+SF":8.75,"S+M+RV":14.75,"S+SF":9.5,"V+KF+LA+M":5.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.29,"S+M+RV+SF":15.5,"S+RV+SF":39.25,"S+M+SF":7.75,"S+M+RV":19,"S+SF":7.5,"V+KF+LA+M":3.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.35,"S+M+RV+SF":16.25,"S+RV+SF":40.5,"S+M+SF":13,"S+M+RV":14.25,"S+SF":7,"V+KF+LA+M":3,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.41,"S+M+RV+SF":15.5,"S+RV+SF":36.75,"S+M+SF":14,"S+M+RV":14.75,"S+SF":8.25,"V+KF+LA+M":3,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.47,"S+M+RV+SF":19.75,"S+RV+SF":35.5,"S+M+SF":14,"S+M+RV":17.5,"S+SF":4.5,"V+KF+LA+M":2.75,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.53,"S+M+RV+SF":22.75,"S+RV+SF":36.25,"S+M+SF":18,"S+M+RV":10.75,"S+SF":5.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.59,"S+M+RV+SF":26.5,"S+RV+SF":31,"S+M+SF":16,"S+M+RV":11.75,"S+SF":6.25,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.65,"S+M+RV+SF":29.75,"S+RV+SF":31,"S+M+SF":19,"S+M+RV":8.75,"S+SF":5.25,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.71,"S+M+RV+SF":30,"S+RV+SF":28.5,"S+M+SF":18.25,"S+M+RV":13.75,"S+SF":5,"V+KF+LA+M":0.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.77,"S+M+RV+SF":28.75,"S+RV+SF":31.5,"S+M+SF":20.5,"S+M+RV":8.5,"S+SF":3.75,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.83,"S+M+RV+SF":34,"S+RV+SF":23.75,"S+M+SF":24.5,"S+M+RV":9.75,"S+SF":4.25,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.89,"S+M+RV+SF":32,"S+RV+SF":25.75,"S+M+SF":20.75,"S+M+RV":13.5,"S+SF":4.75,"V+KF+LA+M":1,"noGov":0}
+{"pair":"M climate position × SF→M acceptance","policyVal":4,"bilateralVal":0.95,"S+M+RV+SF":33,"S+RV+SF":26.5,"S+M+SF":22.25,"S+M+RV":10,"S+SF":3.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.08,"bilateralVal":0.0308,"S+M+RV+SF":33.75,"S+RV+SF":26.5,"S+M+SF":26.25,"S+M+RV":3.75,"S+SF":3.75,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.08,"bilateralVal":0.0923,"S+M+RV+SF":31.75,"S+RV+SF":28,"S+M+SF":21.25,"S+M+RV":7,"S+SF":4,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.08,"bilateralVal":0.1538,"S+M+RV+SF":32.5,"S+RV+SF":27.75,"S+M+SF":20.75,"S+M+RV":8.5,"S+SF":4.5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.08,"bilateralVal":0.2154,"S+M+RV+SF":31,"S+RV+SF":22.75,"S+M+SF":23.25,"S+M+RV":13.25,"S+SF":4,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.08,"bilateralVal":0.2769,"S+M+RV+SF":28.75,"S+RV+SF":26.25,"S+M+SF":24.5,"S+M+RV":11.75,"S+SF":1.75,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.08,"bilateralVal":0.3385,"S+M+RV+SF":30.25,"S+RV+SF":23.5,"S+M+SF":20.5,"S+M+RV":17,"S+SF":4.5,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.08,"bilateralVal":0.4,"S+M+RV+SF":32.25,"S+RV+SF":23.25,"S+M+SF":21.25,"S+M+RV":13.25,"S+SF":5.75,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.08,"bilateralVal":0.4615,"S+M+RV+SF":29.25,"S+RV+SF":24,"S+M+SF":20,"S+M+RV":15.75,"S+SF":4.75,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.08,"bilateralVal":0.5231,"S+M+RV+SF":30.75,"S+RV+SF":22.75,"S+M+SF":22.5,"S+M+RV":13.75,"S+SF":3.25,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.08,"bilateralVal":0.5846,"S+M+RV+SF":32.25,"S+RV+SF":21.75,"S+M+SF":22,"S+M+RV":15,"S+SF":3.25,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.08,"bilateralVal":0.6462,"S+M+RV+SF":30,"S+RV+SF":25.5,"S+M+SF":18.25,"S+M+RV":15.25,"S+SF":5.75,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.08,"bilateralVal":0.7077,"S+M+RV+SF":28.5,"S+RV+SF":26,"S+M+SF":20.25,"S+M+RV":17,"S+SF":3.5,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.08,"bilateralVal":0.7692,"S+M+RV+SF":29.75,"S+RV+SF":21.5,"S+M+SF":24.75,"S+M+RV":14.5,"S+SF":4.75,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.23,"bilateralVal":0.0308,"S+M+RV+SF":36.5,"S+RV+SF":28,"S+M+SF":21.75,"S+M+RV":4.5,"S+SF":4.25,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.23,"bilateralVal":0.0923,"S+M+RV+SF":38,"S+RV+SF":24.5,"S+M+SF":20,"S+M+RV":6.5,"S+SF":3,"V+KF+LA+M":2,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.23,"bilateralVal":0.1538,"S+M+RV+SF":37.5,"S+RV+SF":22.5,"S+M+SF":21.75,"S+M+RV":8.75,"S+SF":4.5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.23,"bilateralVal":0.2154,"S+M+RV+SF":34.5,"S+RV+SF":23,"S+M+SF":22.5,"S+M+RV":10.75,"S+SF":5.5,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.23,"bilateralVal":0.2769,"S+M+RV+SF":32.5,"S+RV+SF":24.5,"S+M+SF":20.5,"S+M+RV":13.5,"S+SF":4,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.23,"bilateralVal":0.3385,"S+M+RV+SF":30.75,"S+RV+SF":22.5,"S+M+SF":24,"S+M+RV":12.5,"S+SF":4.75,"V+KF+LA+M":0.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.23,"bilateralVal":0.4,"S+M+RV+SF":33,"S+RV+SF":24,"S+M+SF":20.75,"S+M+RV":12,"S+SF":4.25,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.23,"bilateralVal":0.4615,"S+M+RV+SF":34.5,"S+RV+SF":20.5,"S+M+SF":27,"S+M+RV":11.25,"S+SF":3.5,"V+KF+LA+M":0.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.23,"bilateralVal":0.5231,"S+M+RV+SF":31.25,"S+RV+SF":27.25,"S+M+SF":24,"S+M+RV":11.5,"S+SF":3,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.23,"bilateralVal":0.5846,"S+M+RV+SF":31.25,"S+RV+SF":23.75,"S+M+SF":19.25,"S+M+RV":15.5,"S+SF":3.25,"V+KF+LA+M":2,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.23,"bilateralVal":0.6462,"S+M+RV+SF":27,"S+RV+SF":25.5,"S+M+SF":21,"S+M+RV":16.25,"S+SF":3.25,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.23,"bilateralVal":0.7077,"S+M+RV+SF":36.25,"S+RV+SF":22.5,"S+M+SF":18,"S+M+RV":15,"S+SF":3,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.23,"bilateralVal":0.7692,"S+M+RV+SF":31.75,"S+RV+SF":21.75,"S+M+SF":25,"S+M+RV":14,"S+SF":4,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.38,"bilateralVal":0.0308,"S+M+RV+SF":31,"S+RV+SF":28.25,"S+M+SF":23.75,"S+M+RV":5.25,"S+SF":5.25,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.38,"bilateralVal":0.0923,"S+M+RV+SF":32.5,"S+RV+SF":28.25,"S+M+SF":21,"S+M+RV":8,"S+SF":4.75,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.38,"bilateralVal":0.1538,"S+M+RV+SF":31.25,"S+RV+SF":25.25,"S+M+SF":20,"S+M+RV":11,"S+SF":4.75,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.38,"bilateralVal":0.2154,"S+M+RV+SF":32,"S+RV+SF":26.5,"S+M+SF":18.75,"S+M+RV":13.25,"S+SF":3.5,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.38,"bilateralVal":0.2769,"S+M+RV+SF":34,"S+RV+SF":26.75,"S+M+SF":20.75,"S+M+RV":10.25,"S+SF":4.75,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.38,"bilateralVal":0.3385,"S+M+RV+SF":31,"S+RV+SF":24.75,"S+M+SF":20.75,"S+M+RV":12.75,"S+SF":4.5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.38,"bilateralVal":0.4,"S+M+RV+SF":30,"S+RV+SF":23,"S+M+SF":23.25,"S+M+RV":12,"S+SF":5.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.38,"bilateralVal":0.4615,"S+M+RV+SF":38.25,"S+RV+SF":27.75,"S+M+SF":14.5,"S+M+RV":11.5,"S+SF":2.75,"V+KF+LA+M":0.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.38,"bilateralVal":0.5231,"S+M+RV+SF":31.5,"S+RV+SF":22.75,"S+M+SF":22.25,"S+M+RV":14.25,"S+SF":3.75,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.38,"bilateralVal":0.5846,"S+M+RV+SF":31.25,"S+RV+SF":26.75,"S+M+SF":22,"S+M+RV":13.25,"S+SF":2.5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.38,"bilateralVal":0.6462,"S+M+RV+SF":27.25,"S+RV+SF":25.25,"S+M+SF":24.25,"S+M+RV":15,"S+SF":2.75,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.38,"bilateralVal":0.7077,"S+M+RV+SF":32,"S+RV+SF":24,"S+M+SF":20.75,"S+M+RV":13.5,"S+SF":2.75,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.38,"bilateralVal":0.7692,"S+M+RV+SF":29,"S+RV+SF":23.25,"S+M+SF":26.25,"S+M+RV":13,"S+SF":4.5,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.54,"bilateralVal":0.0308,"S+M+RV+SF":32,"S+RV+SF":29.5,"S+M+SF":21.5,"S+M+RV":4,"S+SF":4.5,"V+KF+LA+M":2,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.54,"bilateralVal":0.0923,"S+M+RV+SF":32.75,"S+RV+SF":25.5,"S+M+SF":23.5,"S+M+RV":7.75,"S+SF":3.75,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.54,"bilateralVal":0.1538,"S+M+RV+SF":34,"S+RV+SF":30,"S+M+SF":18.25,"S+M+RV":9.25,"S+SF":3.75,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.54,"bilateralVal":0.2154,"S+M+RV+SF":31,"S+RV+SF":26,"S+M+SF":22.25,"S+M+RV":13,"S+SF":4,"V+KF+LA+M":0.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.54,"bilateralVal":0.2769,"S+M+RV+SF":32,"S+RV+SF":21.5,"S+M+SF":25,"S+M+RV":12.5,"S+SF":3.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.54,"bilateralVal":0.3385,"S+M+RV+SF":31.5,"S+RV+SF":25.75,"S+M+SF":17,"S+M+RV":14.75,"S+SF":3,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.54,"bilateralVal":0.4,"S+M+RV+SF":32,"S+RV+SF":22.75,"S+M+SF":21.5,"S+M+RV":13,"S+SF":4,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.54,"bilateralVal":0.4615,"S+M+RV+SF":35,"S+RV+SF":23.25,"S+M+SF":19.75,"S+M+RV":13,"S+SF":3.75,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.54,"bilateralVal":0.5231,"S+M+RV+SF":34.75,"S+RV+SF":23.5,"S+M+SF":20.75,"S+M+RV":12.25,"S+SF":3.75,"V+KF+LA+M":2,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.54,"bilateralVal":0.5846,"S+M+RV+SF":34.5,"S+RV+SF":22.25,"S+M+SF":20.5,"S+M+RV":13.75,"S+SF":3.25,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.54,"bilateralVal":0.6462,"S+M+RV+SF":29.5,"S+RV+SF":21.75,"S+M+SF":24.5,"S+M+RV":15.25,"S+SF":2.25,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.54,"bilateralVal":0.7077,"S+M+RV+SF":25.75,"S+RV+SF":25.5,"S+M+SF":25.75,"S+M+RV":14.25,"S+SF":4,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.54,"bilateralVal":0.7692,"S+M+RV+SF":32.25,"S+RV+SF":23,"S+M+SF":20.5,"S+M+RV":15.5,"S+SF":2.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.69,"bilateralVal":0.0308,"S+M+RV+SF":33.25,"S+RV+SF":28,"S+M+SF":20.75,"S+M+RV":4.5,"S+SF":5.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.69,"bilateralVal":0.0923,"S+M+RV+SF":27.75,"S+RV+SF":28,"S+M+SF":22.75,"S+M+RV":10.5,"S+SF":4.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.69,"bilateralVal":0.1538,"S+M+RV+SF":35.75,"S+RV+SF":21.5,"S+M+SF":22.25,"S+M+RV":10.25,"S+SF":3.5,"V+KF+LA+M":2,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.69,"bilateralVal":0.2154,"S+M+RV+SF":33.5,"S+RV+SF":23.75,"S+M+SF":21.25,"S+M+RV":12.5,"S+SF":2.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.69,"bilateralVal":0.2769,"S+M+RV+SF":33,"S+RV+SF":25,"S+M+SF":21.5,"S+M+RV":11.75,"S+SF":3.75,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.69,"bilateralVal":0.3385,"S+M+RV+SF":31.5,"S+RV+SF":18,"S+M+SF":25.5,"S+M+RV":13.75,"S+SF":3.5,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.69,"bilateralVal":0.4,"S+M+RV+SF":33.25,"S+RV+SF":23.75,"S+M+SF":20.75,"S+M+RV":12.75,"S+SF":3.75,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.69,"bilateralVal":0.4615,"S+M+RV+SF":29.75,"S+RV+SF":28,"S+M+SF":22,"S+M+RV":11.25,"S+SF":4,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.69,"bilateralVal":0.5231,"S+M+RV+SF":33.5,"S+RV+SF":21,"S+M+SF":25.75,"S+M+RV":13.5,"S+SF":1.75,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.69,"bilateralVal":0.5846,"S+M+RV+SF":33.5,"S+RV+SF":24.5,"S+M+SF":17.75,"S+M+RV":16.75,"S+SF":4.25,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.69,"bilateralVal":0.6462,"S+M+RV+SF":31.5,"S+RV+SF":23.25,"S+M+SF":20.5,"S+M+RV":16.5,"S+SF":4,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.69,"bilateralVal":0.7077,"S+M+RV+SF":29.75,"S+RV+SF":22.25,"S+M+SF":22,"S+M+RV":15.5,"S+SF":5.25,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.69,"bilateralVal":0.7692,"S+M+RV+SF":32.5,"S+RV+SF":27.5,"S+M+SF":19.5,"S+M+RV":11.75,"S+SF":3.25,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.85,"bilateralVal":0.0308,"S+M+RV+SF":35.75,"S+RV+SF":27,"S+M+SF":20.5,"S+M+RV":4.5,"S+SF":5.5,"V+KF+LA+M":2.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.85,"bilateralVal":0.0923,"S+M+RV+SF":31.75,"S+RV+SF":27.25,"S+M+SF":21.75,"S+M+RV":7,"S+SF":5.5,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.85,"bilateralVal":0.1538,"S+M+RV+SF":30,"S+RV+SF":24.75,"S+M+SF":25.5,"S+M+RV":10.5,"S+SF":3.5,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.85,"bilateralVal":0.2154,"S+M+RV+SF":31.5,"S+RV+SF":27.75,"S+M+SF":20.5,"S+M+RV":11.25,"S+SF":3.25,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.85,"bilateralVal":0.2769,"S+M+RV+SF":31.5,"S+RV+SF":26,"S+M+SF":23.25,"S+M+RV":12.5,"S+SF":2.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.85,"bilateralVal":0.3385,"S+M+RV+SF":35.75,"S+RV+SF":19,"S+M+SF":21,"S+M+RV":13.75,"S+SF":4,"V+KF+LA+M":2,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.85,"bilateralVal":0.4,"S+M+RV+SF":35.25,"S+RV+SF":24.5,"S+M+SF":16.75,"S+M+RV":14,"S+SF":3.25,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.85,"bilateralVal":0.4615,"S+M+RV+SF":30.25,"S+RV+SF":24.25,"S+M+SF":22.75,"S+M+RV":13,"S+SF":4.75,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.85,"bilateralVal":0.5231,"S+M+RV+SF":33.25,"S+RV+SF":23.25,"S+M+SF":22.5,"S+M+RV":12,"S+SF":4,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.85,"bilateralVal":0.5846,"S+M+RV+SF":34.25,"S+RV+SF":23.75,"S+M+SF":19,"S+M+RV":12.5,"S+SF":3.25,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.85,"bilateralVal":0.6462,"S+M+RV+SF":31.25,"S+RV+SF":22.75,"S+M+SF":24,"S+M+RV":15.25,"S+SF":2.75,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.85,"bilateralVal":0.7077,"S+M+RV+SF":30.75,"S+RV+SF":23,"S+M+SF":23.5,"S+M+RV":16,"S+SF":2.75,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":0.85,"bilateralVal":0.7692,"S+M+RV+SF":29.5,"S+RV+SF":23.5,"S+M+SF":22,"S+M+RV":15,"S+SF":5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1,"bilateralVal":0.0308,"S+M+RV+SF":37,"S+RV+SF":20.75,"S+M+SF":22.75,"S+M+RV":5,"S+SF":5.75,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1,"bilateralVal":0.0923,"S+M+RV+SF":33.25,"S+RV+SF":25.25,"S+M+SF":22.75,"S+M+RV":7.5,"S+SF":4.25,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1,"bilateralVal":0.1538,"S+M+RV+SF":32,"S+RV+SF":26,"S+M+SF":24.25,"S+M+RV":8.25,"S+SF":4,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1,"bilateralVal":0.2154,"S+M+RV+SF":34.25,"S+RV+SF":21.75,"S+M+SF":20.75,"S+M+RV":10.25,"S+SF":4.5,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1,"bilateralVal":0.2769,"S+M+RV+SF":27.5,"S+RV+SF":30.75,"S+M+SF":19,"S+M+RV":13,"S+SF":3,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1,"bilateralVal":0.3385,"S+M+RV+SF":31,"S+RV+SF":25,"S+M+SF":17.75,"S+M+RV":14.25,"S+SF":4,"V+KF+LA+M":2,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1,"bilateralVal":0.4,"S+M+RV+SF":31.75,"S+RV+SF":26.5,"S+M+SF":21,"S+M+RV":13.5,"S+SF":3,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1,"bilateralVal":0.4615,"S+M+RV+SF":31,"S+RV+SF":23.5,"S+M+SF":24.5,"S+M+RV":13.75,"S+SF":1.5,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1,"bilateralVal":0.5231,"S+M+RV+SF":36.75,"S+RV+SF":21,"S+M+SF":19.25,"S+M+RV":14,"S+SF":2.75,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1,"bilateralVal":0.5846,"S+M+RV+SF":33.25,"S+RV+SF":22.5,"S+M+SF":21.75,"S+M+RV":14.25,"S+SF":3,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1,"bilateralVal":0.6462,"S+M+RV+SF":30.5,"S+RV+SF":24,"S+M+SF":24.25,"S+M+RV":12.25,"S+SF":3,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1,"bilateralVal":0.7077,"S+M+RV+SF":32,"S+RV+SF":23.5,"S+M+SF":19.75,"S+M+RV":15.5,"S+SF":3.75,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1,"bilateralVal":0.7692,"S+M+RV+SF":33.75,"S+RV+SF":19.25,"S+M+SF":22.75,"S+M+RV":16,"S+SF":2,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.15,"bilateralVal":0.0308,"S+M+RV+SF":32.75,"S+RV+SF":29.5,"S+M+SF":20.75,"S+M+RV":4.75,"S+SF":3.75,"V+KF+LA+M":3,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.15,"bilateralVal":0.0923,"S+M+RV+SF":30.5,"S+RV+SF":29,"S+M+SF":21.5,"S+M+RV":6,"S+SF":4,"V+KF+LA+M":2.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.15,"bilateralVal":0.1538,"S+M+RV+SF":33.5,"S+RV+SF":25.75,"S+M+SF":21,"S+M+RV":10.75,"S+SF":5.5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.15,"bilateralVal":0.2154,"S+M+RV+SF":28.75,"S+RV+SF":27.75,"S+M+SF":20.5,"S+M+RV":13.25,"S+SF":4.75,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.15,"bilateralVal":0.2769,"S+M+RV+SF":29.75,"S+RV+SF":25.5,"S+M+SF":22,"S+M+RV":10.75,"S+SF":6.25,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.15,"bilateralVal":0.3385,"S+M+RV+SF":28.5,"S+RV+SF":27.25,"S+M+SF":23.75,"S+M+RV":11,"S+SF":5.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.15,"bilateralVal":0.4,"S+M+RV+SF":32.25,"S+RV+SF":22.5,"S+M+SF":23.25,"S+M+RV":10.25,"S+SF":4,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.15,"bilateralVal":0.4615,"S+M+RV+SF":32.5,"S+RV+SF":22,"S+M+SF":24.25,"S+M+RV":12.25,"S+SF":3,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.15,"bilateralVal":0.5231,"S+M+RV+SF":31.5,"S+RV+SF":20.25,"S+M+SF":22.75,"S+M+RV":17.5,"S+SF":3.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.15,"bilateralVal":0.5846,"S+M+RV+SF":31,"S+RV+SF":26.5,"S+M+SF":20.75,"S+M+RV":12.5,"S+SF":5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.15,"bilateralVal":0.6462,"S+M+RV+SF":29.25,"S+RV+SF":23,"S+M+SF":22.75,"S+M+RV":13.25,"S+SF":5.5,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.15,"bilateralVal":0.7077,"S+M+RV+SF":33.5,"S+RV+SF":23.5,"S+M+SF":20.25,"S+M+RV":13.75,"S+SF":2.25,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.15,"bilateralVal":0.7692,"S+M+RV+SF":30.5,"S+RV+SF":24.25,"S+M+SF":19.5,"S+M+RV":15.25,"S+SF":3.75,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.31,"bilateralVal":0.0308,"S+M+RV+SF":35,"S+RV+SF":27.75,"S+M+SF":21,"S+M+RV":7,"S+SF":3.75,"V+KF+LA+M":2,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.31,"bilateralVal":0.0923,"S+M+RV+SF":31.75,"S+RV+SF":29.25,"S+M+SF":18.25,"S+M+RV":8.75,"S+SF":4.75,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.31,"bilateralVal":0.1538,"S+M+RV+SF":31,"S+RV+SF":26,"S+M+SF":20.5,"S+M+RV":10.25,"S+SF":5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.31,"bilateralVal":0.2154,"S+M+RV+SF":32,"S+RV+SF":25.5,"S+M+SF":19.25,"S+M+RV":11.5,"S+SF":6,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.31,"bilateralVal":0.2769,"S+M+RV+SF":32.5,"S+RV+SF":22,"S+M+SF":22,"S+M+RV":14.75,"S+SF":3.75,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.31,"bilateralVal":0.3385,"S+M+RV+SF":34.75,"S+RV+SF":24.5,"S+M+SF":21,"S+M+RV":13,"S+SF":1.75,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.31,"bilateralVal":0.4,"S+M+RV+SF":32,"S+RV+SF":22.25,"S+M+SF":25,"S+M+RV":12.5,"S+SF":2.25,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.31,"bilateralVal":0.4615,"S+M+RV+SF":31.75,"S+RV+SF":23.75,"S+M+SF":21.5,"S+M+RV":14.25,"S+SF":3.25,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.31,"bilateralVal":0.5231,"S+M+RV+SF":29.5,"S+RV+SF":26.5,"S+M+SF":23.75,"S+M+RV":14.25,"S+SF":1.5,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.31,"bilateralVal":0.5846,"S+M+RV+SF":28,"S+RV+SF":23.75,"S+M+SF":22.75,"S+M+RV":13,"S+SF":5.5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.31,"bilateralVal":0.6462,"S+M+RV+SF":33.5,"S+RV+SF":21.25,"S+M+SF":19.25,"S+M+RV":16,"S+SF":4,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.31,"bilateralVal":0.7077,"S+M+RV+SF":33,"S+RV+SF":24.25,"S+M+SF":20,"S+M+RV":15,"S+SF":3.5,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.31,"bilateralVal":0.7692,"S+M+RV+SF":33.75,"S+RV+SF":18.5,"S+M+SF":23.25,"S+M+RV":17.25,"S+SF":2.5,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.46,"bilateralVal":0.0308,"S+M+RV+SF":34,"S+RV+SF":29.5,"S+M+SF":19.75,"S+M+RV":5,"S+SF":5.25,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.46,"bilateralVal":0.0923,"S+M+RV+SF":33.25,"S+RV+SF":27,"S+M+SF":20,"S+M+RV":7,"S+SF":5.5,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.46,"bilateralVal":0.1538,"S+M+RV+SF":33.25,"S+RV+SF":28,"S+M+SF":20.25,"S+M+RV":10.75,"S+SF":3.75,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.46,"bilateralVal":0.2154,"S+M+RV+SF":31.5,"S+RV+SF":24,"S+M+SF":20.5,"S+M+RV":11.75,"S+SF":3,"V+KF+LA+M":2.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.46,"bilateralVal":0.2769,"S+M+RV+SF":31.5,"S+RV+SF":25.75,"S+M+SF":22.5,"S+M+RV":12.75,"S+SF":2.25,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.46,"bilateralVal":0.3385,"S+M+RV+SF":29.75,"S+RV+SF":22.75,"S+M+SF":22.5,"S+M+RV":10.75,"S+SF":5.75,"V+KF+LA+M":2.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.46,"bilateralVal":0.4,"S+M+RV+SF":29.75,"S+RV+SF":25.5,"S+M+SF":25.75,"S+M+RV":10.25,"S+SF":4.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.46,"bilateralVal":0.4615,"S+M+RV+SF":30.25,"S+RV+SF":26,"S+M+SF":23,"S+M+RV":13,"S+SF":3.25,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.46,"bilateralVal":0.5231,"S+M+RV+SF":31.25,"S+RV+SF":25.5,"S+M+SF":18,"S+M+RV":15.25,"S+SF":4,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.46,"bilateralVal":0.5846,"S+M+RV+SF":30,"S+RV+SF":22.25,"S+M+SF":26.25,"S+M+RV":12.25,"S+SF":3.75,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.46,"bilateralVal":0.6462,"S+M+RV+SF":31.25,"S+RV+SF":22.25,"S+M+SF":22.5,"S+M+RV":13.25,"S+SF":3.75,"V+KF+LA+M":3,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.46,"bilateralVal":0.7077,"S+M+RV+SF":31,"S+RV+SF":23.5,"S+M+SF":20,"S+M+RV":16,"S+SF":4.25,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.46,"bilateralVal":0.7692,"S+M+RV+SF":35.75,"S+RV+SF":23,"S+M+SF":18.5,"S+M+RV":13.75,"S+SF":2.75,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.62,"bilateralVal":0.0308,"S+M+RV+SF":29.75,"S+RV+SF":31.75,"S+M+SF":21.25,"S+M+RV":6.25,"S+SF":4.5,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.62,"bilateralVal":0.0923,"S+M+RV+SF":35.5,"S+RV+SF":26.25,"S+M+SF":21.25,"S+M+RV":7.5,"S+SF":4.25,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.62,"bilateralVal":0.1538,"S+M+RV+SF":30.75,"S+RV+SF":25,"S+M+SF":24,"S+M+RV":11.75,"S+SF":4.5,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.62,"bilateralVal":0.2154,"S+M+RV+SF":30.5,"S+RV+SF":26.75,"S+M+SF":20,"S+M+RV":14,"S+SF":5,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.62,"bilateralVal":0.2769,"S+M+RV+SF":31,"S+RV+SF":25.25,"S+M+SF":24.5,"S+M+RV":9.25,"S+SF":4.25,"V+KF+LA+M":0.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.62,"bilateralVal":0.3385,"S+M+RV+SF":35.75,"S+RV+SF":20,"S+M+SF":21,"S+M+RV":12.5,"S+SF":4.5,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.62,"bilateralVal":0.4,"S+M+RV+SF":30.5,"S+RV+SF":25,"S+M+SF":23.25,"S+M+RV":10.75,"S+SF":3.5,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.62,"bilateralVal":0.4615,"S+M+RV+SF":27.5,"S+RV+SF":25.75,"S+M+SF":22.25,"S+M+RV":14,"S+SF":4.25,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.62,"bilateralVal":0.5231,"S+M+RV+SF":31.75,"S+RV+SF":26.5,"S+M+SF":19.75,"S+M+RV":14,"S+SF":3.25,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.62,"bilateralVal":0.5846,"S+M+RV+SF":35,"S+RV+SF":26,"S+M+SF":18,"S+M+RV":13,"S+SF":2.75,"V+KF+LA+M":2,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.62,"bilateralVal":0.6462,"S+M+RV+SF":33,"S+RV+SF":22,"S+M+SF":19.75,"S+M+RV":16.5,"S+SF":4,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.62,"bilateralVal":0.7077,"S+M+RV+SF":31.75,"S+RV+SF":20.75,"S+M+SF":22,"S+M+RV":15.5,"S+SF":4.5,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.62,"bilateralVal":0.7692,"S+M+RV+SF":30.75,"S+RV+SF":23,"S+M+SF":20.75,"S+M+RV":15.5,"S+SF":4.25,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.77,"bilateralVal":0.0308,"S+M+RV+SF":38.75,"S+RV+SF":26.75,"S+M+SF":18.75,"S+M+RV":5.25,"S+SF":4.75,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.77,"bilateralVal":0.0923,"S+M+RV+SF":37.25,"S+RV+SF":25,"S+M+SF":19.5,"S+M+RV":7.5,"S+SF":2.75,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.77,"bilateralVal":0.1538,"S+M+RV+SF":30,"S+RV+SF":28,"S+M+SF":22.25,"S+M+RV":10.25,"S+SF":4.75,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.77,"bilateralVal":0.2154,"S+M+RV+SF":28,"S+RV+SF":24,"S+M+SF":18.25,"S+M+RV":15.75,"S+SF":7,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.77,"bilateralVal":0.2769,"S+M+RV+SF":27.5,"S+RV+SF":31.25,"S+M+SF":21.5,"S+M+RV":11.75,"S+SF":3.75,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.77,"bilateralVal":0.3385,"S+M+RV+SF":34.5,"S+RV+SF":19.5,"S+M+SF":25,"S+M+RV":11.75,"S+SF":3.25,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.77,"bilateralVal":0.4,"S+M+RV+SF":28,"S+RV+SF":25.75,"S+M+SF":24.25,"S+M+RV":11.5,"S+SF":3.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.77,"bilateralVal":0.4615,"S+M+RV+SF":34.25,"S+RV+SF":24.75,"S+M+SF":19,"S+M+RV":13.5,"S+SF":2.25,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.77,"bilateralVal":0.5231,"S+M+RV+SF":35,"S+RV+SF":20.25,"S+M+SF":22.5,"S+M+RV":12.5,"S+SF":5.75,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.77,"bilateralVal":0.5846,"S+M+RV+SF":30.5,"S+RV+SF":26,"S+M+SF":22,"S+M+RV":13.75,"S+SF":3.75,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.77,"bilateralVal":0.6462,"S+M+RV+SF":30.75,"S+RV+SF":20.5,"S+M+SF":24.25,"S+M+RV":15.25,"S+SF":3.75,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.77,"bilateralVal":0.7077,"S+M+RV+SF":33.25,"S+RV+SF":24.75,"S+M+SF":20,"S+M+RV":12.5,"S+SF":3,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.77,"bilateralVal":0.7692,"S+M+RV+SF":33.25,"S+RV+SF":23.75,"S+M+SF":21,"S+M+RV":14.75,"S+SF":1.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.92,"bilateralVal":0.0308,"S+M+RV+SF":33.5,"S+RV+SF":28,"S+M+SF":20.5,"S+M+RV":5.25,"S+SF":4.25,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.92,"bilateralVal":0.0923,"S+M+RV+SF":31.5,"S+RV+SF":27.25,"S+M+SF":20.75,"S+M+RV":7.75,"S+SF":4.75,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.92,"bilateralVal":0.1538,"S+M+RV+SF":31.5,"S+RV+SF":25,"S+M+SF":22.75,"S+M+RV":10.25,"S+SF":5.25,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.92,"bilateralVal":0.2154,"S+M+RV+SF":31,"S+RV+SF":21.75,"S+M+SF":22.5,"S+M+RV":12.75,"S+SF":5.5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.92,"bilateralVal":0.2769,"S+M+RV+SF":29.75,"S+RV+SF":25.25,"S+M+SF":25,"S+M+RV":11,"S+SF":3.5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.92,"bilateralVal":0.3385,"S+M+RV+SF":31.5,"S+RV+SF":25.5,"S+M+SF":21.25,"S+M+RV":14.5,"S+SF":2.5,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.92,"bilateralVal":0.4,"S+M+RV+SF":34,"S+RV+SF":24.75,"S+M+SF":21.25,"S+M+RV":13,"S+SF":3.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.92,"bilateralVal":0.4615,"S+M+RV+SF":31.25,"S+RV+SF":24.25,"S+M+SF":23,"S+M+RV":11.75,"S+SF":4.75,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.92,"bilateralVal":0.5231,"S+M+RV+SF":29.25,"S+RV+SF":29.75,"S+M+SF":17.5,"S+M+RV":14,"S+SF":4.75,"V+KF+LA+M":1,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.92,"bilateralVal":0.5846,"S+M+RV+SF":30,"S+RV+SF":25.5,"S+M+SF":24,"S+M+RV":12.5,"S+SF":1.5,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.92,"bilateralVal":0.6462,"S+M+RV+SF":33.75,"S+RV+SF":21,"S+M+SF":20.75,"S+M+RV":16.5,"S+SF":4.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.92,"bilateralVal":0.7077,"S+M+RV+SF":27.25,"S+RV+SF":22,"S+M+SF":22.75,"S+M+RV":17,"S+SF":4,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"EL immigration floor × M→EL tolerance","policyVal":1.92,"bilateralVal":0.7692,"S+M+RV+SF":31,"S+RV+SF":24.5,"S+M+SF":19.25,"S+M+RV":17.25,"S+SF":3,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.23,"S+M+RV+SF":9.25,"S+RV+SF":44.25,"S+M+SF":9.25,"S+M+RV":18.5,"S+SF":4.5,"V+KF+LA+M":3.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.29,"S+M+RV+SF":11.5,"S+RV+SF":32.75,"S+M+SF":9.75,"S+M+RV":24.25,"S+SF":5.75,"V+KF+LA+M":5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.35,"S+M+RV+SF":16.25,"S+RV+SF":36.75,"S+M+SF":14,"S+M+RV":15,"S+SF":5.75,"V+KF+LA+M":2.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.41,"S+M+RV+SF":21,"S+RV+SF":28.25,"S+M+SF":14.75,"S+M+RV":18.5,"S+SF":5.75,"V+KF+LA+M":4.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.47,"S+M+RV+SF":24,"S+RV+SF":28,"S+M+SF":14.25,"S+M+RV":18.5,"S+SF":5.25,"V+KF+LA+M":3,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.53,"S+M+RV+SF":23.75,"S+RV+SF":30,"S+M+SF":17.25,"S+M+RV":17,"S+SF":3.25,"V+KF+LA+M":3,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.59,"S+M+RV+SF":27.5,"S+RV+SF":24,"S+M+SF":20.5,"S+M+RV":15.25,"S+SF":4.5,"V+KF+LA+M":3,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.65,"S+M+RV+SF":25.75,"S+RV+SF":26.25,"S+M+SF":22,"S+M+RV":14.75,"S+SF":5.75,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.71,"S+M+RV+SF":29.75,"S+RV+SF":24,"S+M+SF":24,"S+M+RV":12.75,"S+SF":3.5,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.77,"S+M+RV+SF":34.75,"S+RV+SF":19.25,"S+M+SF":23.5,"S+M+RV":12.25,"S+SF":2.75,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.83,"S+M+RV+SF":34,"S+RV+SF":20.75,"S+M+SF":20.5,"S+M+RV":13.25,"S+SF":4.25,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.89,"S+M+RV+SF":33.75,"S+RV+SF":19.5,"S+M+SF":21.25,"S+M+RV":14.25,"S+SF":4.5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.95,"S+M+RV+SF":33.25,"S+RV+SF":26.5,"S+M+SF":20,"S+M+RV":11,"S+SF":3.75,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.23,"S+M+RV+SF":12.5,"S+RV+SF":38.25,"S+M+SF":10.75,"S+M+RV":19.75,"S+SF":6,"V+KF+LA+M":4,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.29,"S+M+RV+SF":11.75,"S+RV+SF":32.75,"S+M+SF":13.5,"S+M+RV":22.5,"S+SF":5,"V+KF+LA+M":5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.35,"S+M+RV+SF":22.5,"S+RV+SF":32.25,"S+M+SF":10,"S+M+RV":17.75,"S+SF":6.25,"V+KF+LA+M":4.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.41,"S+M+RV+SF":18.25,"S+RV+SF":35.5,"S+M+SF":12.5,"S+M+RV":15.25,"S+SF":6.25,"V+KF+LA+M":5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.47,"S+M+RV+SF":22,"S+RV+SF":28.5,"S+M+SF":19.75,"S+M+RV":17.25,"S+SF":4.75,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.53,"S+M+RV+SF":27.75,"S+RV+SF":26.5,"S+M+SF":18.25,"S+M+RV":16.5,"S+SF":4.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.59,"S+M+RV+SF":26.75,"S+RV+SF":24,"S+M+SF":21.75,"S+M+RV":13.25,"S+SF":4.75,"V+KF+LA+M":3.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.65,"S+M+RV+SF":28.25,"S+RV+SF":26.25,"S+M+SF":19.5,"S+M+RV":16,"S+SF":3.75,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.71,"S+M+RV+SF":29.75,"S+RV+SF":23.75,"S+M+SF":22.25,"S+M+RV":13,"S+SF":5.75,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.77,"S+M+RV+SF":35,"S+RV+SF":23.75,"S+M+SF":20.5,"S+M+RV":13,"S+SF":2.75,"V+KF+LA+M":1,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.83,"S+M+RV+SF":28.5,"S+RV+SF":23.25,"S+M+SF":23.25,"S+M+RV":15.25,"S+SF":2.5,"V+KF+LA+M":2,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.89,"S+M+RV+SF":33.5,"S+RV+SF":19.5,"S+M+SF":24.25,"S+M+RV":13.75,"S+SF":4,"V+KF+LA+M":1,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":0,"bilateralVal":0.95,"S+M+RV+SF":29,"S+RV+SF":23.25,"S+M+SF":26.5,"S+M+RV":12,"S+SF":3.5,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.23,"S+M+RV+SF":15,"S+RV+SF":37.75,"S+M+SF":9.5,"S+M+RV":18.25,"S+SF":6.5,"V+KF+LA+M":5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.29,"S+M+RV+SF":14.75,"S+RV+SF":37.25,"S+M+SF":11.5,"S+M+RV":19,"S+SF":5.5,"V+KF+LA+M":4.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.35,"S+M+RV+SF":17.75,"S+RV+SF":31.25,"S+M+SF":13.75,"S+M+RV":18.75,"S+SF":6,"V+KF+LA+M":3.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.41,"S+M+RV+SF":20,"S+RV+SF":30,"S+M+SF":15.75,"S+M+RV":19,"S+SF":4.25,"V+KF+LA+M":3.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.47,"S+M+RV+SF":21,"S+RV+SF":29.5,"S+M+SF":16,"S+M+RV":16.5,"S+SF":6.5,"V+KF+LA+M":3.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.53,"S+M+RV+SF":24.5,"S+RV+SF":32.75,"S+M+SF":19.75,"S+M+RV":12,"S+SF":4.5,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.59,"S+M+RV+SF":28.25,"S+RV+SF":25,"S+M+SF":20.75,"S+M+RV":13.75,"S+SF":4.5,"V+KF+LA+M":2.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.65,"S+M+RV+SF":32,"S+RV+SF":23.25,"S+M+SF":20.5,"S+M+RV":14.5,"S+SF":4.25,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.71,"S+M+RV+SF":27.5,"S+RV+SF":25.25,"S+M+SF":23.5,"S+M+RV":11.75,"S+SF":3.75,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.77,"S+M+RV+SF":31.5,"S+RV+SF":26,"S+M+SF":19,"S+M+RV":13.75,"S+SF":2.75,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.83,"S+M+RV+SF":31.5,"S+RV+SF":24.5,"S+M+SF":20,"S+M+RV":12.75,"S+SF":4.5,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.89,"S+M+RV+SF":33.75,"S+RV+SF":21,"S+M+SF":24.75,"S+M+RV":12.25,"S+SF":3.5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.95,"S+M+RV+SF":35.25,"S+RV+SF":25.25,"S+M+SF":22.75,"S+M+RV":9.5,"S+SF":2.25,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.23,"S+M+RV+SF":10,"S+RV+SF":36.5,"S+M+SF":10,"S+M+RV":20.75,"S+SF":5.5,"V+KF+LA+M":5.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.29,"S+M+RV+SF":12.75,"S+RV+SF":34.5,"S+M+SF":12,"S+M+RV":20,"S+SF":6,"V+KF+LA+M":3.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.35,"S+M+RV+SF":18.25,"S+RV+SF":34.25,"S+M+SF":14.75,"S+M+RV":14,"S+SF":6.75,"V+KF+LA+M":4.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.41,"S+M+RV+SF":20.25,"S+RV+SF":31,"S+M+SF":13.25,"S+M+RV":15.25,"S+SF":6.75,"V+KF+LA+M":5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.47,"S+M+RV+SF":22.5,"S+RV+SF":29.25,"S+M+SF":15.25,"S+M+RV":18,"S+SF":6.5,"V+KF+LA+M":2.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.53,"S+M+RV+SF":28,"S+RV+SF":27,"S+M+SF":17,"S+M+RV":15.5,"S+SF":4,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.59,"S+M+RV+SF":27.25,"S+RV+SF":25.5,"S+M+SF":20.25,"S+M+RV":15.5,"S+SF":3.75,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.65,"S+M+RV+SF":29.75,"S+RV+SF":30.25,"S+M+SF":20.5,"S+M+RV":10.75,"S+SF":3.25,"V+KF+LA+M":1,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.71,"S+M+RV+SF":35.5,"S+RV+SF":26,"S+M+SF":20.5,"S+M+RV":9.75,"S+SF":3.5,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.77,"S+M+RV+SF":28.25,"S+RV+SF":26.25,"S+M+SF":21.5,"S+M+RV":13.25,"S+SF":4.5,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.83,"S+M+RV+SF":33.75,"S+RV+SF":19,"S+M+SF":21.75,"S+M+RV":16,"S+SF":4,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.89,"S+M+RV+SF":36.75,"S+RV+SF":26,"S+M+SF":19,"S+M+RV":9.25,"S+SF":3.75,"V+KF+LA+M":1,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.95,"S+M+RV+SF":32.75,"S+RV+SF":25.75,"S+M+SF":20.5,"S+M+RV":11.25,"S+SF":4.75,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.23,"S+M+RV+SF":10.75,"S+RV+SF":39.75,"S+M+SF":8,"S+M+RV":19.75,"S+SF":6.25,"V+KF+LA+M":5.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.29,"S+M+RV+SF":15.75,"S+RV+SF":38.75,"S+M+SF":8.75,"S+M+RV":20,"S+SF":4.5,"V+KF+LA+M":3.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.35,"S+M+RV+SF":13.5,"S+RV+SF":44,"S+M+SF":10.25,"S+M+RV":12.75,"S+SF":5.5,"V+KF+LA+M":3.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.41,"S+M+RV+SF":19,"S+RV+SF":32.75,"S+M+SF":14.75,"S+M+RV":16.5,"S+SF":5.75,"V+KF+LA+M":3,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.47,"S+M+RV+SF":18,"S+RV+SF":35,"S+M+SF":18.75,"S+M+RV":14,"S+SF":4,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.53,"S+M+RV+SF":21.5,"S+RV+SF":29.25,"S+M+SF":15.25,"S+M+RV":19.25,"S+SF":5.75,"V+KF+LA+M":2,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.59,"S+M+RV+SF":25,"S+RV+SF":27.75,"S+M+SF":26.25,"S+M+RV":11.25,"S+SF":4.75,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.65,"S+M+RV+SF":28.25,"S+RV+SF":25,"S+M+SF":23.25,"S+M+RV":12.5,"S+SF":3.75,"V+KF+LA+M":2.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.71,"S+M+RV+SF":34.25,"S+RV+SF":24.75,"S+M+SF":23,"S+M+RV":10.5,"S+SF":2.75,"V+KF+LA+M":1,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.77,"S+M+RV+SF":33.75,"S+RV+SF":22.5,"S+M+SF":23.75,"S+M+RV":11.75,"S+SF":3,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.83,"S+M+RV+SF":33.25,"S+RV+SF":27,"S+M+SF":22.25,"S+M+RV":9.75,"S+SF":2.75,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.89,"S+M+RV+SF":37.25,"S+RV+SF":22,"S+M+SF":16.25,"S+M+RV":16.5,"S+SF":2.75,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.95,"S+M+RV+SF":31,"S+RV+SF":28.25,"S+M+SF":19.5,"S+M+RV":13,"S+SF":4,"V+KF+LA+M":1,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.23,"S+M+RV+SF":12.75,"S+RV+SF":40.25,"S+M+SF":8.75,"S+M+RV":15.75,"S+SF":6.75,"V+KF+LA+M":5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.29,"S+M+RV+SF":13.5,"S+RV+SF":39,"S+M+SF":9.75,"S+M+RV":18.5,"S+SF":3,"V+KF+LA+M":5.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.35,"S+M+RV+SF":19.75,"S+RV+SF":33.5,"S+M+SF":11.5,"S+M+RV":19.25,"S+SF":5.5,"V+KF+LA+M":3.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.41,"S+M+RV+SF":23,"S+RV+SF":34.5,"S+M+SF":13.5,"S+M+RV":13,"S+SF":6,"V+KF+LA+M":3.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.47,"S+M+RV+SF":20.25,"S+RV+SF":32.25,"S+M+SF":19.75,"S+M+RV":15,"S+SF":5.5,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.53,"S+M+RV+SF":25.75,"S+RV+SF":29.25,"S+M+SF":17.5,"S+M+RV":14.75,"S+SF":6,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.59,"S+M+RV+SF":29.75,"S+RV+SF":24.25,"S+M+SF":20.25,"S+M+RV":13,"S+SF":5.25,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.65,"S+M+RV+SF":25.5,"S+RV+SF":26.5,"S+M+SF":21.5,"S+M+RV":17.5,"S+SF":3.75,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.71,"S+M+RV+SF":30.5,"S+RV+SF":22,"S+M+SF":25.25,"S+M+RV":11.75,"S+SF":4,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.77,"S+M+RV+SF":34,"S+RV+SF":25.75,"S+M+SF":20.5,"S+M+RV":11.25,"S+SF":4.5,"V+KF+LA+M":1,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.83,"S+M+RV+SF":33,"S+RV+SF":25,"S+M+SF":19.5,"S+M+RV":15.25,"S+SF":2.25,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.89,"S+M+RV+SF":32.5,"S+RV+SF":21.75,"S+M+SF":21.25,"S+M+RV":13,"S+SF":4.5,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":1,"bilateralVal":0.95,"S+M+RV+SF":32.25,"S+RV+SF":24.75,"S+M+SF":20,"S+M+RV":11,"S+SF":4.5,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.23,"S+M+RV+SF":11.75,"S+RV+SF":40.25,"S+M+SF":9.5,"S+M+RV":17,"S+SF":5.5,"V+KF+LA+M":5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.29,"S+M+RV+SF":14.25,"S+RV+SF":36.5,"S+M+SF":10.75,"S+M+RV":18.75,"S+SF":6.5,"V+KF+LA+M":4,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.35,"S+M+RV+SF":16.75,"S+RV+SF":37,"S+M+SF":14,"S+M+RV":16.75,"S+SF":6,"V+KF+LA+M":3.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.41,"S+M+RV+SF":18.5,"S+RV+SF":33.25,"S+M+SF":17.25,"S+M+RV":15,"S+SF":4.75,"V+KF+LA+M":5.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.47,"S+M+RV+SF":20.25,"S+RV+SF":33.75,"S+M+SF":16.25,"S+M+RV":16,"S+SF":5.75,"V+KF+LA+M":2.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.53,"S+M+RV+SF":24.75,"S+RV+SF":30.25,"S+M+SF":17.75,"S+M+RV":14.25,"S+SF":5.5,"V+KF+LA+M":2,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.59,"S+M+RV+SF":27.5,"S+RV+SF":28.75,"S+M+SF":17.25,"S+M+RV":14,"S+SF":4.5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.65,"S+M+RV+SF":30.25,"S+RV+SF":25.75,"S+M+SF":21.25,"S+M+RV":10.5,"S+SF":4,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.71,"S+M+RV+SF":33,"S+RV+SF":29,"S+M+SF":19.5,"S+M+RV":8.5,"S+SF":4.75,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.77,"S+M+RV+SF":33.75,"S+RV+SF":25,"S+M+SF":21.5,"S+M+RV":10,"S+SF":3.5,"V+KF+LA+M":2,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.83,"S+M+RV+SF":32.25,"S+RV+SF":24.25,"S+M+SF":20.25,"S+M+RV":12,"S+SF":5.5,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.89,"S+M+RV+SF":34,"S+RV+SF":22.75,"S+M+SF":22.5,"S+M+RV":12.25,"S+SF":3.25,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.95,"S+M+RV+SF":33,"S+RV+SF":23.25,"S+M+SF":21.75,"S+M+RV":13.75,"S+SF":2.25,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.23,"S+M+RV+SF":10.5,"S+RV+SF":40.25,"S+M+SF":9.75,"S+M+RV":18,"S+SF":8,"V+KF+LA+M":4.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.29,"S+M+RV+SF":18.5,"S+RV+SF":34.75,"S+M+SF":9.75,"S+M+RV":18,"S+SF":7.5,"V+KF+LA+M":3,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.35,"S+M+RV+SF":18,"S+RV+SF":35,"S+M+SF":12.5,"S+M+RV":16.5,"S+SF":8.25,"V+KF+LA+M":3.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.41,"S+M+RV+SF":21,"S+RV+SF":32.75,"S+M+SF":14.25,"S+M+RV":16.5,"S+SF":5,"V+KF+LA+M":4,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.47,"S+M+RV+SF":17.75,"S+RV+SF":33.75,"S+M+SF":17.25,"S+M+RV":17.5,"S+SF":6,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.53,"S+M+RV+SF":25.5,"S+RV+SF":26.25,"S+M+SF":17.5,"S+M+RV":14.25,"S+SF":6.5,"V+KF+LA+M":2.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.59,"S+M+RV+SF":28,"S+RV+SF":25.5,"S+M+SF":21,"S+M+RV":11,"S+SF":5.75,"V+KF+LA+M":2,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.65,"S+M+RV+SF":30.25,"S+RV+SF":21.75,"S+M+SF":25.25,"S+M+RV":10.5,"S+SF":5,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.71,"S+M+RV+SF":31.5,"S+RV+SF":24.5,"S+M+SF":23.5,"S+M+RV":11.75,"S+SF":4.5,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.77,"S+M+RV+SF":34.75,"S+RV+SF":26.25,"S+M+SF":20.25,"S+M+RV":11.75,"S+SF":2.5,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.83,"S+M+RV+SF":32,"S+RV+SF":24.5,"S+M+SF":24,"S+M+RV":11.75,"S+SF":3.25,"V+KF+LA+M":1,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.89,"S+M+RV+SF":31.75,"S+RV+SF":28.25,"S+M+SF":22.5,"S+M+RV":8,"S+SF":3.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.95,"S+M+RV+SF":34.5,"S+RV+SF":21.5,"S+M+SF":23.25,"S+M+RV":13.25,"S+SF":3.25,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.23,"S+M+RV+SF":9.75,"S+RV+SF":40,"S+M+SF":11,"S+M+RV":20.5,"S+SF":6,"V+KF+LA+M":4.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.29,"S+M+RV+SF":16.75,"S+RV+SF":34,"S+M+SF":14.25,"S+M+RV":17.25,"S+SF":6.25,"V+KF+LA+M":3.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.35,"S+M+RV+SF":15.75,"S+RV+SF":36.5,"S+M+SF":14.5,"S+M+RV":15.5,"S+SF":7,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.41,"S+M+RV+SF":23.5,"S+RV+SF":32,"S+M+SF":16.25,"S+M+RV":15,"S+SF":4.25,"V+KF+LA+M":3.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.47,"S+M+RV+SF":23.25,"S+RV+SF":31.75,"S+M+SF":18.25,"S+M+RV":13.25,"S+SF":5.75,"V+KF+LA+M":2.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.53,"S+M+RV+SF":20.25,"S+RV+SF":31.75,"S+M+SF":22.25,"S+M+RV":14,"S+SF":4.75,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.59,"S+M+RV+SF":25.25,"S+RV+SF":27.75,"S+M+SF":20.25,"S+M+RV":13.75,"S+SF":3.75,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.65,"S+M+RV+SF":31.5,"S+RV+SF":27,"S+M+SF":19.5,"S+M+RV":9.75,"S+SF":6.5,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.71,"S+M+RV+SF":35.5,"S+RV+SF":26.5,"S+M+SF":18.5,"S+M+RV":10,"S+SF":4,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.77,"S+M+RV+SF":32.75,"S+RV+SF":24,"S+M+SF":21.25,"S+M+RV":12,"S+SF":3.5,"V+KF+LA+M":1,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.83,"S+M+RV+SF":34.25,"S+RV+SF":24.5,"S+M+SF":23.25,"S+M+RV":8.75,"S+SF":3.25,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.89,"S+M+RV+SF":37,"S+RV+SF":19.5,"S+M+SF":22.25,"S+M+RV":12,"S+SF":3.5,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.95,"S+M+RV+SF":33.5,"S+RV+SF":22.5,"S+M+SF":23.5,"S+M+RV":10.25,"S+SF":4,"V+KF+LA+M":1,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.23,"S+M+RV+SF":14.5,"S+RV+SF":40.25,"S+M+SF":8.5,"S+M+RV":18.5,"S+SF":5,"V+KF+LA+M":5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.29,"S+M+RV+SF":15.25,"S+RV+SF":39.5,"S+M+SF":9,"S+M+RV":15.5,"S+SF":8.5,"V+KF+LA+M":3.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.35,"S+M+RV+SF":18.25,"S+RV+SF":38,"S+M+SF":11.25,"S+M+RV":15.75,"S+SF":5.5,"V+KF+LA+M":3,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.41,"S+M+RV+SF":15.5,"S+RV+SF":35.25,"S+M+SF":15.75,"S+M+RV":17,"S+SF":4.25,"V+KF+LA+M":3.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.47,"S+M+RV+SF":20,"S+RV+SF":31.25,"S+M+SF":21.75,"S+M+RV":13.25,"S+SF":6.25,"V+KF+LA+M":2.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.53,"S+M+RV+SF":22.25,"S+RV+SF":34.75,"S+M+SF":17,"S+M+RV":11.75,"S+SF":4,"V+KF+LA+M":3.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.59,"S+M+RV+SF":23.75,"S+RV+SF":27.75,"S+M+SF":20.5,"S+M+RV":14.25,"S+SF":8,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.65,"S+M+RV+SF":34,"S+RV+SF":23.75,"S+M+SF":19.25,"S+M+RV":13.5,"S+SF":4.25,"V+KF+LA+M":1,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.71,"S+M+RV+SF":32.25,"S+RV+SF":26.5,"S+M+SF":22.75,"S+M+RV":9,"S+SF":3.75,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.77,"S+M+RV+SF":33,"S+RV+SF":23.75,"S+M+SF":22,"S+M+RV":12,"S+SF":4.25,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.83,"S+M+RV+SF":34.25,"S+RV+SF":21.25,"S+M+SF":22.25,"S+M+RV":13,"S+SF":2,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.89,"S+M+RV+SF":31.25,"S+RV+SF":25,"S+M+SF":21.75,"S+M+RV":10.5,"S+SF":5,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.95,"S+M+RV+SF":30.75,"S+RV+SF":23.5,"S+M+SF":27.25,"S+M+RV":10.75,"S+SF":2.5,"V+KF+LA+M":0.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.23,"S+M+RV+SF":11.75,"S+RV+SF":40.75,"S+M+SF":8.75,"S+M+RV":17.25,"S+SF":9.5,"V+KF+LA+M":2.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.29,"S+M+RV+SF":17,"S+RV+SF":39.5,"S+M+SF":8,"S+M+RV":16.5,"S+SF":7.5,"V+KF+LA+M":4.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.35,"S+M+RV+SF":16.75,"S+RV+SF":38,"S+M+SF":14,"S+M+RV":17.75,"S+SF":5.25,"V+KF+LA+M":2.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.41,"S+M+RV+SF":18,"S+RV+SF":36.75,"S+M+SF":12,"S+M+RV":15.25,"S+SF":6.25,"V+KF+LA+M":4.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.47,"S+M+RV+SF":24.5,"S+RV+SF":32.25,"S+M+SF":15.5,"S+M+RV":11.5,"S+SF":6,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.53,"S+M+RV+SF":25.25,"S+RV+SF":27.5,"S+M+SF":18.5,"S+M+RV":15.25,"S+SF":5.5,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.59,"S+M+RV+SF":26.5,"S+RV+SF":28.5,"S+M+SF":16.5,"S+M+RV":17,"S+SF":3.75,"V+KF+LA+M":2.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.65,"S+M+RV+SF":29.25,"S+RV+SF":23.75,"S+M+SF":21.75,"S+M+RV":12.5,"S+SF":3.5,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.71,"S+M+RV+SF":32.75,"S+RV+SF":25,"S+M+SF":20.75,"S+M+RV":13.25,"S+SF":4.5,"V+KF+LA+M":1,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.77,"S+M+RV+SF":34.25,"S+RV+SF":23.75,"S+M+SF":26.5,"S+M+RV":8.75,"S+SF":2.25,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.83,"S+M+RV+SF":34.25,"S+RV+SF":23,"S+M+SF":23,"S+M+RV":11,"S+SF":3.75,"V+KF+LA+M":2.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.89,"S+M+RV+SF":34,"S+RV+SF":22.5,"S+M+SF":25,"S+M+RV":12.25,"S+SF":2.75,"V+KF+LA+M":0.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":2,"bilateralVal":0.95,"S+M+RV+SF":34,"S+RV+SF":26,"S+M+SF":22,"S+M+RV":13.25,"S+SF":2.75,"V+KF+LA+M":0,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.23,"S+M+RV+SF":11.25,"S+RV+SF":42.25,"S+M+SF":7.75,"S+M+RV":16.5,"S+SF":6.5,"V+KF+LA+M":4,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.29,"S+M+RV+SF":11,"S+RV+SF":42.5,"S+M+SF":12.75,"S+M+RV":15.25,"S+SF":5.25,"V+KF+LA+M":4.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.35,"S+M+RV+SF":19,"S+RV+SF":33.25,"S+M+SF":14,"S+M+RV":16.5,"S+SF":5.25,"V+KF+LA+M":3.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.41,"S+M+RV+SF":22.25,"S+RV+SF":32.5,"S+M+SF":13.25,"S+M+RV":14.25,"S+SF":7.25,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.47,"S+M+RV+SF":23.25,"S+RV+SF":32.75,"S+M+SF":18.25,"S+M+RV":13.75,"S+SF":4,"V+KF+LA+M":1.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.53,"S+M+RV+SF":24.5,"S+RV+SF":33.75,"S+M+SF":15.5,"S+M+RV":13.25,"S+SF":4.5,"V+KF+LA+M":2,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.59,"S+M+RV+SF":32,"S+RV+SF":23,"S+M+SF":21.75,"S+M+RV":13.75,"S+SF":3.75,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.65,"S+M+RV+SF":30.5,"S+RV+SF":25.75,"S+M+SF":23.25,"S+M+RV":12,"S+SF":2.5,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.71,"S+M+RV+SF":33.5,"S+RV+SF":27,"S+M+SF":18.75,"S+M+RV":10.75,"S+SF":4,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.77,"S+M+RV+SF":33.5,"S+RV+SF":25.5,"S+M+SF":22,"S+M+RV":11.25,"S+SF":4.75,"V+KF+LA+M":0.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.83,"S+M+RV+SF":36.5,"S+RV+SF":23.75,"S+M+SF":22,"S+M+RV":11,"S+SF":3,"V+KF+LA+M":1.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.89,"S+M+RV+SF":35.25,"S+RV+SF":22.25,"S+M+SF":22.75,"S+M+RV":11,"S+SF":4,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.95,"S+M+RV+SF":33.75,"S+RV+SF":23.75,"S+M+SF":21,"S+M+RV":12.5,"S+SF":4.5,"V+KF+LA+M":0.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.23,"S+M+RV+SF":9.5,"S+RV+SF":43.5,"S+M+SF":8.75,"S+M+RV":18.75,"S+SF":5,"V+KF+LA+M":3.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.29,"S+M+RV+SF":11.5,"S+RV+SF":40,"S+M+SF":12.25,"S+M+RV":13.75,"S+SF":6.5,"V+KF+LA+M":3.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.35,"S+M+RV+SF":21.25,"S+RV+SF":30.75,"S+M+SF":12.25,"S+M+RV":17.75,"S+SF":6,"V+KF+LA+M":3,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.41,"S+M+RV+SF":19.25,"S+RV+SF":35.25,"S+M+SF":16.5,"S+M+RV":12.75,"S+SF":5.25,"V+KF+LA+M":2.25,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.47,"S+M+RV+SF":24.25,"S+RV+SF":32.25,"S+M+SF":16.75,"S+M+RV":16,"S+SF":3,"V+KF+LA+M":3,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.53,"S+M+RV+SF":27.75,"S+RV+SF":29.25,"S+M+SF":18.25,"S+M+RV":14,"S+SF":3,"V+KF+LA+M":2.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.59,"S+M+RV+SF":29,"S+RV+SF":29.5,"S+M+SF":16.25,"S+M+RV":12.75,"S+SF":3.5,"V+KF+LA+M":2.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.65,"S+M+RV+SF":30,"S+RV+SF":27,"S+M+SF":18.5,"S+M+RV":15.25,"S+SF":1.75,"V+KF+LA+M":1,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.71,"S+M+RV+SF":33,"S+RV+SF":26.75,"S+M+SF":19.75,"S+M+RV":11.25,"S+SF":3.25,"V+KF+LA+M":0.75,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.77,"S+M+RV+SF":33,"S+RV+SF":24,"S+M+SF":23,"S+M+RV":12.25,"S+SF":2,"V+KF+LA+M":1,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.83,"S+M+RV+SF":34.25,"S+RV+SF":23.25,"S+M+SF":19.5,"S+M+RV":13.5,"S+SF":3,"V+KF+LA+M":1.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.89,"S+M+RV+SF":37,"S+RV+SF":22.75,"S+M+SF":22.25,"S+M+RV":12.75,"S+SF":1.75,"V+KF+LA+M":0.5,"noGov":0}
+{"pair":"SF wealth tax position × SF→M acceptance","policyVal":3,"bilateralVal":0.95,"S+M+RV+SF":34.5,"S+RV+SF":22.5,"S+M+SF":26.25,"S+M+RV":9.25,"S+SF":2.5,"V+KF+LA+M":0.75,"noGov":0}
