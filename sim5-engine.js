@@ -1038,10 +1038,21 @@ function simulate(userParams, N) {
             }
           }
 
-          // NA seats — only when they help reach 90
+          // NA seats — only shown when they are genuinely decisive
+          // (tungen på vægtskålen): the coalition needs them to reach 90
+          // even after counting forståelsespapir and loose støttepartier.
           const naSupport = [];
           const looseSeats = looseSupport.reduce((s, id) => s + ((PARTIES_MAP[id] || {}).mandates || 0), 0);
-          if (govSeats + looseSeats < 90) {
+          // Count forståelsespapir parties' seats (EL etc.)
+          // Use all forst-eligible parties that get deals >40% of the time
+          const forstEligible = PARTIES_LIST.filter(p => {
+            if (govSet.has(p.id)) return false;
+            const fp = p.positions.forstaaelsespapir;
+            return fp && fp.weight >= 0.95 && fp.ideal === 0;
+          });
+          const forstSeats = forstEligible.reduce((s, p) => s + (p.mandates || 0), 0);
+          const withMainlandSupport = govSeats + forstSeats + looseSeats;
+          if (withMainlandSupport < 90) {
             for (const seat of NA_SEATS) {
               const pAligned = govSide === "red" ? seat.pRed : govSide === "blue" ? seat.pBlue : 0;
               if (pAligned + seat.pFlexible >= 0.50) {
