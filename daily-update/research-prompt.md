@@ -8,7 +8,7 @@ You are monitoring the Danish government formation process following the
 24 March 2026 election. Produce a research brief covering developments
 in the last 24 hours that could affect which government forms.
 
-This brief will be read by a human analyst who translates findings into
+This brief will be read by an AI agent that translates findings into
 model parameter changes. You do NOT need to propose specific numeric
 values — focus on what happened, who said what, and what it means for
 coalition dynamics.
@@ -32,6 +32,11 @@ For each significant development, report:
 3. **Coalition impact** — which coalitions become more or less likely, and why
 
 Focus on:
+- **Any statements by party leaders or members** relevant to
+  negotiations — media interviews, social media posts, press
+  scrums, TV appearances. Most days the signal is not a formal
+  event but a party leader saying something slightly new to a
+  journalist that reveals their negotiation posture.
 - Bilateral meetings between party leaders and their tone/outcome
 - Policy concessions or hardened red lines
 - Signals about which parties are willing to govern together
