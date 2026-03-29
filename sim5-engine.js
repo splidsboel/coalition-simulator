@@ -1052,8 +1052,8 @@ function simulate(userParams, N) {
     const BILATERAL_SIGMA_OVERRIDES = {
       // M-facing relationships with higher uncertainty
       "M.EL.tolerateInGov": 0.08,  // main hurdle for center-left govt
-      "SF.M.inGov": 0.05,          // untested partnership
-      "M.SF.inGov": 0.05,          // policy distance is real
+      "SF.M.inGov": 0.03,          // strategic necessity — high confidence
+      "M.SF.inGov": 0.03,          // policy distance is real but value well-calibrated
       "EL.M.tolerateInGov": 0.06,  // grassroots constraint
       "DD.M.tolerateInGov": 0.06,  // personal animosity, uncertain resolution
       "RV.M.tolerateInGov": 0.04,  // 2022 trauma — low base, moderate uncertainty
