@@ -1388,6 +1388,8 @@
       };
 
       function formatPct(value, digits = 1) {
+        // Never show "0 %" for positive values — use "< 1 %" instead
+        if (value > 0 && value < Math.pow(10, -digits) * 5) return "< 1 %";
         return new Intl.NumberFormat("da-DK", {
           minimumFractionDigits: digits,
           maximumFractionDigits: digits
@@ -1967,7 +1969,7 @@ onmessage = function(e) {
           `;
         }).join("");
 
-        els.mandateLegend.innerHTML = "";
+        els.mandateLegend.innerHTML = '<span style="font-size:0.7rem;color:var(--muted);">LG = løsgænger · GL = Grønland · FO = Færøerne</span>';
       }
 
       function updateValuePills() {
@@ -3127,7 +3129,6 @@ onmessage = function(e) {
         for (const party of Sim5Parties.PARTIES_LIST) {
           if (govSet.has(party.id)) continue;
           if (party.positions?.forstaaelsespapir?.weight >= 0.95 && party.positions?.forstaaelsespapir?.ideal === 0) {
-            // Forst parties only support same-side governments (EL won't support blue)
             const partyIsRed = party.bloc === "red";
             if ((partyIsRed && isRed) || (!partyIsRed && isBlue)) {
               support.push({ id: party.id, mandates: party.mandates, type: "forst" });
@@ -3137,6 +3138,13 @@ onmessage = function(e) {
           if (blocSide && party.bloc === blocSide && party.participationPref) {
             if ((party.participationPref.government || 0) < 0.50)
               support.push({ id: party.id, mandates: party.mandates, type: "loose" });
+          }
+        }
+        // Løsgængere: blue-leaning independents auto-support blue governments
+        for (const seat of Sim5Parties.NA_SEATS) {
+          if (!seat.id.startsWith("LG-")) continue;
+          if (isBlue && seat.pBlue >= 0.70) {
+            support.push({ id: seat.id, mandates: seat.mandates, type: "loose" });
           }
         }
         return support;
@@ -3164,7 +3172,10 @@ onmessage = function(e) {
         // Return user's manual selection
         return [...builderState.supportOverrides].map(id => {
           const p = Sim5Parties.PARTIES_MAP[id];
-          return p ? { id, mandates: p.mandates, type: "manual" } : null;
+          if (p) return { id, mandates: p.mandates, type: "manual" };
+          const na = Sim5Parties.NA_SEATS.find(s => s.id === id);
+          if (na) return { id, mandates: na.mandates, type: "manual" };
+          return null;
         }).filter(Boolean);
       }
 
@@ -3189,17 +3200,20 @@ onmessage = function(e) {
         const supportSeats = support.reduce((s, p) => s + p.mandates, 0);
         const totalWithSupport = totalSeats + supportSeats;
 
-        // Eligible support parties: any non-government party
-        const eligibleSupport = parties.filter(p => !govSet.has(p.id));
+        // Eligible support parties: any non-government party + løsgængere
+        const lgSeats = Sim5Parties.NA_SEATS.filter(s => s.id.startsWith("LG-")).map(s => ({ id: s.id, mandates: s.mandates, bloc: "na" }));
+        const eligibleSupport = [...parties.filter(p => !govSet.has(p.id)), ...lgSeats];
 
         // Horizontal mandate bar
         const govSegments = BUILDER_ORDER.filter(id => govSet.has(id)).map(id => {
           const p = Sim5Parties.PARTIES_MAP[id];
           return `<div style="flex:${p.mandates} 0 0;background:${partyColor(id)};height:100%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.72rem;font-weight:600;overflow:hidden;white-space:nowrap;transition:flex 0.2s;" title="${id}: ${p.mandates}">${p.mandates >= 6 ? id + "\u2009" + p.mandates : p.mandates >= 4 ? "" + p.mandates : ""}</div>`;
         }).join("");
-        const supportSegments = BUILDER_ORDER.filter(id => supportSet.has(id)).map(id => {
-          const p = Sim5Parties.PARTIES_MAP[id];
-          return `<div style="flex:${p.mandates} 0 0;background:${partyColor(id)};opacity:0.3;height:100%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.65rem;font-weight:500;overflow:hidden;transition:flex 0.2s;" title="${id}: ${p.mandates} (st\u00f8tte)">${p.mandates >= 6 ? id : ""}</div>`;
+        const supportSegments = [...BUILDER_ORDER, ...Sim5Parties.NA_SEATS.filter(s => s.id.startsWith("LG-")).map(s => s.id)].filter(id => supportSet.has(id)).map(id => {
+          const p = Sim5Parties.PARTIES_MAP[id] || Sim5Parties.NA_SEATS.find(s => s.id === id);
+          if (!p) return "";
+          const label = lgLabels[id] || id;
+          return `<div style="flex:${p.mandates} 0 0;background:${partyColor(id)};opacity:0.3;height:100%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.65rem;font-weight:500;overflow:hidden;transition:flex 0.2s;" title="${label}: ${p.mandates} (st\u00f8tte)">${p.mandates >= 6 ? label : ""}</div>`;
         }).join("");
         const naSegment = naSeats > 0 ? `<div style="flex:${naSeats} 0 0;background:linear-gradient(135deg,#607080,#8899aa);height:100%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.65rem;font-weight:500;overflow:hidden;" title="NA: ${naSeats}">NA</div>` : "";
         const emptyFlex = Math.max(0, 179 - totalWithSupport - naSeats);
@@ -3213,9 +3227,11 @@ onmessage = function(e) {
         }).join("");
 
         // Support party toggle pills
+        const lgLabels = { "LG-LA": "LG (LA)", "LG-BP": "LG (BP)" };
         const supportPills = selArr.length > 0 ? eligibleSupport.map(p => {
           const active = supportSet.has(p.id);
-          return `<button type="button" class="builder-support-pill" data-support="${p.id}" style="display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:12px;border:1px solid ${active ? partyColor(p.id) : "var(--border)"};background:${active ? partyColor(p.id) + "18" : "#fff"};cursor:pointer;font-size:0.72rem;opacity:${active ? 1 : 0.5};transition:all 0.15s;"><span style="width:6px;height:6px;border-radius:50%;background:${partyColor(p.id)};"></span>${p.id}</button>`;
+          const label = lgLabels[p.id] || p.id;
+          return `<button type="button" class="builder-support-pill" data-support="${p.id}" style="display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:12px;border:1px solid ${active ? partyColor(p.id) : "var(--border)"};background:${active ? partyColor(p.id) + "18" : "#fff"};cursor:pointer;font-size:0.72rem;opacity:${active ? 1 : 0.5};transition:all 0.15s;"><span style="width:6px;height:6px;border-radius:50%;background:${partyColor(p.id)};"></span>${escapeHtml(label)}</button>`;
         }).join("") : "";
 
         // Coalition label with støttepartier
@@ -3240,6 +3256,7 @@ onmessage = function(e) {
             ${selArr.length > 0 ? `<div style="margin-bottom:10px;">
               <p style="font-size:0.75rem;color:var(--muted);margin:0 0 4px;">St\u00f8ttepartier <span style="font-size:0.68rem;">(klik for at til/frav\u00e6lge)</span></p>
               <div style="display:flex;flex-wrap:wrap;gap:4px;">${supportPills}</div>
+              <p style="font-size:0.65rem;color:var(--muted);margin:4px 0 0;">LG = l\u00f8sg\u00e6nger (ekskluderet fra parti, stemmer sandsynligvis bl\u00e5t men uden partidisciplin)</p>
             </div>` : ""}
             <div style="margin-bottom:14px;">
               <div style="position:relative;height:36px;background:#f0ede8;border-radius:6px;overflow:visible;display:flex;">
