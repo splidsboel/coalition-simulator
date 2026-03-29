@@ -40,14 +40,14 @@
   {
     "date": "2026-03-28",
     "coalitions": {
-      "S+M+RV+SF": 33.2,
-      "S+RV+SF": 13.3,
-      "V+KF+LA+M": 10.9,
-      "S+SF": 9.7,
-      "V+KF+M": 9.4,
-      "V+LA+M": 6.3,
-      "V+DD+M": 2.1,
-      "V+DD+KF+M": 2.1
+      "S+M+RV+SF": 46.1,
+      "S+RV+SF": 15.9,
+      "S+SF": 12.1,
+      "V+KF+LA+M": 5.3,
+      "V+KF+M": 4.4,
+      "V+LA+M": 3.3,
+      "S+M+SF": 2.3,
+      "V+DF+KF+M": 1.1
     },
     "noGov": 0,
     "formationStage": "forhandlinger",

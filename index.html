@@ -1328,7 +1328,7 @@
         formateurOverride: "red",
         maxFormationRounds: 1,
         viabilityThreshold: 0.75,
-        N: 500,
+        N: 2000,
         mDemandGov: true,
         sDemandGov: true,
         pmDemand: !!Sim5Parties.PARTIES_MAP.S.pmDemand,
@@ -1784,12 +1784,13 @@ onmessage = function(e) {
               <div class="field-header">
                 <span class="field-label">Iterationer</span>
               </div>
-              <p class="field-desc">Antal Monte Carlo-simuleringer. Flere = mere præcist men langsommere. 500 er en god balance.</p>
+              <p class="field-desc">Antal Monte Carlo-simuleringer. Flere = mere præcist men langsommere.</p>
               <select id="control-N" data-control="N">
-                <option value="200">200</option>
-                <option value="500" selected>500</option>
+                <option value="500">500</option>
                 <option value="1000">1000</option>
-                <option value="2000">2000</option>
+                <option value="2000" selected>2000</option>
+                <option value="5000">5000</option>
+                <option value="10000">10000</option>
               </select>
             </div>
 
@@ -2981,7 +2982,7 @@ onmessage = function(e) {
       }
 
       // ==================== TIMELINE TAB ====================
-      const TIMELINE_DATA = [{"date":"2026-03-24","coalitions":{"S+M+RV+SF":39.6,"S+RV+SF":12.6,"V+KF+LA+M":10.2,"S+SF":9.1,"V+KF+M":7.9,"V+LA+M":5.2,"V+DD+KF+M":1.9,"V+DD+LA+M":1.5},"noGov":0,"formationStage":"valgaften","changelog":["Udgangspunkt: kalibrering fra valgaften, f\u00f8r forhandlingssignaler"]},{"date":"2026-03-26","coalitions":{"S+M+RV+SF":39.3,"S+RV+SF":15.5,"S+SF":10,"V+KF+LA+M":8.3,"V+KF+M":6.7,"V+LA+M":4.2,"V+DF+KF+M":1.7,"V+DD+M":1.4},"noGov":0,"formationStage":"forhandlinger","changelog":["L\u00f8kkes strategiske orientering: 30 % sandsynlighed for at forf\u00f8lge bl\u00e5 koalition","SF forhandler h\u00e5rdere efter mistillidstrussel","Konservative \u00e5bner d\u00f8ren til S"]},{"date":"2026-03-28","coalitions":{"S+M+RV+SF":33.2,"S+RV+SF":13.3,"V+KF+LA+M":10.9,"S+SF":9.7,"V+KF+M":9.4,"V+LA+M":6.3,"V+DD+M":2.1,"V+DD+KF+M":2.1},"noGov":0,"formationStage":"forhandlinger","changelog":["M globalHarshness op (0.24 \u2192 0.32): L\u00f8kkes h\u00e5rde linje mod EL og formueskat","EL bl\u00f8der op: globalHarshness 0.64 \u2192 0.56, fleksibel forhandlingsposition","SF globalHarshness ned (0.64 \u2192 0.55): privat forventningsstyring om kompromiser","KF mere oppositions-orienteret (gov 0.70 \u2192 0.55): tilfreds med opposition","KF\u2192S inGov ned (0.43 \u2192 0.35): SVMRK vurderes urealistisk"]}];
+      const TIMELINE_DATA = [{"date":"2026-03-24","coalitions":{"S+M+RV+SF":39.6,"S+RV+SF":12.6,"V+KF+LA+M":10.2,"S+SF":9.1,"V+KF+M":7.9,"V+LA+M":5.2,"V+DD+KF+M":1.9,"V+DD+LA+M":1.5},"noGov":0,"formationStage":"valgaften","changelog":["Udgangspunkt: kalibrering fra valgaften, f\u00f8r forhandlingssignaler"]},{"date":"2026-03-26","coalitions":{"S+M+RV+SF":39.3,"S+RV+SF":15.5,"S+SF":10,"V+KF+LA+M":8.3,"V+KF+M":6.7,"V+LA+M":4.2,"V+DF+KF+M":1.7,"V+DD+M":1.4},"noGov":0,"formationStage":"forhandlinger","changelog":["L\u00f8kkes strategiske orientering: 30 % sandsynlighed for at forf\u00f8lge bl\u00e5 koalition","SF forhandler h\u00e5rdere efter mistillidstrussel","Konservative \u00e5bner d\u00f8ren til S"]},{"date":"2026-03-28","coalitions":{"S+M+RV+SF":46.1,"S+RV+SF":15.9,"S+SF":12.1,"V+KF+LA+M":5.3,"V+KF+M":4.4,"V+LA+M":3.3,"S+M+SF":2.3,"V+DF+KF+M":1.1},"noGov":0,"formationStage":"forhandlinger","changelog":["M globalHarshness op (0.24 \u2192 0.32): L\u00f8kkes h\u00e5rde linje mod EL og formueskat","EL bl\u00f8der op: globalHarshness 0.64 \u2192 0.56, fleksibel forhandlingsposition","SF globalHarshness ned (0.64 \u2192 0.55): privat forventningsstyring om kompromiser","KF mere oppositions-orienteret (gov 0.70 \u2192 0.55): tilfreds med opposition","KF\u2192S inGov ned (0.43 \u2192 0.35): SVMRK vurderes urealistisk"]}];
       let timelineData = TIMELINE_DATA;
 
       function renderTimeline() {

@@ -1108,14 +1108,15 @@ function simulate(userParams, N) {
     // Default sigma = 0.05 for all values. Captures genuine uncertainty
     // about negotiation outcomes — no bilateral is a point estimate.
     // Special cases get higher sigma where uncertainty is greater.
-    const BILATERAL_SIGMA_DEFAULT = 0.05;
+    const BILATERAL_SIGMA_DEFAULT = 0.02;  // low default: most bilaterals are well-calibrated
     const BILATERAL_SIGMA_OVERRIDES = {
       // M-facing relationships with higher uncertainty
-      "M.EL.tolerateInGov": 0.10,  // main hurdle for center-left govt
-      "SF.M.inGov": 0.06,          // untested partnership
-      "M.SF.inGov": 0.06,          // policy distance is real
-      "EL.M.tolerateInGov": 0.08,  // grassroots constraint
-      "DD.M.tolerateInGov": 0.08,  // personal animosity, uncertain resolution
+      "M.EL.tolerateInGov": 0.08,  // main hurdle for center-left govt
+      "SF.M.inGov": 0.05,          // untested partnership
+      "M.SF.inGov": 0.05,          // policy distance is real
+      "EL.M.tolerateInGov": 0.06,  // grassroots constraint
+      "DD.M.tolerateInGov": 0.06,  // personal animosity, uncertain resolution
+      "RV.M.tolerateInGov": 0.04,  // 2022 trauma — low base, moderate uncertainty
     };
     const _savedAllBilaterals = {};
     for (const party of PARTIES_LIST) {
