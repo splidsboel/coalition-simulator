@@ -764,9 +764,9 @@ function selectGovernment(mandates, naAlignments, cfg, coalitions) {
     // Desperation fallback: allow sub-90 coalitions
     const despCfg = { ...cfg, flexibility: Math.min(0.5, (cfg.flexibility || 0) + flexIncrement), _naAlignments: naAlignments };
     const despCandidates = [
-      tryGroup(sLed, sLedBonus, despCfg, 0.05, false),
-      tryGroup(blueLed, blueBonus, despCfg, 0.05, false),
-      tryGroup(mLed, mLedBonus, despCfg, 0.05, false)
+      tryGroup(sLed, sLedBonus, despCfg, 0.05, !!cfg.require90Only),
+      tryGroup(blueLed, blueBonus, despCfg, 0.05, !!cfg.require90Only),
+      tryGroup(mLed, mLedBonus, despCfg, 0.05, !!cfg.require90Only)
     ].filter(Boolean);
     let despBest = null;
     for (const c of despCandidates) { if (!despBest || c.score > despBest.score) despBest = c; }
@@ -809,9 +809,9 @@ function selectGovernment(mandates, naAlignments, cfg, coalitions) {
       flexibility: (cfg.flexibility || 0) + (maxRedRounds + 1) * flexIncrement,
       _naAlignments: naAlignments
     };
-    const desperationResultBlue = tryGroup(sLed, sLedBonus, desperationCfgBlue, 0.05, false)
-      || tryGroup(blueLed, blueBonus, desperationCfgBlue, 0.05, false)
-      || tryGroup(mLed, mLedBonus, desperationCfgBlue, 0.05, false);
+    const desperationResultBlue = tryGroup(sLed, sLedBonus, desperationCfgBlue, 0.05, !!cfg.require90Only)
+      || tryGroup(blueLed, blueBonus, desperationCfgBlue, 0.05, !!cfg.require90Only)
+      || tryGroup(mLed, mLedBonus, desperationCfgBlue, 0.05, !!cfg.require90Only);
     if (desperationResultBlue) {
       desperationResultBlue.formationRound = maxRedRounds + 2;
       desperationResultBlue.formateurOrder = "desperation";
@@ -904,9 +904,9 @@ function selectGovernment(mandates, naAlignments, cfg, coalitions) {
     flexibility: Math.min(0.5, (cfg.flexibility || 0) + (desperationRoundNum - 1) * flexIncrement),
     _naAlignments: naAlignments
   };
-  const desperationResult = tryGroup(sLed, sLedBonus, desperationCfg, 0.05, false)
-    || tryGroup(blueLed, blueBonus, desperationCfg, 0.05, false)
-    || tryGroup(mLed, mLedBonus, desperationCfg, 0.05, false);
+  const desperationResult = tryGroup(sLed, sLedBonus, desperationCfg, 0.05, !!cfg.require90Only)
+    || tryGroup(blueLed, blueBonus, desperationCfg, 0.05, !!cfg.require90Only)
+    || tryGroup(mLed, mLedBonus, desperationCfg, 0.05, !!cfg.require90Only);
   if (desperationResult) {
     desperationResult.formationRound = desperationRoundNum;
     desperationResult.formateurOrder = "desperation";
@@ -1013,7 +1013,8 @@ function buildConfig(userParams) {
     flexIncrement: 0.05,
     formateurPull: 0.3,
     floorThreshold: 0.7,
-    mistillidThreshold: 0.10
+    mistillidThreshold: 0.10,
+    require90Only: true  // Default: only 90-viable coalitions. Toggle off to allow skiftende flertal.
   };
 
   const cfg = { ...defaults };

@@ -1331,6 +1331,7 @@
         N: 5000,
         mDemandGov: true,
         sDemandGov: true,
+        require90Only: true,
         pmDemand: !!Sim5Parties.PARTIES_MAP.S.pmDemand,
         partySettings: MAIN_PARTIES.reduce((acc, party) => {
           acc[party.id] = {
@@ -1697,6 +1698,17 @@ onmessage = function(e) {
               </select>
             </div>
 
+            <div class="field inline">
+              <div>
+                <div class="field-label">Kræv 90 mandater</div>
+                <div class="field-note">Kun koalitioner der kan samle 90 stemmer (inkl. støttepartier) kan dannes. Slå fra for at tillade skiftende flertal.</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="control-require90Only" data-control="require90Only" checked>
+                <span class="toggle-track"></span>
+              </label>
+            </div>
+
             <div class="field">
               <div class="field-header">
                 <span class="field-label">Viabilitetstærskel</span>
@@ -2015,6 +2027,7 @@ onmessage = function(e) {
           N: Number(document.getElementById("control-N").value),
           mDemandGov: document.getElementById("party-M-demandgov")?.checked || false,
           sDemandGov: document.getElementById("party-S-demandgov")?.checked || false,
+          require90Only: document.getElementById("control-require90Only")?.checked ?? true,
           demandGov: ["SF", "RV", "V", "KF", "LA"].reduce((acc, id) => {
             const el = document.getElementById(`party-${id}-demandgov`);
             if (el && el.checked) acc[id] = true;
@@ -2045,6 +2058,7 @@ onmessage = function(e) {
           viabilityThreshold: DEFAULTS.viabilityThreshold,
           N: DEFAULTS.N,
           mDemandGov: DEFAULTS.mDemandGov,
+          require90Only: DEFAULTS.require90Only,
           pmDemand: DEFAULTS.pmDemand,
           partySettings: MAIN_PARTIES.reduce((acc, party) => {
             acc[party.id] = { globalHarshness: DEFAULTS.partySettings[party.id].globalHarshness };
@@ -2067,6 +2081,7 @@ onmessage = function(e) {
         document.getElementById("control-viabilityThreshold").value = params.viabilityThreshold;
         document.getElementById("control-N").value = params.N;
         document.getElementById("party-M-demandgov").checked = params.mDemandGov;
+        if (document.getElementById("control-require90Only")) document.getElementById("control-require90Only").checked = params.require90Only;
         document.getElementById("party-S-pmdemand").checked = params.pmDemand;
         const sDemandGovEl = document.getElementById("party-S-demandgov");
         if (sDemandGovEl) sDemandGovEl.checked = params.sDemandGov != null ? params.sDemandGov : true;
