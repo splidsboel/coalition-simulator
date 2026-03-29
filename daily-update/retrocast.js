@@ -54,6 +54,21 @@ const HISTORICAL_OVERRIDES = {
       "EL.globalHarshness": { from: 0.56, to: 0.64 },
       "ALT.globalHarshness": { from: 0.48, to: 0.53 },
     }
+  },
+  "2026-03-28": {
+    label: "forhandlinger",
+    formationStage: "forhandlinger",
+    changelog: [
+      "EL bløder op: globalHarshness 0.64 → 0.56, fleksibel forhandlingsposition",
+      "ALT globalHarshness ned (0.53 → 0.48): svinepagt som eneste ultimatum",
+      "SF globalHarshness ned (0.64 → 0.55): privat forventningsstyring om kompromiser"
+    ],
+    overrides: {
+      // Revert March 29 changes (LA/BP seat reductions + løsgængere are structural, not brief-driven)
+      // Actually: the expulsions ARE events. But the seats were changed in sim5-parties.js
+      // directly, so we need to temporarily restore LA=16, BP=4 for the March 28 retrocast.
+      // This is handled by mandate overrides, not party property overrides.
+    }
   }
 };
 

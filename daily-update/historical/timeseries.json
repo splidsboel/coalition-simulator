@@ -55,5 +55,26 @@
       "ALT globalHarshness ned (0.53 → 0.48): svinepagt som eneste ultimatum",
       "SF globalHarshness ned (0.64 → 0.55): privat forventningsstyring om kompromiser"
     ]
+  },
+  {
+    "date": "2026-03-29",
+    "coalitions": {
+      "S+M+RV+SF": 27.7,
+      "S+M+SF": 22.7,
+      "V+KF+LA+M": 12.9,
+      "V+KF+M": 9,
+      "V+LA+M": 5.6,
+      "V+M": 4,
+      "S+KF+M+RV": 2.7,
+      "V+DF+KF+LA+M": 1.5
+    },
+    "noGov": 0,
+    "formationStage": "forhandlinger",
+    "changelog": [
+      "LA ekskluderer Cecilie Liv Hansen → løsgænger (LA 16→15)",
+      "BP ekskluderer Jacob Harris → løsgænger (BP 4→3)",
+      "Løsgængere modelleret med probabilistisk blå tilknytning (85-88%)",
+      "Forhandlingspause: weekend bruges til uformelle bilaterale sonderinger"
+    ]
   }
 ]
