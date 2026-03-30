@@ -1322,12 +1322,16 @@
 
       const MAIN_PARTIES = Sim5Parties.PARTIES_LIST;
       const ALL_SEATS = [...Sim5Parties.PARTIES_LIST, ...Sim5Parties.NA_SEATS];
+      const M_BLUE_ORIENTATION_MANUAL_DEFAULT = 0.50;
 
       const DEFAULTS = {
         flexibility: 0,
         redPreference: 0.5,
-        mBlueOrientation: 0.50,
-        formateurOverride: "red",
+        mBlueOrientation: null, // null = endogenous
+        crossBlocBonus: 2.0,
+        mSfInGov: 0.62,
+        dfMTolerate: 0.20,
+        formateurOverride: "simultaneous",
         maxFormationRounds: 1,
         viabilityThreshold: 0.75,
         N: 5000,
@@ -1344,19 +1348,19 @@
 
       const PRESETS = {
         "Baseline": {},
-        "Bred midte": { redPreference: 0.3, flexibility: 0.1 },
-        "Rød blok": { redPreference: 0.8 },
-        "Løkke → blå": { mBlueOrientation: 0.80, mDemandGov: false },
-        "Maksimalt pres": { flexibility: 0.3, maxFormationRounds: 3 },
-        "SF blokerer M": { flexibility: -0.2 }
+        "Bred midte": { redPreference: 0.3, crossBlocBonus: 5.0 },
+        "Rød blok": { redPreference: 0.8, mSfInGov: 0.80 },
+        "Løkke → blå": { mBlueOrientation: 0.85, mDemandGov: false },
+        "DF accepterer M": { dfMTolerate: 0.60 },
+        "SF blokerer M": { mSfInGov: 0.15 }
       };
       const PRESET_DESCRIPTIONS = {
-        "Baseline": "Alle parametre på standardværdier. Udgangspunkt for sammenligning.",
-        "Bred midte": "Frederiksen foretrækker bred koalition med M. Let forhandlingspres.",
-        "Rød blok": "Frederiksen prioriterer ren rød regering (S+SF, S+SF+RV) uden borgerlige partier.",
-        "Løkke → blå": "Løkke orienterer sig mod blå blok og kræver ikke selv regeringsdeltagelse.",
-        "Maksimalt pres": "Stærkt forhandlingspres og op til 5 runder. Partierne strækker sig langt.",
-        "SF blokerer M": "Lav fleksibilitet gør det sværere for SF at acceptere M som koalitionspartner."
+        "Baseline": "Alle parametre på standardværdier. Løkke vurderer selv hvilken blok der giver den bedste koalition.",
+        "Bred midte": "Frederiksen foretrækker bred koalition, og Løkke har en stærk præference for at bygge bro mellem blokkene.",
+        "Rød blok": "Frederiksen prioriterer ren rød regering. SF er mere villig til at acceptere M som partner.",
+        "Løkke → blå": "Løkke orienterer sig fast mod blå blok og opgiver kravet om at sidde i regering.",
+        "DF accepterer M": "Dansk Folkeparti tolererer Moderaterne i en blå regering — blå bloks finanslovsaritmetik forbedres markant.",
+        "SF blokerer M": "SF nægter at regere med Moderaterne. S+M-koalitioner bliver nærmest umulige."
       };
 
       const state = {
@@ -1665,11 +1669,57 @@ onmessage = function(e) {
           <div class="field-group">
             <div class="field">
               <div class="field-header">
-                <span class="field-label">Fleksibilitet</span>
-                <span class="value-pill" id="control-flexibility-value">0,00</span>
+                <span class="field-label">Løkkes orientering</span>
+                <span class="value-pill" id="control-mBlueOrientation-value">Auto</span>
               </div>
-              <p class="field-desc">Globalt forhandlingspres. Negative værdier = partier holder fast. Positive = partier strækker sig. Stiger automatisk i senere forhandlingsrunder.</p>
-              <input type="range" id="control-flexibility" data-control="flexibility" min="-0.3" max="0.5" step="0.05" value="0">
+              <p class="field-desc">Bestemmer om Løkkes blokorientering beregnes af modellen eller fastlåses manuelt. Når automatisk: Løkke vurderer i hver iteration den bedste koalition på begge sider ud fra politisk nærhed, centrismepræference og regeringsduelighed — og vælger den side der giver ham mest. Se "Sådan virker modellen" for detaljer.</p>
+              <div class="field inline">
+                <div>
+                  <div class="field-label">Endogen (automatisk)</div>
+                  <div class="field-note">Løkke sammenligner rød og blå side og vælger probabilistisk ud fra sin nyttefunktion.</div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" id="control-mBlueOrientation-auto" data-control="mBlueOrientationAuto" checked>
+                  <span class="toggle-track"></span>
+                </label>
+              </div>
+              <div id="mBlueOrientation-slider-wrapper" class="field" style="display:none;">
+                <div class="field-header">
+                  <span class="field-label">Løkkes orientering mod blå</span>
+                </div>
+                <input type="range" id="control-mBlueOrientation" data-control="mBlueOrientation" min="0" max="1" step="0.05" value="${M_BLUE_ORIENTATION_MANUAL_DEFAULT.toFixed(2)}">
+                <div class="field-endpoints">
+                  <span>Rød ←</span>
+                  <span>→ Blå</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="field-header">
+                <span class="field-label">Centrismepræference (tværblok-bonus)</span>
+                <span class="value-pill" id="control-crossBlocBonus-value">2,0</span>
+              </div>
+              <p class="field-desc">Hvor meget foretrækker Løkke brede koalitioner der krydser blokkene? Høj værdi = stærk præference for tværblok.</p>
+              <input type="range" id="control-crossBlocBonus" data-control="crossBlocBonus" min="1" max="10" step="0.5" value="2.0">
+            </div>
+
+            <div class="field">
+              <div class="field-header">
+                <span class="field-label">Moderaternes accept af SF i regering</span>
+                <span class="value-pill" id="control-mSfInGov-value">0,62</span>
+              </div>
+              <p class="field-desc">Løkkes villighed til at regere med SF. Afgørende for S+M+RV+SF.</p>
+              <input type="range" id="control-mSfInGov" data-control="mSfInGov" min="0" max="1" step="0.05" value="0.62">
+            </div>
+
+            <div class="field">
+              <div class="field-header">
+                <span class="field-label">DFs tolerance af M i blå regering</span>
+                <span class="value-pill" id="control-dfMTolerate-value">0,20</span>
+              </div>
+              <p class="field-desc">DFs villighed til at støtte en blå regering med Moderaterne. Afgørende for blå bloks finanslovsaritmetik.</p>
+              <input type="range" id="control-dfMTolerate" data-control="dfMTolerate" min="0" max="1" step="0.05" value="0.20">
             </div>
 
             <div class="field">
@@ -1683,31 +1733,11 @@ onmessage = function(e) {
 
             <div class="field">
               <div class="field-header">
-                <span class="field-label">Løkkes orientering</span>
-                <span class="value-pill" id="control-mBlueOrientation-value">30 %</span>
+                <span class="field-label">Fleksibilitet</span>
+                <span class="value-pill" id="control-flexibility-value">0,00</span>
               </div>
-              <p class="field-desc">Sandsynligheden for at Løkke forfølger en blå koalition i stedet for at samarbejde med Frederiksen. Hver iteration trækker M en strategisk orientering: ved 0 % samarbejder M altid med rød, ved 100 % forfølger M altid blå. Ved blå orientering nægter M at deltage i S-ledede regeringer og stemmer imod deres finanslov.</p>
-              <input type="range" id="control-mBlueOrientation" data-control="mBlueOrientation" min="0" max="1" step="0.05" value="0.30">
-            </div>
-
-            <div class="field">
-              <div class="field-header">
-                <span class="field-label">Første formateur</span>
-              </div>
-              <p class="field-desc">Hvem får først forsøg på at danne regering? Standard: Frederiksen (udpeget som kongelig undersøger, marts 2026). "Blå først" er et kontrafaktisk scenarie hvor en blå formateur får første forsøg.</p>
-              <select id="control-formateurOverride" data-control="formateurOverride">
-                <option value="red" selected>Rød (S) først — standard</option>
-                <option value="blue">Blå (V) først — kontrafaktisk</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <div class="field-header">
-                <span class="field-label">Viabilitetstærskel</span>
-                <span class="value-pill" id="control-viabilityThreshold-value">0,70</span>
-              </div>
-              <p class="field-desc">Minimum sandsynlighed for at formatøren kan forhandle en budgetaftale med tilstrækkeligt mange støttepartier. Høj tærskel = kræver sikre aftaler. Lav = tager chancer. Gælder for både rød og blå formatør.</p>
-              <input type="range" id="control-viabilityThreshold" data-control="viabilityThreshold" min="0.3" max="0.9" step="0.05" value="0.75">
+              <p class="field-desc">Globalt forhandlingspres. Negative værdier = partier holder fast. Positive = partier strækker sig. Stiger automatisk i senere forhandlingsrunder.</p>
+              <input type="range" id="control-flexibility" data-control="flexibility" min="-0.3" max="0.5" step="0.05" value="0">
             </div>
 
             <button type="button" id="run-button" class="run-button dirty">Kør simulering ▶</button>
@@ -1717,6 +1747,15 @@ onmessage = function(e) {
             <summary class="field-label">Modelantagelser</summary>
 
           <div class="field-group">
+            <div class="field">
+              <div class="field-header">
+                <span class="field-label">Viabilitetstærskel</span>
+                <span class="value-pill" id="control-viabilityThreshold-value">0,75</span>
+              </div>
+              <p class="field-desc">Minimum budgetpassage-sandsynlighed for at en koalition kan dannes. Høj tærskel = kræver sikre aftaler. Lav = tager chancer. Anvendes i den sekventielle protokol; i simultan tilstand bruges scoringsfunktionen i stedet.</p>
+              <input type="range" id="control-viabilityThreshold" data-control="viabilityThreshold" min="0.3" max="0.9" step="0.05" value="0.75">
+            </div>
+
             <div class="field">
               <div class="field-header">
                 <span class="field-label">M–EL forståelsespapir</span>
@@ -1731,7 +1770,7 @@ onmessage = function(e) {
                 <span class="field-label">Vægt på budgetsikkerhed vs. politisk kvalitet</span>
                 <span class="value-pill" id="control-passageWeight-value">0,65</span>
               </div>
-              <p class="field-desc">Hvor meget vægter formatøren budgetafstemningens sandsynlighed vs. koalitionens politiske kvalitet?</p>
+              <p class="field-desc">Hvor meget vægter scoringsfunktionen budgetafstemningens sandsynlighed vs. koalitionens politiske kvalitet?</p>
               <input type="range" id="control-passageWeight" data-control="passageWeight" min="0.3" max="0.9" step="0.05" value="0.65">
               <div class="field-endpoints">
                 <span>Politisk kvalitet</span>
@@ -1777,15 +1816,6 @@ onmessage = function(e) {
 
             <div class="field">
               <div class="field-header">
-                <span class="field-label">Forhandlingsforsøg / S-formatør</span>
-                <span class="value-pill" id="control-maxFormationRounds-value">1</span>
-              </div>
-              <p class="field-desc">Antal forsøg inden for Frederiksens formatørmandat. Hvert forsøg stiger fleksibiliteten lidt — partierne bliver mere pragmatiske efterhånden. Hvis alle forsøg fejler, overgår mandatet til en blå formatør med lavere viabilitetstærskel (0,10).</p>
-              <input type="range" id="control-maxFormationRounds" data-control="maxFormationRounds" min="1" max="5" step="1" value="1">
-            </div>
-
-            <div class="field">
-              <div class="field-header">
                 <span class="field-label">Iterationer</span>
               </div>
               <p class="field-desc">Antal Monte Carlo-simuleringer. Flere = mere præcist men langsommere.</p>
@@ -1809,7 +1839,7 @@ onmessage = function(e) {
 
             <div class="field">
               <div class="field-header">
-                <span class="field-label">Formateurtiltrækning</span>
+                <span class="field-label">Statsministerens forhandlingsstyrke</span>
                 <span class="value-pill" id="control-formateurPull-value">0,30</span>
               </div>
               <p class="field-desc">Ekstra indflydelse til statsministerkandidaten i platformforhandlinger. Højere = regeringens politik ligner mere statsministerens parti.</p>
@@ -1866,21 +1896,34 @@ onmessage = function(e) {
                   <strong>Platformforhandling:</strong> Hver koalitions politiske platform forhandles som et vægtet kompromis. Hvert partis indflydelse afhænger af dets mandattal, hvor vigtigt emnet er for partiet, og hvor essentielt partiet er for koalitionen (et lille parti, der er afgørende for flertallet, har forhandlingsstyrke ud over sine mandater). Hvis platformen tvinger et parti ud over dets acceptable grænse, trækker en blød gulvmekanisme platformen mod et kompromis, vægtet efter alle partiers indsats — ikke et binært enten-eller.
                 </p>
                 <p class="field-desc methodology-copy">
-                  <strong>Vægtningen w:</strong> Parameteren <span class="mono">w</span> styrer balancen. Høj <span class="mono">w</span> betyder, at formatøren prioriterer budgetsikkerhed. Lav <span class="mono">w</span> betyder, at formatøren prioriterer politisk kvalitet. Vi kender ikke den sande værdi, så modellen varierer <span class="mono">w</span> mellem simuleringerne, normalt omkring 0,65, for at afspejle denne usikkerhed. Du kan justere <span class="mono">w</span> under Modelantagelser i kontrolpanelet.
+                  <strong>Vægtningen w:</strong> Parameteren <span class="mono">w</span> styrer balancen. Høj <span class="mono">w</span> betyder, at scoringsfunktionen prioriterer budgetsikkerhed. Lav <span class="mono">w</span> betyder, at den prioriterer politisk kvalitet. Vi kender ikke den sande værdi, så modellen varierer <span class="mono">w</span> mellem simuleringerne, normalt omkring 0,65, for at afspejle denne usikkerhed. Du kan justere <span class="mono">w</span> under Modelantagelser i kontrolpanelet.
+                </p>
+              </section>
+
+              <section class="field-group methodology-section">
+                <p class="field-label methodology-heading"><strong>Løkkes centrale rolle</strong></p>
+                <p class="field-desc methodology-copy">
+                  Moderaterne sidder med nøglen til regeringsdannelsen. Løkke kan vælge rød side (S+M-koalitioner med høj budgetsikkerhed) eller blå side (V+M-koalitioner med lav budgetsikkerhed men tættere politisk match). Modellen beregner Løkkes valg <em>endogent</em> i hver iteration: han vurderer den bedste koalition på begge sider og vælger probabilistisk ud fra en nyttefunktion.
+                </p>
+                <p class="field-desc methodology-copy">
+                  <strong>Løkkes nyttefunktion:</strong> For hver koalition med M beregnes tre faktorer. (1) <em>Politisk nærhed</em>: hvor tæt er koalitionens forhandlede platform på Løkkes egne politiske idealer? (2) <em>Centrismepræference</em>: en bonus for koalitioner der krydser blokkene — Løkke grundlagde Moderaterne for at bygge bro. (3) <em>Regeringsduelighed</em>: sandsynligheden for at koalitionen kan vedtage en finanslov, opløftet i anden potens — en strategisk aktør nedvurderer koalitioner med lav overlevelseschance overproportionalt.
+                </p>
+                <p class="field-desc methodology-copy">
+                  Løkke sammenligner den bedste koalition på rød og blå side og vælger probabilistisk: sandsynligheden for at gå blå er lig blå nytte delt med den samlede nytte. Når Løkke vælger en side, lukkes den anden side — M nægter at samarbejde med den fravalgte side. Du kan fastlåse Løkkes orientering manuelt i kontrolpanelet eller lade modellen beregne den.
                 </p>
               </section>
 
               <section class="field-group methodology-section">
                 <p class="field-label methodology-heading"><strong>Usikkerhed og konfidensintervaller</strong></p>
                 <p class="field-desc methodology-copy">
-                  Flere af modellens parametre er genuint usikre, f.eks. SFs og Ms villighed til at regere sammen, Ms tolerance for EL som støtteparti og formatørens risikovillighed. I stedet for at vælge én fast værdi trækker modellen disse parametre fra sandsynlighedsfordelinger i hver simuleringsrunde. Det betyder, at outputtet afspejler reel usikkerhed snarere end falsk præcision. Resultaternes spredning viser, hvor følsom konklusionen er over for antagelser, vi ikke kan fastslå med sikkerhed.
+                  Flere af modellens parametre er genuint usikre, f.eks. SFs og Ms villighed til at regere sammen, Ms tolerance for EL som støtteparti og viabilitetstærsklens placering. I stedet for at vælge én fast værdi trækker modellen disse parametre fra sandsynlighedsfordelinger i hver simuleringsrunde. Det betyder, at outputtet afspejler reel usikkerhed snarere end falsk præcision. Resultaternes spredning viser, hvor følsom konklusionen er over for antagelser, vi ikke kan fastslå med sikkerhed.
                 </p>
               </section>
 
               <section class="field-group methodology-section">
                 <p class="field-label methodology-heading"><strong>Hvad du kan justere</strong></p>
                 <p class="field-desc methodology-copy">
-                  Scenariokontrol-panelet lader dig ændre de vigtigste politiske antagelser, som fleksibilitet, rød præference og formatørvalg. Under Modelantagelser kan du justere modellens strukturelle valg, f.eks. hvor meget budgetpassage dominerer, og hvor tilbageholdende oppositionen er. Under Kalibrering finder du tekniske parametre til finindstilling.
+                  Scenariokontrol-panelet fokuserer på de mest afgørende politiske antagelser. De vigtigste: Løkkes blokorientering (automatisk eller manuelt fastlåst), hans centrismepræference (hvor stærkt han foretrækker tværblok-koalitioner), og de to bilaterale relationer der bestemmer, om S+M+RV+SF og blå M-regeringer er mulige: Moderaternes accept af SF og DFs tolerance af M. Under Modelantagelser kan du justere modellens strukturelle valg. Under Kalibrering finder du tekniske parametre.
                 </p>
               </section>
 
@@ -1890,7 +1933,7 @@ onmessage = function(e) {
                 <section class="field-group methodology-section">
                   <p class="field-label methodology-heading"><strong>Scoringsfunktionens komponenter</strong></p>
                   <p class="field-desc methodology-copy">
-                    Koalitionskvalitet = ideoFit &times; parsimony &times; mwcc &times; govEase, hvor ideoFit måler den gennemsnitlige parvise politiske afstand, parsimony belønner færre regeringspartier ([1.15, 1.10, 0.95, 0.85] for 1-4 partier), mwcc giver bonus til minimum vindende forbundne koalitioner (1.15), og govEase måler evnen til at finde lovgivningsflertal på tværs af politikområder (0.5 + 1.0 &times; gennemsnitlig gennemførlighed).
+                    Koalitionskvalitet = ideoFit &times; parsimony &times; mwcc &times; govEase &times; flertalsgab &times; eksternAfhængighed. De fire første: ideoFit måler parvise politiske afstande, parsimony belønner færre partier, mwcc giver bonus til minimum vindende forbundne koalitioner, govEase måler evnen til at finde flertal. Flertalsgab er en ikke-lineær straf for koalitioner hvis samlede støttegrundlag (regering + forståelsespapir + støttepartier) falder under 90 mandater — straf er størst lige under 90 og aftager derefter. Ekstern afhængighed straffer koalitioner der er afhængige af nordatlantiske mandater eller løsgængere.
                   </p>
                 </section>
 
@@ -1911,7 +1954,7 @@ onmessage = function(e) {
                 <section class="field-group methodology-section">
                   <p class="field-label methodology-heading"><strong>Formationsprotokol</strong></p>
                   <p class="field-desc methodology-copy">
-                    S-formatøren forsøger først i 1-5 runder med stigende fleksibilitet. Hvis alle S-forsøg fejler, får en blå formatør chancen med samme viabilitetstærskel. Hvis også det fejler, følger en sidste desperationsrunde med tærskel 0.05. Historisk er der altid dannet en regering.
+                    Alle koalitioner konkurrerer simultant: S-ledede, V-ledede og M-ledede koalitioner evalueres parallelt, og den højest scorende vinder. Dette afspejler at alle sider forhandler samtidigt i virkeligheden. Løkkes endogene orientering bestemmer, hvilke koalitioner der er tilgængelige — når Løkke vælger blå, lukkes S+M-koalitioner. Scoringsfunktionen alene afgør vinderen; ingen viabilitetstærskel favoriserer den ene side.
                   </p>
                 </section>
 
@@ -1976,6 +2019,10 @@ onmessage = function(e) {
         document.querySelectorAll('input[type="range"]').forEach(input => {
           const output = document.getElementById(input.id + "-value");
           if (!output) return;
+          if (input.id === "control-mBlueOrientation" && document.getElementById("control-mBlueOrientation-auto")?.checked) {
+            output.textContent = "Auto";
+            return;
+          }
           const decimals = (String(input.step).split(".")[1] || "").length;
           output.textContent = formatDecimal(Number(input.value), decimals);
         });
@@ -1987,6 +2034,13 @@ onmessage = function(e) {
             summary.textContent = formatDecimal(Number(input.value), 2);
           }
         });
+      }
+
+      function syncMBlueOrientationControl() {
+        const autoEl = document.getElementById("control-mBlueOrientation-auto");
+        const wrapper = document.getElementById("mBlueOrientation-slider-wrapper");
+        if (!autoEl || !wrapper) return;
+        wrapper.style.display = autoEl.checked ? "none" : "";
       }
 
       function collectParams() {
@@ -2012,12 +2066,15 @@ onmessage = function(e) {
 
         // Helper to read a range/select value if the element exists
         const num = id => { const el = document.getElementById(id); return el ? Number(el.value) : undefined; };
+        const mBlueOrientationAuto = document.getElementById("control-mBlueOrientation-auto");
 
         return {
           flexibility: Number(document.getElementById("control-flexibility").value),
           redPreference: Number(document.getElementById("control-redPreference").value),
-          mBlueOrientation: Number(document.getElementById("control-mBlueOrientation").value),
-          maxFormationRounds: Number(document.getElementById("control-maxFormationRounds").value),
+          mBlueOrientation: mBlueOrientationAuto?.checked ? null : Number(document.getElementById("control-mBlueOrientation").value),
+          crossBlocBonus: num("control-crossBlocBonus"),
+          mSfInGov: num("control-mSfInGov"),
+          dfMTolerate: num("control-dfMTolerate"),
           viabilityThreshold: Number(document.getElementById("control-viabilityThreshold").value),
           N: Number(document.getElementById("control-N").value),
           mDemandGov: document.getElementById("party-M-demandgov")?.checked || false,
@@ -2033,7 +2090,6 @@ onmessage = function(e) {
           oppositionAbstention: num("control-oppositionAbstention"),
           rescueBase: num("control-rescueBase"),
           mDemandPM: document.getElementById("party-M-demandpm").checked,
-          formateurOverride: document.getElementById("control-formateurOverride").value,
           // Calibration parameters
           flexIncrement: num("control-flexIncrement"),
           formateurPull: num("control-formateurPull"),
@@ -2047,8 +2103,9 @@ onmessage = function(e) {
           flexibility: DEFAULTS.flexibility,
           redPreference: DEFAULTS.redPreference,
           mBlueOrientation: DEFAULTS.mBlueOrientation,
-          formateurOverride: DEFAULTS.formateurOverride,
-          maxFormationRounds: DEFAULTS.maxFormationRounds,
+          crossBlocBonus: DEFAULTS.crossBlocBonus,
+          mSfInGov: DEFAULTS.mSfInGov,
+          dfMTolerate: DEFAULTS.dfMTolerate,
           viabilityThreshold: DEFAULTS.viabilityThreshold,
           N: DEFAULTS.N,
           mDemandGov: DEFAULTS.mDemandGov,
@@ -2068,9 +2125,11 @@ onmessage = function(e) {
 
         document.getElementById("control-flexibility").value = params.flexibility;
         document.getElementById("control-redPreference").value = params.redPreference;
-        document.getElementById("control-mBlueOrientation").value = params.mBlueOrientation != null ? params.mBlueOrientation : DEFAULTS.mBlueOrientation;
-        document.getElementById("control-formateurOverride").value = params.formateurOverride != null ? params.formateurOverride : DEFAULTS.formateurOverride;
-        document.getElementById("control-maxFormationRounds").value = params.maxFormationRounds;
+        document.getElementById("control-mBlueOrientation").value = params.mBlueOrientation != null ? params.mBlueOrientation : M_BLUE_ORIENTATION_MANUAL_DEFAULT;
+        document.getElementById("control-mBlueOrientation-auto").checked = params.mBlueOrientation == null;
+        document.getElementById("control-crossBlocBonus").value = params.crossBlocBonus != null ? params.crossBlocBonus : DEFAULTS.crossBlocBonus;
+        document.getElementById("control-mSfInGov").value = params.mSfInGov != null ? params.mSfInGov : DEFAULTS.mSfInGov;
+        document.getElementById("control-dfMTolerate").value = params.dfMTolerate != null ? params.dfMTolerate : DEFAULTS.dfMTolerate;
         document.getElementById("control-viabilityThreshold").value = params.viabilityThreshold;
         document.getElementById("control-N").value = params.N;
         document.getElementById("party-M-demandgov").checked = params.mDemandGov;
@@ -2106,6 +2165,7 @@ onmessage = function(e) {
           if (el) el.value = params[key] != null ? params[key] : defaultValue;
         }
 
+        syncMBlueOrientationControl();
         state.suppressControlEvents = false;
         state.scenarioName = scenarioName;
         setActivePreset(scenarioName in PRESETS ? scenarioName : null);
@@ -2530,16 +2590,6 @@ onmessage = function(e) {
                     <strong class="mono">${formatPct(results.noGovPct || 0, 0)}</strong>
                   </div>
                   <div class="metric-card">
-                    <small>Formateur</small>
-                    <strong class="mono">${(() => {
-                      const fo = results.formateurOrder || {};
-                      const redPct = fo["rød først"] || 0;
-                      const bluePct = fo["blå først"] || 0;
-                      if (bluePct > 0) return "S " + formatPct(redPct, 0) + " · V " + formatPct(bluePct, 0);
-                      return "S " + formatPct(redPct, 0);
-                    })()}</strong>
-                  </div>
-                  <div class="metric-card">
                     <small>Hyppigste regering</small>
                     <strong>${topCoalition ? escapeHtml(topCoalition.label) : "Ingen"}</strong>
                   </div>
@@ -2854,25 +2904,25 @@ onmessage = function(e) {
         };
 
         const importanceRows = [
-          { label: "Viabilitetstærskel", value: 2.31, note: "Hvor risikovillig er formatøren?", category: "scenario" },
+          { label: "Viabilitetstærskel", value: 2.31, note: "Minimumskrav til budgetpassage", category: "scenario" },
           { label: "Rød præference", value: 2.01, note: "Foretrækker Frederiksen rød eller bred?", category: "scenario" },
           { label: "Fleksibilitet", value: 1.28, note: "Forhandlingspres og kompromisvillighed", category: "scenario" },
           { label: "Oppositionens tilbageholdenhed", value: 0.90, note: "Oppositionens tilbageholdenhed ved finanslov", category: "model" },
           { label: "Budgetpassage vs kvalitet (w)", value: 0.73, note: "Budgetsikkerhed vs. politisk kvalitet", category: "model" },
           { label: "M kræver regering", value: 0.71, note: "Kræver M at deltage i regeringen?", category: "scenario" },
-          { label: "Forhandlingsforsøg", value: 0.68, note: "Antal forhandlingsforsøg", category: "scenario" },
+          { label: "Forhandlingsrunder", value: 0.68, note: "Antal forhandlingsrunder", category: "scenario" },
           { label: "Finanslovsredning", value: 0.66, note: "Tværblok-redning af finansloven", category: "model" },
-          { label: "Formatørtiltrækning", value: 0.58, note: "Formatørens forhandlingsstyrke", category: "model" },
+          { label: "SM-forhandlingsstyrke", value: 0.58, note: "Statsministerens forhandlingsstyrke", category: "model" },
           { label: "M→SF i regering", value: 0.50, note: "Ms villighed til SF som koalitionspartner", category: "party" }
         ];
 
         // Structural parameter sparklines (from highres-1d-sweeps.jsonl, 13 points, double-smoothed)
         const structuralCurves = [
-          { label: "Viabilitetstærskel", caption: "Formatørens minimumskrav til budgetpassage. Højere = kun sikre koalitioner forsøges.", values: [27, 29, 30, 30, 29, 29, 30, 31, 32, 35, 38, 39, 38], range: [0.41, 0.84], color: "#1e3a5f", featured: true },
+          { label: "Viabilitetstærskel", caption: "Minimumskrav til budgetpassage for at en koalition kan dannes. Højere = kun sikre koalitioner forsøges.", values: [27, 29, 30, 30, 29, 29, 30, 31, 32, 35, 38, 39, 38], range: [0.41, 0.84], color: "#1e3a5f", featured: true },
           { label: "Rød præference", caption: "Foretrækker Frederiksen en ren rød eller en bred midterregering?", values: [24, 25, 26, 28, 30, 31, 30, 28, 26, 24, 22, 20, 18], range: [0.02, 0.98], color: "#2c5282" },
           { label: "Fleksibilitet", caption: "Forhandlingspres. Negativt = partier holder fast. Positivt = kompromisvillighed stiger.", values: [22, 25, 28, 30, 31, 33, 35, 36, 37, 36, 34, 34, 35], range: [-0.29, 0.49], color: "#3a6ea5" },
           { label: "Oppositionens tilbageholdenhed", caption: "Stemmer det største oppositionsparti imod eller undlader at stemme? Dansk norm: undlade.", values: [29, 31, 32, 33, 34, 35, 36, 37, 37, 38, 40, 42, 42], range: [0.11, 0.69], color: "#d97706" },
-          { label: "Budgetpassage vs kvalitet (w)", caption: "Vægter formatøren budgetsikkerhed (høj) eller politisk kvalitet (lav)?", values: [28, 28, 28, 29, 31, 32, 31, 32, 34, 35, 35, 33, 31], range: [0.31, 0.89], color: "#b45309" },
+          { label: "Budgetpassage vs kvalitet (w)", caption: "Vægter scoringsfunktionen budgetsikkerhed (høj) eller politisk kvalitet (lav)?", values: [28, 28, 28, 29, 31, 32, 31, 32, 34, 35, 35, 33, 31], range: [0.31, 0.89], color: "#b45309" },
         ];
 
         // Bilateral relationship sparklines (13 points, double-smoothed)
@@ -2918,7 +2968,7 @@ onmessage = function(e) {
         els.sensitivityCard.innerHTML = `
           <div class="card-body">
             <div class="sensitivity-shell">
-              <p class="sensitivity-intro">Sensitivitetsanalysen viser, hvilke antagelser der faktisk flytter koalitionsfordelingen. Først kommer formatørens egne valg, derefter modellens spilleregler og til sidst de partiforhold, der afgør, hvilken regering der vinder inden for de rammer.</p>
+              <p class="sensitivity-intro">Sensitivitetsanalysen viser, hvilke antagelser der faktisk flytter koalitionsfordelingen. Først kommer de centrale scenarieparametre, derefter modellens spilleregler og til sidst de partiforhold, der afgør, hvilken regering der vinder inden for de rammer.</p>
 
               <section class="field-group methodology-section sensitivity-section sensitivity-section-card">
                 <p class="field-label methodology-heading"><strong>De vigtigste knapper</strong></p>
@@ -2992,7 +3042,7 @@ onmessage = function(e) {
       }
 
       // ==================== TIMELINE TAB ====================
-      const TIMELINE_DATA = [{"date":"2026-03-24","coalitions":{"S+M+RV+SF":26.6,"S+M+SF":21.4,"S+RV+SF":0,"S+KF+M+RV":2.2,"V+KF+LA+M":12,"V+KF+M":9.8,"V+LA+M":6.1,"V+M":4.8},"noGov":0,"formationStage":"valgaften","changelog":["Udgangspunkt: kalibrering fra valgaften, f\u00f8r forhandlingssignaler"]},{"date":"2026-03-26","coalitions":{"S+M+RV+SF":24.6,"S+M+SF":20.4,"S+RV+SF":0,"S+KF+M+RV":2.1,"V+KF+LA+M":12.7,"V+KF+M":9.9,"V+LA+M":6,"V+M":4.6},"noGov":0,"formationStage":"forhandlinger","changelog":["SF mistillidstrussel h\u00e6ver SF globalHarshness","Konservative \u00e5bner d\u00f8ren til S"]},{"date":"2026-03-28","coalitions":{"S+M+RV+SF":23.1,"S+M+SF":19.7,"S+RV+SF":0,"S+KF+M+RV":1.9,"V+KF+LA+M":13.4,"V+KF+M":9.2,"V+LA+M":6.2,"V+M":3.7},"noGov":0,"formationStage":"forhandlinger","changelog":["EL bl\u00f8der op: globalHarshness 0.64 \u2192 0.56, fleksibel forhandlingsposition","ALT globalHarshness ned (0.53 \u2192 0.48): svinepagt som eneste ultimatum","SF globalHarshness ned (0.64 \u2192 0.55): privat forventningsstyring om kompromiser"]},{"date":"2026-03-29","coalitions":{"S+M+RV+SF":23.8,"S+M+SF":19.6,"S+RV+SF":11.2,"S+KF+M+RV":2.3,"V+KF+LA+M":10.3,"V+KF+M":7.2,"V+LA+M":4.7,"V+M":2.7},"noGov":0,"formationStage":"forhandlinger","changelog":["LA ekskluderer Cecilie Liv Hansen \u2192 l\u00f8sg\u00e6nger (LA 16\u219215)","BP ekskluderer Jacob Harris \u2192 l\u00f8sg\u00e6nger (BP 4\u21923)","L\u00f8sg\u00e6ngere modelleret med probabilistisk bl\u00e5 tilknytning (60%)","Forhandlingspause: weekend bruges til uformelle bilaterale sonderinger"]}];
+      const TIMELINE_DATA = [{"date":"2026-03-24","coalitions":{"S+M+RV+SF":36.4,"S+M+SF":22.2,"V+KF+LA+M":10.9,"V+KF+M":10.6,"V+LA+M":6.9,"V+M":5.8,"S+KF+M+RV":1.9,"V+DD+M":0.6},"noGov":0.01,"formationStage":"valgaften","changelog":["Udgangspunkt: kalibrering fra valgaften, f\u00f8r forhandlingssignaler"]},{"date":"2026-03-26","coalitions":{"S+M+RV+SF":36.5,"S+M+SF":21.9,"V+KF+M":10.7,"V+KF+LA+M":10.4,"V+LA+M":7,"V+M":5.7,"S+KF+M+RV":2.3,"V+DD+KF+M":0.6},"noGov":0.01,"formationStage":"forhandlinger","changelog":["SF mistillidstrussel h\u00e6ver SF globalHarshness","Konservative \u00e5bner d\u00f8ren til S"]},{"date":"2026-03-28","coalitions":{"S+M+RV+SF":35.8,"S+M+SF":22.2,"V+KF+M":11.1,"V+KF+LA+M":10.7,"V+LA+M":6.8,"V+M":5.7,"S+KF+M+RV":2.4,"S+M+V":0.6},"noGov":0,"formationStage":"forhandlinger","changelog":["EL bl\u00f8der op: globalHarshness 0.64 \u2192 0.56, fleksibel forhandlingsposition","ALT globalHarshness ned (0.53 \u2192 0.48): svinepagt som eneste ultimatum","SF globalHarshness ned (0.64 \u2192 0.55): privat forventningsstyring om kompromiser"]},{"date":"2026-03-29","coalitions":{"S+M+RV+SF":31.8,"S+M+SF":19.4,"V+KF+M":10.8,"V+KF+LA+M":10.6,"V+LA+M":6.8,"V+M":5.9,"S+RV+SF":5.8,"S+KF+M+RV":2.3},"noGov":0,"formationStage":"forhandlinger","changelog":["LA ekskluderer Cecilie Liv Hansen \u2192 l\u00f8sg\u00e6nger (LA 16\u219215)","BP ekskluderer Jacob Harris \u2192 l\u00f8sg\u00e6nger (BP 4\u21923)","L\u00f8sg\u00e6ngere modelleret med probabilistisk bl\u00e5 tilknytning (60%)","Forhandlingspause: weekend bruges til uformelle bilaterale sonderinger"]},{"date":"2026-03-30","coalitions":{"S+M+RV+SF":31.8,"V+KF+LA+M":11.1,"S+M+SF":19,"V+KF+M":10.3,"V+LA+M":7,"S+RV+SF":6.2,"V+M":5.8,"S+KF+M+RV":2},"noGov":0.01,"formationStage":"forhandlinger","changelog":["Motoropdatering: simultan koalitionskonkurrence","Endogen M-orientering: L\u00f8kke vurderer begge blokke","Kvalitetsstraffe: flertalsgab og ekstern mandatafh\u00e6ngighed","Tv\u00e6rblok-bonus i M-nyttefunktion"]}];
       let timelineData = TIMELINE_DATA;
 
       function renderTimeline() {
@@ -3121,7 +3171,7 @@ onmessage = function(e) {
       // ==================== COALITION BUILDER ====================
       const PARTY_LETTERS = { S:"A", SF:"F", M:"M", EL:"Ø", ALT:"Å", RV:"B", V:"V", LA:"I", KF:"C", DF:"O", DD:"Æ", BP:"H" };
       const BUILDER_ORDER = ["EL", "ALT", "SF", "S", "RV", "M", "KF", "V", "DD", "LA", "DF", "BP"];
-      let builderState = { selected: new Set(), formateur: "red", supportOverrides: null, naCount: null }; // naCount: null = auto
+      let builderState = { selected: new Set(), supportOverrides: null, naCount: null }; // naCount: null = auto
 
 
       function builderSupportParties(govMembers) {
@@ -3245,8 +3295,6 @@ onmessage = function(e) {
           coalLabel += ` <span style="color:var(--muted);font-weight:400;">(${support.map(s => s.id).join(", ")})</span>`;
         }
 
-        const isRedF = builderState.formateur === "red";
-
         card.innerHTML = `
           <div class="card-header"><strong>Koalitionsbygger</strong><span class="field-note">Klik p\u00e5 partier for at bygge en koalition</span></div>
           <div class="card-body">
@@ -3278,7 +3326,6 @@ onmessage = function(e) {
             <div style="display:flex;gap:8px;align-items:center;margin-bottom:14px;">
               <button type="button" id="builder-test-btn" style="padding:8px 20px;background:var(--accent);color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:0.85rem;font-weight:500;" ${selArr.length < 1 ? "disabled" : ""}>Test koalition</button>
               <button type="button" id="builder-clear-btn" style="padding:8px 14px;background:#eee;color:var(--ink);border:none;border-radius:4px;cursor:pointer;font-size:0.85rem;" ${selArr.length < 1 ? "disabled" : ""}>Ryd</button>
-              <button type="button" id="builder-formateur-toggle" style="margin-left:auto;padding:5px 12px;border:1px solid var(--border);border-radius:4px;cursor:pointer;font-size:0.75rem;background:${isRedF ? "#E91C34" : "#11418D"};color:#fff;">${isRedF ? "R\u00f8d f\u00f8rste format\u00f8r" : "Bl\u00e5 f\u00f8rste format\u00f8r"}</button>
             </div>
             <p style="font-size:0.88rem;margin:0 0 6px;font-weight:500;min-height:1.3em;">${coalLabel}</p>
             <div id="builder-result"></div>
@@ -3316,10 +3363,6 @@ onmessage = function(e) {
           builderState.naCount = null;
           renderBuilder();
         });
-        card.querySelector("#builder-formateur-toggle")?.addEventListener("click", () => {
-          builderState.formateur = builderState.formateur === "red" ? "blue" : "red";
-          renderBuilder();
-        });
         card.querySelector("#builder-na-plus")?.addEventListener("click", () => {
           const cur = builderState.naCount != null ? builderState.naCount : autoNACount(selArr);
           if (cur < 4) { builderState.naCount = cur + 1; renderBuilder(); }
@@ -3346,7 +3389,6 @@ onmessage = function(e) {
           return (pb?.mandates || 0) - (pa?.mandates || 0);
         });
         const cfg = collectParams();
-        cfg.formateurOverride = builderState.formateur;
         try {
           const platform = Sim5Coalitions.negotiatePlatform(sorted, cfg);
           if (!platform) { resultDiv.innerHTML = `<p style="color:#c0392b;font-weight:500;">Koalitionen kunne ikke forhandle en platform.</p>`; return; }
@@ -3423,6 +3465,9 @@ onmessage = function(e) {
         document.querySelectorAll("[data-control]").forEach(control => {
           const eventName = control.tagName === "SELECT" || control.type === "checkbox" ? "change" : "input";
           control.addEventListener(eventName, () => {
+            if (control.id === "control-mBlueOrientation-auto") {
+              syncMBlueOrientationControl();
+            }
             updateValuePills();
             if (!state.suppressControlEvents) {
               state.scenarioName = "Tilpasset";

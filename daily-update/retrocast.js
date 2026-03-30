@@ -67,6 +67,18 @@ const HISTORICAL_OVERRIDES = {
     removeLG: true,
     mandateOverrides: { LA: 16, BP: 4 },
     overrides: {}
+  },
+  "2026-03-29": {
+    label: "forhandlinger",
+    formationStage: "forhandlinger",
+    changelog: [
+      "LA ekskluderer Cecilie Liv Hansen → løsgænger (LA 16→15)",
+      "BP ekskluderer Jacob Harris → løsgænger (BP 4→3)",
+      "Løsgængere modelleret med probabilistisk blå tilknytning (60%)",
+      "Forhandlingspause: weekend bruges til uformelle bilaterale sonderinger"
+    ],
+    removeLG: false,  // LG seats exist from this date
+    overrides: {}
   }
 };
 
@@ -179,7 +191,7 @@ for (const [date, config] of Object.entries(HISTORICAL_OVERRIDES)) {
 }
 
 // Run current date
-console.log("\n=== Current: 2026-03-28 ===");
+console.log("\n=== Current: 2026-03-30 ===");
 const current = engine.simulate({}, N);
 const currentCoalitions = {};
 for (const c of current.topCoalitions.slice(0, 10)) {
@@ -191,20 +203,17 @@ for (const key of Object.keys(currentCoalitions)) {
 console.log("  Results:", JSON.stringify(currentCoalitions));
 
 timeline.push({
-  date: "2026-03-28",
+  date: "2026-03-30",
   coalitions: currentCoalitions,
   noGov: current.noGovPct,
   formationStage: "forhandlinger",
   changelog: [
-    "Motoropdatering: 90-stemme viabilitetsgate i formatørprotokol",
-    "oppositionAbstention: 0.30 → 0.10",
-    "Bilateral CI på alle relationer (σ=0.05 standard)",
-    "SF kræver at være i regering (demandGov=true)",
-    "M-accept rekalibreret ud fra strategisk nødvendighed",
-    "M globalHarshness: 0.24 → 0.32 (blind kalibrering)",
-    "EL bløder op: globalHarshness 0.64 → 0.56, fleksibel forhandlingsposition",
-    "KF mere oppositions-orienteret: gov 0.70 → 0.55",
-    "RV→M tolerateInGov: 0.82 → 0.10 (2022-traume: RV kan ikke overleve M i regering uden RV)"
+    "Motoropdatering: simultan koalitionskonkurrence (erstatter sekventiel formatørprotokol)",
+    "Endogen M-orientering: Løkke vurderer begge blokke ud fra politisk fit, centrismepræference og P(passage)²",
+    "Kvalitetsstraffe: flertalsgab (√-deficit) og ekstern mandatafhængighed (NA/LG)",
+    "DemandGov blødgjort: 95% → 90% imod",
+    "Tværblok-bonus i M-nyttefunktion (crossBlocBonus=2.0)",
+    "Fix: bilateral drift-bug i CI-genopretning"
   ]
 });
 

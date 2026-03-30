@@ -344,11 +344,31 @@ function getGovSide(coalition) {
   return "other";
 }
 
+function classifyCoalitionCategory(members) {
+  const RED = new Set(["S", "SF", "EL", "ALT", "RV"]);
+  const BLUE = new Set(["V", "LA", "KF", "DF", "DD", "BP"]);
+
+  let hasRed = false, hasBlue = false, hasSwing = false;
+  for (const id of members) {
+    if (RED.has(id)) hasRed = true;
+    else if (BLUE.has(id)) hasBlue = true;
+    else if (id === "M") hasSwing = true;
+  }
+
+  if (hasRed && hasBlue) return "cross-bloc";
+  if (hasRed && hasSwing) return "center-red";
+  if (hasBlue && hasSwing) return "center-blue";
+  if (hasRed) return "red";
+  if (hasBlue) return "blue";
+  return "center-red";  // M-alone
+}
+
 const exportedSim5Coalitions = {
   enumerateCoalitions,
   negotiatePlatform,
   computeConcessions,
   classifyGovType,
+  classifyCoalitionCategory,
   getGovSide
 };
 

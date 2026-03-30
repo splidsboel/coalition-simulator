@@ -2,16 +2,16 @@
   {
     "date": "2026-03-24",
     "coalitions": {
-      "S+M+RV+SF": 26.6,
-      "S+M+SF": 21.4,
-      "V+KF+LA+M": 12,
-      "V+KF+M": 9.8,
-      "V+LA+M": 6.1,
-      "V+M": 4.8,
-      "S+KF+M+RV": 2.2,
-      "S+RV+SF": 0
+      "S+M+RV+SF": 36.4,
+      "S+M+SF": 22.2,
+      "V+KF+LA+M": 10.9,
+      "V+KF+M": 10.6,
+      "V+LA+M": 6.9,
+      "V+M": 5.8,
+      "S+KF+M+RV": 1.9,
+      "V+DD+M": 0.6
     },
-    "noGov": 0,
+    "noGov": 0.01,
     "formationStage": "valgaften",
     "changelog": [
       "Udgangspunkt: kalibrering fra valgaften, før forhandlingssignaler"
@@ -20,16 +20,16 @@
   {
     "date": "2026-03-26",
     "coalitions": {
-      "S+M+RV+SF": 24.6,
-      "S+M+SF": 20.4,
-      "V+KF+LA+M": 12.7,
-      "V+KF+M": 9.9,
-      "V+LA+M": 6,
-      "V+M": 4.6,
-      "S+KF+M+RV": 2.1,
-      "S+RV+SF": 0
+      "S+M+RV+SF": 36.5,
+      "S+M+SF": 21.9,
+      "V+KF+M": 10.7,
+      "V+KF+LA+M": 10.4,
+      "V+LA+M": 7,
+      "V+M": 5.7,
+      "S+KF+M+RV": 2.3,
+      "V+DD+KF+M": 0.6
     },
-    "noGov": 0,
+    "noGov": 0.01,
     "formationStage": "forhandlinger",
     "changelog": [
       "SF mistillidstrussel hæver SF globalHarshness",
@@ -39,14 +39,14 @@
   {
     "date": "2026-03-28",
     "coalitions": {
-      "S+M+RV+SF": 23.1,
-      "S+M+SF": 19.7,
-      "V+KF+LA+M": 13.4,
-      "V+KF+M": 9.2,
-      "V+LA+M": 6.2,
-      "V+M": 3.7,
-      "S+KF+M+RV": 1.9,
-      "S+RV+SF": 0
+      "S+M+RV+SF": 35.8,
+      "S+M+SF": 22.2,
+      "V+KF+M": 11.1,
+      "V+KF+LA+M": 10.7,
+      "V+LA+M": 6.8,
+      "V+M": 5.7,
+      "S+KF+M+RV": 2.4,
+      "S+M+V": 0.6
     },
     "noGov": 0,
     "formationStage": "forhandlinger",
@@ -59,13 +59,13 @@
   {
     "date": "2026-03-29",
     "coalitions": {
-      "S+M+RV+SF": 23.8,
-      "S+M+SF": 19.6,
-      "S+RV+SF": 11.2,
-      "V+KF+LA+M": 10.3,
-      "V+KF+M": 7.2,
-      "V+LA+M": 4.7,
-      "V+M": 2.7,
+      "S+M+RV+SF": 31.8,
+      "S+M+SF": 19.4,
+      "V+KF+M": 10.8,
+      "V+KF+LA+M": 10.6,
+      "V+LA+M": 6.8,
+      "V+M": 5.9,
+      "S+RV+SF": 5.8,
       "S+KF+M+RV": 2.3
     },
     "noGov": 0,
@@ -75,6 +75,29 @@
       "BP ekskluderer Jacob Harris → løsgænger (BP 4→3)",
       "Løsgængere modelleret med probabilistisk blå tilknytning (60%)",
       "Forhandlingspause: weekend bruges til uformelle bilaterale sonderinger"
+    ]
+  },
+  {
+    "date": "2026-03-30",
+    "coalitions": {
+      "S+M+RV+SF": 31.8,
+      "V+KF+LA+M": 11.1,
+      "S+M+SF": 19,
+      "V+KF+M": 10.3,
+      "V+LA+M": 7,
+      "S+RV+SF": 6.2,
+      "V+M": 5.8,
+      "S+KF+M+RV": 2
+    },
+    "noGov": 0.01,
+    "formationStage": "forhandlinger",
+    "changelog": [
+      "Motoropdatering: simultan koalitionskonkurrence (erstatter sekventiel formatørprotokol)",
+      "Endogen M-orientering: Løkke vurderer begge blokke ud fra politisk fit, centrismepræference og P(passage)²",
+      "Kvalitetsstraffe: flertalsgab (√-deficit) og ekstern mandatafhængighed (NA/LG)",
+      "DemandGov blødgjort: 95% → 90% imod",
+      "Tværblok-bonus i M-nyttefunktion (crossBlocBonus=2.0)",
+      "Fix: bilateral drift-bug i CI-genopretning"
     ]
   }
 ]

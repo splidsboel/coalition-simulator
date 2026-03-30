@@ -30,6 +30,7 @@ const {
 const {
   enumerateCoalitions,
   classifyGovType,
+  classifyCoalitionCategory,
   getGovSide
 } = sim5Coalitions;
 
@@ -63,10 +64,10 @@ function blocBudgetVote(partyId, coalition, cfg) {
 
   // Demand gates
   if (partyId === "S" && (cfg.sDemandGov != null ? cfg.sDemandGov : true) && !govIds.includes("S")) {
-    return { pFor: 0.01, pAbstain: 0.04, pAgainst: 0.95 };
+    return { pFor: 0.05, pAbstain: 0.05, pAgainst: 0.90 };
   }
   if (partyId === "M" && cfg.mDemandGov && !govIds.includes("M")) {
-    return { pFor: 0.01, pAbstain: 0.04, pAgainst: 0.95 };
+    return { pFor: 0.05, pAbstain: 0.05, pAgainst: 0.90 };
   }
   // Strategic orientation: when M pursues blue, M actively opposes S-led budgets
   if (partyId === "M" && cfg._mPursuesBlue && !govIds.includes("M") && govSide === "red") {
@@ -74,13 +75,13 @@ function blocBudgetVote(partyId, coalition, cfg) {
   }
   // General "demands government" gate for other parties (SF, RV, V, KF, LA)
   if (cfg.demandGov && cfg.demandGov[partyId] && !govIds.includes(partyId)) {
-    return { pFor: 0.01, pAbstain: 0.04, pAgainst: 0.95 };
+    return { pFor: 0.05, pAbstain: 0.05, pAgainst: 0.90 };
   }
   if (party.pmDemand && coalition.leader !== partyId) {
-    return { pFor: 0.01, pAbstain: 0.04, pAgainst: 0.95 };
+    return { pFor: 0.05, pAbstain: 0.05, pAgainst: 0.90 };
   }
   if (partyId === "M" && cfg.mDemandPM && coalition.leader !== "M") {
-    return { pFor: 0.01, pAbstain: 0.04, pAgainst: 0.95 };
+    return { pFor: 0.05, pAbstain: 0.05, pAgainst: 0.90 };
   }
 
   // Government members: near-certain FOR
@@ -520,12 +521,67 @@ function scoreCoalition(coalition, mandates, pPassage, cfg) {
     }
   }
 
+  // Majority gap penalty: nonlinear penalty for coalitions whose total
+  // parliamentary support base (gov + forståelsespapir + loose støttepartier)
+  // falls short of 90. Steepest just below 90 (crossing from majority to
+  // minority is the qualitative shift), flattening further below.
+  // Uses sqrt for concavity: biggest marginal penalty near 90.
+  const govSet = new Set(government);
+  const govSide = getGovSide(coalition);
+  const forstPartier = (coalition.support || []).map(s => s.party || s);
+  const forstSeats = forstPartier.reduce((s, id) => s + (mandates[id] || (PARTIES_MAP[id] || {}).mandates || 0), 0);
+  let looseSeats = 0;
+  for (const party of PARTIES_LIST) {
+    if (govSet.has(party.id)) continue;
+    if (forstPartier.includes(party.id)) continue;
+    if (party.bloc === govSide && party.participationPref) {
+      const govPref = party.participationPref.government || 0;
+      if (govPref < 0.50) {
+        const vote = blocBudgetVote(party.id, coalition, cfg);
+        if (vote.pFor >= 0.50) {
+          looseSeats += mandates[party.id] || party.mandates || 0;
+        }
+      }
+    }
+  }
+  const totalDanishSupport = seats + forstSeats + looseSeats;
+  const majorityDeficit = Math.max(0, 90 - totalDanishSupport);
+  const mgpK = cfg.majorityGapK != null ? cfg.majorityGapK : 0.08;
+  const majorityGapFactor = majorityDeficit > 0
+    ? 1.0 / (1.0 + mgpK * Math.sqrt(majorityDeficit))
+    : 1.0;
+
+  // External seat dependency: penalty for coalitions that need NA or LG
+  // seats to reach 90. Governments are reluctant to depend on actors
+  // outside the Danish party system (North Atlantic MPs with their own
+  // political dynamics, or expelled independents without party discipline).
+  // Graduated: ~0.90 per required external seat.
+  const naAlignments = cfg._naAlignments || cfg.naAlignments || {};
+  let alignedExternalSeats = 0;
+  for (const seat of NA_SEATS) {
+    const alignment = naAlignments[seat.id] || "flexible";
+    const isAligned = (alignment === "red" && govSide === "red")
+      || (alignment === "blue" && govSide === "blue");
+    const isFlexible = alignment === "flexible";
+    if (isAligned || isFlexible) {
+      alignedExternalSeats += mandates[seat.id] || seat.mandates || 0;
+    }
+  }
+  const externalSeatsNeeded = Math.max(0, Math.min(
+    90 - totalDanishSupport,
+    alignedExternalSeats
+  ));
+  const extDepK = cfg.externalDepK != null ? cfg.externalDepK : 0.90;
+  const externalDepFactor = externalSeatsNeeded > 0
+    ? Math.pow(extDepK, externalSeatsNeeded)
+    : 1.0;
+
   // Two-factor scoring: passage feasibility vs coalition quality.
   // w (passageWeight) controls the tradeoff. CI-varied per iteration
   // to express structural uncertainty about how formateurs decide.
   const w = cfg.passageWeight != null ? cfg.passageWeight : 0.65;
   const passage = pPassage;  // no exponent — w controls influence
-  const quality = ideoFit * parsimony * mwcc * govEase;
+  const quality = ideoFit * parsimony * mwcc * govEase * majorityGapFactor * externalDepFactor;
   const score = Math.pow(passage, w) * Math.pow(Math.max(0.01, quality), 1 - w);
   return score;
 }
@@ -547,6 +603,106 @@ function frederiksenBonus(coalition, redPreference) {
   }
 
   return (1.0 + midterBase - centristEdge * 0.4) * noise;
+}
+
+function evaluateMOrientation(coalitions, mandates, cfg) {
+  const mParty = PARTIES_MAP.M;
+  const crossBlocBonus = cfg.crossBlocBonus != null ? cfg.crossBlocBonus : 2.0;
+  const CENTRISM_BONUS = {
+    "center-red": 1.0,
+    "cross-bloc": crossBlocBonus,
+    "center-blue": 1.0
+  };
+  const PRESELECT_COUNT = 5;
+  const passageCfg = { ...(cfg || {}) };
+  delete passageCfg._mPursuesBlue;
+
+  function computePolicyFit(platform) {
+    let weightedDistanceSum = 0;
+    let weightSum = 0;
+
+    for (const dimension of DIMENSIONS) {
+      const position = mParty.positions[dimension];
+      if (!position) continue;
+      const weight = position.weight || 0;
+      const scaleMax = SCALE_MAX[dimension] || 1;
+      const platformValue = platform && platform[dimension] != null ? platform[dimension] : 0;
+      const distance = Math.abs(platformValue - position.ideal) / scaleMax;
+      weightedDistanceSum += weight * distance;
+      weightSum += weight;
+    }
+
+    const avgWeightedDist = weightSum > 0 ? weightedDistanceSum / weightSum : 1;
+    return Math.max(0.1, 1 - avgWeightedDist);
+  }
+
+  function hasPartnerFromBloc(government, bloc) {
+    for (const id of government || []) {
+      if (id === "M") continue;
+      if (PARTIES_MAP[id] && PARTIES_MAP[id].bloc === bloc) return true;
+    }
+    return false;
+  }
+
+  const descriptors = [];
+  for (const coalition of coalitions || []) {
+    const government = coalition.government || [];
+    if (!government.includes("M")) continue;
+
+    const hasRedPartners = hasPartnerFromBloc(government, "red");
+    const hasBluePartners = hasPartnerFromBloc(government, "blue");
+    const isRedSide = coalition.leader === "S" || (coalition.leader === "M" && hasRedPartners);
+    const isBlueSide = coalition.leader === "V" || (coalition.leader === "M" && hasBluePartners);
+    if (!isRedSide && !isBlueSide) continue;
+
+    const policyFit = computePolicyFit(coalition.platform || {});
+    const category = classifyCoalitionCategory(government);
+    const centrismBonus = CENTRISM_BONUS[category] || 1.0;
+    const heuristic = policyFit * centrismBonus * ((coalition.seats || 0) / 90);
+
+    descriptors.push({
+      coalition,
+      isRedSide,
+      isBlueSide,
+      policyFit,
+      centrismBonus,
+      heuristic
+    });
+  }
+
+  function pickTopCandidates(sideKey) {
+    return descriptors
+      .filter(entry => entry[sideKey])
+      .sort((a, b) => b.heuristic - a.heuristic)
+      .slice(0, PRESELECT_COUNT);
+  }
+
+  const redCandidates = pickTopCandidates("isRedSide");
+  const blueCandidates = pickTopCandidates("isBlueSide");
+  const utilityCache = new Map();
+
+  function computeUtility(entry) {
+    const cacheKey = entry.coalition;
+    if (!utilityCache.has(cacheKey)) {
+      const pPassage = computePpassage(entry.coalition, entry.coalition.platform, mandates, passageCfg);
+      // Passage enters squared: strategic actors discount low-viability paths
+      // superlinearly. At P=0.15 (DF blocks blue), 0.15²=0.023 is devastating.
+      // At P=0.99 (red with M), 0.99²=0.98 is invisible.
+      utilityCache.set(cacheKey, entry.policyFit * entry.centrismBonus * pPassage * pPassage);
+    }
+    return utilityCache.get(cacheKey);
+  }
+
+  const utilityRed = redCandidates.length
+    ? Math.max(...redCandidates.map(computeUtility))
+    : 0.01;
+  const utilityBlue = blueCandidates.length
+    ? Math.max(...blueCandidates.map(computeUtility))
+    : 0.01;
+  const pBlue = utilityBlue / (utilityBlue + utilityRed + 1e-10);
+  const mPursuesBlue = Math.random() < pBlue;
+
+  return { mPursuesBlue, pBlue, utilityRed, utilityBlue };
 }
 
 function determineForstaaelsespapir(government, outsideParties, platform, cfg) {
@@ -690,11 +846,13 @@ function selectGovernment(mandates, naAlignments, cfg, coalitions) {
 
   if (simultaneous) {
     const roundCfg = { ...cfg, flexibility: cfg.flexibility || 0, _naAlignments: naAlignments };
-    // Evaluate all groups with the same threshold, pick overall best
+    // All coalitions compete in one pool. No viability threshold gate —
+    // passage^w in scoring naturally penalizes low-P(passage) coalitions.
+    const simThreshold = 0.01;
     const candidates = [
-      tryGroup(sLed, sLedBonus, roundCfg, viabilityThreshold),
-      tryGroup(blueLed, blueBonus, roundCfg, viabilityThreshold),
-      tryGroup(mLed, mLedBonus, roundCfg, viabilityThreshold)
+      tryGroup(sLed, sLedBonus, roundCfg, simThreshold),
+      tryGroup(blueLed, blueBonus, roundCfg, simThreshold),
+      tryGroup(mLed, mLedBonus, roundCfg, simThreshold)
     ].filter(Boolean);
     // Pick highest score
     let best = null;
@@ -951,8 +1109,8 @@ function buildConfig(userParams) {
     rescueBase: 0.10,
     mDemandGov: true,
     sDemandGov: true,
-    // Frederiksen appointed as kongelig undersøger (March 2026): red forms first.
-    formateurOverride: "red",
+    mBlueOrientation: null,  // null = endogenous M orientation; number = exogenous override
+    formateurOverride: "simultaneous",
     redPreference: 0.5,
     maxFormationRounds: 1,
     flexIncrement: 0.05,
@@ -979,6 +1137,9 @@ function buildConfig(userParams) {
     "sDemandGov",
     "mDemandPM",
     "mElTolerate",
+    "mSfInGov",
+    "dfMTolerate",
+    "crossBlocBonus",
     "passageWeight",
     "oppositionAbstention",
     "rescueBase",
@@ -1014,10 +1175,18 @@ function simulate(userParams, N) {
   const iterations = Number.isFinite(N) ? N : 3000;
   const mandates = buildMandates(params);
   const cfg = buildConfig(params);
-  // Apply user-adjustable M→EL tolerance (dashboard slider)
+  // Apply user-adjustable bilateral overrides (dashboard sliders)
   const _origMEL = PARTIES_MAP.M.relationships.EL.tolerateInGov;
   if (cfg.mElTolerate != null) {
     PARTIES_MAP.M.relationships.EL.tolerateInGov = cfg.mElTolerate;
+  }
+  const _origMSF = PARTIES_MAP.M.relationships.SF.inGov;
+  if (cfg.mSfInGov != null) {
+    PARTIES_MAP.M.relationships.SF.inGov = cfg.mSfInGov;
+  }
+  const _origDFM = PARTIES_MAP.DF.relationships.M.tolerateInGov;
+  if (cfg.dfMTolerate != null) {
+    PARTIES_MAP.DF.relationships.M.tolerateInGov = cfg.dfMTolerate;
   }
 
   const coalitions = enumerateCoalitions(PARTIES_LIST, mandates, cfg);
@@ -1035,7 +1204,8 @@ function simulate(userParams, N) {
   // When a user moves a slider (or a sweep injects a value), the CI should
   // not override it. CI only applies to parameters left at their defaults.
   const CI_DEFAULTS = {
-    mElTolerate: 0.10, viabilityThreshold: 0.75, passageWeight: 0.65,
+    mElTolerate: 0.10, mSfInGov: 0.62, dfMTolerate: 0.20,
+    viabilityThreshold: 0.75, passageWeight: 0.65,
     oppositionAbstention: 0.10, elInformalRate: 0.45, elCentristPenalty: 0.08,
     elForstBase: 0.93, rescueBase: 0.10, distPenalty: 1.50,
     parsimonySpread: 1.0, mdfCooperationProb: 0.08
@@ -1070,8 +1240,10 @@ function simulate(userParams, N) {
         const rel = party.relationships[otherId];
         for (const key of ["inGov", "asSupport", "tolerateInGov", "asPM"]) {
           if (rel[key] == null) continue;
-          // Skip M→EL tolerateInGov if user set the mElTolerate slider
+          // Skip user-overridden bilaterals — slider value is authoritative
           if (party.id === "M" && otherId === "EL" && key === "tolerateInGov" && isUserSet("mElTolerate")) continue;
+          if (party.id === "M" && otherId === "SF" && key === "inGov" && isUserSet("mSfInGov")) continue;
+          if (party.id === "DF" && otherId === "M" && key === "tolerateInGov" && isUserSet("dfMTolerate")) continue;
           const overrideKey = party.id + "." + otherId + "." + key;
           const sigma = BILATERAL_SIGMA_OVERRIDES[overrideKey] || BILATERAL_SIGMA_DEFAULT;
           const saveKey = party.id + "." + otherId + "." + key;
@@ -1137,13 +1309,26 @@ function simulate(userParams, N) {
       ? cfg.parsimonySpread
       : Math.max(0.3, Math.min(1.5, normDraw(1.0, 0.15)));
 
-    // M strategic orientation draw: Løkke simultaneously negotiates with both
-    // blocs. Each iteration, M draws a strategic posture — pursue red (cooperate
-    // with S-led coalitions) or pursue blue (block S-led, support blue).
-    const _mBlueProb = cfg.mBlueOrientation != null ? cfg.mBlueOrientation : 0.50;
-    const _mPursuesBlue = Math.random() < _mBlueProb;
+    let _mPursuesBlue;
+    if (cfg.mBlueOrientation != null) {
+      _mPursuesBlue = Math.random() < cfg.mBlueOrientation;
+    } else {
+      const evalCfg = {
+        ...cfg,
+        viabilityThreshold: _iterViability,
+        passageWeight: _iterPassageWeight,
+        elInformalRate: _iterElInformal,
+        elCentristPenalty: _iterElCentrist,
+        elForstBase: _iterElForstBase,
+        rescueBase: _iterRescueBase,
+        oppositionAbstention: _iterAbstention,
+        distPenalty: _iterDistPenalty,
+        parsimonySpread: _iterParsimony
+      };
+      const mOrientation = evaluateMOrientation(coalitions, mandates, evalCfg);
+      _mPursuesBlue = mOrientation.mPursuesBlue;
+    }
 
-    // When M pursues blue: temporarily make M hostile to S-led coalitions
     const _savedMtoS_inGov = PARTIES_MAP.M.relationships.S.inGov;
     const _savedMtoS_tolerate = PARTIES_MAP.M.relationships.S.tolerateInGov;
     const _savedMtoS_asPM = PARTIES_MAP.M.relationships.S.asPM;
@@ -1258,19 +1443,10 @@ function simulate(userParams, N) {
           }
         }
       }
-      if (_mPursuesBlue) {
-        PARTIES_MAP.M.relationships.S.inGov = _savedMtoS_inGov;
-        PARTIES_MAP.M.relationships.S.tolerateInGov = _savedMtoS_tolerate;
-        PARTIES_MAP.M.relationships.S.asPM = _savedMtoS_asPM;
-      }
-      if (_dfRelaxed) {
-        PARTIES_MAP.M.relationships.DF.tolerateInGov = _savedMDF.mdf_t;
-        PARTIES_MAP.DF.relationships.M.tolerateInGov = _savedMDF.dfm_t;
-        PARTIES_MAP.M.relationships.DF.asSupport = _savedMDF.mdf_s;
-        PARTIES_MAP.DF.relationships.M.asSupport = _savedMDF.dfm_s;
-        PARTIES_MAP.M.relationships.DF.inGov = _savedMDF.mdf_i;
-        PARTIES_MAP.DF.relationships.M.inGov = _savedMDF.dfm_i;
-      }
+      // M orientation and DF relaxation restorations are handled by the
+      // bilateral CI restoration above (which restores ALL bilaterals to
+      // their pre-iteration originals). Separate restoration here would
+      // overwrite with CI-noised values, causing a random walk bug.
     }
   }
 
@@ -1314,8 +1490,10 @@ function simulate(userParams, N) {
       : 0;
   }
 
-  // Restore M→EL tolerance
+  // Restore bilateral overrides
   PARTIES_MAP.M.relationships.EL.tolerateInGov = _origMEL;
+  PARTIES_MAP.M.relationships.SF.inGov = _origMSF;
+  PARTIES_MAP.DF.relationships.M.tolerateInGov = _origDFM;
 
   return {
     N: iterations,
@@ -1334,6 +1512,7 @@ const exportedSim5Engine = {
   simulate,
   blocBudgetVote,
   computePpassage,
+  evaluateMOrientation,
   scoreCoalition,
   selectGovernment,
   confidenceCheck,
