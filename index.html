@@ -2337,7 +2337,10 @@ onmessage = function(e) {
           if (item.supportParties && item.supportParties.length > 0)
             parts.push(item.supportParties.map(s => s.id).join(", "));
           if (item.naParties && item.naParties.length > 0)
-            parts.push(item.naParties.map(s => s.id.replace("GL-","🇬🇱").replace("FO-","🇫🇴").replace("NAL","").replace("IA","").replace("JF","").replace("SB","")).join(""));
+            parts.push(item.naParties.map(s => {
+              if (s.id.startsWith("LG-")) return s.id.replace("LG-", "LG ");
+              return s.id.replace("GL-","🇬🇱").replace("FO-","🇫🇴").replace("NAL","").replace("IA","").replace("JF","").replace("SB","");
+            }).join(", "));
           return ` (${parts.join(", ")})`;
         })();
         return `
