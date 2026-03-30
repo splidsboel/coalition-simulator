@@ -2,14 +2,14 @@
   {
     "date": "2026-03-24",
     "coalitions": {
-      "S+M+RV+SF": 28.2,
-      "S+M+SF": 22,
-      "V+KF+LA+M": 11.1,
-      "V+KF+M": 9.3,
-      "V+LA+M": 5.7,
-      "V+M": 4.6,
-      "S+KF+M+RV": 2.1,
-      "V+DF+KF+M": 2
+      "S+M+RV+SF": 24.4,
+      "S+M+SF": 21,
+      "V+KF+LA+M": 11.7,
+      "V+KF+M": 10.4,
+      "V+LA+M": 6,
+      "V+M": 4.8,
+      "S+RV+SF": 3.9,
+      "S+KF+M+RV": 1.9
     },
     "noGov": 0,
     "formationStage": "valgaften",
@@ -20,14 +20,14 @@
   {
     "date": "2026-03-26",
     "coalitions": {
-      "S+M+RV+SF": 27.4,
-      "V+KF+LA+M": 12.6,
-      "S+M+SF": 21.4,
-      "V+KF+M": 9.9,
-      "V+LA+M": 6.3,
-      "V+M": 4.9,
-      "S+KF+M+RV": 2.6,
-      "V+DF+KF+LA+M": 1.3
+      "S+M+RV+SF": 25.1,
+      "V+KF+LA+M": 12.4,
+      "S+M+SF": 20.9,
+      "V+KF+M": 8.8,
+      "V+LA+M": 5.7,
+      "S+RV+SF": 4,
+      "V+M": 3.6,
+      "S+KF+M+RV": 2.4
     },
     "noGov": 0,
     "formationStage": "forhandlinger",
@@ -39,14 +39,14 @@
   {
     "date": "2026-03-28",
     "coalitions": {
-      "S+M+RV+SF": 26.7,
-      "V+KF+LA+M": 12.3,
-      "S+M+SF": 21.4,
-      "V+KF+M": 9.2,
-      "V+LA+M": 5.8,
-      "V+M": 3.6,
-      "S+KF+M+RV": 2.5,
-      "V+DF+KF+LA+M": 2.4
+      "S+M+RV+SF": 27.4,
+      "S+M+SF": 21.9,
+      "V+KF+LA+M": 11.8,
+      "V+KF+M": 9.1,
+      "V+LA+M": 5.4,
+      "V+M": 4.2,
+      "S+RV+SF": 3.8,
+      "S+KF+M+RV": 2.4
     },
     "noGov": 0,
     "formationStage": "forhandlinger",
@@ -59,21 +59,21 @@
   {
     "date": "2026-03-29",
     "coalitions": {
-      "S+M+RV+SF": 27.7,
-      "S+M+SF": 22.7,
-      "V+KF+LA+M": 12.9,
-      "V+KF+M": 9,
-      "V+LA+M": 5.6,
-      "V+M": 4,
-      "S+KF+M+RV": 2.7,
-      "V+DF+KF+LA+M": 1.5
+      "S+M+RV+SF": 20.5,
+      "S+M+SF": 18.3,
+      "V+KF+LA+M": 15,
+      "V+KF+M": 11.6,
+      "V+LA+M": 7.3,
+      "V+M": 4.9,
+      "S+RV+SF": 4.9,
+      "S+KF+M+RV": 2.1
     },
     "noGov": 0,
     "formationStage": "forhandlinger",
     "changelog": [
       "LA ekskluderer Cecilie Liv Hansen → løsgænger (LA 16→15)",
       "BP ekskluderer Jacob Harris → løsgænger (BP 4→3)",
-      "Løsgængere modelleret med probabilistisk blå tilknytning (85-88%)",
+      "Løsgængere modelleret med probabilistisk blå tilknytning (75%)",
       "Forhandlingspause: weekend bruges til uformelle bilaterale sonderinger"
     ]
   }
