@@ -264,6 +264,11 @@ function confidenceCheck(government, mandates, cfg) {
   const alignments = cfg._naAlignments || cfg.naAlignments || {};
   const govSide = getGovSide({ government, leader });
   for (const seat of NA_SEATS) {
+    // North Atlantic MPs (FO, GL) have a strong convention of abstaining
+    // on Danish confidence motions — they don't actively topple governments.
+    // Løsgængere (LG) are Danish MPs who vote actively.
+    const isNA = seat.id.startsWith("FO-") || seat.id.startsWith("GL-");
+    if (isNA) continue;  // NA seats abstain on confidence votes
     const alignment = alignments[seat.id] || "flexible";
     if ((alignment === "red" && govSide === "blue") || (alignment === "blue" && govSide === "red")) {
       opposition += mandates[seat.id] || seat.mandates || 0;
