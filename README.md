@@ -2,7 +2,7 @@
 
 Interactive post-election coalition explorer for the 2026 Danish general election. Given the actual mandate distribution (where no bloc has a majority), which coalition governments are viable, what would it take to form them, and how likely is each?
 
-**Live dashboard:** [chdausgaard.github.io/coalition-simulator/coalition-builder.html](https://chdausgaard.github.io/coalition-simulator/coalition-builder.html)
+**Live dashboard:** [https://chdausgaard.github.io/coalition-simulator/](https://chdausgaard.github.io/coalition-simulator/)
 
 ## What this does
 
